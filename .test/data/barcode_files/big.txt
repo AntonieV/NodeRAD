@@ -1,0 +1,189 @@
+# Test dataset with generic individual names.
+# p5 barcodes
+1	ATCACG
+2	CGATGT
+3	TTAGGC
+4	TGACCA
+5	ACAGTG
+6	GCCAAT
+7	CAGATC
+8	ACTTGA
+9	GATCAG
+10	TAGCTT
+11	GGCTAC
+12	CTTGTA
+13	AGTCAA
+14	AGTTCC
+15	ATGTCA
+16	CCGTCC
+17	GTCCGC
+18	GTGAAA
+19	GTGGCC
+20	GTTTCG
+21	CGTACG
+22	GAGTGG
+23	ACTGAT
+24	ATTCCT
+25	AAAAAA
+26	AAACCC
+27	AAAGGT
+28	AACAGC
+29	AACCAT
+30	AACGTA
+31	AAGACT
+32	AAGGAG
+33	AATATG
+34	ACATAC
+35	ACCCCA
+36	ACCTTT
+37	ACGCGC
+38	AGAATT
+39	AGACGG
+40	AGCCTC
+41	AGGAAC
+42	AGGGGA
+43	AGGTTG
+44	ATTGGG
+45	CAACTG
+46	CAAGCA
+47	CACAAG
+48	CACCGA
+49	CACTCT
+50	CATGGC
+51	CATTAA
+52	CCCATA
+53	CCCGCG
+54	CCGAGG
+55	CCGGAA
+56	CCTAAC
+57	CGACAC
+58	CGCGAT
+59	CGGCCT
+60	CTAAAT
+61	CTATTC
+62	CTCCTT
+63	CTCTGG
+64	CTGCAG
+65	CTGGGT
+66	GAAACG
+67	GAAGTC
+68	GATTTT
+69	GCACGT
+70	GCCCTG
+71	GCGGTT
+72	GGAGAG
+73	GGATTA
+74	GGCGCA
+75	GGTAGT
+76	TAATGA
+77	TACCCG
+78	TACGAC
+79	TATACA
+80	TCAACC
+81	TCCGGT
+82	TCCTAG
+83	TCGTTA
+84	TCTCTC
+85	TGCGTG
+86	TGTGCT
+87	TGTTGG
+88	TTATCT
+89	TTCAGA
+90	TTGATG
+91	TTTTAC
+
+# p7 barcodes
+1	ATCACG
+
+# individuals
+1	1			Individual 01	Annotation 1
+2	1	GAC		Individual 02	Annotation 1
+3	1	AC		Individual 03	Annotation 1
+4	1	C		Individual 04	Annotation 1
+5	1	AC		Individual 05	Annotation 1
+6	1			Individual 06	Annotation 1
+7	1			Individual 07	Annotation 1
+8	1	GAC		Individual 08	Annotation 1
+9	1	GAC		Individual 09	Annotation 1
+10	1	AC		Individual 10	Annotation 1
+11	1	C		Individual 11	Annotation 1
+12	1	GAC		Individual 12	Annotation 1
+13	1	C		Individual 13	Annotation 1
+14	1			Individual 14	Annotation 1
+15	1	GAC		Individual 15	Annotation 1
+16	1	AC		Individual 16	Annotation 1
+17	1	AC		Individual 17	Annotation 1
+18	1	C		Individual 18	Annotation 1
+19	1	GAC		Individual 19	Annotation 1
+20	1			Individual 20	Annotation 1
+21	1			Individual 21	Annotation 1
+22	1	AC		Individual 22	Annotation 1
+23	1	C		Individual 23	Annotation 1
+24	1	C		Individual 24	Annotation 1
+25	1			Individual 25	Annotation 2
+26	1	GAC		Individual 26	Annotation 2
+27	1	AC		Individual 27	Annotation 2
+28	1	C		Individual 28	Annotation 2
+29	1	AC		Individual 29	Annotation 2
+30	1			Individual 30	Annotation 2
+31	1			Individual 31	Annotation 2
+32	1	GAC		Individual 32	Annotation 2
+33	1	GAC		Individual 33	Annotation 2
+34	1	AC		Individual 34	Annotation 2
+35	1	C		Individual 35	Annotation 2
+36	1	GAC		Individual 36	Annotation 2
+37	1	C		Individual 37	Annotation 2
+38	1			Individual 38	Annotation 2
+39	1	GAC		Individual 39	Annotation 2
+40	1	AC		Individual 40	Annotation 2
+41	1	AC		Individual 41	Annotation 2
+42	1	C		Individual 42	Annotation 2
+43	1	GAC		Individual 43	Annotation 2
+44	1			Individual 44	Annotation 2
+45	1			Individual 45	Annotation 2
+46	1	AC		Individual 46	Annotation 2
+47	1	C		Individual 47	Annotation 2
+48	1	C		Individual 48	Annotation 2
+49	1			Individual 49	Annotation 3
+50	1	GAC		Individual 50	Annotation 3
+51	1	AC		Individual 51	Annotation 3
+52	1	C		Individual 52	Annotation 3
+53	1	AC		Individual 53	Annotation 3
+54	1			Individual 54	Annotation 3
+55	1			Individual 55	Annotation 3
+56	1	GAC		Individual 56	Annotation 3
+57	1	GAC		Individual 57	Annotation 3
+58	1	AC		Individual 58	Annotation 3
+59	1	C		Individual 59	Annotation 3
+60	1	GAC		Individual 60	Annotation 3
+61	1	C		Individual 61	Annotation 3
+62	1			Individual 62	Annotation 3
+63	1	GAC		Individual 63	Annotation 3
+64	1	AC		Individual 64	Annotation 3
+65	1	AC		Individual 65	Annotation 3
+66	1	C		Individual 66	Annotation 3
+67	1	GAC		Individual 67	Annotation 3
+68	1			Individual 68	Annotation 3
+69	1			Individual 69	Annotation 3
+70	1	AC		Individual 70	Annotation 3
+71	1	C		Individual 71	Annotation 3
+72	1	C		Individual 72	Annotation 3
+73	1			Individual 73	Annotation 4
+74	1	GAC		Individual 74	Annotation 4
+75	1	AC		Individual 75	Annotation 4
+76	1	C		Individual 76	Annotation 4
+77	1	AC		Individual 77	Annotation 4
+78	1			Individual 78	Annotation 4
+79	1			Individual 79	Annotation 4
+80	1	GAC		Individual 80	Annotation 4
+81	1	GAC		Individual 81	Annotation 4
+82	1	AC		Individual 82	Annotation 4
+83	1	C		Individual 83	Annotation 4
+84	1	GAC		Individual 84	Annotation 4
+85	1	C		Individual 85	Annotation 4
+86	1			Individual 86	Annotation 4
+87	1	GAC		Individual 87	Annotation 4
+88	1	AC		Individual 88	Annotation 4
+89	1	AC		Individual 89	Annotation 4
+90	1	C		Individual 90	Annotation 4
+91	1	GAC		Individual 91	Annotation 4

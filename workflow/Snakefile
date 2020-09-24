@@ -1,0 +1,19 @@
+# The main entry point of workflow.
+# After configuring, running snakemake -n in a clone of this repository should successfully execute a dry-run of the workflow.
+
+# The data preprocessing is partially based on the following implementations:
+#        * https://github.com/snakemake-workflows/dna-seq-varlociraptor
+#        * https://github.com/snakemake-workflows/rna-seq-kallisto-sleuth
+#        * https://github.com/snakemake-workflows/chipseq
+
+# The data preprocessing steps include:
+#        * raw read quality control with FastQC and MultiQC
+#        * adapter trimming with cutadapt
+
+include: "rules/common.smk"
+include: "rules/extract.smk"
+include: "rules/qc.smk"
+include: "rules/cutadapt.smk"
+
+rule all:
+    input: all_input

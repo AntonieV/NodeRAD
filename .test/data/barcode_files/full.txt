@@ -1,0 +1,132 @@
+# Test dataset with generic individual names.
+# Details on the barcodes used can be found here: http://support.illumina.com/content/dam/illumina-support/documents/documentation/chemistry_documentation/experiment-design/illumina-adapter-sequences_1000000002694-01.pdf
+# The index numbers 17, 24, 26 are reserved and therefore not used
+# p5 barcodes
+1	ATCACG
+2	CGATGT
+3	TTAGGC
+4	TGACCA
+5	ACAGTG
+6	GCCAAT
+7	CAGATC
+8	ACTTGA
+9	GATCAG
+10	TAGCTT
+11	GGCTAC
+12	CTTGTA
+13	AGTCAA
+14	AGTTCC
+15	ATGTCA
+16	CCGTCC
+18	GTCCGC
+19	GTGAAA
+20	GTGGCC
+21	GTTTCG
+22	CGTACG
+23	GAGTGG
+25	ACTGAT
+27	ATTCCT
+
+# p7 barcodes
+1	ATCACG
+8	ACTTGA
+10	TAGCTT
+11	GGCTAC
+
+# individuals
+1	1			Individual 01	Annotation 1
+2	1	GAC		Individual 02	Annotation 1
+3	1	AC		Individual 03	Annotation 1
+4	1	C		Individual 04	Annotation 1
+5	1	AC		Individual 05	Annotation 1
+6	1			Individual 06	Annotation 1
+7	1			Individual 07	Annotation 1
+8	1	GAC		Individual 08	Annotation 1
+9	1	GAC		Individual 09	Annotation 1
+10	1	AC		Individual 10	Annotation 1
+11	1	C		Individual 11	Annotation 1
+12	1	GAC		Individual 12	Annotation 1
+13	1	C		Individual 13	Annotation 1
+14	1			Individual 14	Annotation 1
+15	1	GAC		Individual 15	Annotation 1
+16	1	AC		Individual 16	Annotation 1
+18	1	AC		Individual 17	Annotation 1
+19	1	C		Individual 18	Annotation 1
+20	1	GAC		Individual 19	Annotation 1
+21	1			Individual 20	Annotation 1
+22	1			Individual 21	Annotation 1
+23	1	AC		Individual 22	Annotation 1
+25	1	C		Individual 23	Annotation 1
+27	1	C		Individual 24	Annotation 1
+1	8		G	Individual 25	Annotation 2
+2	8	GAC	G	Individual 26	Annotation 2
+3	8	AC	G	Individual 27	Annotation 2
+4	8	C	G	Individual 28	Annotation 2
+5	8	AC	G	Individual 29	Annotation 2
+6	8		G	Individual 30	Annotation 2
+7	8		G	Individual 31	Annotation 2
+8	8	GAC	G	Individual 32	Annotation 2
+9	8	GAC	G	Individual 33	Annotation 2
+10	8	AC	G	Individual 34	Annotation 2
+11	8	C	G	Individual 35	Annotation 2
+12	8	GAC	G	Individual 36	Annotation 2
+13	8	C	G	Individual 37	Annotation 2
+14	8		G	Individual 38	Annotation 2
+15	8	GAC	G	Individual 39	Annotation 2
+16	8	AC	G	Individual 40	Annotation 2
+18	8	AC	G	Individual 41	Annotation 2
+19	8	C	G	Individual 42	Annotation 2
+20	8	GAC	G	Individual 43	Annotation 2
+21	8		G	Individual 44	Annotation 2
+22	8		G	Individual 45	Annotation 2
+23	8	AC	G	Individual 46	Annotation 2
+25	8	C	G	Individual 47	Annotation 2
+27	8	C	G	Individual 48	Annotation 2
+1	10		AT	Individual 49	Annotation 3
+2	10	GAC	AT	Individual 50	Annotation 3
+3	10	AC	AT	Individual 51	Annotation 3
+4	10	C	AT	Individual 52	Annotation 3
+5	10	AC	AT	Individual 53	Annotation 3
+6	10		AT	Individual 54	Annotation 3
+7	10		AT	Individual 55	Annotation 3
+8	10	GAC	AT	Individual 56	Annotation 3
+9	10	GAC	AT	Individual 57	Annotation 3
+10	10	AC	AT	Individual 58	Annotation 3
+11	10	C	AT	Individual 59	Annotation 3
+12	10	GAC	AT	Individual 60	Annotation 3
+13	10	C	AT	Individual 61	Annotation 3
+14	10		AT	Individual 62	Annotation 3
+15	10	GAC	AT	Individual 63	Annotation 3
+16	10	AC	AT	Individual 64	Annotation 3
+18	10	AC	AT	Individual 65	Annotation 3
+19	10	C	AT	Individual 66	Annotation 3
+20	10	GAC	AT	Individual 67	Annotation 3
+21	10		AT	Individual 68	Annotation 3
+22	10		AT	Individual 69	Annotation 3
+23	10	AC	AT	Individual 70	Annotation 3
+25	10	C	AT	Individual 71	Annotation 3
+27	10	C	AT	Individual 72	Annotation 3
+1	11		CGA	Individual 73	Annotation 4
+2	11	GAC	CGA	Individual 74	Annotation 4
+3	11	AC	CGA	Individual 75	Annotation 4
+4	11	C	CGA	Individual 76	Annotation 4
+5	11	AC	CGA	Individual 77	Annotation 4
+6	11		CGA	Individual 78	Annotation 4
+7	11		CGA	Individual 79	Annotation 4
+8	11	GAC	CGA	Individual 80	Annotation 4
+9	11	GAC	CGA	Individual 81	Annotation 4
+10	11	AC	CGA	Individual 82	Annotation 4
+11	11	C	CGA	Individual 83	Annotation 4
+12	11	GAC	CGA	Individual 84	Annotation 4
+13	11	C	CGA	Individual 85	Annotation 4
+14	11		CGA	Individual 86	Annotation 4
+15	11	GAC	CGA	Individual 87	Annotation 4
+16	11	AC	CGA	Individual 88	Annotation 4
+18	11	AC	CGA	Individual 89	Annotation 4
+19	11	C	CGA	Individual 90	Annotation 4
+20	11	GAC	CGA	Individual 91	Annotation 4
+21	11		CGA	Individual 92	Annotation 4
+22	11		CGA	Individual 93	Annotation 4
+23	11	AC	CGA	Individual 94	Annotation 4
+25	11	C	CGA	Individual 95	Annotation 4
+27	11	C	CGA	Individual 96	Annotation 4

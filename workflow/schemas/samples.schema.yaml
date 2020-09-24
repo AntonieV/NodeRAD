@@ -1,0 +1,29 @@
+$schema: "http://json-schema.org/draft-04/schema#"
+
+description: an entry in the sample sheet
+
+# columns that the config/samples.tsv file can have and which type they should be
+properties:
+  sample:
+    type: string
+    description: sample name
+  individual:
+    type: string
+    description: id or alternative name of the individual/sample
+  barcode_1:
+    type: string
+    description: sequence of the barcode for single end reads or sequence of p5 barcode for paired end reads
+  barcode_2:
+    type: string
+    description: optional, sequence of the p7 barcode for paired end reads
+  spacer_1:
+    type: string
+    description: sequence of p5 spacer/insert for paired end reads
+  spacer_2:
+    type: string
+    description: sequence of p7 spacer/insert for paired end reads
+
+# columns that the config/samples.tsv file must have to pass schema validation
+required:
+  - sample
+  - barcode_1
