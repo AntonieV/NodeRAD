@@ -26,10 +26,13 @@ wildcard_constraints:
 ####### data preprocessing #######
 
 def get_adapter(wildcards):
-    print(samples.loc[wildcards.sample, "barcode_1"])
     return " -g {}={} ".format(wildcards.sample, samples.loc[wildcards.sample, "barcode_1"])
 
 ####### results #######
+
+# minimap2
+def get_query_all_vs_all(wildcards):
+    return
 
 def get_multiqc_input(wildcards):
     multiqc_input = []
@@ -58,11 +61,13 @@ def all_input(wildcards):
         wanted_input.extend(
             expand (
                 [
+                    "results/qc/fastqc/{sample}_fastqc.zip",
                     "results/trimmed/{sample}.fastq.gz",
-                    "results/trimmed/{sample}.se.qc.txt"
+                    "results/trimmed/{sample}.se.qc.txt",
+                    "results/noderad_graph/{sample}.xml.gz",
+                    "results/noderad_graph/{sample}.pdf"
                 ],
                 sample = sample
             )
         )
-    wanted_input.extend(["results/test.txt"])
     return wanted_input

@@ -10,8 +10,13 @@
 #        * raw read quality control with FastQC and MultiQC
 #        * adapter trimming with cutadapt
 
+# The data analysis steps with NodeRAD include:
+#        * determine edit distances with minimap2
+#        * construct graph from edit distances
+
+
 include: "rules/common.smk"
-include: "rules/extract.smk"
+include: "rules/noderad_distances.smk"
 include: "rules/qc.smk"
 include: "rules/cutadapt.smk"
 
