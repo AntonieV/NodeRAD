@@ -1,4 +1,6 @@
 channels:
   - bioconda
+  - conda-forge
 dependencies:
   - mappy ==2.17
+  - graph-tool ==2.35

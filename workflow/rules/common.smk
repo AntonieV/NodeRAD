@@ -58,11 +58,13 @@ def all_input(wildcards):
         wanted_input.extend(
             expand (
                 [
+                    "results/qc/fastqc/{sample}_fastqc.zip",
                     "results/trimmed/{sample}.fastq.gz",
-                    "results/trimmed/{sample}.se.qc.txt"
+                    "results/trimmed/{sample}.se.qc.txt",
+                    "results/test/{sample}.test.txt"
                 ],
                 sample = sample
             )
         )
-    wanted_input.extend(["results/test.txt"])
+    # wanted_input.extend(["results/test.txt"])
     return wanted_input
