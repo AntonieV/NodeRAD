@@ -2,7 +2,7 @@ import sys
 import os
 import gzip
 import pysam
-from Bio.SeqIO.QualityIO import FastqGeneralIterator
+from Bio import SeqIO
 from graph_tool.all import *
 
 sys.stderr = open(snakemake.log[0], "w")
@@ -10,6 +10,12 @@ sys.stderr = open(snakemake.log[0], "w")
 sam = snakemake.input.get("sam")
 reads = snakemake.input.get("fastq")
 threshold = snakemake.params.get("threshold", "")
+format = ""
+
+if reads.endswith((".fastq", ".fq", ".fastq.gz", ".fq.gz")):
+    format = "fastq"
+if reads.endswith((".fasta", ".fa", ".fasta.gz", ".fa.gz")):
+    format = "fasta"
 
 # default value of threshold for maximum distance value
 if threshold == "":
@@ -30,13 +36,17 @@ graph.vertex_properties["id"] = v_id
 v_name = graph.new_vertex_property("string")
 graph.vertex_properties["name"] = v_name
 v_seq = graph.new_vertex_property("string")
-graph.vertex_properties["seq"] = v_seq
-v_qual = graph.new_vertex_property("string")
-graph.vertex_properties["qual"] = v_qual
+graph.vertex_properties["seqence"] = v_seq
+v_qual = graph.new_vertex_property("vector<float>")
+graph.vertex_properties["quality"] = v_qual
 e_dist = graph.new_edge_property("int")
-graph.edge_properties["dist"] = e_dist
-e_cig = graph.new_edge_property("string")
-graph.edge_properties["cig"] = e_cig
+graph.edge_properties["distance"] = e_dist
+e_cs = graph.new_edge_property("string")  # cigar string from cs tag, short or long option can be selected in minimap2 rule
+graph.edge_properties["cs-tag"] = e_cs
+e_cig = graph.new_edge_property("string")  # cigar string from mandatory field 6 (sam format)
+graph.edge_properties["cigar"] = e_cig
+e_lh = graph.new_edge_property("float")
+graph.edge_properties["likelihood"] = e_lh
 
 node = graph.add_vertex()
 v_id[node] = "{idx}_{sample}".format(idx=idx_nodes, sample=sample)
@@ -48,13 +58,13 @@ edges = []
 
 # add vertices
 def add_verticles(_reads, idx_nodes):
-    for (id, seq, qual) in FastqGeneralIterator(_reads):
+    for record in SeqIO.parse(_reads, format):
         idx_nodes += 1
         node = graph.add_vertex()
         v_id[node] = "{idx}_{sample}".format(idx=idx_nodes, sample=sample)
-        v_name[node] = (id).split(' ', 1)[0]
-        v_seq[node] = seq
-        v_qual[node] = qual
+        v_name[node] = (record.id).split(' ', 1)[0]
+        v_seq[node] = record.seq
+        v_qual[node] = [10**(-1 * i / 10) for i in record.letter_annotations["phred_quality"]]
         nodes.append(node)
 
 if reads.endswith(".gz"):
@@ -64,12 +74,13 @@ else:
     with open(reads, "rU") as _reads:
         add_verticles(_reads, idx_nodes)
 
-# add edges
+# add edges from all-vs-all alignment of reads (please see rule minimap2)
 sam = pysam.AlignmentFile(sam, "rb")
 for read in sam.fetch(until_eof=True):
     if read.has_tag("NM") and not read.query_name == read.reference_name:
-        nm = 0
-        cig = ""
+        nm = 0  # edit distance between query and reference sequence
+        cig = ""  # elements of cigar string
+        likelihood = 1.0
         for (tag, tag_val) in read.get_tags():
             if tag == "NM":
                 nm = tag_val
@@ -80,10 +91,47 @@ for read in sam.fetch(until_eof=True):
                 max_NM = nm
             node1 = find_vertex(graph, v_name, read.query_name)[0]
             node2 = find_vertex(graph, v_name, read.reference_name)[0]
-            edge = graph.add_edge(node1, node2)
-            e_dist[edge] = nm
-            e_cig[edge] = cig
-            edges.append(edges)
+            if (not graph.vertex_index[node2] in graph.get_all_neighbors(node1)):
+                edge = graph.add_edge(node1, node2)
+                e_dist[edge] = nm
+                e_cs[edge] = cig
+                e_cig[edge] = read.cigarstring
+                # pysam operations:
+                    # M   BAM_CMATCH        0  -> 1 - basequal
+                    # I   BAM_CINS          1  -> (1 - mutrate) * 1/3 * basequal + mutrate * (1 - basequal)
+                    # D   BAM_CDEL          2  -> (1 - mutrate) * 1/3 * basequal + mutrate * (1 - basequal)
+                    # N   BAM_CREF_SKIP     3  ??
+                    # S   BAM_CSOFT_CLIP    4  ??
+                    # H   BAM_CHARD_CLIP    5  ??
+                    # P   BAM_CPAD          6  ??
+                    # =   BAM_CEQUAL        7  -> 1 - basequal
+                    # X   BAM_CDIFF         8  -> (1 - mutrate) * 1/3 * basequal + mutrate * (1 - basequal)
+                    # B   BAM_CBACK         9  ??
+                qual_idx = 0
+                mutrate = 0.05
+                for (op, length) in read.cigartuples:
+                    n1 = graph.vertex_properties["quality"][node1]
+                    n2 = graph.vertex_properties["quality"][node2]
+                    if op == 7 or op == 0:  # on match
+                        for i in n1[qual_idx:length-1]:
+                            likelihood *= 1 - i
+                        for i in n2[qual_idx:length - 1]:
+                            likelihood *= 1 - i
+                        qual_idx = length
+                    if op == 8 or op == 1 or op == 2:
+                        if op == 8:  # on mismatch: substitution/snp
+                            mutrate = 0.8999
+                        if op == 1:  # on mismatch: insertion
+                            mutrate = 0.05
+                        if op == 2:  # on mismatch: deletion
+                            mutrate = 0.05
+                        for i in n1[qual_idx:length-1]:
+                            likelihood *= (1 - mutrate) * float(1/3) * i + mutrate * (1 - i)  # or (1-basequal) * 1/3 * basequal + mutrate * (1-basequal) ?
+                        for i in n2[qual_idx:length - 1]:
+                            likelihood *= (1 - mutrate) * float(1/3) * i + mutrate * (1 - i)  # or (1-basequal) * 1/3 * basequal + mutrate * (1-basequal) ?
+                        qual_idx = length
+                e_lh[edge] = likelihood
+                edges.append(edge)
 sam.close()
 
 n_nodes = len(nodes)
@@ -93,6 +141,5 @@ sys.stderr.write("graph construction summary for sample {}:\n nodes:\t{}\n edges
 graph.save(snakemake.output.get("graph_xml"))
 pos = sfdp_layout(graph)
 graph_draw(graph, vertex_color=[1, 1, 1, 0],
-           edge_color=graph.edge_properties["dist"], pos=pos, vertex_size=1,
-           output=snakemake.output.get("graph_figure"))
-
+           edge_color=graph.edge_properties["likelihood"], elen=graph.edge_properties["likelihood"],
+           pos=pos, vertex_size=1, output=snakemake.output.get("graph_figure"))

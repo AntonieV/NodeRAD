@@ -29,15 +29,15 @@ jobs:
       - name: Test workflow
         uses: snakemake/snakemake-github-action@v1.9.0
         with:
-          directory: .test
-          snakefile: ../workflow/Snakefile
+          directory: ./.test #change to .test if not works
+          snakefile: workflow/Snakefile
           args: "--use-conda --show-failed-logs -j 10 --conda-cleanup-pkgs cache --conda-frontend mamba"
 
       - name: Test report
         uses: snakemake/snakemake-github-action@v1.9.0
         with:
-          directory: .test
-          snakefile: ../workflow/Snakefile
+          directory: ./.test #change to .test if not works
+          snakefile: workflow/Snakefile
           args: "--report report.zip"
           stagein: |
             export TMPDIR=/tmp
