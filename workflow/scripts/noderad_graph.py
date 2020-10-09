@@ -4,12 +4,20 @@ import gzip
 import pysam
 from Bio import SeqIO
 from graph_tool.all import *
+import pulp
 
 sys.stderr = open(snakemake.log[0], "w")
 
 sam = snakemake.input.get("sam")
 reads = snakemake.input.get("fastq")
 threshold = snakemake.params.get("threshold", "")
+mut_total = snakemake.params.get("mut_total", "")
+mut_subst = snakemake.params.get("mut_subst", "")
+n_snp = 0
+mut_ins = snakemake.params.get("mut_ins", "")
+n_ins = 0
+mut_del = snakemake.params.get("mut_del", "")
+n_del = 0
 format = ""
 
 if reads.endswith((".fastq", ".fq", ".fastq.gz", ".fq.gz")):
@@ -108,10 +116,11 @@ for read in sam.fetch(until_eof=True):
                     # X   BAM_CDIFF         8  -> (1 - mutrate) * 1/3 * basequal + mutrate * (1 - basequal)
                     # B   BAM_CBACK         9  ??
                 qual_idx = 0
-                mutrate = 0.05
                 for (op, length) in read.cigartuples:
+                    mutrate = mut_total
                     n1 = graph.vertex_properties["quality"][node1]
                     n2 = graph.vertex_properties["quality"][node2]
+                    # print("op: {}; length: {}".format(op, length))
                     if op == 7 or op == 0:  # on match
                         for i in n1[qual_idx:length-1]:
                             likelihood *= 1 - i
@@ -119,12 +128,15 @@ for read in sam.fetch(until_eof=True):
                             likelihood *= 1 - i
                         qual_idx = length
                     if op == 8 or op == 1 or op == 2:
-                        if op == 8:  # on mismatch: substitution/snp
-                            mutrate = 0.8999
-                        if op == 1:  # on mismatch: insertion
-                            mutrate = 0.05
-                        if op == 2:  # on mismatch: deletion
-                            mutrate = 0.05
+                        if op == 8 and mut_subst:  # on mismatch: substitution/snp
+                            mutrate = mut_subst
+                            n_snp += length
+                        if op == 1 and mut_ins:  # on mismatch: insertion
+                            mutrate = mut_ins
+                            n_ins += length
+                        if op == 2 and mut_del:  # on mismatch: deletion
+                            mutrate = mut_del
+                            n_del += length
                         for i in n1[qual_idx:length-1]:
                             likelihood *= (1 - mutrate) * float(1/3) * i + mutrate * (1 - i)  # or (1-basequal) * 1/3 * basequal + mutrate * (1-basequal) ?
                         for i in n2[qual_idx:length - 1]:
@@ -137,9 +149,38 @@ sam.close()
 n_nodes = len(nodes)
 n_edges = len(edges)
 sys.stderr.write("graph construction summary for sample {}:\n nodes:\t{}\n edges:\t{}\n max distance:\t{}".format(sample, n_nodes, n_edges, max_NM))
+sys.stderr.write("\n\tmutations:\n\t\tsnp's and substitutions: {}\n\t\tinsertions: {}\n\t\tdeletions: {}\n\n".format(n_snp, n_ins, n_del))
 
 graph.save(snakemake.output.get("graph_xml"))
 pos = sfdp_layout(graph)
 graph_draw(graph, vertex_color=[1, 1, 1, 0],
-           edge_color=graph.edge_properties["likelihood"], elen=graph.edge_properties["likelihood"],
+           edge_color=graph.edge_properties["likelihood"],
            pos=pos, vertex_size=1, output=snakemake.output.get("graph_figure"))
+# hist = distance_histogram(graph, weight=e_lh, samples=n_nodes)
+# print(hist)
+
+# extract connected components
+all_components, hist = label_components(graph)
+sys.stderr.write("number of connected components: {}\n\n".format(max(all_components.a)))
+sys.stderr.write("histogram of connected components:\n"+str(hist)+"\n\n")
+connected_components = []
+sporadic_vertices = []
+sys.stderr.write("connected components with more than one vertex are:\n\n")
+for comp_nr in range(min(all_components), max(all_components)):
+    conn_component = GraphView(graph, vfilt=all_components.a == comp_nr)
+    conn_component = Graph(conn_component, prune=True)
+    if hist[comp_nr] > 1:
+        connected_components.append(conn_component)
+        sys.stderr.write("\t" + str(conn_component) + "\n")
+        # pos = sfdp_layout(conn_component)
+        # sub_dir = "/home/tarja/Schreibtisch/workspace_bioinformatik/NodeRAD/.test/results/subgraphes/{}".format(snakemake.wildcards.get('sample'))
+        # if not os.path.exists(sub_dir):
+        #     os.makedirs(sub_dir)
+        # graph_draw(conn_component, vertex_color=[1, 1, 1, 0],
+        #            edge_color=conn_component.edge_properties["likelihood"],
+        #            pos=pos, vertex_size=1, output=sub_dir+"/"+str(comp_nr)+"-view_subgraph.pdf")
+        # conn_component.save(sub_dir+"/"+str(comp_nr)+"-subgraph.xml.gz")
+    else:
+        sporadic_vertices.append(conn_component)
+# ILP on each connected component
+

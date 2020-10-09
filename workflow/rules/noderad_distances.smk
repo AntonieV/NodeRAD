@@ -18,7 +18,7 @@ rule minimap2:
     log:
         "logs/minimap2/{sample}.log"
     params:
-        extra="-aY --eqx -B 0 --cs=long"
+        extra="-a -A 10 --eqx --cs=long"
     threads: 3
     wrapper:
         "0.66.0/bio/minimap2/aligner"
@@ -32,7 +32,11 @@ rule create_noderad_graph:
         graph_xml="results/noderad_graph/{sample}.xml.gz",
         graph_figure="results/noderad_graph/{sample}.pdf"
     params:
-        threshold=12 # threshold for maximum distance value for building the graph, default: 23
+        threshold=12, # threshold for maximum distance value for building the graph, default: 23
+        mut_total=config["mutationrates"]["total"],
+        mut_subst=config["mutationrates"]["substitution"],
+        mut_ins=config["mutationrates"]["insertion"],
+        mut_del=config["mutationrates"]["deletion"],
     log:
         "logs/noderad_graph/{sample}.test.log"
     conda:
