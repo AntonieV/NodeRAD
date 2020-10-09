@@ -4,7 +4,6 @@ import gzip
 import pysam
 from Bio import SeqIO
 from graph_tool.all import *
-import pulp
 
 sys.stderr = open(snakemake.log[0], "w")
 
@@ -158,29 +157,3 @@ graph_draw(graph, vertex_color=[1, 1, 1, 0],
            pos=pos, vertex_size=1, output=snakemake.output.get("graph_figure"))
 # hist = distance_histogram(graph, weight=e_lh, samples=n_nodes)
 # print(hist)
-
-# extract connected components
-all_components, hist = label_components(graph)
-sys.stderr.write("number of connected components: {}\n\n".format(max(all_components.a)))
-sys.stderr.write("histogram of connected components:\n"+str(hist)+"\n\n")
-connected_components = []
-sporadic_vertices = []
-sys.stderr.write("connected components with more than one vertex are:\n\n")
-for comp_nr in range(min(all_components), max(all_components)):
-    conn_component = GraphView(graph, vfilt=all_components.a == comp_nr)
-    conn_component = Graph(conn_component, prune=True)
-    if hist[comp_nr] > 1:
-        connected_components.append(conn_component)
-        sys.stderr.write("\t" + str(conn_component) + "\n")
-        # pos = sfdp_layout(conn_component)
-        # sub_dir = "/home/tarja/Schreibtisch/workspace_bioinformatik/NodeRAD/.test/results/subgraphes/{}".format(snakemake.wildcards.get('sample'))
-        # if not os.path.exists(sub_dir):
-        #     os.makedirs(sub_dir)
-        # graph_draw(conn_component, vertex_color=[1, 1, 1, 0],
-        #            edge_color=conn_component.edge_properties["likelihood"],
-        #            pos=pos, vertex_size=1, output=sub_dir+"/"+str(comp_nr)+"-view_subgraph.pdf")
-        # conn_component.save(sub_dir+"/"+str(comp_nr)+"-subgraph.xml.gz")
-    else:
-        sporadic_vertices.append(conn_component)
-# ILP on each connected component
-

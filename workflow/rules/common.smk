@@ -65,7 +65,8 @@ def all_input(wildcards):
                     "results/trimmed/{sample}.fastq.gz",
                     "results/trimmed/{sample}.se.qc.txt",
                     "results/noderad_graph/{sample}.xml.gz",
-                    "results/noderad_graph/{sample}.pdf"
+                    "results/noderad_graph/{sample}.pdf",
+                    "results/test/{sample}-test.txt"
                 ],
                 sample = sample
             )

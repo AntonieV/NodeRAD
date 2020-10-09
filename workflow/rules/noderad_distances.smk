@@ -24,7 +24,7 @@ rule minimap2:
         "0.66.0/bio/minimap2/aligner"
 
 # creates graph for nodeRAD calculations
-rule create_noderad_graph:
+rule noderad_graph:
     input:
         sam="results/minimap2/aligned/{sample}_aln.sam",
         fastq="results/trimmed/{sample}.fastq.gz"
@@ -38,9 +38,24 @@ rule create_noderad_graph:
         mut_ins=config["mutationrates"]["insertion"],
         mut_del=config["mutationrates"]["deletion"],
     log:
-        "logs/noderad_graph/{sample}.test.log"
+        "logs/noderad/graph/{sample}-graph.log"
     conda:
         "../envs/noderad_graph.yaml"
     script:
         "../scripts/noderad_graph.py"
+
+# extracts the connected components and solves the ilp to determine the optimal representatives
+rule noderad_representatives:
+    input:
+         "results/noderad_graph/{sample}.xml.gz"
+    output:
+        "results/test/{sample}-test.txt"
+    params:
+        ""
+    log:
+        "logs/noderad/representatives/{sample}-representatives.log"
+    conda:
+         "../envs/noderad_representatives.yaml"
+    script:
+        "../scripts/noderad_representatives.py"
 
