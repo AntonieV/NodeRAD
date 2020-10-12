@@ -54,7 +54,7 @@ def all_input(wildcards):
     wanted_input = []
 
     # multiQC-report
-    wanted_input.extend(["results/qc/multiqc/multiqc.html"])
+    # wanted_input.extend(["results/qc/multiqc/multiqc.html"])
 
     # trimming reads
     for sample in samples.index:
@@ -64,9 +64,11 @@ def all_input(wildcards):
                     "results/qc/fastqc/{sample}_fastqc.zip",
                     "results/trimmed/{sample}.fastq.gz",
                     "results/trimmed/{sample}.se.qc.txt",
-                    "results/noderad_graph/{sample}.xml.gz",
-                    "results/noderad_graph/{sample}.pdf",
-                    "results/test/{sample}-test.txt"
+                    "results/noderad/graph/{sample}.xml.gz",
+                    "results/noderad/graph/{sample}.pdf",
+                    "results/noderad/connected_components/{sample}.all_components.xml.gz", # optional
+                    "results/noderad/connected_components/{sample}.all_components.pdf", # optional
+                    "results/noderad/representatives/{sample}.txt"
                 ],
                 sample = sample
             )

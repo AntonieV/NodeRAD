@@ -119,7 +119,6 @@ for read in sam.fetch(until_eof=True):
                     mutrate = mut_total
                     n1 = graph.vertex_properties["quality"][node1]
                     n2 = graph.vertex_properties["quality"][node2]
-                    # print("op: {}; length: {}".format(op, length))
                     if op == 7 or op == 0:  # on match
                         for i in n1[qual_idx:length-1]:
                             likelihood *= 1 - i

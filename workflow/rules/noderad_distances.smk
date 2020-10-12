@@ -29,8 +29,8 @@ rule noderad_graph:
         sam="results/minimap2/aligned/{sample}_aln.sam",
         fastq="results/trimmed/{sample}.fastq.gz"
     output:
-        graph_xml="results/noderad_graph/{sample}.xml.gz",
-        graph_figure="results/noderad_graph/{sample}.pdf"
+        graph_xml="results/noderad/graph/{sample}.xml.gz",
+        graph_figure="results/noderad/graph/{sample}.pdf"
     params:
         threshold=12, # threshold for maximum distance value for building the graph, default: 23
         mut_total=config["mutationrates"]["total"],
@@ -47,9 +47,13 @@ rule noderad_graph:
 # extracts the connected components and solves the ilp to determine the optimal representatives
 rule noderad_representatives:
     input:
-         "results/noderad_graph/{sample}.xml.gz"
+         "results/noderad/graph/{sample}.xml.gz"
     output:
-        "results/test/{sample}-test.txt"
+        representatives="results/noderad/representatives/{sample}.txt",
+        # optional output files:
+        connected_components_xml="results/noderad/connected_components/{sample}.all_components.xml.gz",
+        connected_components_figure="results/noderad/connected_components/{sample}.all_components.pdf",
+        dir_subgraphs=directory("results/noderad/connected_components/subgraphes/{sample}")
     params:
         ""
     log:
