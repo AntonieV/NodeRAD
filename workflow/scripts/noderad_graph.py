@@ -103,17 +103,6 @@ for read in sam.fetch(until_eof=True):
                 e_dist[edge] = nm
                 e_cs[edge] = cig
                 e_cig[edge] = read.cigarstring
-                # pysam operations:
-                    # M   BAM_CMATCH        0  -> 1 - basequal
-                    # I   BAM_CINS          1  -> (1 - mutrate) * 1/3 * basequal + mutrate * (1 - basequal)
-                    # D   BAM_CDEL          2  -> (1 - mutrate) * 1/3 * basequal + mutrate * (1 - basequal)
-                    # N   BAM_CREF_SKIP     3  ??
-                    # S   BAM_CSOFT_CLIP    4  ??
-                    # H   BAM_CHARD_CLIP    5  ??
-                    # P   BAM_CPAD          6  ??
-                    # =   BAM_CEQUAL        7  -> 1 - basequal
-                    # X   BAM_CDIFF         8  -> (1 - mutrate) * 1/3 * basequal + mutrate * (1 - basequal)
-                    # B   BAM_CBACK         9  ??
                 qual_idx = 0
                 for (op, length) in read.cigartuples:
                     mutrate = mut_total
@@ -125,26 +114,30 @@ for read in sam.fetch(until_eof=True):
                         for i in n2[qual_idx:length - 1]:
                             likelihood *= 1 - i
                         qual_idx = length
-                    if op == 8 or op == 1 or op == 2:
-                        if op == 8 and mut_subst:  # on mismatch: substitution/snp
-                            mutrate = mut_subst
+                    if op == 8 or op == 1 or op == 2 or op == 4:
+                        if op == 8 or op == 4:  # on mismatch: substitution/snp or on softclip
+                            if mut_subst:
+                                mutrate = mut_subst
                             n_snp += length
-                        if op == 1 and mut_ins:  # on mismatch: insertion
-                            mutrate = mut_ins
+                        if op == 1:  # on mismatch: insertion
+                            if mut_ins:
+                                mutrate = mut_ins
                             n_ins += length
-                        if op == 2 and mut_del:  # on mismatch: deletion
-                            mutrate = mut_del
+                        if op == 2:  # on mismatch: deletion
+                            if mut_del:
+                                mutrate = mut_del
                             n_del += length
                         for i in n1[qual_idx:length-1]:
-                            likelihood *= (1 - mutrate) * float(1/3) * i + mutrate * (1 - i)  # or (1-basequal) * 1/3 * basequal + mutrate * (1-basequal) ?
+                            likelihood *= (1 - mutrate) * float(1/3) * i + mutrate * (1 - i)
                         for i in n2[qual_idx:length - 1]:
-                            likelihood *= (1 - mutrate) * float(1/3) * i + mutrate * (1 - i)  # or (1-basequal) * 1/3 * basequal + mutrate * (1-basequal) ?
+                            likelihood *= (1 - mutrate) * float(1/3) * i + mutrate * (1 - i)
                         qual_idx = length
                 e_lh[edge] = likelihood
                 edges.append(edge)
 sam.close()
 
-n_nodes = len(nodes)
+graph.remove_vertex(0)
+n_nodes = len(nodes) - 1
 n_edges = len(edges)
 sys.stderr.write("graph construction summary for sample {}:\n nodes:\t{}\n edges:\t{}\n max distance:\t{}".format(sample, n_nodes, n_edges, max_NM))
 sys.stderr.write("\n\tmutations:\n\t\tsnp's and substitutions: {}\n\t\tinsertions: {}\n\t\tdeletions: {}\n\n".format(n_snp, n_ins, n_del))
@@ -154,5 +147,3 @@ pos = sfdp_layout(graph)
 graph_draw(graph, vertex_color=[1, 1, 1, 0],
            edge_color=graph.edge_properties["likelihood"],
            pos=pos, vertex_size=1, output=snakemake.output.get("graph_figure"))
-# hist = distance_histogram(graph, weight=e_lh, samples=n_nodes)
-# print(hist)

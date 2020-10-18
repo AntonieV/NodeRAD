@@ -3,6 +3,7 @@ import os
 from graph_tool.all import *
 import pulp
 import math
+import numpy as np
 
 sys.stderr = open(snakemake.log[0], "w")
 
@@ -56,24 +57,37 @@ if connected_components_figure:
 
 # ILP on each connected component
 
-# for comp in connected_components:
-# # data:
-#     nodes = comp.vertices()
-#     edges = comp.edge()
-#     r = pulp.LpVariable.dicts("representatives", i , 0, 1 , pulp.LpInteger)
-#     z = pulp.LpVariable.dicts("indicator",(i , j),0, 1 , pulp.LpInteger)
-#
-# # function:
-#     representatives_ilp = pulp.LpProblem("Find representatives for loci", pulp.LpMaximize)
-#     representatives_ilp += pulp.lpSum([z[i][j]*math.log(e_lh[i][j]) for node in nodes for node in nodes])
-#     for node in nodes:
-#         comp.get_all_neighbors(node)
-# # representatives_ilp = pulp.LpProblem("Find representatives for loci", pulp.LpMaximize)
-#
-# # restrictions:
+for comp in connected_components:
+    # data:
+    nodes = list([comp.vertex_index[node] for node in comp.vertices()])
+    print(nodes)
+    edges = list([(comp.vertex_index[ed.source()], comp.vertex_index[ed.target()]) for ed in comp.edges()])
 
+    for n in range(1, len(nodes) + 1):
+        # decision variables
+        r = pulp.LpVariable.dicts("representatives", nodes, 0, 1, pulp.LpBinary)
+        z = pulp.LpVariable.dicts("indicator", (nodes, nodes), 0, 1, pulp.LpBinary)
 
-######## DEBUG ########
-with open(snakemake.output.get("representatives"), 'w') as f:
-    print("Hello snakemake!", file=f)
-#######################
+        # function:
+        model_representatives = pulp.LpProblem("Find_representatives_for_loci", pulp.LpMaximize)
+        # includes the constrait z[i][j] = 1 :
+            # get_all_edges(node) guarantees: z[i][j] = 1 <=> i is adjacent to j AND
+            # r == 1 guarantees: z[i][j] = 0 if r[i] == 0
+        model_representatives += pulp.lpSum([z[source][target] * math.log(comp.edge_properties['likelihood'][comp.edge(source, target)]) for node in nodes for (source, target) in comp.get_all_edges(comp.vertex_index[node]) if r[source] == 1])
+
+        # # restrictions:
+        model_representatives += pulp.lpSum([z[source][target] for node in nodes for (source, target) in comp.get_all_edges(comp.vertex_index[node])]) >= 1, "each_node_is_representative_or_has_representative"
+        model_representatives += pulp.lpSum([r[node] for node in nodes]) == n, "for_each_number_of_representatives"
+        model_representatives.solve()
+        print("Best solution for {} representatives is {} with: ".format(n, pulp.value(model_representatives.objective.value())))
+        for var in model_representatives.variables():
+            if var.varValue == 1:
+                print("{} = {}".format(var.name, var.varValue))
+        with open(snakemake.output.get("representatives"), 'a+') as f:
+            print("status: ", pulp.LpStatus[model_representatives.status], file=f)
+            print("objective-value: ", pulp.value(model_representatives.objective.value()), file=f)
+        # for var in model_representatives.variables():
+        #     with open(snakemake.output.get("representatives"), 'a+') as f:
+        #         if var.varValue == 1:
+        #             print("Best solution for {} representatives is {}".format())
+        #         print("{} = {}".format(var.name, var.varValue), file=f)

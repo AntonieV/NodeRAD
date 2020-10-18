@@ -18,6 +18,7 @@ analysis/*
 !LICENSE
 !README.md
 !start.sh
+.test/results/*
 
 ### R Programming language ###
 # History files
