@@ -3,7 +3,7 @@ import os
 from graph_tool.all import *
 import pulp
 import math
-import numpy as np
+import collections
 
 sys.stderr = open(snakemake.log[0], "w")
 
@@ -61,7 +61,6 @@ for comp in connected_components:
     # data:
     nodes = list([comp.vertex_index[node] for node in comp.vertices()])
     print(nodes)
-    edges = list([(comp.vertex_index[ed.source()], comp.vertex_index[ed.target()]) for ed in comp.edges()])
 
     for n in range(1, len(nodes) + 1):
         # decision variables
@@ -70,24 +69,22 @@ for comp in connected_components:
 
         # function:
         model_representatives = pulp.LpProblem("Find_representatives_for_loci", pulp.LpMaximize)
-        # includes the constrait z[i][j] = 1 :
-            # get_all_edges(node) guarantees: z[i][j] = 1 <=> i is adjacent to j AND
-            # r == 1 guarantees: z[i][j] = 0 if r[i] == 0
-        model_representatives += pulp.lpSum([z[source][target] * math.log(comp.edge_properties['likelihood'][comp.edge(source, target)]) for node in nodes for (source, target) in comp.get_all_edges(comp.vertex_index[node]) if r[source] == 1])
+        model_representatives += pulp.lpSum([z[node][neighbor] * comp.edge_properties['likelihood'][comp.edge(node, neighbor)] for node in nodes for neighbor in comp.get_all_neighbors(comp.vertex_index[node])])
 
-        # # restrictions:
-        model_representatives += pulp.lpSum([z[source][target] for node in nodes for (source, target) in comp.get_all_edges(comp.vertex_index[node])]) >= 1, "each_node_is_representative_or_has_representative"
+        # restrictions:
+        for node in nodes:
+            # guarantees: z[i][j] = 1 <=> i is adjacent to j
+            for neighbor in comp.get_all_neighbors(comp.vertex_index[node]):
+                # guarantees: if r[i] == 0: z[i][j] = 0 OR z[i][j] = 1 (if r[j] == 1), if r[i] == 1: z[i][j] = 1
+                model_representatives += r[node] <= z[node][neighbor]
+                # guarantees: r[i] <= z[i][j] <= r[i] + r[j]
+                model_representatives += r[node] + r[neighbor] >= z[node][neighbor]
+
+        model_representatives += pulp.lpSum([z[node][neighbor] for node in nodes for neighbor in comp.get_all_neighbors(comp.vertex_index[node])]) >= 1, "each_node_is_representative_or_has_representative"
         model_representatives += pulp.lpSum([r[node] for node in nodes]) == n, "for_each_number_of_representatives"
+        # model_representatives.writeLP(snakemake.output.get("representatives"))
         model_representatives.solve()
-        print("Best solution for {} representatives is {} with: ".format(n, pulp.value(model_representatives.objective.value())))
-        for var in model_representatives.variables():
-            if var.varValue == 1:
-                print("{} = {}".format(var.name, var.varValue))
         with open(snakemake.output.get("representatives"), 'a+') as f:
             print("status: ", pulp.LpStatus[model_representatives.status], file=f)
-            print("objective-value: ", pulp.value(model_representatives.objective.value()), file=f)
-        # for var in model_representatives.variables():
-        #     with open(snakemake.output.get("representatives"), 'a+') as f:
-        #         if var.varValue == 1:
-        #             print("Best solution for {} representatives is {}".format())
-        #         print("{} = {}".format(var.name, var.varValue), file=f)
+            print("Best solution for {} representatives is {} with: ".format(n, pulp.value(model_representatives.objective.value())), file=f)
+

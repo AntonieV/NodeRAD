@@ -109,9 +109,9 @@ for read in sam.fetch(until_eof=True):
                     n1 = graph.vertex_properties["quality"][node1]
                     n2 = graph.vertex_properties["quality"][node2]
                     if op == 7 or op == 0:  # on match
-                        for i in n1[qual_idx:length-1]:
+                        for i in n1[qual_idx:length]:
                             likelihood *= 1 - i
-                        for i in n2[qual_idx:length - 1]:
+                        for i in n2[qual_idx:length]:
                             likelihood *= 1 - i
                         qual_idx = length
                     if op == 8 or op == 1 or op == 2 or op == 4:
@@ -127,9 +127,9 @@ for read in sam.fetch(until_eof=True):
                             if mut_del:
                                 mutrate = mut_del
                             n_del += length
-                        for i in n1[qual_idx:length-1]:
+                        for i in n1[qual_idx:length]:
                             likelihood *= (1 - mutrate) * float(1/3) * i + mutrate * (1 - i)
-                        for i in n2[qual_idx:length - 1]:
+                        for i in n2[qual_idx:length]:
                             likelihood *= (1 - mutrate) * float(1/3) * i + mutrate * (1 - i)
                         qual_idx = length
                 e_lh[edge] = likelihood
