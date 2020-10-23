@@ -66,8 +66,8 @@ def all_input(wildcards):
                     "results/trimmed/{sample}.se.qc.txt",
                     "results/noderad/graph/{sample}.xml.gz",
                     "results/noderad/graph/{sample}.pdf",
-                    # "results/noderad/connected_components/{sample}.all_components.xml.gz", # optional
-                    # "results/noderad/connected_components/{sample}.all_components.pdf", # optional
+                    "results/noderad/connected_components/{sample}.all_components.xml.gz", # optional
+                    "results/noderad/connected_components/{sample}.all_components.pdf", # optional
                     "results/noderad/representatives/{sample}.txt"
                 ],
                 sample = sample

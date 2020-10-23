@@ -51,9 +51,9 @@ rule noderad_representatives:
     output:
         representatives="results/noderad/representatives/{sample}.txt",
         # optional output files:
-        # connected_components_xml="results/noderad/connected_components/{sample}.all_components.xml.gz",
-        # connected_components_figure="results/noderad/connected_components/{sample}.all_components.pdf",
-        # dir_subgraphs=directory("results/noderad/connected_components/subgraphes/{sample}")
+        connected_components_xml="results/noderad/connected_components/{sample}.all_components.xml.gz",
+        connected_components_figure="results/noderad/connected_components/{sample}.all_components.pdf",
+        dir_subgraphs=directory("results/noderad/connected_components/subgraphes/{sample}")
     params:
         ""
     log:

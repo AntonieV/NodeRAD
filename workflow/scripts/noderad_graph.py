@@ -37,7 +37,7 @@ if reads.endswith(".gz"):
 # init graph
 idx_nodes = 0  # index of nodes
 max_NM = 0     # highest edit distance
-graph = Graph(directed=False)
+graph = Graph(directed=True)
 v_id = graph.new_vertex_property("string")
 graph.vertex_properties["id"] = v_id
 v_name = graph.new_vertex_property("string")
@@ -96,29 +96,26 @@ for read in sam.fetch(until_eof=True):
         if nm <= threshold:
             if max_NM < nm:
                 max_NM = nm
-            node1 = find_vertex(graph, v_name, read.query_name)[0]
-            node2 = find_vertex(graph, v_name, read.reference_name)[0]
-            if (not graph.vertex_index[node2] in graph.get_all_neighbors(node1)):
-                edge = graph.add_edge(node1, node2)
+            query_node = find_vertex(graph, v_name, read.query_name)[0] ###
+            ref_node = find_vertex(graph, v_name, read.reference_name)[0]
+            if (not graph.vertex_index[ref_node] in graph.get_all_neighbors(query_node)):
+                edge = graph.add_edge(query_node, ref_node)
                 e_dist[edge] = nm
                 e_cs[edge] = cig
                 e_cig[edge] = read.cigarstring
                 qual_idx = 0
                 for (op, length) in read.cigartuples:
                     mutrate = mut_total
-                    n1 = graph.vertex_properties["quality"][node1]
-                    n2 = graph.vertex_properties["quality"][node2]
+                    qual_query_node = graph.vertex_properties["quality"][query_node]
                     if op == 7 or op == 0:  # on match
-                        for i in n1[qual_idx:length]:
-                            likelihood *= 1 - i
-                        for i in n2[qual_idx:length]:
+                        for i in qual_query_node[qual_idx:length]:
                             likelihood *= 1 - i
                         qual_idx = length
                     if op == 8 or op == 1 or op == 2 or op == 4:
                         if op == 8 or op == 4:  # on mismatch: substitution/snp or on softclip
                             if mut_subst:
                                 mutrate = mut_subst
-                            n_snp += length
+                                n_snp += length
                         if op == 1:  # on mismatch: insertion
                             if mut_ins:
                                 mutrate = mut_ins
@@ -127,9 +124,7 @@ for read in sam.fetch(until_eof=True):
                             if mut_del:
                                 mutrate = mut_del
                             n_del += length
-                        for i in n1[qual_idx:length]:
-                            likelihood *= (1 - mutrate) * float(1/3) * i + mutrate * (1 - i)
-                        for i in n2[qual_idx:length]:
+                        for i in qual_query_node[qual_idx:length]:
                             likelihood *= (1 - mutrate) * float(1/3) * i + mutrate * (1 - i)
                         qual_idx = length
                 e_lh[edge] = likelihood
