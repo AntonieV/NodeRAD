@@ -3,8 +3,11 @@ import os
 from graph_tool.all import *
 import pulp
 import math
+import warnings
 import collections
-import pandas as pd
+# import pandas as pd
+import warnings
+import solver_wrapper
 
 sys.stderr = open(snakemake.log[0], "w")
 
@@ -18,6 +21,24 @@ graph.vertex_properties["component-label"] = v_concom
 connected_components_xml = snakemake.output.get("connected_components_xml", "")
 connected_components_figure = snakemake.output.get("connected_components_figure", "")
 dir_subgraphs = snakemake.output.get("dir_subgraphs", "")
+
+# solver configuration wrapper for PuLP:
+solver = snakemake.params.get("solver", None)
+mip = snakemake.params.get("mip", None)
+timelimit = snakemake.params.get("timelimit", None)
+gaprel = snakemake.params.get("gaprel", None)
+gapabs = snakemake.params.get("gapabs", None)
+fracgap = snakemake.params.get("fracgap", None)
+maxnodes = snakemake.params.get("maxnodes", None)
+maxmemory = snakemake.params.get("maxmemory", None)
+threads = snakemake.threads
+spec_solver = ""
+
+if solver:
+    if solver in pulp.apis.list_solvers(onlyAvailable=True):
+        spec_solver = solver_wrapper.check_params(solver, mip, timelimit, gaprel, gapabs, fracgap, maxnodes, maxmemory, threads)
+    else:
+        warnings.warn('The selected solver is not supported or is not available. The calculation is continued with the default solvers of Pulp (CBC and CHOCO).')
 
 # extract connected components
 all_components, hist = label_components(graph, vprop=v_concom)
@@ -80,7 +101,12 @@ for comp in connected_components:
 
         model_representatives += pulp.lpSum([r[node] for node in nodes]) == n, "for_each_number_of_representatives"
         # model_representatives.writeLP(snakemake.output.get("representatives"))
-        model_representatives.solve()
+
+        if spec_solver:
+            model_representatives.solve(spec_solver)
+        else:
+            model_representatives.solve()
+
         with open(snakemake.output.get("representatives"), 'a+') as f:
             print("status: ", pulp.LpStatus[model_representatives.status], file=f)
             print("Best solution for {} representatives is {} with: ".format(n, pulp.value(model_representatives.objective.value())), file=f)

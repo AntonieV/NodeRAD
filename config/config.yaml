@@ -10,6 +10,28 @@ resources:
   # input of second run to compare the samples with each other
   fasta-data: "results/test.fasta"
 
+mutationrates:
+  total: 0.05
+  substitution: 0.8999
+  insertion: 0.05
+  deletion: 0.05
+
+ilp:
+  # choose a solver and its parameters for the identification of potential representatives (optimization by ILP with PuLP)
+  # for the different solvers and their options please see https://coin-or.github.io/pulp/technical/solvers.html
+  # if no solver is selected, then PuLP automatically uses default included solver (CBC and CHOCO)
+  # as solver can be selected: CHOCO_CMD, COINMP_DLL, CPLEX_DLL, GLPK_CMD, LpSolver, IPCL_CMD, MOSEK, PULP_CHOCO_CMD, PYGLPK YAPOSIB,
+  #                            LpSolver_CMD, SCIP_CMD, COIN_CMD, CPLEX_PY, GUROBI, XPRESS, GUROBI_CMD, PULP_CBC_CMD, CPLEX_CMD
+  solver: "COIN_CMD"
+  mip: False           # boolean value; can be specified for each solver
+  timeLimit: 500       # maximum time for solver in seconds, can be specified for each solver, except SCIP_CMD
+  threads: 12          # only for GUROBI_CMD, PULP_CBC_CMD, COIN_CMD or CPLEX_CMD solver
+  gapRel: 0.0001       # float value, only for CPLEX_PY, GUROBI, XPRESS, GUROBI_CMD, PULP_CBC_CMD, COIN_CMD or CPLEX_CMD solver
+  gapAbs:              # float value, only for GUROBI_CMD, PULP_CBC_CMD, COIN_CMD or CPLEX_CMD solver
+  fracGap:             # float value, only for COIN_CMD solver
+  maxNodes:            # integer value, only for CPLEX_CMD solver
+  maxMemory:           # float value, only for CPLEX_CMD solver
+
 params: # ToDo: adjust optional parameters for the rule cutadapt_se
   # these cutadapt parameters need to contain the required flag(s) for
   # the type of adapter(s) to trim, i.e.:
@@ -29,4 +51,3 @@ params: # ToDo: adjust optional parameters for the rule cutadapt_se
   #     of expected adapter matches by chance
   cutadapt-pe: "-a AGATCGGAAGAGCACACGTCTGAACTCCAGTCA -g AATGATACGGCGACCACCGAGATCTACACTCTTTCCCTACACGACGCTCTTCCGATCT -A AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT -G AATGATACGGCGACCACCGAGATCTACACTCTTTCCCTACACGACGCTCTTCCGATCT"
   cutadapt-others: "-e 0.005 --overlap 7"
-
