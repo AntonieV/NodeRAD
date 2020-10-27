@@ -55,17 +55,18 @@ rule noderad_representatives:
         connected_components_figure="results/noderad/connected_components/{sample}.all_components.pdf",
         dir_subgraphs=directory("results/noderad/connected_components/subgraphes/{sample}")
     params:
+        # optional params for PuLP solvers
         solver=config["ilp"]["solver"],
         mip=config["ilp"]["mip"],
         timelimit=config["ilp"]["timeLimit"],
         gaprel=config["ilp"]["gapRel"],
         gapabs=config["ilp"]["gapAbs"],
-        fracgap=config["ilp"]["fracGap"],
         maxnodes=config["ilp"]["maxNodes"],
         maxmemory=config["ilp"]["maxMemory"]
     log:
         "logs/noderad/representatives/{sample}-representatives.log"
-    threads:  # for the PuLP solver options the total number of threads must be divided among all samples
+    threads:
+        # for PuLP solver params the total number of threads must be divided among all samples
         int(config["ilp"]["threads"]/len(samples.index)) if config["ilp"]["threads"] else 1
     conda:
          "../envs/noderad_representatives.yaml"

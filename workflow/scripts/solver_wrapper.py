@@ -1,5 +1,4 @@
 import pulp
-import warnings
 import sys
 
 mip_solvs = ["SCIP_CMD", "CHOCO_CMD", "COINMP_DLL", "CPLEX_DLL", "GLPK_CMD", "LpSolver", "MIPCL_CMD",
@@ -10,7 +9,8 @@ gapRel_solvs = mip_solvs[12:]
 thread_solvs = mip_solvs[15:]
 
 
-def create_solver(solver, mip, timelimit, gaprel, gapabs, fracgap, maxnodes, maxmemory, threads):
+def create_solver(solver, mip, timelimit, gaprel, gapabs, maxnodes, maxmemory, threads):
+    print("Params: solver={} mip={} timeLimit={} gapRel={} gapAbs={} maxNodes={} maxMemory={} threads={}\n".format(str(solver), str(mip), str(timelimit), str(gaprel), str(gapabs), str(maxnodes), str(maxmemory), str(threads)))
     if solver == "SCIP_CMD":
         return pulp.apis.SCIP_CMD(mip=mip)
     if solver == "CHOCO_CMD":
@@ -46,59 +46,52 @@ def create_solver(solver, mip, timelimit, gaprel, gapabs, fracgap, maxnodes, max
     if solver == "PULP_CBC_CMD":
         return pulp.apis.PULP_CBC_CMD(mip=mip, timeLimit=timelimit, threads=threads, gapRel=gaprel, gapAbs=gapabs)
     if solver == "COIN_CMD":
-        return pulp.apis.COIN_CMD(mip=mip, timeLimit=timelimit, threads=threads, gapRel=gaprel, gapAbs=gapabs,
-                                  fracGap=fracgap)
+        return pulp.apis.COIN_CMD(mip=mip, timeLimit=timelimit, threads=threads, gapRel=gaprel, gapAbs=gapabs)
     if solver == "CPLEX_CMD":
         return pulp.apis.CPLEX_CMD(mip=mip, timeLimit=timelimit, threads=threads, gapRel=gaprel, gapAbs=gapabs,
                                    maxMemory=maxmemory, maxNodes=maxnodes)
     return ""
 
 
-def check_params(solver, mip, timelimit, gaprel, gapabs, fracgap, maxnodes, maxmemory, threads):
+def check_params(solver, mip, timelimit, gaprel, gapabs, maxnodes, maxmemory, threads):
     if not threads or threads < 1:
         threads = None
     if not mip:
         mip = False
     if mip:
         if not isinstance(mip, bool):
-            warnings.warn("The mip option can only be set to True or False. The option was set to False.")
+            sys.stderr.write("The mip option can only be set to True or False, was setting to False.\n")
             mip = False
         if not solver in mip_solvs:
-            warnings.warn("The mip option is not available for {}.".format(solver))
+            sys.stderr.write("The mip option is not available for {}\n.".format(solver))
     if timelimit:
         if not isinstance(timelimit, int) or timelimit < 1:
-            warnings.warn("The timeLimit option must be a positive integer number. The option was set to None.")
+            sys.stderr.write("The timeLimit option must be a positive integer number, setting to None.\n")
             timelimit = None
         if not solver in timelimit_solvs:
-            warnings.warn("The timeLimit option is not available for {}.".format(solver))
+            sys.stderr.write("The timeLimit option is not available for {}.\n".format(solver))
     if gaprel:
         if not isinstance(gaprel, float):
-            warnings.warn("The gapRel option must be a floating point number. The option was set to None.")
+            sys.stderr.write("The gapRel option must be a floating point number, setting to None.\n")
             gaprel = None
         if not solver in gapRel_solvs:
-            warnings.warn("The gapRel option is not available for {}.".format(solver))
+            sys.stderr.write("The gapRel option is not available for {}.\n".format(solver))
     if threads or gapabs:
         if not isinstance(threads, int):
-            warnings.warn("The thread option must be a positive integer number. The option was set to None.")
+            sys.stderr.write("The thread option must be a positive integer number, setting to None.\n")
             threads = None
         if not isinstance(gapabs, float):
-            warnings.warn("The gapAbs option must be a floating point number. The option was set to None.")
+            sys.stderr.write("The gapAbs option must be a floating point number, setting to None.\n")
             gapabs = None
         if not solver in thread_solvs:
-            warnings.warn("The gapAbs or threads options are not available for {}.".format(solver))
-    if fracgap:
-        if not isinstance(fracgap, float):
-            warnings.warn("The fracGap option must be a floating point number. The option was set to None.")
-            fracgap = None
-        if not solver == "COIN_CMD":
-            warnings.warn("The fracGap option is not available for {}.".format(solver))
+            sys.stderr.write("The gapAbs or threads options are not available for {}.\n".format(solver))
     if maxnodes or maxmemory:
         if not isinstance(maxnodes, int) or maxnodes < 1:
-            warnings.warn("The maxNodes option must be a positive integer number. The option was set to None.")
+            sys.stderr.write("The maxNodes option must be a positive integer number, setting to None.\n")
             maxnodes = None
         if not isinstance(maxmemory, int) or maxmemory < 1:
-            warnings.warn("The maxMemory option must be a positive integer number. The option was set to None.")
+            sys.stderr.write("The maxMemory option must be a positive integer number, setting to None.\n")
             maxmemory = None
         if not solver == "CPLEX_CMD":
-            warnings.warn("The fracGap option is not available for {}.".format(solver))
-    create_solver(solver, mip, timelimit, gaprel, gapabs, fracgap, maxnodes, maxmemory, threads)
+            sys.stderr.write("The fracGap option is not available for {}\n.".format(solver))
+    create_solver(solver, mip, timelimit, gaprel, gapabs, maxnodes, maxmemory, threads)

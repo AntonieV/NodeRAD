@@ -1,11 +1,23 @@
 # This file should contain everything to configure the workflow on a global scale.
 # In case of sample based data, it should be complemented by a samples.tsv file that contains
 # one row per sample. It can be parsed easily via pandas.
-samples: "config/samples.tsv"
+#samples: "config/samples.tsv"
+
+# minimal sets of samples for testing:
+
+#samples: "config/samples_small.tsv"
+samples: "config/samples_mini.tsv"
+#samples: "config/samples_micro.tsv"
 
 resources:
   # input of first run for mapping reads of each sample
-  fastq-data: "data/ddRAGEdataset_ATCACG_1.fastq"
+#  fastq-data: "data/ddRAGEdataset_ATCACG_1.fastq"
+
+# minimal dataset for testing:
+#  fastq-data: "data/small_dataset/ddRAGEdataset_GGCTAC_1.fastq"
+  fastq-data: "data/mini_dataset/ddRAGEdataset_GGCTAC_1.fastq"
+#  fastq-data: "data/micro_dataset/ddRAGEdataset_ATCACG_1.fastq"
+
 
   # input of second run to compare the samples with each other
   fasta-data: "results/test.fasta"
@@ -26,9 +38,8 @@ ilp:
   mip: False           # boolean value; can be specified for each solver
   timeLimit: 120       # maximum time for solver in seconds, can be specified for each solver, except SCIP_CMD
   threads: 12          # total number of threads to use for ILP calculation, only for GUROBI_CMD, PULP_CBC_CMD, COIN_CMD or CPLEX_CMD solver
-  gapRel: 0.001        # float value, only for CPLEX_PY, GUROBI, XPRESS, GUROBI_CMD, PULP_CBC_CMD, COIN_CMD or CPLEX_CMD solver
+  gapRel:              # float value, only for CPLEX_PY, GUROBI, XPRESS, GUROBI_CMD, PULP_CBC_CMD, COIN_CMD or CPLEX_CMD solver
   gapAbs:              # float value, only for GUROBI_CMD, PULP_CBC_CMD, COIN_CMD or CPLEX_CMD solver
-  fracGap:             # float value, only for COIN_CMD solver
   maxNodes:            # integer value, only for CPLEX_CMD solver
   maxMemory:           # float value, only for CPLEX_CMD solver
 

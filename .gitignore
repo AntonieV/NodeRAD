@@ -1,23 +1,6 @@
 *
 analysis
 analysis/*
-!analysis/README.md
-!config
-!config/*
-!resources
-!resources/*
-!workflow
-!workflow/**
-.gitignore
-!.gitattributes
-!.editorconfig
-!.travis.yml
-!.test
-!.test/data/*
-!.test/config/*
-!LICENSE
-!README.md
-!start.sh
 .test/results/*
 
 ### R Programming language ###
@@ -64,3 +47,47 @@ vignettes/*.pdf
 ### Java ###
 # Compiled class file
 *.class
+
+__pycache__/
+*.py[cod]
+
+!analysis/README.md
+!config
+!config/*
+!resources
+!resources/*
+!workflow
+!workflow/*
+!.gitignore
+!.gitattributes
+!.editorconfig
+!.travis.yml
+!.test
+!.test/data/*
+!.test/config/*
+!LICENSE
+!README.md
+!start.sh
+
+# Examples output:
+!.test/results/noderad/graph/A.pdf
+!.test/results/noderad/graph/A.xml.gz
+!.test/results/noderad/connected_components/A.all_components.pdf
+!.test/results/noderad/connected_components/A.all_components.xml.gz
+!.test/results/noderad/connected_components/subgraphes/A/A-127.subgraph.pdf
+!.test/results/noderad/connected_components/subgraphes/A/A-127.subgraph.xml.gz
+!.test/results/noderad/connected_components/subgraphes/A/A-625.subgraph.pdf
+!.test/results/noderad/connected_components/subgraphes/A/A-625.subgraph.xml.gz
+!.test/results/noderad/connected_components/subgraphes/A/A-1495.subgraph.pdf
+!.test/results/noderad/connected_components/subgraphes/A/A-1495.subgraph.xml.gz
+!.test/results/noderad/connected_components/subgraphes/A/A-2029.subgraph.pdf
+!.test/results/noderad/connected_components/subgraphes/A/A-2029.subgraph.xml.gz
+!.test/results/noderad/connected_components/subgraphes/A/A-5063.subgraph.pdf
+!.test/results/noderad/connected_components/subgraphes/A/A-5063.subgraph.xml.gz
+!.test/results/noderad/connected_components/subgraphes/A/A-5412.subgraph.pdf
+!.test/results/noderad/connected_components/subgraphes/A/A-5412.subgraph.xml.gz
+!.test/results/noderad/connected_components/subgraphes/A/A-5532.subgraph.pdf
+!.test/results/noderad/connected_components/subgraphes/A/A-5532.subgraph.xml.gz
+!.test/results/noderad/connected_components/subgraphes/A/A-5603.subgraph.pdf
+!.test/results/noderad/connected_components/subgraphes/A/A-5603.subgraph.xml.gz
+!.test/results/noderad/representatives/*

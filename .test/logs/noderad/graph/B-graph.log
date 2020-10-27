@@ -1,9 +1,0 @@
-graph construction summary for sample B:
- nodes:	7616
- edges:	32424
- max distance:	7
-	mutations:
-		snp's and substitutions: 44309
-		insertions: 768
-		deletions: 779
-

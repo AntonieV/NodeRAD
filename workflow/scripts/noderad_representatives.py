@@ -3,10 +3,8 @@ import os
 from graph_tool.all import *
 import pulp
 import math
-import warnings
 import collections
 # import pandas as pd
-import warnings
 import solver_wrapper
 
 sys.stderr = open(snakemake.log[0], "w")
@@ -28,7 +26,6 @@ mip = snakemake.params.get("mip", None)
 timelimit = snakemake.params.get("timelimit", None)
 gaprel = snakemake.params.get("gaprel", None)
 gapabs = snakemake.params.get("gapabs", None)
-fracgap = snakemake.params.get("fracgap", None)
 maxnodes = snakemake.params.get("maxnodes", None)
 maxmemory = snakemake.params.get("maxmemory", None)
 threads = snakemake.threads
@@ -36,15 +33,15 @@ spec_solver = ""
 
 if solver:
     if solver in pulp.apis.list_solvers(onlyAvailable=True):
-        spec_solver = solver_wrapper.check_params(solver, mip, timelimit, gaprel, gapabs, fracgap, maxnodes, maxmemory, threads)
+        spec_solver = solver_wrapper.check_params(solver, mip, timelimit, gaprel, gapabs, maxnodes, maxmemory, threads)
     else:
-        warnings.warn('The selected solver is not supported or is not available. The calculation is continued with the default solvers of Pulp (CBC and CHOCO).')
+        sys.stderr.write('The selected solver is not supported or is not available. The calculation is continued with the default solvers of Pulp (CBC and CHOCO).')
 
 # extract connected components
 all_components, hist = label_components(graph, vprop=v_concom)
 # a is a shortcut for the get_array() method as an attribute, please see https://graph-tool.skewed.de/static/doc/graph_tool.html#graph_tool.PropertyMap.get_array
-sys.stderr.write("number of connected components: {}\n\n".format(max(all_components.a)))
-sys.stderr.write("histogram of connected components:\n"+str(hist)+"\n\n")
+sys.stderr.write("Number of connected components: {}\n\n".format(max(all_components.a)))
+sys.stderr.write("Histogram of connected components:\n"+str(hist)+"\n\n")
 connected_components = []
 sporadic_vertices = []
 sys.stderr.write("connected components with more than one vertex are:\n\n")
@@ -88,13 +85,13 @@ for comp in connected_components:
 
         # function:
         model_representatives = pulp.LpProblem("Find_representatives_for_loci", pulp.LpMaximize)
-        model_representatives += pulp.lpSum([z[node][neighbor] * math.log10(comp.edge_properties['likelihood'][comp.edge(node, neighbor)]) for node in nodes for neighbor in comp.get_out_neighbors(comp.vertex_index[node])])
+        model_representatives += pulp.lpSum([z[neighbor][node] * math.log10(comp.edge_properties['likelihood'][comp.edge(neighbor, node)]) for node in nodes for neighbor in comp.get_in_neighbors(comp.vertex_index[node])])
 
         # restrictions:
         for node in nodes:
-            for neighbor in comp.get_out_neighbors(comp.vertex_index[node]):
+            for neighbor in comp.get_in_neighbors(comp.vertex_index[node]):
                 # z[i][j] = 1 <=> i is adjacent to j AND r[j] == 1
-                model_representatives += (z[node][neighbor] == r[neighbor]), "{i}adjacent_to_{j}_and_r[{j}]_is_1".format(i=node, j=neighbor)
+                model_representatives += (z[neighbor][node] == r[node]), "{i}adjacent_to_{j}_and_r[{j}]_is_1".format(i=node, j=neighbor)
 
         for node in nodes:
             model_representatives += pulp.lpSum([z[node][neighbor] for neighbor in comp.get_out_neighbors(comp.vertex_index[node])]) >= 1, "each_node[{i}]_is_representative_or_has_representative[{j}]".format(i=node, j=neighbor)

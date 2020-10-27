@@ -1,0 +1,2976 @@
+status:  Infeasible
+Best solution for 1 representatives is -0.6370379946528449 with: 
+status:  Infeasible
+Best solution for 2 representatives is -4.70517456113267 with: 
+status:  Infeasible
+Best solution for 3 representatives is -18.007979104381793 with: 
+status:  Infeasible
+Best solution for 4 representatives is -175.03859439176648 with: 
+status:  Infeasible
+Best solution for 5 representatives is -71.21223814591444 with: 
+status:  Infeasible
+Best solution for 6 representatives is -50.70819506357334 with: 
+status:  Infeasible
+Best solution for 7 representatives is -154.0402008944817 with: 
+status:  Infeasible
+Best solution for 8 representatives is -1012.1303815544875 with: 
+status:  Infeasible
+Best solution for 9 representatives is -4.151340775264354 with: 
+status:  Infeasible
+Best solution for 10 representatives is -2.5397194520739315 with: 
+status:  Optimal
+Best solution for 11 representatives is -3.133735497631358 with: 
+status:  Optimal
+Best solution for 12 representatives is -2.923020335796089 with: 
+status:  Optimal
+Best solution for 13 representatives is -2.931524248570833 with: 
+status:  Optimal
+Best solution for 14 representatives is -2.8417672859308363 with: 
+status:  Optimal
+Best solution for 15 representatives is -2.8556721026378042 with: 
+status:  Optimal
+Best solution for 16 representatives is -2.85604320786128 with: 
+status:  Optimal
+Best solution for 17 representatives is -2.885274479374635 with: 
+status:  Optimal
+Best solution for 18 representatives is -2.920620570258283 with: 
+status:  Optimal
+Best solution for 19 representatives is -2.949851841771638 with: 
+status:  Optimal
+Best solution for 20 representatives is -3.0150590140687448 with: 
+status:  Optimal
+Best solution for 21 representatives is -3.108554394390003 with: 
+status:  Optimal
+Best solution for 22 representatives is -3.177056466185751 with: 
+status:  Optimal
+Best solution for 23 representatives is -3.2513709380366738 with: 
+status:  Optimal
+Best solution for 24 representatives is -3.3659398531205706 with: 
+status:  Optimal
+Best solution for 25 representatives is -3.4964266806323714 with: 
+status:  Optimal
+Best solution for 26 representatives is -3.6665783642804985 with: 
+status:  Optimal
+Best solution for 27 representatives is -3.838405606347373 with: 
+status:  Optimal
+Best solution for 28 representatives is -4.015118034720257 with: 
+status:  Optimal
+Best solution for 29 representatives is -4.200848120277883 with: 
+status:  Optimal
+Best solution for 30 representatives is -4.39026572208423 with: 
+status:  Optimal
+Best solution for 31 representatives is -4.579695876670309 with: 
+status:  Optimal
+Best solution for 32 representatives is -4.776872503300892 with: 
+status:  Optimal
+Best solution for 33 representatives is -4.975482124776739 with: 
+status:  Optimal
+Best solution for 34 representatives is -5.187020287865265 with: 
+status:  Optimal
+Best solution for 35 representatives is -5.410026341652433 with: 
+status:  Optimal
+Best solution for 36 representatives is -5.647707618339555 with: 
+status:  Optimal
+Best solution for 37 representatives is -5.888496534353875 with: 
+status:  Optimal
+Best solution for 38 representatives is -6.129783463280468 with: 
+status:  Optimal
+Best solution for 39 representatives is -6.371120872822825 with: 
+status:  Optimal
+Best solution for 40 representatives is -6.632266682675935 with: 
+status:  Optimal
+Best solution for 41 representatives is -6.894761959994547 with: 
+status:  Optimal
+Best solution for 42 representatives is -7.165305871131675 with: 
+status:  Optimal
+Best solution for 43 representatives is -7.443902174850811 with: 
+status:  Optimal
+Best solution for 44 representatives is -7.738964676925773 with: 
+status:  Optimal
+Best solution for 45 representatives is -8.038903146210226 with: 
+status:  Optimal
+Best solution for 46 representatives is -8.342844822401405 with: 
+status:  Optimal
+Best solution for 47 representatives is -8.652420199701462 with: 
+status:  Optimal
+Best solution for 48 representatives is -8.975959971376257 with: 
+status:  Optimal
+Best solution for 49 representatives is -9.30179623426441 with: 
+status:  Optimal
+Best solution for 50 representatives is -9.628556382744366 with: 
+status:  Optimal
+Best solution for 51 representatives is -9.972306848691348 with: 
+status:  Optimal
+Best solution for 52 representatives is -10.352120502804878 with: 
+status:  Optimal
+Best solution for 53 representatives is -10.748545870637846 with: 
+status:  Optimal
+Best solution for 54 representatives is -11.320114039308423 with: 
+status:  Optimal
+Best solution for 55 representatives is -11.962540475050288 with: 
+status:  Optimal
+Best solution for 56 representatives is -12.61453236729895 with: 
+status:  Optimal
+Best solution for 57 representatives is -13.2762129313914 with: 
+status:  Optimal
+Best solution for 58 representatives is -14.268171547013486 with: 
+status:  Infeasible
+Best solution for 1 representatives is -11.769556499471875 with: 
+status:  Infeasible
+Best solution for 2 representatives is -4.42343401877228 with: 
+status:  Infeasible
+Best solution for 3 representatives is -108.3005941242572 with: 
+status:  Infeasible
+Best solution for 4 representatives is -50.42923403031717 with: 
+status:  Infeasible
+Best solution for 5 representatives is -473.8297269030961 with: 
+status:  Infeasible
+Best solution for 6 representatives is -48.13048155447028 with: 
+status:  Infeasible
+Best solution for 7 representatives is -214.63477589260174 with: 
+status:  Infeasible
+Best solution for 8 representatives is -2.63248064310965 with: 
+status:  Optimal
+Best solution for 9 representatives is -3.1239163691939615 with: 
+status:  Optimal
+Best solution for 10 representatives is -2.896799958667783 with: 
+status:  Optimal
+Best solution for 11 representatives is -2.9255060180301995 with: 
+status:  Optimal
+Best solution for 12 representatives is -2.9408547578745994 with: 
+status:  Optimal
+Best solution for 13 representatives is -2.798799948496273 with: 
+status:  Optimal
+Best solution for 14 representatives is -2.907535963888143 with: 
+status:  Optimal
+Best solution for 15 representatives is -2.9747130936406134 with: 
+status:  Optimal
+Best solution for 16 representatives is -3.0848499239349065 with: 
+status:  Optimal
+Best solution for 17 representatives is -3.19916812003136 with: 
+status:  Optimal
+Best solution for 18 representatives is -3.317451661062801 with: 
+status:  Optimal
+Best solution for 19 representatives is -3.4429245452958868 with: 
+status:  Optimal
+Best solution for 20 representatives is -3.5719399558714744 with: 
+status:  Optimal
+Best solution for 21 representatives is -3.698550977794796 with: 
+status:  Optimal
+Best solution for 22 representatives is -3.827566388370384 with: 
+status:  Optimal
+Best solution for 23 representatives is -3.9579873302492024 with: 
+status:  Optimal
+Best solution for 24 representatives is -4.111634113523015 with: 
+status:  Optimal
+Best solution for 25 representatives is -4.267128174951789 with: 
+status:  Optimal
+Best solution for 26 representatives is -4.4540556474197 with: 
+status:  Optimal
+Best solution for 27 representatives is -4.642729504235401 with: 
+status:  Optimal
+Best solution for 28 representatives is -4.849521334759275 with: 
+status:  Optimal
+Best solution for 29 representatives is -5.0714324045015085 with: 
+status:  Optimal
+Best solution for 30 representatives is -5.299491934522397 with: 
+status:  Optimal
+Best solution for 31 representatives is -5.535477861566574 with: 
+status:  Optimal
+Best solution for 32 representatives is -5.778371279921688 with: 
+status:  Optimal
+Best solution for 33 representatives is -6.026471147755344 with: 
+status:  Optimal
+Best solution for 34 representatives is -6.274858336893971 with: 
+status:  Optimal
+Best solution for 35 representatives is -6.561793459970753 with: 
+status:  Optimal
+Best solution for 36 representatives is -6.850649642777245 with: 
+status:  Optimal
+Best solution for 37 representatives is -7.146710637201694 with: 
+status:  Optimal
+Best solution for 38 representatives is -7.4776525953524615 with: 
+status:  Optimal
+Best solution for 39 representatives is -7.8567396213357 with: 
+status:  Optimal
+Best solution for 40 representatives is -8.47239619838582 with: 
+status:  Optimal
+Best solution for 41 representatives is -9.140393537733491 with: 
+status:  Optimal
+Best solution for 42 representatives is -9.883737333829318 with: 
+status:  Optimal
+Best solution for 43 representatives is -10.632281597417492 with: 
+status:  Optimal
+Best solution for 44 representatives is -11.396664289203095 with: 
+status:  Optimal
+Best solution for 45 representatives is -12.174026002431063 with: 
+status:  Optimal
+Best solution for 46 representatives is -13.017770213065173 with: 
+status:  Optimal
+Best solution for 47 representatives is -14.129113154581798 with: 
+status:  Infeasible
+Best solution for 1 representatives is -40.22826581499018 with: 
+status:  Infeasible
+Best solution for 2 representatives is -12.805411913479057 with: 
+status:  Infeasible
+Best solution for 3 representatives is -82.66710440155629 with: 
+status:  Infeasible
+Best solution for 4 representatives is -313.5064292525161 with: 
+status:  Infeasible
+Best solution for 5 representatives is -88.27312664033613 with: 
+status:  Infeasible
+Best solution for 6 representatives is -81.36870947862008 with: 
+status:  Infeasible
+Best solution for 7 representatives is -43.84368471323597 with: 
+status:  Infeasible
+Best solution for 8 representatives is -51.44725696031284 with: 
+status:  Infeasible
+Best solution for 9 representatives is -3.559815284533996 with: 
+status:  Optimal
+Best solution for 10 representatives is -4.202456649002333 with: 
+status:  Optimal
+Best solution for 11 representatives is -3.9784266164240183 with: 
+status:  Optimal
+Best solution for 12 representatives is -3.783853017621583 with: 
+status:  Optimal
+Best solution for 13 representatives is -3.7817837475723532 with: 
+status:  Optimal
+Best solution for 14 representatives is -3.805994023688168 with: 
+status:  Optimal
+Best solution for 15 representatives is -3.8326073336333555 with: 
+status:  Optimal
+Best solution for 16 representatives is -3.808352830787584 with: 
+status:  Optimal
+Best solution for 17 representatives is -3.8325631069033985 with: 
+status:  Optimal
+Best solution for 18 representatives is -3.9075183336184542 with: 
+status:  Optimal
+Best solution for 19 representatives is -3.9129599174700767 with: 
+status:  Optimal
+Best solution for 20 representatives is -3.9757609618077274 with: 
+status:  Optimal
+Best solution for 21 representatives is -4.065990770523662 with: 
+status:  Optimal
+Best solution for 22 representatives is -4.157169622653783 with: 
+status:  Optimal
+Best solution for 23 representatives is -4.279095289631659 with: 
+status:  Optimal
+Best solution for 24 representatives is -4.433554345347952 with: 
+status:  Optimal
+Best solution for 25 representatives is -4.5724001872470765 with: 
+status:  Optimal
+Best solution for 26 representatives is -4.726859242963368 with: 
+status:  Optimal
+Best solution for 27 representatives is -4.898820841554378 with: 
+status:  Optimal
+Best solution for 28 representatives is -5.08568417343548 with: 
+status:  Optimal
+Best solution for 29 representatives is -5.278535539522302 with: 
+status:  Optimal
+Best solution for 30 representatives is -5.483332163706059 with: 
+status:  Optimal
+Best solution for 31 representatives is -5.699546900482939 with: 
+status:  Optimal
+Best solution for 32 representatives is -5.929322194999044 with: 
+status:  Optimal
+Best solution for 33 representatives is -6.161132870779106 with: 
+status:  Optimal
+Best solution for 34 representatives is -6.3962548851489345 with: 
+status:  Optimal
+Best solution for 35 representatives is -6.648826108925103 with: 
+status:  Optimal
+Best solution for 36 representatives is -6.910036024809707 with: 
+status:  Optimal
+Best solution for 37 representatives is -7.172578005038948 with: 
+status:  Optimal
+Best solution for 38 representatives is -7.458461390418646 with: 
+status:  Optimal
+Best solution for 39 representatives is -7.749026376122354 with: 
+status:  Optimal
+Best solution for 40 representatives is -8.043876858482209 with: 
+status:  Optimal
+Best solution for 41 representatives is -8.34970302164341 with: 
+status:  Optimal
+Best solution for 42 representatives is -8.66209139187788 with: 
+status:  Optimal
+Best solution for 43 representatives is -8.997909567773092 with: 
+status:  Optimal
+Best solution for 44 representatives is -9.398464679330967 with: 
+status:  Optimal
+Best solution for 45 representatives is -9.928454525693972 with: 
+status:  Optimal
+Best solution for 46 representatives is -10.504757359807195 with: 
+status:  Optimal
+Best solution for 47 representatives is -11.106372180836857 with: 
+status:  Optimal
+Best solution for 48 representatives is -11.719093971279968 with: 
+status:  Optimal
+Best solution for 49 representatives is -12.35348246203954 with: 
+status:  Optimal
+Best solution for 50 representatives is -12.995663228454228 with: 
+status:  Optimal
+Best solution for 51 representatives is -13.755847922885929 with: 
+status:  Optimal
+Best solution for 52 representatives is -14.763813874732573 with: 
+status:  Optimal
+Best solution for 53 representatives is -15.787736556553252 with: 
+status:  Optimal
+Best solution for 54 representatives is -16.874689889802735 with: 
+status:  Optimal
+Best solution for 55 representatives is -18.430981043881282 with: 
+status:  Optimal
+Best solution for 56 representatives is -19.98994777105809 with: 
+status:  Infeasible
+Best solution for 1 representatives is -20.957662024791542 with: 
+status:  Infeasible
+Best solution for 2 representatives is -8.322441557914425 with: 
+status:  Infeasible
+Best solution for 3 representatives is -60.547970256472475 with: 
+status:  Infeasible
+Best solution for 4 representatives is -100.60910872069756 with: 
+status:  Infeasible
+Best solution for 5 representatives is -52.15988036852278 with: 
+status:  Infeasible
+Best solution for 6 representatives is -10.999216344271268 with: 
+status:  Infeasible
+Best solution for 7 representatives is -13.93793551817591 with: 
+status:  Infeasible
+Best solution for 8 representatives is -4.900730925744287 with: 
+status:  Optimal
+Best solution for 9 representatives is -4.217084912837854 with: 
+status:  Optimal
+Best solution for 10 representatives is -3.6416283414076176 with: 
+status:  Optimal
+Best solution for 11 representatives is -3.530108828312996 with: 
+status:  Optimal
+Best solution for 12 representatives is -3.4726342776494135 with: 
+status:  Optimal
+Best solution for 13 representatives is -3.5119973700953855 with: 
+status:  Optimal
+Best solution for 14 representatives is -3.539783798312791 with: 
+status:  Optimal
+Best solution for 15 representatives is -3.579146890758763 with: 
+status:  Optimal
+Best solution for 16 representatives is -3.651671442646909 with: 
+status:  Optimal
+Best solution for 17 representatives is -3.7339971905858547 with: 
+status:  Optimal
+Best solution for 18 representatives is -3.8342797655175027 with: 
+status:  Optimal
+Best solution for 19 representatives is -3.935651094755935 with: 
+status:  Optimal
+Best solution for 20 representatives is -4.048682575474019 with: 
+status:  Optimal
+Best solution for 21 representatives is -4.161739495137962 with: 
+status:  Optimal
+Best solution for 22 representatives is -4.32575101001355 with: 
+status:  Optimal
+Best solution for 23 representatives is -4.49125792644722 with: 
+status:  Optimal
+Best solution for 24 representatives is -4.667844112568438 with: 
+status:  Optimal
+Best solution for 25 representatives is -4.845513985291191 with: 
+status:  Optimal
+Best solution for 26 representatives is -5.04701303451204 with: 
+status:  Optimal
+Best solution for 27 representatives is -5.324056878927957 with: 
+status:  Optimal
+Best solution for 28 representatives is -5.650228816945787 with: 
+status:  Optimal
+Best solution for 29 representatives is -6.151299943238334 with: 
+status:  Optimal
+Best solution for 30 representatives is -6.661956879925144 with: 
+status:  Optimal
+Best solution for 31 representatives is -7.229091206314078 with: 
+status:  Optimal
+Best solution for 32 representatives is -7.803176338416378 with: 
+status:  Optimal
+Best solution for 33 representatives is -8.379351888627863 with: 
+status:  Optimal
+Best solution for 34 representatives is -8.971617615908748 with: 
+status:  Optimal
+Best solution for 35 representatives is -9.572931918193682 with: 
+status:  Optimal
+Best solution for 36 representatives is -10.197041048013425 with: 
+status:  Optimal
+Best solution for 37 representatives is -10.825478963059211 with: 
+status:  Optimal
+Best solution for 38 representatives is -11.4693584669675 with: 
+status:  Optimal
+Best solution for 39 representatives is -12.135942806234945 with: 
+status:  Optimal
+Best solution for 40 representatives is -12.82950007030453 with: 
+status:  Optimal
+Best solution for 41 representatives is -13.532505299299372 with: 
+status:  Optimal
+Best solution for 42 representatives is -14.24781241136998 with: 
+status:  Optimal
+Best solution for 43 representatives is -14.974576869342853 with: 
+status:  Optimal
+Best solution for 44 representatives is -15.723724871319464 with: 
+status:  Optimal
+Best solution for 45 representatives is -16.57197937091244 with: 
+status:  Optimal
+Best solution for 46 representatives is -17.6496021947745 with: 
+status:  Optimal
+Best solution for 47 representatives is -18.7621446335422 with: 
+status:  Infeasible
+Best solution for 1 representatives is -6.39600575438101 with: 
+status:  Infeasible
+Best solution for 2 representatives is -3.324514719901135 with: 
+status:  Infeasible
+Best solution for 3 representatives is -60.500032309452614 with: 
+status:  Infeasible
+Best solution for 4 representatives is -8.087854638462721 with: 
+status:  Infeasible
+Best solution for 5 representatives is -8.12778408822498 with: 
+status:  Infeasible
+Best solution for 6 representatives is -3.4861406683509775 with: 
+status:  Optimal
+Best solution for 7 representatives is -3.69391453843111 with: 
+status:  Optimal
+Best solution for 8 representatives is -3.6002115715319567 with: 
+status:  Optimal
+Best solution for 9 representatives is -3.2514848724883714 with: 
+status:  Optimal
+Best solution for 10 representatives is -3.2877405077211406 with: 
+status:  Optimal
+Best solution for 11 representatives is -3.3862803657529237 with: 
+status:  Optimal
+Best solution for 12 representatives is -3.4890589537365617 with: 
+status:  Optimal
+Best solution for 13 representatives is -3.587598811768345 with: 
+status:  Optimal
+Best solution for 14 representatives is -3.691827015411108 with: 
+status:  Optimal
+Best solution for 15 representatives is -3.896731355319548 with: 
+status:  Optimal
+Best solution for 16 representatives is -4.104795373275025 with: 
+status:  Optimal
+Best solution for 17 representatives is -4.353343493843642 with: 
+status:  Optimal
+Best solution for 18 representatives is -4.669285274449662 with: 
+status:  Optimal
+Best solution for 19 representatives is -4.922365108983652 with: 
+status:  Optimal
+Best solution for 20 representatives is -5.449269332805116 with: 
+status:  Optimal
+Best solution for 21 representatives is -6.055122106830007 with: 
+status:  Optimal
+Best solution for 22 representatives is -6.7036398470223295 with: 
+status:  Optimal
+Best solution for 23 representatives is -7.373504030730799 with: 
+status:  Optimal
+Best solution for 24 representatives is -8.099032477064632 with: 
+status:  Optimal
+Best solution for 25 representatives is -8.839130564843863 with: 
+status:  Optimal
+Best solution for 26 representatives is -9.579852095598023 with: 
+status:  Optimal
+Best solution for 27 representatives is -10.337425799691458 with: 
+status:  Optimal
+Best solution for 28 representatives is -11.10714871023764 with: 
+status:  Optimal
+Best solution for 29 representatives is -11.892062118785939 with: 
+status:  Optimal
+Best solution for 30 representatives is -12.704305321879751 with: 
+status:  Optimal
+Best solution for 31 representatives is -13.708918393423561 with: 
+status:  Optimal
+Best solution for 32 representatives is -14.727090668349035 with: 
+status:  Optimal
+Best solution for 33 representatives is -15.750246518960214 with: 
+status:  Optimal
+Best solution for 34 representatives is -16.778267736029918 with: 
+status:  Infeasible
+Best solution for 1 representatives is -1.299061782925708 with: 
+status:  Infeasible
+Best solution for 2 representatives is -10.2880938978003 with: 
+status:  Infeasible
+Best solution for 3 representatives is -6.7659773212521435 with: 
+status:  Infeasible
+Best solution for 4 representatives is -108.21624942038773 with: 
+status:  Infeasible
+Best solution for 5 representatives is -76.21185099758041 with: 
+status:  Infeasible
+Best solution for 6 representatives is -118.09643448345969 with: 
+status:  Infeasible
+Best solution for 7 representatives is -142.7837214958895 with: 
+status:  Infeasible
+Best solution for 8 representatives is -34.39141575899542 with: 
+status:  Infeasible
+Best solution for 9 representatives is -4.533006481504771 with: 
+status:  Infeasible
+Best solution for 10 representatives is -3.9575575288676426 with: 
+status:  Optimal
+Best solution for 11 representatives is -4.841877308498025 with: 
+status:  Optimal
+Best solution for 12 representatives is -4.29747603867383 with: 
+status:  Optimal
+Best solution for 13 representatives is -4.33594966471006 with: 
+status:  Optimal
+Best solution for 14 representatives is -4.293980192864034 with: 
+status:  Optimal
+Best solution for 15 representatives is -4.129567550688497 with: 
+status:  Optimal
+Best solution for 16 representatives is -4.179570610127705 with: 
+status:  Optimal
+Best solution for 17 representatives is -4.266170765533092 with: 
+status:  Optimal
+Best solution for 18 representatives is -4.385084637575053 with: 
+status:  Optimal
+Best solution for 19 representatives is -4.488734797349975 with: 
+status:  Optimal
+Best solution for 20 representatives is -4.607648669391936 with: 
+status:  Optimal
+Best solution for 21 representatives is -4.744837185792503 with: 
+status:  Optimal
+Best solution for 22 representatives is -4.903056098572904 with: 
+status:  Optimal
+Best solution for 23 representatives is -5.078509983911228 with: 
+status:  Optimal
+Best solution for 24 representatives is -5.258033091509064 with: 
+status:  Optimal
+Best solution for 25 representatives is -5.450055579535735 with: 
+status:  Optimal
+Best solution for 26 representatives is -5.644780899200709 with: 
+status:  Optimal
+Best solution for 27 representatives is -5.85135381634234 with: 
+status:  Optimal
+Best solution for 28 representatives is -6.0652246449811384 with: 
+status:  Optimal
+Best solution for 29 representatives is -6.30186362591861 with: 
+status:  Optimal
+Best solution for 30 representatives is -6.545670730041452 with: 
+status:  Optimal
+Best solution for 31 representatives is -6.79115604426467 with: 
+status:  Optimal
+Best solution for 32 representatives is -7.040336947157618 with: 
+status:  Optimal
+Best solution for 33 representatives is -7.2858222613808366 with: 
+status:  Optimal
+Best solution for 34 representatives is -7.5505880246649335 with: 
+status:  Optimal
+Best solution for 35 representatives is -7.817103683205455 with: 
+status:  Optimal
+Best solution for 36 representatives is -8.105735764753057 with: 
+status:  Optimal
+Best solution for 37 representatives is -8.431607469662856 with: 
+status:  Optimal
+Best solution for 38 representatives is -8.965682431158458 with: 
+status:  Optimal
+Best solution for 39 representatives is -9.518162887531755 with: 
+status:  Optimal
+Best solution for 40 representatives is -10.119954512306393 with: 
+status:  Optimal
+Best solution for 41 representatives is -10.773059554135147 with: 
+status:  Optimal
+Best solution for 42 representatives is -11.426421281017898 with: 
+status:  Optimal
+Best solution for 43 representatives is -12.138776920427063 with: 
+status:  Optimal
+Best solution for 44 representatives is -12.870638541423382 with: 
+status:  Optimal
+Best solution for 45 representatives is -13.605498554055155 with: 
+status:  Optimal
+Best solution for 46 representatives is -14.345228453753077 with: 
+status:  Optimal
+Best solution for 47 representatives is -15.096669855335344 with: 
+status:  Optimal
+Best solution for 48 representatives is -15.849409365959167 with: 
+status:  Optimal
+Best solution for 49 representatives is -16.603553786081022 with: 
+status:  Optimal
+Best solution for 50 representatives is -17.378286993051706 with: 
+status:  Optimal
+Best solution for 51 representatives is -18.384061936884322 with: 
+status:  Optimal
+Best solution for 52 representatives is -19.451903084708 with: 
+status:  Optimal
+Best solution for 53 representatives is -20.5738146053407 with: 
+status:  Optimal
+Best solution for 54 representatives is -21.7377753379617 with: 
+status:  Infeasible
+Best solution for 1 representatives is -6.8652912331597005 with: 
+status:  Infeasible
+Best solution for 2 representatives is -12.788654289323382 with: 
+status:  Infeasible
+Best solution for 3 representatives is -10.035757800767561 with: 
+status:  Infeasible
+Best solution for 4 representatives is -32.724114107802365 with: 
+status:  Infeasible
+Best solution for 5 representatives is -4.495332261668037 with: 
+status:  Infeasible
+Best solution for 6 representatives is -14.77702581978857 with: 
+status:  Infeasible
+Best solution for 7 representatives is -14.899651521007177 with: 
+status:  Infeasible
+Best solution for 8 representatives is -2.221120478011982 with: 
+status:  Optimal
+Best solution for 9 representatives is -2.6763176403624005 with: 
+status:  Optimal
+Best solution for 10 representatives is -2.507557374926988 with: 
+status:  Optimal
+Best solution for 11 representatives is -2.498636502353363 with: 
+status:  Optimal
+Best solution for 12 representatives is -2.5748537199353 with: 
+status:  Optimal
+Best solution for 13 representatives is -2.613787045334014 with: 
+status:  Optimal
+Best solution for 14 representatives is -2.676493936836087 with: 
+status:  Optimal
+Best solution for 15 representatives is -2.7280020586964326 with: 
+status:  Optimal
+Best solution for 16 representatives is -2.804219276278369 with: 
+status:  Optimal
+Best solution for 17 representatives is -2.897213738770118 with: 
+status:  Optimal
+Best solution for 18 representatives is -3.0081720577368265 with: 
+status:  Optimal
+Best solution for 19 representatives is -3.137061862743511 with: 
+status:  Optimal
+Best solution for 20 representatives is -3.2732067055076 with: 
+status:  Optimal
+Best solution for 21 representatives is -3.424627306241657 with: 
+status:  Optimal
+Best solution for 22 representatives is -3.5775107616029036 with: 
+status:  Optimal
+Best solution for 23 representatives is -3.7496758437764166 with: 
+status:  Optimal
+Best solution for 24 representatives is -3.930459788318476 with: 
+status:  Optimal
+Best solution for 25 representatives is -4.127835015916114 with: 
+status:  Optimal
+Best solution for 26 representatives is -4.334568642684514 with: 
+status:  Optimal
+Best solution for 27 representatives is -4.549581045616147 with: 
+status:  Optimal
+Best solution for 28 representatives is -4.7688381928539565 with: 
+status:  Optimal
+Best solution for 29 representatives is -4.993141655819279 with: 
+status:  Optimal
+Best solution for 30 representatives is -5.218577161699011 with: 
+status:  Optimal
+Best solution for 31 representatives is -5.44834005313667 with: 
+status:  Optimal
+Best solution for 32 representatives is -5.684470117186672 with: 
+status:  Optimal
+Best solution for 33 representatives is -5.921331333324295 with: 
+status:  Optimal
+Best solution for 34 representatives is -6.16274881181287 with: 
+status:  Optimal
+Best solution for 35 representatives is -6.409858962062426 with: 
+status:  Optimal
+Best solution for 36 representatives is -6.68753070774636 with: 
+status:  Optimal
+Best solution for 37 representatives is -6.96629797313264 with: 
+status:  Optimal
+Best solution for 38 representatives is -7.2487698800799425 with: 
+status:  Optimal
+Best solution for 39 representatives is -7.546516579392101 with: 
+status:  Optimal
+Best solution for 40 representatives is -7.853161562180249 with: 
+status:  Optimal
+Best solution for 41 representatives is -8.162962053659266 with: 
+status:  Optimal
+Best solution for 42 representatives is -8.522189865717266 with: 
+status:  Optimal
+Best solution for 43 representatives is -8.890790093405013 with: 
+status:  Optimal
+Best solution for 44 representatives is -9.567617946033963 with: 
+status:  Optimal
+Best solution for 45 representatives is -10.253369213143317 with: 
+status:  Optimal
+Best solution for 46 representatives is -11.058272597902098 with: 
+status:  Optimal
+Best solution for 47 representatives is -11.896175033383159 with: 
+status:  Infeasible
+Best solution for 1 representatives is -19.470487514738217 with: 
+status:  Infeasible
+Best solution for 2 representatives is -78.1284064215108 with: 
+status:  Infeasible
+Best solution for 3 representatives is -37.30257301653263 with: 
+status:  Infeasible
+Best solution for 4 representatives is -31.300580600692875 with: 
+status:  Infeasible
+Best solution for 5 representatives is -17.88349400525461 with: 
+status:  Infeasible
+Best solution for 6 representatives is -52.439985671954865 with: 
+status:  Infeasible
+Best solution for 7 representatives is -79.07250189329298 with: 
+status:  Infeasible
+Best solution for 8 representatives is -49.043471903210566 with: 
+status:  Infeasible
+Best solution for 9 representatives is -4.179769578193516 with: 
+status:  Optimal
+Best solution for 10 representatives is -4.88108346855483 with: 
+status:  Optimal
+Best solution for 11 representatives is -4.675733510230147 with: 
+status:  Optimal
+Best solution for 12 representatives is -4.616626010321045 with: 
+status:  Optimal
+Best solution for 13 representatives is -4.6541356974804975 with: 
+status:  Optimal
+Best solution for 14 representatives is -4.59970844213438 with: 
+status:  Optimal
+Best solution for 15 representatives is -4.651839569315668 with: 
+status:  Optimal
+Best solution for 16 representatives is -4.733528171346954 with: 
+status:  Optimal
+Best solution for 17 representatives is -4.777696817447161 with: 
+status:  Optimal
+Best solution for 18 representatives is -4.877488452495099 with: 
+status:  Optimal
+Best solution for 19 representatives is -4.983738973517386 with: 
+status:  Optimal
+Best solution for 20 representatives is -5.1044071382050324 with: 
+status:  Optimal
+Best solution for 21 representatives is -5.2648417034065345 with: 
+status:  Optimal
+Best solution for 22 representatives is -5.425619533895923 with: 
+status:  Optimal
+Best solution for 23 representatives is -5.619082254982809 with: 
+status:  Optimal
+Best solution for 24 representatives is -5.822422718946705 with: 
+status:  Optimal
+Best solution for 25 representatives is -6.093359660562119 with: 
+status:  Optimal
+Best solution for 26 representatives is -6.371701854538434 with: 
+status:  Optimal
+Best solution for 27 representatives is -6.659939380345752 with: 
+status:  Optimal
+Best solution for 28 representatives is -6.965286992816849 with: 
+status:  Optimal
+Best solution for 29 representatives is -7.285689180301579 with: 
+status:  Optimal
+Best solution for 30 representatives is -7.61561585173444 with: 
+status:  Optimal
+Best solution for 31 representatives is -7.965103489540081 with: 
+status:  Optimal
+Best solution for 32 representatives is -8.365105457198599 with: 
+status:  Optimal
+Best solution for 33 representatives is -8.94054534911924 with: 
+status:  Optimal
+Best solution for 34 representatives is -9.516135249821918 with: 
+status:  Optimal
+Best solution for 35 representatives is -10.116655487381905 with: 
+status:  Optimal
+Best solution for 36 representatives is -10.717690744440802 with: 
+status:  Optimal
+Best solution for 37 representatives is -11.350396281712698 with: 
+status:  Optimal
+Best solution for 38 representatives is -11.988254816072683 with: 
+status:  Optimal
+Best solution for 39 representatives is -12.630584151539871 with: 
+status:  Optimal
+Best solution for 40 representatives is -13.317946635231184 with: 
+status:  Optimal
+Best solution for 41 representatives is -14.02292023111072 with: 
+status:  Optimal
+Best solution for 42 representatives is -14.733377363423365 with: 
+status:  Optimal
+Best solution for 43 representatives is -15.470877701335532 with: 
+status:  Optimal
+Best solution for 44 representatives is -16.21076420782476 with: 
+status:  Optimal
+Best solution for 45 representatives is -16.957383849691794 with: 
+status:  Optimal
+Best solution for 46 representatives is -17.706602237670495 with: 
+status:  Optimal
+Best solution for 47 representatives is -18.530554933058724 with: 
+status:  Optimal
+Best solution for 48 representatives is -19.355728127008064 with: 
+status:  Optimal
+Best solution for 49 representatives is -20.424129369111792 with: 
+status:  Optimal
+Best solution for 50 representatives is -21.49980232559716 with: 
+status:  Optimal
+Best solution for 51 representatives is -22.59346730293996 with: 
+status:  Optimal
+Best solution for 52 representatives is -23.746540067670832 with: 
+status:  Infeasible
+Best solution for 1 representatives is -5.560035273993439 with: 
+status:  Infeasible
+Best solution for 2 representatives is -24.570345829750636 with: 
+status:  Infeasible
+Best solution for 3 representatives is -19.061358328397315 with: 
+status:  Infeasible
+Best solution for 4 representatives is -82.18859340002285 with: 
+status:  Infeasible
+Best solution for 5 representatives is -32.3449565640556 with: 
+status:  Infeasible
+Best solution for 6 representatives is -8.305293277275435 with: 
+status:  Optimal
+Best solution for 7 representatives is -3.709298162493536 with: 
+status:  Optimal
+Best solution for 8 representatives is -3.632520159896173 with: 
+status:  Optimal
+Best solution for 9 representatives is -3.6595680258071126 with: 
+status:  Optimal
+Best solution for 10 representatives is -3.58448997472576 with: 
+status:  Optimal
+Best solution for 11 representatives is -3.582156300326541 with: 
+status:  Optimal
+Best solution for 12 representatives is -3.6551014961707615 with: 
+status:  Optimal
+Best solution for 13 representatives is -3.733182527961225 with: 
+status:  Optimal
+Best solution for 14 representatives is -3.8237495293559816 with: 
+status:  Optimal
+Best solution for 15 representatives is -3.927448918216959 with: 
+status:  Optimal
+Best solution for 16 representatives is -4.102758448015381 with: 
+status:  Optimal
+Best solution for 17 representatives is -4.296453918763245 with: 
+status:  Optimal
+Best solution for 18 representatives is -4.493584166992609 with: 
+status:  Optimal
+Best solution for 19 representatives is -4.696761346805594 with: 
+status:  Optimal
+Best solution for 20 representatives is -4.906908407345202 with: 
+status:  Optimal
+Best solution for 21 representatives is -5.151746299606475 with: 
+status:  Optimal
+Best solution for 22 representatives is -5.410100833499745 with: 
+status:  Optimal
+Best solution for 23 representatives is -5.905553838371884 with: 
+status:  Optimal
+Best solution for 24 representatives is -6.409838332610804 with: 
+status:  Optimal
+Best solution for 25 representatives is -6.945040599874589 with: 
+status:  Optimal
+Best solution for 26 representatives is -7.491182587765205 with: 
+status:  Optimal
+Best solution for 27 representatives is -8.07659722701468 with: 
+status:  Optimal
+Best solution for 28 representatives is -8.692818139331886 with: 
+status:  Optimal
+Best solution for 29 representatives is -9.345410264055152 with: 
+status:  Optimal
+Best solution for 30 representatives is -10.010028120382753 with: 
+status:  Optimal
+Best solution for 31 representatives is -10.68723015735248 with: 
+status:  Optimal
+Best solution for 32 representatives is -11.387361696117452 with: 
+status:  Optimal
+Best solution for 33 representatives is -12.09121404902002 with: 
+status:  Optimal
+Best solution for 34 representatives is -12.807022099261143 with: 
+status:  Optimal
+Best solution for 35 representatives is -13.787261113286391 with: 
+status:  Optimal
+Best solution for 36 representatives is -14.785519122351857 with: 
+status:  Optimal
+Best solution for 37 representatives is -15.825937690616497 with: 
+status:  Optimal
+Best solution for 38 representatives is -16.87149090037934 with: 
+status:  Optimal
+Best solution for 39 representatives is -17.919821490356206 with: 
+status:  Optimal
+Best solution for 40 representatives is -19.10328233625779 with: 
+status:  Infeasible
+Best solution for 1 representatives is -20.24931807697007 with: 
+status:  Infeasible
+Best solution for 2 representatives is -26.699625913907603 with: 
+status:  Infeasible
+Best solution for 3 representatives is -46.92361852439086 with: 
+status:  Infeasible
+Best solution for 4 representatives is -163.50159225335315 with: 
+status:  Infeasible
+Best solution for 5 representatives is -17.59190072468291 with: 
+status:  Infeasible
+Best solution for 6 representatives is -13.622297849575878 with: 
+status:  Infeasible
+Best solution for 7 representatives is -2.2668294206171034 with: 
+status:  Optimal
+Best solution for 8 representatives is -2.0851404310508057 with: 
+status:  Optimal
+Best solution for 9 representatives is -2.1020062735796983 with: 
+status:  Optimal
+Best solution for 10 representatives is -2.1349019792386255 with: 
+status:  Optimal
+Best solution for 11 representatives is -2.136278863213237 with: 
+status:  Optimal
+Best solution for 12 representatives is -2.169595741681752 with: 
+status:  Optimal
+Best solution for 13 representatives is -2.2556039801070136 with: 
+status:  Optimal
+Best solution for 14 representatives is -2.3472068720675066 with: 
+status:  Optimal
+Best solution for 15 representatives is -2.503189902596365 with: 
+status:  Optimal
+Best solution for 16 representatives is -2.67163844163778 with: 
+status:  Optimal
+Best solution for 17 representatives is -2.8577314635097717 with: 
+status:  Optimal
+Best solution for 18 representatives is -3.0502803148983015 with: 
+status:  Optimal
+Best solution for 19 representatives is -3.2470789580979535 with: 
+status:  Optimal
+Best solution for 20 representatives is -3.4518455741690395 with: 
+status:  Optimal
+Best solution for 21 representatives is -3.677875191880782 with: 
+status:  Optimal
+Best solution for 22 representatives is -3.9066351528162566 with: 
+status:  Optimal
+Best solution for 23 representatives is -4.13551700657154 with: 
+status:  Optimal
+Best solution for 24 representatives is -4.382054032868434 with: 
+status:  Optimal
+Best solution for 25 representatives is -4.669170601784696 with: 
+status:  Optimal
+Best solution for 26 representatives is -4.974674750738269 with: 
+status:  Optimal
+Best solution for 27 representatives is -5.443429520924168 with: 
+status:  Optimal
+Best solution for 28 representatives is -6.041200840081492 with: 
+status:  Optimal
+Best solution for 29 representatives is -6.710669361320941 with: 
+status:  Optimal
+Best solution for 30 representatives is -7.388571540499628 with: 
+status:  Optimal
+Best solution for 31 representatives is -8.095339299900091 with: 
+status:  Optimal
+Best solution for 32 representatives is -8.901781986320113 with: 
+status:  Optimal
+Best solution for 33 representatives is -9.781604365579732 with: 
+status:  Optimal
+Best solution for 34 representatives is -10.739023628251307 with: 
+status:  Optimal
+Best solution for 35 representatives is -11.779776623956113 with: 
+status:  Optimal
+Best solution for 36 representatives is -12.86500596450586 with: 
+status:  Optimal
+Best solution for 37 representatives is -13.978068377115854 with: 
+status:  Infeasible
+Best solution for 1 representatives is -5.738529519252391 with: 
+status:  Infeasible
+Best solution for 2 representatives is -2.423085834617583 with: 
+status:  Infeasible
+Best solution for 3 representatives is -11.459187425788068 with: 
+status:  Infeasible
+Best solution for 4 representatives is -21.38001834474197 with: 
+status:  Infeasible
+Best solution for 5 representatives is -60.92653578481863 with: 
+status:  Infeasible
+Best solution for 6 representatives is -72.0249778153701 with: 
+status:  Infeasible
+Best solution for 7 representatives is -76.9455234558213 with: 
+status:  Infeasible
+Best solution for 8 representatives is -482.9294904092658 with: 
+status:  Infeasible
+Best solution for 9 representatives is -6.088195692228878 with: 
+status:  Infeasible
+Best solution for 10 representatives is -2.308574128083649 with: 
+status:  Optimal
+Best solution for 11 representatives is -2.8306573205196885 with: 
+status:  Optimal
+Best solution for 12 representatives is -2.739823026885703 with: 
+status:  Optimal
+Best solution for 13 representatives is -2.6359469747169335 with: 
+status:  Optimal
+Best solution for 14 representatives is -2.5739480090616524 with: 
+status:  Optimal
+Best solution for 15 representatives is -2.6084797246849263 with: 
+status:  Optimal
+Best solution for 16 representatives is -2.61234039062574 with: 
+status:  Optimal
+Best solution for 17 representatives is -2.672349085485834 with: 
+status:  Optimal
+Best solution for 18 representatives is -2.7478176965198586 with: 
+status:  Optimal
+Best solution for 19 representatives is -2.8077903067956065 with: 
+status:  Optimal
+Best solution for 20 representatives is -2.898487582626543 with: 
+status:  Optimal
+Best solution for 21 representatives is -3.0104970284234165 with: 
+status:  Optimal
+Best solution for 22 representatives is -3.11886031937047 with: 
+status:  Optimal
+Best solution for 23 representatives is -3.230869765167343 with: 
+status:  Optimal
+Best solution for 24 representatives is -3.3447434067760478 with: 
+status:  Optimal
+Best solution for 25 representatives is -3.4610503324594215 with: 
+status:  Optimal
+Best solution for 26 representatives is -3.5869135288257255 with: 
+status:  Optimal
+Best solution for 27 representatives is -3.719678683991071 with: 
+status:  Optimal
+Best solution for 28 representatives is -3.85676736746653 with: 
+status:  Optimal
+Best solution for 29 representatives is -4.002122708714122 with: 
+status:  Optimal
+Best solution for 30 representatives is -4.158201538343668 with: 
+status:  Optimal
+Best solution for 31 representatives is -4.315989613340855 with: 
+status:  Optimal
+Best solution for 32 representatives is -4.483678685557878 with: 
+status:  Optimal
+Best solution for 33 representatives is -4.654111237579775 with: 
+status:  Optimal
+Best solution for 34 representatives is -4.842224584361243 with: 
+status:  Optimal
+Best solution for 35 representatives is -5.043129479037102 with: 
+status:  Optimal
+Best solution for 36 representatives is -5.2465964810880426 with: 
+status:  Optimal
+Best solution for 37 representatives is -5.451556374273418 with: 
+status:  Optimal
+Best solution for 38 representatives is -5.667384391256324 with: 
+status:  Optimal
+Best solution for 39 representatives is -5.888131244201535 with: 
+status:  Optimal
+Best solution for 40 representatives is -6.109198082069564 with: 
+status:  Optimal
+Best solution for 41 representatives is -6.345024295834379 with: 
+status:  Optimal
+Best solution for 42 representatives is -6.590939487923733 with: 
+status:  Optimal
+Best solution for 43 representatives is -6.846753482154129 with: 
+status:  Optimal
+Best solution for 44 representatives is -7.1028230635304785 with: 
+status:  Optimal
+Best solution for 45 representatives is -7.363178150106334 with: 
+status:  Optimal
+Best solution for 46 representatives is -7.6241465695945285 with: 
+status:  Optimal
+Best solution for 47 representatives is -7.885775561135793 with: 
+status:  Optimal
+Best solution for 48 representatives is -8.164544654564125 with: 
+status:  Optimal
+Best solution for 49 representatives is -8.492585010414674 with: 
+status:  Optimal
+Best solution for 50 representatives is -8.857395821011135 with: 
+status:  Optimal
+Best solution for 51 representatives is -9.275127719482139 with: 
+status:  Optimal
+Best solution for 52 representatives is -9.768469442014714 with: 
+status:  Optimal
+Best solution for 53 representatives is -10.344568175168105 with: 
+status:  Optimal
+Best solution for 54 representatives is -10.941005681724626 with: 
+status:  Optimal
+Best solution for 55 representatives is -11.563638279590316 with: 
+status:  Optimal
+Best solution for 56 representatives is -12.242420447857501 with: 
+status:  Optimal
+Best solution for 57 representatives is -12.956051430650847 with: 
+status:  Infeasible
+Best solution for 1 representatives is -6.745505754314075 with: 
+status:  Infeasible
+Best solution for 2 representatives is -1.6156579475595476 with: 
+status:  Infeasible
+Best solution for 3 representatives is -8.12738932542713 with: 
+status:  Infeasible
+Best solution for 4 representatives is -44.48549882314784 with: 
+status:  Infeasible
+Best solution for 5 representatives is -145.7200925503039 with: 
+status:  Infeasible
+Best solution for 6 representatives is -14.337503155937355 with: 
+status:  Infeasible
+Best solution for 7 representatives is -23.540863225440418 with: 
+status:  Infeasible
+Best solution for 8 representatives is -51.53110954662181 with: 
+status:  Infeasible
+Best solution for 9 representatives is -532.6334546393088 with: 
+status:  Infeasible
+Best solution for 10 representatives is -3.7104156209119137 with: 
+status:  Optimal
+Best solution for 11 representatives is -4.161306257750913 with: 
+status:  Optimal
+Best solution for 12 representatives is -4.02721153944229 with: 
+status:  Optimal
+Best solution for 13 representatives is -3.9795385688360128 with: 
+status:  Optimal
+Best solution for 14 representatives is -4.0173249031138125 with: 
+status:  Optimal
+Best solution for 15 representatives is -4.032848777165275 with: 
+status:  Optimal
+Best solution for 16 representatives is -4.046885003334485 with: 
+status:  Optimal
+Best solution for 17 representatives is -4.10459179540763 with: 
+status:  Optimal
+Best solution for 18 representatives is -4.218282660959464 with: 
+status:  Optimal
+Best solution for 19 representatives is -4.305087548581061 with: 
+status:  Optimal
+Best solution for 20 representatives is -4.4187784141328965 with: 
+status:  Optimal
+Best solution for 21 representatives is -4.5368953555844485 with: 
+status:  Optimal
+Best solution for 22 representatives is -4.658834795483303 with: 
+status:  Optimal
+Best solution for 23 representatives is -4.7835746355576045 with: 
+status:  Optimal
+Best solution for 24 representatives is -4.9063416350927485 with: 
+status:  Optimal
+Best solution for 25 representatives is -5.03108147516705 with: 
+status:  Optimal
+Best solution for 26 representatives is -5.168379409526689 with: 
+status:  Optimal
+Best solution for 27 representatives is -5.31618239088944 with: 
+status:  Optimal
+Best solution for 28 representatives is -5.466598684918193 with: 
+status:  Optimal
+Best solution for 29 representatives is -5.6184628552562055 with: 
+status:  Optimal
+Best solution for 30 representatives is -5.788951319689727 with: 
+status:  Optimal
+Best solution for 31 representatives is -5.975066650863571 with: 
+status:  Optimal
+Best solution for 32 representatives is -6.168936430090529 with: 
+status:  Optimal
+Best solution for 33 representatives is -6.385059125255641 with: 
+status:  Optimal
+Best solution for 34 representatives is -6.606142797106135 with: 
+status:  Optimal
+Best solution for 35 representatives is -6.832508264808192 with: 
+status:  Optimal
+Best solution for 36 representatives is -7.062937604133646 with: 
+status:  Optimal
+Best solution for 37 representatives is -7.297144465122248 with: 
+status:  Optimal
+Best solution for 38 representatives is -7.535013572835712 with: 
+status:  Optimal
+Best solution for 39 representatives is -7.797541512288614 with: 
+status:  Optimal
+Best solution for 40 representatives is -8.127425518715926 with: 
+status:  Optimal
+Best solution for 41 representatives is -8.462113564188739 with: 
+status:  Optimal
+Best solution for 42 representatives is -8.812377709895797 with: 
+status:  Optimal
+Best solution for 43 representatives is -9.375831234630263 with: 
+status:  Optimal
+Best solution for 44 representatives is -9.951715400650968 with: 
+status:  Optimal
+Best solution for 45 representatives is -10.55134517730333 with: 
+status:  Optimal
+Best solution for 46 representatives is -11.16505769167528 with: 
+status:  Optimal
+Best solution for 47 representatives is -11.788066999523949 with: 
+status:  Optimal
+Best solution for 48 representatives is -12.417815468273682 with: 
+status:  Optimal
+Best solution for 49 representatives is -13.05012079804495 with: 
+status:  Optimal
+Best solution for 50 representatives is -13.709426798850924 with: 
+status:  Optimal
+Best solution for 51 representatives is -14.373878465188465 with: 
+status:  Optimal
+Best solution for 52 representatives is -15.050397390453565 with: 
+status:  Optimal
+Best solution for 53 representatives is -15.741871887874888 with: 
+status:  Optimal
+Best solution for 54 representatives is -16.449605165802822 with: 
+status:  Optimal
+Best solution for 55 representatives is -17.166786783328853 with: 
+status:  Optimal
+Best solution for 56 representatives is -17.89871743217588 with: 
+status:  Optimal
+Best solution for 57 representatives is -18.650585998463086 with: 
+status:  Optimal
+Best solution for 58 representatives is -19.72187919875358 with: 
+status:  Infeasible
+Best solution for 1 representatives is -3.3966255455562466 with: 
+status:  Infeasible
+Best solution for 2 representatives is -5.781772607814872 with: 
+status:  Infeasible
+Best solution for 3 representatives is -4.3849615123575205 with: 
+status:  Infeasible
+Best solution for 4 representatives is -4.3687529073946205 with: 
+status:  Infeasible
+Best solution for 5 representatives is -3.0773202701764037 with: 
+status:  Optimal
+Best solution for 6 representatives is -1.6792089182310606 with: 
+status:  Optimal
+Best solution for 7 representatives is -1.686871329007299 with: 
+status:  Optimal
+Best solution for 8 representatives is -1.697918797348045 with: 
+status:  Optimal
+Best solution for 9 representatives is -1.7055812081242834 with: 
+status:  Optimal
+Best solution for 10 representatives is -1.7256718264335844 with: 
+status:  Optimal
+Best solution for 11 representatives is -1.710005423013194 with: 
+status:  Optimal
+Best solution for 12 representatives is -1.7176678337894324 with: 
+status:  Optimal
+Best solution for 13 representatives is -1.758532128785168 with: 
+status:  Optimal
+Best solution for 14 representatives is -1.8668265928320438 with: 
+status:  Optimal
+Best solution for 15 representatives is -1.9262132319653344 with: 
+status:  Optimal
+Best solution for 16 representatives is -2.0036821060953693 with: 
+status:  Optimal
+Best solution for 17 representatives is -2.0874296290059733 with: 
+status:  Optimal
+Best solution for 18 representatives is -2.214021388352037 with: 
+status:  Optimal
+Best solution for 19 representatives is -2.3746490574017396 with: 
+status:  Optimal
+Best solution for 20 representatives is -2.5369229181170785 with: 
+status:  Optimal
+Best solution for 21 representatives is -2.704707136093447 with: 
+status:  Optimal
+Best solution for 22 representatives is -2.8824510693062266 with: 
+status:  Optimal
+Best solution for 23 representatives is -3.0644013722708796 with: 
+status:  Optimal
+Best solution for 24 representatives is -3.24636654250816 with: 
+status:  Optimal
+Best solution for 25 representatives is -3.448598019480291 with: 
+status:  Optimal
+Best solution for 26 representatives is -3.65334635141565 with: 
+status:  Optimal
+Best solution for 27 representatives is -3.8646807005747132 with: 
+status:  Optimal
+Best solution for 28 representatives is -4.094128094348383 with: 
+status:  Optimal
+Best solution for 29 representatives is -4.386045544220869 with: 
+status:  Optimal
+Best solution for 30 representatives is -4.68084811754499 with: 
+status:  Optimal
+Best solution for 31 representatives is -5.000660087843508 with: 
+status:  Optimal
+Best solution for 32 representatives is -5.334983502673967 with: 
+status:  Optimal
+Best solution for 33 representatives is -5.68559446303135 with: 
+status:  Optimal
+Best solution for 34 representatives is -6.060532115723932 with: 
+status:  Optimal
+Best solution for 35 representatives is -6.438960048703898 with: 
+status:  Optimal
+Best solution for 36 representatives is -6.83066288162477 with: 
+status:  Optimal
+Best solution for 37 representatives is -7.251864893498424 with: 
+status:  Optimal
+Best solution for 38 representatives is -7.6890361935861495 with: 
+status:  Infeasible
+Best solution for 1 representatives is -110.48953077328252 with: 
+status:  Infeasible
+Best solution for 2 representatives is -200.19914534140437 with: 
+status:  Infeasible
+Best solution for 3 representatives is -6.175513422838068 with: 
+status:  Infeasible
+Best solution for 4 representatives is -19.91590770245747 with: 
+status:  Infeasible
+Best solution for 5 representatives is -14.161612560361373 with: 
+status:  Infeasible
+Best solution for 6 representatives is -150.85407544324858 with: 
+status:  Infeasible
+Best solution for 7 representatives is -324.07106221786967 with: 
+status:  Infeasible
+Best solution for 8 representatives is -37.16249769904703 with: 
+status:  Infeasible
+Best solution for 9 representatives is -3.290921723348243 with: 
+status:  Optimal
+Best solution for 10 representatives is -3.66725783463961 with: 
+status:  Optimal
+Best solution for 11 representatives is -3.312346596772616 with: 
+status:  Optimal
+Best solution for 12 representatives is -3.180051779354809 with: 
+status:  Optimal
+Best solution for 13 representatives is -3.212711888333182 with: 
+status:  Optimal
+Best solution for 14 representatives is -3.2247151185487235 with: 
+status:  Optimal
+Best solution for 15 representatives is -3.2183831174570297 with: 
+status:  Optimal
+Best solution for 16 representatives is -3.251043226435403 with: 
+status:  Optimal
+Best solution for 17 representatives is -3.2845167428019457 with: 
+status:  Optimal
+Best solution for 18 representatives is -3.321987545567214 with: 
+status:  Optimal
+Best solution for 19 representatives is -3.3601470215485802 with: 
+status:  Optimal
+Best solution for 20 representatives is -3.4289588619493183 with: 
+status:  Optimal
+Best solution for 21 representatives is -3.503288235342955 with: 
+status:  Optimal
+Best solution for 22 representatives is -3.5742830906683007 with: 
+status:  Optimal
+Best solution for 23 representatives is -3.648612464061937 with: 
+status:  Optimal
+Best solution for 24 representatives is -3.723431696373801 with: 
+status:  Optimal
+Best solution for 25 representatives is -3.8248706168275612 with: 
+status:  Optimal
+Best solution for 26 representatives is -3.95638991403521 with: 
+status:  Optimal
+Best solution for 27 representatives is -4.0912267670286715 with: 
+status:  Optimal
+Best solution for 28 representatives is -4.2510925588933315 with: 
+status:  Optimal
+Best solution for 29 representatives is -4.4386454831070585 with: 
+status:  Optimal
+Best solution for 30 representatives is -4.631970881731936 with: 
+status:  Optimal
+Best solution for 31 representatives is -4.819523805945663 with: 
+status:  Optimal
+Best solution for 32 representatives is -5.029807727964349 with: 
+status:  Optimal
+Best solution for 33 representatives is -5.241289683970799 with: 
+status:  Optimal
+Best solution for 34 representatives is -5.453620209075799 with: 
+status:  Optimal
+Best solution for 35 representatives is -5.673700423598943 with: 
+status:  Optimal
+Best solution for 36 representatives is -5.894736249415951 with: 
+status:  Optimal
+Best solution for 37 representatives is -6.151701017686297 with: 
+status:  Optimal
+Best solution for 38 representatives is -6.413704774931993 with: 
+status:  Optimal
+Best solution for 39 representatives is -6.676977955924111 with: 
+status:  Optimal
+Best solution for 40 representatives is -6.943221614809431 with: 
+status:  Optimal
+Best solution for 41 representatives is -7.235599890313983 with: 
+status:  Optimal
+Best solution for 42 representatives is -7.533832527759633 with: 
+status:  Optimal
+Best solution for 43 representatives is -7.83362748668825 with: 
+status:  Optimal
+Best solution for 44 representatives is -8.16634186538291 with: 
+status:  Optimal
+Best solution for 45 representatives is -8.507562906708717 with: 
+status:  Optimal
+Best solution for 46 representatives is -8.87539816383472 with: 
+status:  Optimal
+Best solution for 47 representatives is -9.245460801265912 with: 
+status:  Optimal
+Best solution for 48 representatives is -9.628894620764193 with: 
+status:  Optimal
+Best solution for 49 representatives is -10.037067402633115 with: 
+status:  Optimal
+Best solution for 50 representatives is -10.529064319908331 with: 
+status:  Optimal
+Best solution for 51 representatives is -11.554644435211625 with: 
+status:  Optimal
+Best solution for 52 representatives is -12.581526642117469 with: 
+status:  Optimal
+Best solution for 53 representatives is -13.694789847864143 with: 
+status:  Optimal
+Best solution for 54 representatives is -14.865167586622754 with: 
+status:  Optimal
+Best solution for 55 representatives is -16.054172374798124 with: 
+status:  Infeasible
+Best solution for 1 representatives is -0.22795308204182865 with: 
+status:  Infeasible
+Best solution for 2 representatives is -0.2861525116044463 with: 
+status:  Infeasible
+Best solution for 3 representatives is -0.22827725239038643 with: 
+status:  Optimal
+Best solution for 4 representatives is -0.22536543021264047 with: 
+status:  Optimal
+Best solution for 5 representatives is -0.29057977780740724 with: 
+status:  Optimal
+Best solution for 6 representatives is -0.4129452191461431 with: 
+status:  Infeasible
+Best solution for 1 representatives is -4.421884723465027 with: 
+status:  Infeasible
+Best solution for 2 representatives is -4.711366861579964 with: 
+status:  Infeasible
+Best solution for 3 representatives is -5.61557517576907 with: 
+status:  Infeasible
+Best solution for 4 representatives is -16.5386566435225 with: 
+status:  Infeasible
+Best solution for 5 representatives is -20.126825516076273 with: 
+status:  Infeasible
+Best solution for 6 representatives is -9.754696811874686 with: 
+status:  Optimal
+Best solution for 7 representatives is -4.598171020612906 with: 
+status:  Optimal
+Best solution for 8 representatives is -3.6061396056300934 with: 
+status:  Optimal
+Best solution for 9 representatives is -3.334897389335847 with: 
+status:  Optimal
+Best solution for 10 representatives is -3.3548252602835906 with: 
+status:  Optimal
+Best solution for 11 representatives is -3.3849043711338935 with: 
+status:  Optimal
+Best solution for 12 representatives is -3.4153896147695524 with: 
+status:  Optimal
+Best solution for 13 representatives is -3.445468725619856 with: 
+status:  Optimal
+Best solution for 14 representatives is -3.5355738354937203 with: 
+status:  Optimal
+Best solution for 15 representatives is -3.626330307323293 with: 
+status:  Optimal
+Best solution for 16 representatives is -3.75586221572128 with: 
+status:  Optimal
+Best solution for 17 representatives is -3.9293472541312897 with: 
+status:  Optimal
+Best solution for 18 representatives is -4.1092812434236405 with: 
+status:  Optimal
+Best solution for 19 representatives is -4.308681273230963 with: 
+status:  Optimal
+Best solution for 20 representatives is -4.509404262410238 with: 
+status:  Optimal
+Best solution for 21 representatives is -4.712681644830988 with: 
+status:  Optimal
+Best solution for 22 representatives is -4.929760851381112 with: 
+status:  Optimal
+Best solution for 23 representatives is -5.196747281148043 with: 
+status:  Optimal
+Best solution for 24 representatives is -5.5359622969000055 with: 
+status:  Optimal
+Best solution for 25 representatives is -5.9169023236656 with: 
+status:  Optimal
+Best solution for 26 representatives is -6.455235986017937 with: 
+status:  Optimal
+Best solution for 27 representatives is -7.008911327832572 with: 
+status:  Optimal
+Best solution for 28 representatives is -7.5943995914266855 with: 
+status:  Optimal
+Best solution for 29 representatives is -8.227336250533783 with: 
+status:  Optimal
+Best solution for 30 representatives is -8.925832750479012 with: 
+status:  Optimal
+Best solution for 31 representatives is -9.650914609537127 with: 
+status:  Optimal
+Best solution for 32 representatives is -10.46411514391549 with: 
+status:  Optimal
+Best solution for 33 representatives is -11.392829546615165 with: 
+status:  Optimal
+Best solution for 34 representatives is -12.565489387910464 with: 
+status:  Optimal
+Best solution for 35 representatives is -13.745069109400308 with: 
+status:  Optimal
+Best solution for 36 representatives is -14.925778599365245 with: 
+status:  Optimal
+Best solution for 37 representatives is -16.118075819188213 with: 
+status:  Optimal
+Best solution for 38 representatives is -17.310693345525753 with: 
+status:  Infeasible
+Best solution for 1 representatives is -0.09403154775137028 with: 
+status:  Infeasible
+Best solution for 2 representatives is -0.09403154775137028 with: 
+status:  Optimal
+Best solution for 3 representatives is -0.09403154775137028 with: 
+status:  Optimal
+Best solution for 4 representatives is -0.12512434054429758 with: 
+status:  Infeasible
+Best solution for 1 representatives is -0.12097615546089892 with: 
+status:  Infeasible
+Best solution for 2 representatives is -0.0944449845145264 with: 
+status:  Optimal
+Best solution for 3 representatives is -0.12097615546089892 with: 
+status:  Infeasible
+Best solution for 1 representatives is -11.482907459128626 with: 
+status:  Infeasible
+Best solution for 2 representatives is -2.8864762484189144 with: 
+status:  Infeasible
+Best solution for 3 representatives is -27.68478958221781 with: 
+status:  Infeasible
+Best solution for 4 representatives is -75.59760730426959 with: 
+status:  Infeasible
+Best solution for 5 representatives is -4.558975632266853 with: 
+status:  Infeasible
+Best solution for 6 representatives is -6.309150922078815 with: 
+status:  Infeasible
+Best solution for 7 representatives is -9.032415609457074 with: 
+status:  Infeasible
+Best solution for 8 representatives is -2.558883174776117 with: 
+status:  Optimal
+Best solution for 9 representatives is -3.02710118091879 with: 
+status:  Optimal
+Best solution for 10 representatives is -2.825431955371657 with: 
+status:  Optimal
+Best solution for 11 representatives is -2.843248281740627 with: 
+status:  Optimal
+Best solution for 12 representatives is -2.813230339052641 with: 
+status:  Optimal
+Best solution for 13 representatives is -2.8546065631897783 with: 
+status:  Optimal
+Best solution for 14 representatives is -2.8776374559903513 with: 
+status:  Optimal
+Best solution for 15 representatives is -2.923717766692369 with: 
+status:  Optimal
+Best solution for 16 representatives is -3.0213357746788096 with: 
+status:  Optimal
+Best solution for 17 representatives is -3.1375951169284444 with: 
+status:  Optimal
+Best solution for 18 representatives is -3.248225200908555 with: 
+status:  Optimal
+Best solution for 19 representatives is -3.3668765431693664 with: 
+status:  Optimal
+Best solution for 20 representatives is -3.495492061618077 with: 
+status:  Optimal
+Best solution for 21 representatives is -3.630044026242353 with: 
+status:  Optimal
+Best solution for 22 representatives is -3.766008404055712 with: 
+status:  Optimal
+Best solution for 23 representatives is -3.914015456023437 with: 
+status:  Optimal
+Best solution for 24 representatives is -4.074610181828662 with: 
+status:  Optimal
+Best solution for 25 representatives is -4.250225773195501 with: 
+status:  Optimal
+Best solution for 26 representatives is -4.4269375549345655 with: 
+status:  Optimal
+Best solution for 27 representatives is -4.625509384534162 with: 
+status:  Optimal
+Best solution for 28 representatives is -4.851126047414843 with: 
+status:  Optimal
+Best solution for 29 representatives is -5.091425411126243 with: 
+status:  Optimal
+Best solution for 30 representatives is -5.353747408807962 with: 
+status:  Optimal
+Best solution for 31 representatives is -5.622276246914686 with: 
+status:  Optimal
+Best solution for 32 representatives is -5.891232855985968 with: 
+status:  Optimal
+Best solution for 33 representatives is -6.174930435402601 with: 
+status:  Optimal
+Best solution for 34 representatives is -6.468921398705883 with: 
+status:  Optimal
+Best solution for 35 representatives is -6.826165674227597 with: 
+status:  Optimal
+Best solution for 36 representatives is -7.215393575748734 with: 
+status:  Optimal
+Best solution for 37 representatives is -7.641039066091342 with: 
+status:  Optimal
+Best solution for 38 representatives is -8.252370066256661 with: 
+status:  Optimal
+Best solution for 39 representatives is -8.873026669034967 with: 
+status:  Optimal
+Best solution for 40 representatives is -9.501726376843902 with: 
+status:  Optimal
+Best solution for 41 representatives is -10.152598969546686 with: 
+status:  Optimal
+Best solution for 42 representatives is -10.854103561881962 with: 
+status:  Optimal
+Best solution for 43 representatives is -11.588862563232887 with: 
+status:  Optimal
+Best solution for 44 representatives is -12.351792459726957 with: 
+status:  Optimal
+Best solution for 45 representatives is -13.116109250745698 with: 
+status:  Optimal
+Best solution for 46 representatives is -14.132616226478088 with: 
+status:  Infeasible
+Best solution for 1 representatives is -0.055424900463812196 with: 
+status:  Infeasible
+Best solution for 2 representatives is -0.04899207219578013 with: 
+status:  Optimal
+Best solution for 3 representatives is -0.055424900463812196 with: 
+status:  Infeasible
+Best solution for 1 representatives is -52.15248691603982 with: 
+status:  Infeasible
+Best solution for 2 representatives is -15.058623737105915 with: 
+status:  Infeasible
+Best solution for 3 representatives is -71.30190141180573 with: 
+status:  Infeasible
+Best solution for 4 representatives is -36.28985636911635 with: 
+status:  Infeasible
+Best solution for 5 representatives is -88.38729926385511 with: 
+status:  Infeasible
+Best solution for 6 representatives is -123.81338871320247 with: 
+status:  Infeasible
+Best solution for 7 representatives is -37.66358195335706 with: 
+status:  Infeasible
+Best solution for 8 representatives is -107.02797647583567 with: 
+status:  Infeasible
+Best solution for 9 representatives is -3.677935230468677 with: 
+status:  Optimal
+Best solution for 10 representatives is -4.2418286259206965 with: 
+status:  Optimal
+Best solution for 11 representatives is -3.986094724035696 with: 
+status:  Optimal
+Best solution for 12 representatives is -3.994025145498508 with: 
+status:  Optimal
+Best solution for 13 representatives is -3.969853096341684 with: 
+status:  Optimal
+Best solution for 14 representatives is -4.007586170061892 with: 
+status:  Optimal
+Best solution for 15 representatives is -4.071931581631861 with: 
+status:  Optimal
+Best solution for 16 representatives is -4.13665099489095 with: 
+status:  Optimal
+Best solution for 17 representatives is -4.210225323714937 with: 
+status:  Optimal
+Best solution for 18 representatives is -4.274570735284906 with: 
+status:  Optimal
+Best solution for 19 representatives is -4.339290148543995 with: 
+status:  Optimal
+Best solution for 20 representatives is -4.439229866943877 with: 
+status:  Optimal
+Best solution for 21 representatives is -4.550789715952812 with: 
+status:  Optimal
+Best solution for 22 representatives is -4.668617088522285 with: 
+status:  Optimal
+Best solution for 23 representatives is -4.786568632323807 with: 
+status:  Optimal
+Best solution for 24 representatives is -4.907469704221939 with: 
+status:  Optimal
+Best solution for 25 representatives is -5.0429036832042 with: 
+status:  Optimal
+Best solution for 26 representatives is -5.245665236262124 with: 
+status:  Optimal
+Best solution for 27 representatives is -5.460139242346958 with: 
+status:  Optimal
+Best solution for 28 representatives is -5.690694221147021 with: 
+status:  Optimal
+Best solution for 29 representatives is -5.925448709215306 with: 
+status:  Optimal
+Best solution for 30 representatives is -6.1775208366717225 with: 
+status:  Optimal
+Best solution for 31 representatives is -6.4296888163946795 with: 
+status:  Optimal
+Best solution for 32 representatives is -6.694042267181375 with: 
+status:  Optimal
+Best solution for 33 representatives is -6.96580354605729 with: 
+status:  Optimal
+Best solution for 34 representatives is -7.2680016296270695 with: 
+status:  Optimal
+Best solution for 35 representatives is -7.596192853738395 with: 
+status:  Optimal
+Best solution for 36 representatives is -7.943674778644791 with: 
+status:  Optimal
+Best solution for 37 representatives is -8.527330802356593 with: 
+status:  Optimal
+Best solution for 38 representatives is -9.167511576262516 with: 
+status:  Optimal
+Best solution for 39 representatives is -9.837122311503718 with: 
+status:  Optimal
+Best solution for 40 representatives is -10.509694549063848 with: 
+status:  Optimal
+Best solution for 41 representatives is -11.189900088102235 with: 
+status:  Optimal
+Best solution for 42 representatives is -11.879033844553089 with: 
+status:  Optimal
+Best solution for 43 representatives is -12.575547069158237 with: 
+status:  Optimal
+Best solution for 44 representatives is -13.273371235234006 with: 
+status:  Optimal
+Best solution for 45 representatives is -13.991832938478527 with: 
+status:  Optimal
+Best solution for 46 representatives is -14.728622075195949 with: 
+status:  Optimal
+Best solution for 47 representatives is -15.473056696087069 with: 
+status:  Optimal
+Best solution for 48 representatives is -16.23977866720534 with: 
+status:  Optimal
+Best solution for 49 representatives is -17.10807276041845 with: 
+status:  Optimal
+Best solution for 50 representatives is -18.07608212374589 with: 
+status:  Optimal
+Best solution for 51 representatives is -19.298219951400153 with: 
+status:  Optimal
+Best solution for 52 representatives is -20.621220920594432 with: 
+status:  Infeasible
+Best solution for 1 representatives is -0.6477596330001018 with: 
+status:  Infeasible
+Best solution for 2 representatives is -16.196802467716644 with: 
+status:  Infeasible
+Best solution for 3 representatives is -4.760262190842405 with: 
+status:  Infeasible
+Best solution for 4 representatives is -257.295280813918 with: 
+status:  Infeasible
+Best solution for 5 representatives is -315.07177123490635 with: 
+status:  Infeasible
+Best solution for 6 representatives is -47.38999805212782 with: 
+status:  Infeasible
+Best solution for 7 representatives is -90.20357745589145 with: 
+status:  Infeasible
+Best solution for 8 representatives is -21.465987135327993 with: 
+status:  Optimal
+Best solution for 9 representatives is -3.38209045641418 with: 
+status:  Optimal
+Best solution for 10 representatives is -2.972210213030755 with: 
+status:  Optimal
+Best solution for 11 representatives is -2.8748898797190545 with: 
+status:  Optimal
+Best solution for 12 representatives is -2.7896559799250498 with: 
+status:  Optimal
+Best solution for 13 representatives is -2.8051169917263654 with: 
+status:  Optimal
+Best solution for 14 representatives is -2.8231837788727216 with: 
+status:  Optimal
+Best solution for 15 representatives is -2.794591552326143 with: 
+status:  Optimal
+Best solution for 16 representatives is -2.856483742701576 with: 
+status:  Optimal
+Best solution for 17 representatives is -2.8835552302065843 with: 
+status:  Optimal
+Best solution for 18 representatives is -2.96951914089345 with: 
+status:  Optimal
+Best solution for 19 representatives is -3.0591323073847554 with: 
+status:  Optimal
+Best solution for 20 representatives is -3.20799285428598 with: 
+status:  Optimal
+Best solution for 21 representatives is -3.362295012216578 with: 
+status:  Optimal
+Best solution for 22 representatives is -3.5178293318249816 with: 
+status:  Optimal
+Best solution for 23 representatives is -3.7010226026930515 with: 
+status:  Optimal
+Best solution for 24 representatives is -3.88826217525558 with: 
+status:  Optimal
+Best solution for 25 representatives is -4.089182485542087 with: 
+status:  Optimal
+Best solution for 26 representatives is -4.30828800755495 with: 
+status:  Optimal
+Best solution for 27 representatives is -4.5391505477791245 with: 
+status:  Optimal
+Best solution for 28 representatives is -4.7755785357858835 with: 
+status:  Optimal
+Best solution for 29 representatives is -5.016538316562732 with: 
+status:  Optimal
+Best solution for 30 representatives is -5.264888546491969 with: 
+status:  Optimal
+Best solution for 31 representatives is -5.515171310322946 with: 
+status:  Optimal
+Best solution for 32 representatives is -5.769617118086646 with: 
+status:  Optimal
+Best solution for 33 representatives is -6.02736715662169 with: 
+status:  Optimal
+Best solution for 34 representatives is -6.289277691835491 with: 
+status:  Optimal
+Best solution for 35 representatives is -6.554153903987252 with: 
+status:  Optimal
+Best solution for 36 representatives is -6.825362305646511 with: 
+status:  Optimal
+Best solution for 37 representatives is -7.103194267050815 with: 
+status:  Optimal
+Best solution for 38 representatives is -7.382032211950057 with: 
+status:  Optimal
+Best solution for 39 representatives is -7.693746827402709 with: 
+status:  Optimal
+Best solution for 40 representatives is -8.005964727390172 with: 
+status:  Optimal
+Best solution for 41 representatives is -8.327539785172325 with: 
+status:  Optimal
+Best solution for 42 representatives is -8.650754234436071 with: 
+status:  Optimal
+Best solution for 43 representatives is -8.978079059451764 with: 
+status:  Optimal
+Best solution for 44 representatives is -9.314107176424905 with: 
+status:  Optimal
+Best solution for 45 representatives is -9.765709229234837 with: 
+status:  Optimal
+Best solution for 46 representatives is -10.383319220117404 with: 
+status:  Optimal
+Best solution for 47 representatives is -11.05924308962927 with: 
+status:  Optimal
+Best solution for 48 representatives is -11.73679499892275 with: 
+status:  Optimal
+Best solution for 49 representatives is -12.432430840668768 with: 
+status:  Optimal
+Best solution for 50 representatives is -13.15660669005028 with: 
+status:  Optimal
+Best solution for 51 representatives is -13.928365855685325 with: 
+status:  Infeasible
+Best solution for 1 representatives is -0.49691658221358104 with: 
+status:  Infeasible
+Best solution for 2 representatives is -5.859682539400476 with: 
+status:  Infeasible
+Best solution for 3 representatives is -49.87685247597287 with: 
+status:  Infeasible
+Best solution for 4 representatives is -391.08193667421705 with: 
+status:  Infeasible
+Best solution for 5 representatives is -146.26994248731418 with: 
+status:  Infeasible
+Best solution for 6 representatives is -86.58570516989012 with: 
+status:  Infeasible
+Best solution for 7 representatives is -264.1697159180566 with: 
+status:  Infeasible
+Best solution for 8 representatives is -52.190842540187866 with: 
+status:  Infeasible
+Best solution for 9 representatives is -3.0943077658803064 with: 
+status:  Optimal
+Best solution for 10 representatives is -3.9230934831579543 with: 
+status:  Optimal
+Best solution for 11 representatives is -3.359778443181332 with: 
+status:  Optimal
+Best solution for 12 representatives is -3.3022878545349768 with: 
+status:  Optimal
+Best solution for 13 representatives is -3.3125426854859956 with: 
+status:  Optimal
+Best solution for 14 representatives is -3.3734967561888753 with: 
+status:  Optimal
+Best solution for 15 representatives is -3.4636557534647365 with: 
+status:  Optimal
+Best solution for 16 representatives is -3.5117511804459243 with: 
+status:  Optimal
+Best solution for 17 representatives is -3.613374578650563 with: 
+status:  Optimal
+Best solution for 18 representatives is -3.7584548477868793 with: 
+status:  Optimal
+Best solution for 19 representatives is -3.917091795060614 with: 
+status:  Optimal
+Best solution for 20 representatives is -4.111897025112625 with: 
+status:  Optimal
+Best solution for 21 representatives is -4.29400441604989 with: 
+status:  Optimal
+Best solution for 22 representatives is -4.490822496484754 with: 
+status:  Optimal
+Best solution for 23 representatives is -4.689108029831825 with: 
+status:  Optimal
+Best solution for 24 representatives is -4.88801870070837 with: 
+status:  Optimal
+Best solution for 25 representatives is -5.092345135874651 with: 
+status:  Optimal
+Best solution for 26 representatives is -5.301790171687219 with: 
+status:  Optimal
+Best solution for 27 representatives is -5.514198867484175 with: 
+status:  Optimal
+Best solution for 28 representatives is -5.729497671861089 with: 
+status:  Optimal
+Best solution for 29 representatives is -5.945714787050028 with: 
+status:  Optimal
+Best solution for 30 representatives is -6.163645934807559 with: 
+status:  Optimal
+Best solution for 31 representatives is -6.386549016124791 with: 
+status:  Optimal
+Best solution for 32 representatives is -6.624214274554815 with: 
+status:  Optimal
+Best solution for 33 representatives is -6.872901626048687 with: 
+status:  Optimal
+Best solution for 34 representatives is -7.143663565229476 with: 
+status:  Optimal
+Best solution for 35 representatives is -7.456651114248743 with: 
+status:  Optimal
+Best solution for 36 representatives is -7.777980425942344 with: 
+status:  Optimal
+Best solution for 37 representatives is -8.103993083881175 with: 
+status:  Optimal
+Best solution for 38 representatives is -8.436767151561156 with: 
+status:  Optimal
+Best solution for 39 representatives is -8.791594486571139 with: 
+status:  Optimal
+Best solution for 40 representatives is -9.176463260214295 with: 
+status:  Optimal
+Best solution for 41 representatives is -9.578682046703364 with: 
+status:  Optimal
+Best solution for 42 representatives is -10.086297796497975 with: 
+status:  Optimal
+Best solution for 43 representatives is -10.690599869655967 with: 
+status:  Optimal
+Best solution for 44 representatives is -11.30580401588122 with: 
+status:  Optimal
+Best solution for 45 representatives is -11.952671423526338 with: 
+status:  Optimal
+Best solution for 46 representatives is -12.622519386610628 with: 
+status:  Optimal
+Best solution for 47 representatives is -13.297237731172341 with: 
+status:  Optimal
+Best solution for 48 representatives is -13.973685676101148 with: 
+status:  Optimal
+Best solution for 49 representatives is -14.676950961888599 with: 
+status:  Optimal
+Best solution for 50 representatives is -15.453182632264687 with: 
+status:  Optimal
+Best solution for 51 representatives is -16.655062975742506 with: 
+status:  Infeasible
+Best solution for 1 representatives is -2.0446571031591865 with: 
+status:  Infeasible
+Best solution for 2 representatives is -28.2731898576 with: 
+status:  Infeasible
+Best solution for 3 representatives is -8.358006211716022 with: 
+status:  Infeasible
+Best solution for 4 representatives is -7.2668997258631975 with: 
+status:  Infeasible
+Best solution for 5 representatives is -1.9897922273655548 with: 
+status:  Optimal
+Best solution for 6 representatives is -1.7789696692184975 with: 
+status:  Optimal
+Best solution for 7 representatives is -1.6754775974978193 with: 
+status:  Optimal
+Best solution for 8 representatives is -1.7620393614423244 with: 
+status:  Optimal
+Best solution for 9 representatives is -1.8427816369043843 with: 
+status:  Optimal
+Best solution for 10 representatives is -1.9293434008488892 with: 
+status:  Optimal
+Best solution for 11 representatives is -2.0397020066381515 with: 
+status:  Optimal
+Best solution for 12 representatives is -2.210041549889464 with: 
+status:  Optimal
+Best solution for 13 representatives is -2.3891916511556492 with: 
+status:  Optimal
+Best solution for 14 representatives is -2.562635271612102 with: 
+status:  Optimal
+Best solution for 15 representatives is -2.7417853728782866 with: 
+status:  Optimal
+Best solution for 16 representatives is -2.9261146011154056 with: 
+status:  Optimal
+Best solution for 17 representatives is -3.1523041710180304 with: 
+status:  Optimal
+Best solution for 18 representatives is -3.3964373316353527 with: 
+status:  Optimal
+Best solution for 19 representatives is -3.6914138228026245 with: 
+status:  Optimal
+Best solution for 20 representatives is -3.9885400801523616 with: 
+status:  Optimal
+Best solution for 21 representatives is -4.290046644149335 with: 
+status:  Optimal
+Best solution for 22 representatives is -4.605911281768756 with: 
+status:  Optimal
+Best solution for 23 representatives is -4.956838556328759 with: 
+status:  Optimal
+Best solution for 24 representatives is -5.376492184030174 with: 
+status:  Optimal
+Best solution for 25 representatives is -6.132236560878772 with: 
+status:  Optimal
+Best solution for 26 representatives is -6.9066081082257424 with: 
+status:  Optimal
+Best solution for 27 representatives is -7.686656614564214 with: 
+status:  Infeasible
+Best solution for 1 representatives is -0.08669342011134842 with: 
+status:  Infeasible
+Best solution for 2 representatives is -0.07846896499266107 with: 
+status:  Optimal
+Best solution for 3 representatives is -0.08669342011134842 with: 
+status:  Infeasible
+Best solution for 1 representatives is -0.09935692114577549 with: 
+status:  Infeasible
+Best solution for 2 representatives is -0.07957790821431054 with: 
+status:  Optimal
+Best solution for 3 representatives is -0.09935692114577549 with: 
+status:  Infeasible
+Best solution for 1 representatives is -20.081276376559128 with: 
+status:  Infeasible
+Best solution for 2 representatives is -94.37406590113318 with: 
+status:  Infeasible
+Best solution for 3 representatives is -14.22997010534733 with: 
+status:  Infeasible
+Best solution for 4 representatives is -311.1162787245767 with: 
+status:  Infeasible
+Best solution for 5 representatives is -103.8864556114548 with: 
+status:  Infeasible
+Best solution for 6 representatives is -1651.2381010230506 with: 
+status:  Infeasible
+Best solution for 7 representatives is -462.9255715244505 with: 
+status:  Infeasible
+Best solution for 8 representatives is -36.904932481188446 with: 
+status:  Infeasible
+Best solution for 9 representatives is -38.23491056959 with: 
+status:  Optimal
+Best solution for 10 representatives is -4.243760244370984 with: 
+status:  Optimal
+Best solution for 11 representatives is -3.79649042267042 with: 
+status:  Optimal
+Best solution for 12 representatives is -3.508768230037019 with: 
+status:  Optimal
+Best solution for 13 representatives is -3.4608684278752446 with: 
+status:  Optimal
+Best solution for 14 representatives is -3.436077252700495 with: 
+status:  Optimal
+Best solution for 15 representatives is -3.4772186345821283 with: 
+status:  Optimal
+Best solution for 16 representatives is -3.5119369078505525 with: 
+status:  Optimal
+Best solution for 17 representatives is -3.5376160592761567 with: 
+status:  Optimal
+Best solution for 18 representatives is -3.5313232477842367 with: 
+status:  Optimal
+Best solution for 19 representatives is -3.57246462966587 with: 
+status:  Optimal
+Best solution for 20 representatives is -3.6384542779106415 with: 
+status:  Optimal
+Best solution for 21 representatives is -3.760677174365705 with: 
+status:  Optimal
+Best solution for 22 representatives is -3.894686683717177 with: 
+status:  Optimal
+Best solution for 23 representatives is -4.03808730125912 with: 
+status:  Optimal
+Best solution for 24 representatives is -4.161389560728684 with: 
+status:  Optimal
+Best solution for 25 representatives is -4.287563188072196 with: 
+status:  Optimal
+Best solution for 26 representatives is -4.432850819014065 with: 
+status:  Optimal
+Best solution for 27 representatives is -4.578456710719429 with: 
+status:  Optimal
+Best solution for 28 representatives is -4.727747741204863 with: 
+status:  Optimal
+Best solution for 29 representatives is -4.895067932866068 with: 
+status:  Optimal
+Best solution for 30 representatives is -5.0702759505163115 with: 
+status:  Optimal
+Best solution for 31 representatives is -5.2533332008021745 with: 
+status:  Optimal
+Best solution for 32 representatives is -5.438386449063339 with: 
+status:  Optimal
+Best solution for 33 representatives is -5.636520417623892 with: 
+status:  Optimal
+Best solution for 34 representatives is -5.859344924335459 with: 
+status:  Optimal
+Best solution for 35 representatives is -6.086207622573979 with: 
+status:  Optimal
+Best solution for 36 representatives is -6.325512177794696 with: 
+status:  Optimal
+Best solution for 37 representatives is -6.576878327104215 with: 
+status:  Optimal
+Best solution for 38 representatives is -6.8316882172712905 with: 
+status:  Optimal
+Best solution for 39 representatives is -7.088896786805671 with: 
+status:  Optimal
+Best solution for 40 representatives is -7.354902244318222 with: 
+status:  Optimal
+Best solution for 41 representatives is -7.623615394417566 with: 
+status:  Optimal
+Best solution for 42 representatives is -7.900224848604918 with: 
+status:  Optimal
+Best solution for 43 representatives is -8.178995532626972 with: 
+status:  Optimal
+Best solution for 44 representatives is -8.459157405913032 with: 
+status:  Optimal
+Best solution for 45 representatives is -8.763268809319536 with: 
+status:  Optimal
+Best solution for 46 representatives is -9.07952607545111 with: 
+status:  Optimal
+Best solution for 47 representatives is -9.404922255257611 with: 
+status:  Optimal
+Best solution for 48 representatives is -9.732881614956943 with: 
+status:  Optimal
+Best solution for 49 representatives is -10.077694854109126 with: 
+status:  Optimal
+Best solution for 50 representatives is -10.45306344828432 with: 
+status:  Optimal
+Best solution for 51 representatives is -11.04536161000273 with: 
+status:  Optimal
+Best solution for 52 representatives is -11.653108761090792 with: 
+status:  Optimal
+Best solution for 53 representatives is -12.276828224831052 with: 
+status:  Optimal
+Best solution for 54 representatives is -12.915432161719616 with: 
+status:  Optimal
+Best solution for 55 representatives is -13.653539361735477 with: 
+status:  Optimal
+Best solution for 56 representatives is -14.399097017066584 with: 
+status:  Optimal
+Best solution for 57 representatives is -15.222809945087045 with: 
+status:  Optimal
+Best solution for 58 representatives is -16.05179797891577 with: 
+status:  Optimal
+Best solution for 59 representatives is -17.159944770528707 with: 
+status:  Infeasible
+Best solution for 1 representatives is -12.150750707147441 with: 
+status:  Infeasible
+Best solution for 2 representatives is -41.92922288616046 with: 
+status:  Infeasible
+Best solution for 3 representatives is -24.003723032444768 with: 
+status:  Infeasible
+Best solution for 4 representatives is -18.80439686677218 with: 
+status:  Infeasible
+Best solution for 5 representatives is -11.228441099179427 with: 
+status:  Infeasible
+Best solution for 6 representatives is -23.239318901938535 with: 
+status:  Infeasible
+Best solution for 7 representatives is -2.697639439440949 with: 
+status:  Optimal
+Best solution for 8 representatives is -2.7540907234211343 with: 
+status:  Optimal
+Best solution for 9 representatives is -2.6161494162532013 with: 
+status:  Optimal
+Best solution for 10 representatives is -2.692314746856726 with: 
+status:  Optimal
+Best solution for 11 representatives is -2.768635516910463 with: 
+status:  Optimal
+Best solution for 12 representatives is -2.848840785961896 with: 
+status:  Optimal
+Best solution for 13 representatives is -2.9790579596466995 with: 
+status:  Optimal
+Best solution for 14 representatives is -3.1227639229710342 with: 
+status:  Optimal
+Best solution for 15 representatives is -3.2680591008954525 with: 
+status:  Optimal
+Best solution for 16 representatives is -3.442013621127231 with: 
+status:  Optimal
+Best solution for 17 representatives is -3.619607009123054 with: 
+status:  Optimal
+Best solution for 18 representatives is -3.792692084555983 with: 
+status:  Optimal
+Best solution for 19 representatives is -3.9666466047877615 with: 
+status:  Optimal
+Best solution for 20 representatives is -4.171032708189779 with: 
+status:  Optimal
+Best solution for 21 representatives is -4.4386788386284035 with: 
+status:  Optimal
+Best solution for 22 representatives is -4.707686274371609 with: 
+status:  Optimal
+Best solution for 23 representatives is -4.977272808710121 with: 
+status:  Optimal
+Best solution for 24 representatives is -5.251185319126933 with: 
+status:  Optimal
+Best solution for 25 representatives is -5.544633586934572 with: 
+status:  Optimal
+Best solution for 26 representatives is -6.0575177711387855 with: 
+status:  Optimal
+Best solution for 27 representatives is -6.641097628425316 with: 
+status:  Optimal
+Best solution for 28 representatives is -7.248747250182754 with: 
+status:  Optimal
+Best solution for 29 representatives is -7.9254660814689055 with: 
+status:  Optimal
+Best solution for 30 representatives is -8.679792465522366 with: 
+status:  Optimal
+Best solution for 31 representatives is -9.522666771025708 with: 
+status:  Optimal
+Best solution for 32 representatives is -10.399525540849213 with: 
+status:  Optimal
+Best solution for 33 representatives is -11.290850780693551 with: 
+status:  Optimal
+Best solution for 34 representatives is -12.255574933075447 with: 
+status:  Optimal
+Best solution for 35 representatives is -13.231973162734963 with: 
+status:  Optimal
+Best solution for 36 representatives is -14.241546435602574 with: 
+status:  Optimal
+Best solution for 37 representatives is -15.393002399929605 with: 
+status:  Infeasible
+Best solution for 1 representatives is -0.08984696889894056 with: 
+status:  Infeasible
+Best solution for 2 representatives is -0.08353451750655647 with: 
+status:  Optimal
+Best solution for 3 representatives is -0.08984696889894056 with: 
+status:  Infeasible
+Best solution for 1 representatives is -6.728256081163406 with: 
+status:  Infeasible
+Best solution for 2 representatives is -6.944256670340236 with: 
+status:  Infeasible
+Best solution for 3 representatives is -22.735395389227946 with: 
+status:  Infeasible
+Best solution for 4 representatives is -34.599686738553785 with: 
+status:  Infeasible
+Best solution for 5 representatives is -157.12596635395235 with: 
+status:  Infeasible
+Best solution for 6 representatives is -335.91142608345626 with: 
+status:  Infeasible
+Best solution for 7 representatives is -22.43177477474952 with: 
+status:  Infeasible
+Best solution for 8 representatives is -3.3987183706068866 with: 
+status:  Optimal
+Best solution for 9 representatives is -3.8631431190520535 with: 
+status:  Optimal
+Best solution for 10 representatives is -3.3211846376522005 with: 
+status:  Optimal
+Best solution for 11 representatives is -3.312101203449422 with: 
+status:  Optimal
+Best solution for 12 representatives is -3.275736739680976 with: 
+status:  Optimal
+Best solution for 13 representatives is -3.2394858963585427 with: 
+status:  Optimal
+Best solution for 14 representatives is -3.2341437207946275 with: 
+status:  Optimal
+Best solution for 15 representatives is -3.2914896347965206 with: 
+status:  Optimal
+Best solution for 16 representatives is -3.3598540706341717 with: 
+status:  Optimal
+Best solution for 17 representatives is -3.4494598923878543 with: 
+status:  Optimal
+Best solution for 18 representatives is -3.540823833801371 with: 
+status:  Optimal
+Best solution for 19 representatives is -3.634476798409978 with: 
+status:  Optimal
+Best solution for 20 representatives is -3.7326645963283385 with: 
+status:  Optimal
+Best solution for 21 representatives is -3.857444677239922 with: 
+status:  Optimal
+Best solution for 22 representatives is -3.982939404011752 with: 
+status:  Optimal
+Best solution for 23 representatives is -4.142558221194753 with: 
+status:  Optimal
+Best solution for 24 representatives is -4.308085758670642 with: 
+status:  Optimal
+Best solution for 25 representatives is -4.5064944781513585 with: 
+status:  Optimal
+Best solution for 26 representatives is -4.707654801273431 with: 
+status:  Optimal
+Best solution for 27 representatives is -4.911732147487544 with: 
+status:  Optimal
+Best solution for 28 representatives is -5.127948101042644 with: 
+status:  Optimal
+Best solution for 29 representatives is -5.350367040385571 with: 
+status:  Optimal
+Best solution for 30 representatives is -5.573251264162131 with: 
+status:  Optimal
+Best solution for 31 representatives is -5.86672889021307 with: 
+status:  Optimal
+Best solution for 32 representatives is -6.177467937348045 with: 
+status:  Optimal
+Best solution for 33 representatives is -6.509055766229871 with: 
+status:  Optimal
+Best solution for 34 representatives is -6.961511345949614 with: 
+status:  Optimal
+Best solution for 35 representatives is -7.431572165566569 with: 
+status:  Optimal
+Best solution for 36 representatives is -7.9771684255825885 with: 
+status:  Optimal
+Best solution for 37 representatives is -8.537191369912733 with: 
+status:  Optimal
+Best solution for 38 representatives is -9.099604091296827 with: 
+status:  Optimal
+Best solution for 39 representatives is -9.704740042846057 with: 
+status:  Optimal
+Best solution for 40 representatives is -10.335613388217219 with: 
+status:  Optimal
+Best solution for 41 representatives is -10.972570562371295 with: 
+status:  Optimal
+Best solution for 42 representatives is -11.628982217842275 with: 
+status:  Optimal
+Best solution for 43 representatives is -12.288998779637122 with: 
+status:  Optimal
+Best solution for 44 representatives is -12.962326176327794 with: 
+status:  Optimal
+Best solution for 45 representatives is -13.666653798312733 with: 
+status:  Optimal
+Best solution for 46 representatives is -14.387421484485424 with: 
+status:  Optimal
+Best solution for 47 representatives is -15.254585815736542 with: 
+status:  Optimal
+Best solution for 48 representatives is -16.33660976965578 with: 
+status:  Optimal
+Best solution for 49 representatives is -17.497944752124074 with: 
+status:  Optimal
+Best solution for 50 representatives is -19.11771099153193 with: 
+status:  Infeasible
+Best solution for 1 representatives is -41.98989178549719 with: 
+status:  Infeasible
+Best solution for 2 representatives is -53.346525562266294 with: 
+status:  Infeasible
+Best solution for 3 representatives is -38.03843674026297 with: 
+status:  Infeasible
+Best solution for 4 representatives is -19.57745045178399 with: 
+status:  Infeasible
+Best solution for 5 representatives is -342.28207040789425 with: 
+status:  Infeasible
+Best solution for 6 representatives is -1576.668010253039 with: 
+status:  Infeasible
+Best solution for 7 representatives is -74.75785628476935 with: 
+status:  Infeasible
+Best solution for 8 representatives is -3.862294388908692 with: 
+status:  Infeasible
+Best solution for 9 representatives is -3.712797857167075 with: 
+status:  Optimal
+Best solution for 10 representatives is -4.1701956022557605 with: 
+status:  Optimal
+Best solution for 11 representatives is -4.08356392542205 with: 
+status:  Optimal
+Best solution for 12 representatives is -4.090874185994534 with: 
+status:  Optimal
+Best solution for 13 representatives is -4.072177676600296 with: 
+status:  Optimal
+Best solution for 14 representatives is -4.047873927896929 with: 
+status:  Optimal
+Best solution for 15 representatives is -4.055184188469414 with: 
+status:  Optimal
+Best solution for 16 representatives is -4.073746782833596 with: 
+status:  Optimal
+Best solution for 17 representatives is -4.108244958302487 with: 
+status:  Optimal
+Best solution for 18 representatives is -4.189744723401023 with: 
+status:  Optimal
+Best solution for 19 representatives is -4.278565871988995 with: 
+status:  Optimal
+Best solution for 20 representatives is -4.380002315116916 with: 
+status:  Optimal
+Best solution for 21 representatives is -4.468389188431933 with: 
+status:  Optimal
+Best solution for 22 representatives is -4.549888953530468 with: 
+status:  Optimal
+Best solution for 23 representatives is -4.6664503841678675 with: 
+status:  Optimal
+Best solution for 24 representatives is -4.82624547957695 with: 
+status:  Optimal
+Best solution for 25 representatives is -5.044960599948244 with: 
+status:  Optimal
+Best solution for 26 representatives is -5.252111024181379 with: 
+status:  Optimal
+Best solution for 27 representatives is -5.4803469870244275 with: 
+status:  Optimal
+Best solution for 28 representatives is -5.723618271194118 with: 
+status:  Optimal
+Best solution for 29 representatives is -5.9798535308939975 with: 
+status:  Optimal
+Best solution for 30 representatives is -6.266216821451117 with: 
+status:  Optimal
+Best solution for 31 representatives is -6.553366653494212 with: 
+status:  Optimal
+Best solution for 32 representatives is -6.845021919567327 with: 
+status:  Optimal
+Best solution for 33 representatives is -7.146120523434019 with: 
+status:  Optimal
+Best solution for 34 representatives is -7.479171042758248 with: 
+status:  Optimal
+Best solution for 35 representatives is -7.879401329809115 with: 
+status:  Optimal
+Best solution for 36 representatives is -8.287250767417856 with: 
+status:  Optimal
+Best solution for 37 representatives is -8.84908272295698 with: 
+status:  Optimal
+Best solution for 38 representatives is -9.453927354555624 with: 
+status:  Optimal
+Best solution for 39 representatives is -10.10643232864475 with: 
+status:  Optimal
+Best solution for 40 representatives is -10.766798523670477 with: 
+status:  Optimal
+Best solution for 41 representatives is -11.431954244785276 with: 
+status:  Optimal
+Best solution for 42 representatives is -12.107866433797607 with: 
+status:  Optimal
+Best solution for 43 representatives is -12.810507513286867 with: 
+status:  Optimal
+Best solution for 44 representatives is -13.516381021815112 with: 
+status:  Optimal
+Best solution for 45 representatives is -14.230548215084074 with: 
+status:  Optimal
+Best solution for 46 representatives is -15.022817423451599 with: 
+status:  Optimal
+Best solution for 47 representatives is -15.842387373865725 with: 
+status:  Optimal
+Best solution for 48 representatives is -16.74416242098044 with: 
+status:  Optimal
+Best solution for 49 representatives is -17.850231443900782 with: 
+status:  Optimal
+Best solution for 50 representatives is -19.071254352595275 with: 
+status:  Optimal
+Best solution for 51 representatives is -20.77932488199961 with: 
+status:  Infeasible
+Best solution for 1 representatives is -0.2035577083906206 with: 
+status:  Infeasible
+Best solution for 2 representatives is -0.2035577083906206 with: 
+status:  Optimal
+Best solution for 3 representatives is -0.2035577083906206 with: 
+status:  Optimal
+Best solution for 4 representatives is -0.2794871055987538 with: 
+status:  Infeasible
+Best solution for 1 representatives is -9.524472307493976 with: 
+status:  Infeasible
+Best solution for 2 representatives is -30.1884985941333 with: 
+status:  Infeasible
+Best solution for 3 representatives is -20.32646003797133 with: 
+status:  Infeasible
+Best solution for 4 representatives is -38.63650753897633 with: 
+status:  Infeasible
+Best solution for 5 representatives is -42.44012642193553 with: 
+status:  Infeasible
+Best solution for 6 representatives is -59.265535831520445 with: 
+status:  Infeasible
+Best solution for 7 representatives is -378.8343841709157 with: 
+status:  Infeasible
+Best solution for 8 representatives is -3.363968164957339 with: 
+status:  Optimal
+Best solution for 9 representatives is -4.277854401447796 with: 
+status:  Optimal
+Best solution for 10 representatives is -3.3835060613112753 with: 
+status:  Optimal
+Best solution for 11 representatives is -3.4165267994555584 with: 
+status:  Optimal
+Best solution for 12 representatives is -3.3955980620614152 with: 
+status:  Optimal
+Best solution for 13 representatives is -3.407933359558326 with: 
+status:  Optimal
+Best solution for 14 representatives is -3.440954097702609 with: 
+status:  Optimal
+Best solution for 15 representatives is -3.471958646637482 with: 
+status:  Optimal
+Best solution for 16 representatives is -3.516984825704445 with: 
+status:  Optimal
+Best solution for 17 representatives is -3.6091560639517346 with: 
+status:  Optimal
+Best solution for 18 representatives is -3.702169161465064 with: 
+status:  Optimal
+Best solution for 19 representatives is -3.820058122365033 with: 
+status:  Optimal
+Best solution for 20 representatives is -3.970843554620532 with: 
+status:  Optimal
+Best solution for 21 representatives is -4.128998506237814 with: 
+status:  Optimal
+Best solution for 22 representatives is -4.290418357752805 with: 
+status:  Optimal
+Best solution for 23 representatives is -4.452943447714576 with: 
+status:  Optimal
+Best solution for 24 representatives is -4.62625146787259 with: 
+status:  Optimal
+Best solution for 25 representatives is -4.802316094869549 with: 
+status:  Optimal
+Best solution for 26 representatives is -4.986971455538374 with: 
+status:  Optimal
+Best solution for 27 representatives is -5.175102138779851 with: 
+status:  Optimal
+Best solution for 28 representatives is -5.364347116638731 with: 
+status:  Optimal
+Best solution for 29 representatives is -5.5798268825586606 with: 
+status:  Optimal
+Best solution for 30 representatives is -5.8041631979587684 with: 
+status:  Optimal
+Best solution for 31 representatives is -6.029790426101108 with: 
+status:  Optimal
+Best solution for 32 representatives is -6.268682724430683 with: 
+status:  Optimal
+Best solution for 33 representatives is -6.525693600838525 with: 
+status:  Optimal
+Best solution for 34 representatives is -6.785883175912576 with: 
+status:  Optimal
+Best solution for 35 representatives is -7.0911344165737775 with: 
+status:  Optimal
+Best solution for 36 representatives is -7.3981747056285405 with: 
+status:  Optimal
+Best solution for 37 representatives is -7.725351245925545 with: 
+status:  Optimal
+Best solution for 38 representatives is -8.082489157596404 with: 
+status:  Optimal
+Best solution for 39 representatives is -8.50794312537015 with: 
+status:  Optimal
+Best solution for 40 representatives is -9.029957730352166 with: 
+status:  Optimal
+Best solution for 41 representatives is -9.609588435931462 with: 
+status:  Optimal
+Best solution for 42 representatives is -10.212892033230041 with: 
+status:  Optimal
+Best solution for 43 representatives is -10.82758424082876 with: 
+status:  Optimal
+Best solution for 44 representatives is -11.463342724089966 with: 
+status:  Optimal
+Best solution for 45 representatives is -12.125058890952563 with: 
+status:  Optimal
+Best solution for 46 representatives is -12.797184992074886 with: 
+status:  Optimal
+Best solution for 47 representatives is -13.617691535270978 with: 
+status:  Optimal
+Best solution for 48 representatives is -14.575730465419353 with: 
+status:  Optimal
+Best solution for 49 representatives is -15.924317050490897 with: 
+status:  Infeasible
+Best solution for 1 representatives is -0.9224861344182631 with: 
+status:  Infeasible
+Best solution for 2 representatives is -17.695221905886086 with: 
+status:  Infeasible
+Best solution for 3 representatives is -19.819722715810016 with: 
+status:  Infeasible
+Best solution for 4 representatives is -283.08797819644775 with: 
+status:  Infeasible
+Best solution for 5 representatives is -69.77190589646132 with: 
+status:  Infeasible
+Best solution for 6 representatives is -141.87325047072505 with: 
+status:  Infeasible
+Best solution for 7 representatives is -37.23147190141441 with: 
+status:  Infeasible
+Best solution for 8 representatives is -200.39131488162568 with: 
+status:  Infeasible
+Best solution for 9 representatives is -5.169881248449033 with: 
+status:  Infeasible
+Best solution for 10 representatives is -2.8546223893707245 with: 
+status:  Optimal
+Best solution for 11 representatives is -3.596112182480657 with: 
+status:  Optimal
+Best solution for 12 representatives is -3.1942887280496755 with: 
+status:  Optimal
+Best solution for 13 representatives is -2.9234786648979463 with: 
+status:  Optimal
+Best solution for 14 representatives is -2.911561296955968 with: 
+status:  Optimal
+Best solution for 15 representatives is -2.9276059702555064 with: 
+status:  Optimal
+Best solution for 16 representatives is -2.8908849133620835 with: 
+status:  Optimal
+Best solution for 17 representatives is -2.926870366361191 with: 
+status:  Optimal
+Best solution for 18 representatives is -2.983092790394724 with: 
+status:  Optimal
+Best solution for 19 representatives is -3.065832990117518 with: 
+status:  Optimal
+Best solution for 20 representatives is -3.148914851443654 with: 
+status:  Optimal
+Best solution for 21 representatives is -3.2328256989751 with: 
+status:  Optimal
+Best solution for 22 representatives is -3.3239346667546212 with: 
+status:  Optimal
+Best solution for 23 representatives is -3.452380490972835 with: 
+status:  Optimal
+Best solution for 24 representatives is -3.5968184413143627 with: 
+status:  Optimal
+Best solution for 25 representatives is -3.74284485608515 with: 
+status:  Optimal
+Best solution for 26 representatives is -3.8849331201268544 with: 
+status:  Optimal
+Best solution for 27 representatives is -4.0293710704683825 with: 
+status:  Optimal
+Best solution for 28 representatives is -4.182940543162131 with: 
+status:  Optimal
+Best solution for 29 representatives is -4.34226826816235 with: 
+status:  Optimal
+Best solution for 30 representatives is -4.502926891009342 with: 
+status:  Optimal
+Best solution for 31 representatives is -4.668658864285157 with: 
+status:  Optimal
+Best solution for 32 representatives is -4.841744941751167 with: 
+status:  Optimal
+Best solution for 33 representatives is -5.031642112454901 with: 
+status:  Optimal
+Best solution for 34 representatives is -5.230155008132951 with: 
+status:  Optimal
+Best solution for 35 representatives is -5.431289560296066 with: 
+status:  Optimal
+Best solution for 36 representatives is -5.637276911455985 with: 
+status:  Optimal
+Best solution for 37 representatives is -5.857404480296302 with: 
+status:  Optimal
+Best solution for 38 representatives is -6.085021444794422 with: 
+status:  Optimal
+Best solution for 39 representatives is -6.3407808912615495 with: 
+status:  Optimal
+Best solution for 40 representatives is -6.603232496227663 with: 
+status:  Optimal
+Best solution for 41 representatives is -6.874385861631036 with: 
+status:  Optimal
+Best solution for 42 representatives is -7.158580789071336 with: 
+status:  Optimal
+Best solution for 43 representatives is -7.44370225050895 with: 
+status:  Optimal
+Best solution for 44 representatives is -7.76872025570064 with: 
+status:  Optimal
+Best solution for 45 representatives is -8.10656101510392 with: 
+status:  Optimal
+Best solution for 46 representatives is -8.445675181298604 with: 
+status:  Optimal
+Best solution for 47 representatives is -8.78988332970109 with: 
+status:  Optimal
+Best solution for 48 representatives is -9.150922458074493 with: 
+status:  Optimal
+Best solution for 49 representatives is -9.549819578696765 with: 
+status:  Optimal
+Best solution for 50 representatives is -10.017201444670231 with: 
+status:  Optimal
+Best solution for 51 representatives is -10.594076336616157 with: 
+status:  Optimal
+Best solution for 52 representatives is -11.20169513348602 with: 
+status:  Optimal
+Best solution for 53 representatives is -11.831109362567734 with: 
+status:  Optimal
+Best solution for 54 representatives is -12.488796428477775 with: 
+status:  Optimal
+Best solution for 55 representatives is -13.150677769080296 with: 
+status:  Optimal
+Best solution for 56 representatives is -13.987659110298354 with: 
+status:  Optimal
+Best solution for 57 representatives is -15.047700176068416 with: 
+status:  Optimal
+Best solution for 58 representatives is -16.1423220854249 with: 
+status:  Infeasible
+Best solution for 1 representatives is -0.07230279294416374 with: 
+status:  Infeasible
+Best solution for 2 representatives is -0.06617165480721367 with: 
+status:  Optimal
+Best solution for 3 representatives is -0.07230279294416374 with: 
+status:  Infeasible
+Best solution for 1 representatives is -3.6689554698944833 with: 
+status:  Infeasible
+Best solution for 2 representatives is -8.96345831506944 with: 
+status:  Infeasible
+Best solution for 3 representatives is -8.59200308337679 with: 
+status:  Infeasible
+Best solution for 4 representatives is -22.989981680991615 with: 
+status:  Infeasible
+Best solution for 5 representatives is -116.33958516668656 with: 
+status:  Infeasible
+Best solution for 6 representatives is -29.812053249911138 with: 
+status:  Infeasible
+Best solution for 7 representatives is -122.64732679196071 with: 
+status:  Infeasible
+Best solution for 8 representatives is -5.6797563330266385 with: 
+status:  Infeasible
+Best solution for 9 representatives is -3.6413294820681044 with: 
+status:  Optimal
+Best solution for 10 representatives is -4.219501595093367 with: 
+status:  Optimal
+Best solution for 11 representatives is -3.980210840602875 with: 
+status:  Optimal
+Best solution for 12 representatives is -3.972415211074885 with: 
+status:  Optimal
+Best solution for 13 representatives is -3.957822613247491 with: 
+status:  Optimal
+Best solution for 14 representatives is -3.9847348346078766 with: 
+status:  Optimal
+Best solution for 15 representatives is -4.02530804679581 with: 
+status:  Optimal
+Best solution for 16 representatives is -4.149453073739823 with: 
+status:  Optimal
+Best solution for 17 representatives is -4.282326065277376 with: 
+status:  Optimal
+Best solution for 18 representatives is -4.4187466339897155 with: 
+status:  Optimal
+Best solution for 19 representatives is -4.582710501893157 with: 
+status:  Optimal
+Best solution for 20 representatives is -4.747025905226899 with: 
+status:  Optimal
+Best solution for 21 representatives is -4.908737440435576 with: 
+status:  Optimal
+Best solution for 22 representatives is -5.05397420246838 with: 
+status:  Optimal
+Best solution for 23 representatives is -5.218289605802122 with: 
+status:  Optimal
+Best solution for 24 representatives is -5.403353310973074 with: 
+status:  Optimal
+Best solution for 25 representatives is -5.588683695764705 with: 
+status:  Optimal
+Best solution for 26 representatives is -5.7852788157751815 with: 
+status:  Optimal
+Best solution for 27 representatives is -6.005726722573389 with: 
+status:  Optimal
+Best solution for 28 representatives is -6.259251642995303 with: 
+status:  Optimal
+Best solution for 29 representatives is -6.535358267301893 with: 
+status:  Optimal
+Best solution for 30 representatives is -6.838551543511804 with: 
+status:  Optimal
+Best solution for 31 representatives is -7.143768633327449 with: 
+status:  Optimal
+Best solution for 32 representatives is -7.474333612298352 with: 
+status:  Optimal
+Best solution for 33 representatives is -7.844038356414941 with: 
+status:  Optimal
+Best solution for 34 representatives is -8.405628403422119 with: 
+status:  Optimal
+Best solution for 35 representatives is -8.973614896317612 with: 
+status:  Optimal
+Best solution for 36 representatives is -9.554454048990271 with: 
+status:  Optimal
+Best solution for 37 representatives is -10.168855519490249 with: 
+status:  Optimal
+Best solution for 38 representatives is -10.794903333038276 with: 
+status:  Optimal
+Best solution for 39 representatives is -11.429660014080886 with: 
+status:  Optimal
+Best solution for 40 representatives is -12.081804494181025 with: 
+status:  Optimal
+Best solution for 41 representatives is -12.740322363066724 with: 
+status:  Optimal
+Best solution for 42 representatives is -13.39944441555899 with: 
+status:  Optimal
+Best solution for 43 representatives is -14.070437285991462 with: 
+status:  Optimal
+Best solution for 44 representatives is -14.744276659945074 with: 
+status:  Optimal
+Best solution for 45 representatives is -15.427184020606132 with: 
+status:  Optimal
+Best solution for 46 representatives is -16.132384885171994 with: 
+status:  Optimal
+Best solution for 47 representatives is -16.880725450561965 with: 
+status:  Optimal
+Best solution for 48 representatives is -17.6598838244812 with: 
+status:  Optimal
+Best solution for 49 representatives is -18.48072154733635 with: 
+status:  Optimal
+Best solution for 50 representatives is -19.817327640099737 with: 
+status:  Infeasible
+Best solution for 1 representatives is -6.752673879797395 with: 
+status:  Infeasible
+Best solution for 2 representatives is -4.168035123904085 with: 
+status:  Infeasible
+Best solution for 3 representatives is -60.57863945330252 with: 
+status:  Infeasible
+Best solution for 4 representatives is -19.89043044080672 with: 
+status:  Infeasible
+Best solution for 5 representatives is -127.53425735614239 with: 
+status:  Infeasible
+Best solution for 6 representatives is -133.9599048920856 with: 
+status:  Infeasible
+Best solution for 7 representatives is -135.32877393625114 with: 
+status:  Infeasible
+Best solution for 8 representatives is -2361.392123365315 with: 
+status:  Infeasible
+Best solution for 9 representatives is -4.170059903379508 with: 
+status:  Optimal
+Best solution for 10 representatives is -4.865262186771671 with: 
+status:  Optimal
+Best solution for 11 representatives is -4.586934572215797 with: 
+status:  Optimal
+Best solution for 12 representatives is -4.511090765972588 with: 
+status:  Optimal
+Best solution for 13 representatives is -4.552389916920771 with: 
+status:  Optimal
+Best solution for 14 representatives is -4.594324448467564 with: 
+status:  Optimal
+Best solution for 15 representatives is -4.638457318230714 with: 
+status:  Optimal
+Best solution for 16 representatives is -4.680894700651915 with: 
+status:  Optimal
+Best solution for 17 representatives is -4.722193851600097 with: 
+status:  Optimal
+Best solution for 18 representatives is -4.848077883710078 with: 
+status:  Optimal
+Best solution for 19 representatives is -4.965810464214862 with: 
+status:  Optimal
+Best solution for 20 representatives is -5.091694496324844 with: 
+status:  Optimal
+Best solution for 21 representatives is -5.232383575956128 with: 
+status:  Optimal
+Best solution for 22 representatives is -5.379990410998992 with: 
+status:  Optimal
+Best solution for 23 representatives is -5.540925161747537 with: 
+status:  Optimal
+Best solution for 24 representatives is -5.763107105216926 with: 
+status:  Optimal
+Best solution for 25 representatives is -5.978154802971544 with: 
+status:  Optimal
+Best solution for 26 representatives is -6.201942811141944 with: 
+status:  Optimal
+Best solution for 27 representatives is -6.472428795453503 with: 
+status:  Optimal
+Best solution for 28 representatives is -6.74830395649475 with: 
+status:  Optimal
+Best solution for 29 representatives is -7.029000875247769 with: 
+status:  Optimal
+Best solution for 30 representatives is -7.3174907556362125 with: 
+status:  Optimal
+Best solution for 31 representatives is -7.6176801559092 with: 
+status:  Optimal
+Best solution for 32 representatives is -7.923240680137527 with: 
+status:  Optimal
+Best solution for 33 representatives is -8.241435244939186 with: 
+status:  Optimal
+Best solution for 34 representatives is -8.603409265131326 with: 
+status:  Optimal
+Best solution for 35 representatives is -9.207924094833961 with: 
+status:  Optimal
+Best solution for 36 representatives is -9.813910382406535 with: 
+status:  Optimal
+Best solution for 37 representatives is -10.432569604683959 with: 
+status:  Optimal
+Best solution for 38 representatives is -11.084654408805426 with: 
+status:  Optimal
+Best solution for 39 representatives is -11.751756194753098 with: 
+status:  Optimal
+Best solution for 40 representatives is -12.422305265522954 with: 
+status:  Optimal
+Best solution for 41 representatives is -13.103530461876211 with: 
+status:  Optimal
+Best solution for 42 representatives is -13.794549159972531 with: 
+status:  Optimal
+Best solution for 43 representatives is -14.526211808354292 with: 
+status:  Optimal
+Best solution for 44 representatives is -15.26202658577858 with: 
+status:  Optimal
+Best solution for 45 representatives is -16.000989244015386 with: 
+status:  Optimal
+Best solution for 46 representatives is -16.742672172382267 with: 
+status:  Optimal
+Best solution for 47 representatives is -17.50875033522137 with: 
+status:  Optimal
+Best solution for 48 representatives is -18.276238664639006 with: 
+status:  Optimal
+Best solution for 49 representatives is -19.05447192921784 with: 
+status:  Optimal
+Best solution for 50 representatives is -20.047381641108423 with: 
+status:  Optimal
+Best solution for 51 representatives is -21.149934860344118 with: 
+status:  Infeasible
+Best solution for 1 representatives is -0.13462041643284334 with: 
+status:  Infeasible
+Best solution for 2 representatives is -0.10641620346816957 with: 
+status:  Optimal
+Best solution for 3 representatives is -0.13462041643284334 with: 
+status:  Infeasible
+Best solution for 1 representatives is -6.366716675888751 with: 
+status:  Infeasible
+Best solution for 2 representatives is -3.1071474729184967 with: 
+status:  Infeasible
+Best solution for 3 representatives is -2.591440177780143 with: 
+status:  Infeasible
+Best solution for 4 representatives is -5.145710751552563 with: 
+status:  Infeasible
+Best solution for 5 representatives is -1.1235688958641197 with: 
+status:  Optimal
+Best solution for 6 representatives is -1.3431388235963095 with: 
+status:  Optimal
+Best solution for 7 representatives is -1.3129237973571433 with: 
+status:  Optimal
+Best solution for 8 representatives is -1.2953094364390894 with: 
+status:  Optimal
+Best solution for 9 representatives is -1.366223845754542 with: 
+status:  Optimal
+Best solution for 10 representatives is -1.4466592432488674 with: 
+status:  Optimal
+Best solution for 11 representatives is -1.5373515107129887 with: 
+status:  Optimal
+Best solution for 12 representatives is -1.6422202093996097 with: 
+status:  Optimal
+Best solution for 13 representatives is -1.7507291768094744 with: 
+status:  Optimal
+Best solution for 14 representatives is -1.8603823043149317 with: 
+status:  Optimal
+Best solution for 15 representatives is -2.0204340678659083 with: 
+status:  Optimal
+Best solution for 16 representatives is -2.202400772056739 with: 
+status:  Optimal
+Best solution for 17 representatives is -2.404579363091298 with: 
+status:  Optimal
+Best solution for 18 representatives is -2.6430500164161788 with: 
+status:  Optimal
+Best solution for 19 representatives is -2.88595897196884 with: 
+status:  Optimal
+Best solution for 20 representatives is -3.1306483402438072 with: 
+status:  Optimal
+Best solution for 21 representatives is -3.3887624789277253 with: 
+status:  Optimal
+Best solution for 22 representatives is -3.647046377895764 with: 
+status:  Optimal
+Best solution for 23 representatives is -3.9142744149225095 with: 
+status:  Optimal
+Best solution for 24 representatives is -4.1945822663735814 with: 
+status:  Optimal
+Best solution for 25 representatives is -4.475441192551733 with: 
+status:  Optimal
+Best solution for 26 representatives is -4.7757581075321855 with: 
+status:  Optimal
+Best solution for 27 representatives is -5.089747937082576 with: 
+status:  Optimal
+Best solution for 28 representatives is -5.470508266753736 with: 
+status:  Infeasible
+Best solution for 1 representatives is -0.5307344310682911 with: 
+status:  Infeasible
+Best solution for 2 representatives is -0.4981380461177747 with: 
+status:  Optimal
+Best solution for 3 representatives is -0.5307344310682911 with: 
+status:  Infeasible
+Best solution for 1 representatives is -3.3466918408777966 with: 
+status:  Infeasible
+Best solution for 2 representatives is -0.7526692322942606 with: 
+status:  Infeasible
+Best solution for 3 representatives is -9.446074789814219 with: 
+status:  Infeasible
+Best solution for 4 representatives is -26.741777128758123 with: 
+status:  Infeasible
+Best solution for 5 representatives is -59.101313999393675 with: 
+status:  Infeasible
+Best solution for 6 representatives is -180.75660635713186 with: 
+status:  Infeasible
+Best solution for 7 representatives is -515.122269155297 with: 
+status:  Infeasible
+Best solution for 8 representatives is -67.17669384134537 with: 
+status:  Infeasible
+Best solution for 9 representatives is -1247.463288387243 with: 
+status:  Infeasible
+Best solution for 10 representatives is -1292.0409582158204 with: 
+status:  Infeasible
+Best solution for 11 representatives is -437.6172952351053 with: 
+status:  Infeasible
+Best solution for 12 representatives is -5.4403133789438085 with: 
+status:  Infeasible
+Best solution for 13 representatives is -5.4159691829461645 with: 
+status:  Optimal
+Best solution for 14 representatives is -6.118761431473333 with: 
+status:  Optimal
+Best solution for 15 representatives is -5.993868128587021 with: 
+status:  Optimal
+Best solution for 16 representatives is -5.832009837637014 with: 
+status:  Optimal
+Best solution for 17 representatives is -5.908977517438254 with: 
+status:  Optimal
+Best solution for 18 representatives is -5.881073593837489 with: 
+status:  Optimal
+Best solution for 19 representatives is -5.869182806247247 with: 
+status:  Optimal
+Best solution for 20 representatives is -5.955210488518522 with: 
+status:  Optimal
+Best solution for 21 representatives is -6.04287273164965 with: 
+status:  Optimal
+Best solution for 22 representatives is -6.139986895719816 with: 
+status:  Optimal
+Best solution for 23 representatives is -6.247026351068758 with: 
+status:  Optimal
+Best solution for 24 representatives is -6.357977026371406 with: 
+status:  Optimal
+Best solution for 25 representatives is -6.469315711593168 with: 
+status:  Optimal
+Best solution for 26 representatives is -6.588215429681585 with: 
+status:  Optimal
+Best solution for 27 representatives is -6.71040864209848 with: 
+status:  Optimal
+Best solution for 28 representatives is -6.836744501274398 with: 
+status:  Optimal
+Best solution for 29 representatives is -6.968167621681667 with: 
+status:  Optimal
+Best solution for 30 representatives is -7.104782936920821 with: 
+status:  Optimal
+Best solution for 31 representatives is -7.245057035940684 with: 
+status:  Optimal
+Best solution for 32 representatives is -7.387017195072495 with: 
+status:  Optimal
+Best solution for 33 representatives is -7.530463201240889 with: 
+status:  Optimal
+Best solution for 34 representatives is -7.688593619035579 with: 
+status:  Optimal
+Best solution for 35 representatives is -7.844817198551618 with: 
+status:  Optimal
+Best solution for 36 representatives is -8.007242460699723 with: 
+status:  Optimal
+Best solution for 37 representatives is -8.194616456382509 with: 
+status:  Optimal
+Best solution for 38 representatives is -8.411069933604022 with: 
+status:  Optimal
+Best solution for 39 representatives is -8.627898954662422 with: 
+status:  Optimal
+Best solution for 40 representatives is -8.862538194478692 with: 
+status:  Optimal
+Best solution for 41 representatives is -9.104867816760388 with: 
+status:  Optimal
+Best solution for 42 representatives is -9.362851414180891 with: 
+status:  Optimal
+Best solution for 43 representatives is -9.622296590939168 with: 
+status:  Optimal
+Best solution for 44 representatives is -9.90223194469623 with: 
+status:  Optimal
+Best solution for 45 representatives is -10.232860378046277 with: 
+status:  Optimal
+Best solution for 46 representatives is -10.609912456621595 with: 
+status:  Optimal
+Best solution for 47 representatives is -11.16215576328263 with: 
+status:  Optimal
+Best solution for 48 representatives is -11.720944548966825 with: 
+status:  Optimal
+Best solution for 49 representatives is -12.294849778696369 with: 
+status:  Optimal
+Best solution for 50 representatives is -12.86930790353991 with: 
+status:  Optimal
+Best solution for 51 representatives is -13.466213710491939 with: 
+status:  Optimal
+Best solution for 52 representatives is -14.064560360817632 with: 
+status:  Optimal
+Best solution for 53 representatives is -14.663489011608155 with: 
+status:  Optimal
+Best solution for 54 representatives is -15.287277032755915 with: 
+status:  Optimal
+Best solution for 55 representatives is -15.912738374602624 with: 
+status:  Optimal
+Best solution for 56 representatives is -16.576189561535664 with: 
+status:  Optimal
+Best solution for 57 representatives is -17.241856037161874 with: 
+status:  Optimal
+Best solution for 58 representatives is -17.919170219859915 with: 
+status:  Optimal
+Best solution for 59 representatives is -18.61311094276692 with: 
+status:  Optimal
+Best solution for 60 representatives is -19.30975404970403 with: 
+status:  Optimal
+Best solution for 61 representatives is -20.01840970216884 with: 
+status:  Optimal
+Best solution for 62 representatives is -20.745074757932237 with: 
+status:  Optimal
+Best solution for 63 representatives is -21.501928445147023 with: 
+status:  Optimal
+Best solution for 64 representatives is -22.27308364889511 with: 
+status:  Optimal
+Best solution for 65 representatives is -23.236139437002684 with: 
+status:  Optimal
+Best solution for 66 representatives is -24.241753452513038 with: 
+status:  Optimal
+Best solution for 67 representatives is -25.272112868613 with: 
+status:  Optimal
+Best solution for 68 representatives is -26.332890853222896 with: 
+status:  Optimal
+Best solution for 69 representatives is -27.438661555189505 with: 
+status:  Optimal
+Best solution for 70 representatives is -28.556641799886325 with: 
+status:  Optimal
+Best solution for 71 representatives is -29.71657071963098 with: 
+status:  Optimal
+Best solution for 72 representatives is -31.007105630126038 with: 
