@@ -1,0 +1,135 @@
+Configuration:
+
+barcode set                                   full
+dbr sequence                         NNNNNNMMGGACG
+diversity parameter                            1.0
+individual names                     Individual 04
+                                     Individual 13
+nr of individuals                                2
+nr of loci                                      10
+p5 overhang                                  TGCAT
+p5 recognition site                         ATGCAT
+p7 barcode                                  ATCACG
+p7 overhang                                    TAC
+p7 recognition site                           GTAC
+prob. seq error                               0.01
+read length                                    100
+target coverage (d_s)                           10
+used coverage model                   BetaBinomial
+
+
+Read Type Statistics:
+
+Overview:
+Total Simulated Reads                          261
+Total Simulated PCR Copies                      81
+  -> PCR Copy Rate                            0.31
+
+Locus Reads Only (No Singletons and HRL reads):
+Total Locus Reads                              261
+Simulated Locus Reads                          180
+PCR Copies of Locus Reads                       81
+  -> PCR Copy Rate                            0.31
+
+Singletons Only:
+Total Singleton Reads                            0
+Simulated Singleton Reads                        0
+PCR Copies of Singletons                         0
+  -> PCR Copy Rate                            0.00
+
+HRL Reads Only:
+Total HRL Reads                                  0
+Simulated HRL Reads                              0
+PCR Copies of HRL Reads                          0
+  -> PCR Copy Rate                            0.00
+
+Read Type Distribution:
+
+████████████████████
+████████████████████
+████████████████████
+█████████░░░░░░░░░░░
+░░░░░░░░░░░░░░░░░░░░
+
+█: Locus Reads
+░: Locus Read PCR copies
+-: Singletons
+~: Singleton PCR Copies
+=: HRL Reads
+≈: HRL Read PCR Copies
+
+
+Dropout:
+Dropped Out Loci                                 0
+
+
+                   |      1 ATCACG     |      8 ACTTGA     |     10 TAGCTT     |     11 GGCTAC     |
+-------------------|-------------------|-------------------|-------------------|-------------------|
+      1 ATCACG     |   Individual 01   |   Individual 25   |   Individual 49   |   Individual 73   |
+      2 CGATGT     |   Individual 02   |   Individual 26   |   Individual 50   |   Individual 74   |
+      3 TTAGGC     |   Individual 03   |   Individual 27   |   Individual 51   |   Individual 75   |
+      4 TGACCA     |   Individual 04   |   Individual 28   |   Individual 52   |   Individual 76   |
+      5 ACAGTG     |   Individual 05   |   Individual 29   |   Individual 53   |   Individual 77   |
+      6 GCCAAT     |   Individual 06   |   Individual 30   |   Individual 54   |   Individual 78   |
+      7 CAGATC     |   Individual 07   |   Individual 31   |   Individual 55   |   Individual 79   |
+      8 ACTTGA     |   Individual 08   |   Individual 32   |   Individual 56   |   Individual 80   |
+      9 GATCAG     |   Individual 09   |   Individual 33   |   Individual 57   |   Individual 81   |
+     10 TAGCTT     |   Individual 10   |   Individual 34   |   Individual 58   |   Individual 82   |
+     11 GGCTAC     |   Individual 11   |   Individual 35   |   Individual 59   |   Individual 83   |
+     12 CTTGTA     |   Individual 12   |   Individual 36   |   Individual 60   |   Individual 84   |
+     13 AGTCAA     |   Individual 13   |   Individual 37   |   Individual 61   |   Individual 85   |
+     14 AGTTCC     |   Individual 14   |   Individual 38   |   Individual 62   |   Individual 86   |
+     15 ATGTCA     |   Individual 15   |   Individual 39   |   Individual 63   |   Individual 87   |
+     16 CCGTCC     |   Individual 16   |   Individual 40   |   Individual 64   |   Individual 88   |
+     18 GTCCGC     |   Individual 17   |   Individual 41   |   Individual 65   |   Individual 89   |
+     19 GTGAAA     |   Individual 18   |   Individual 42   |   Individual 66   |   Individual 90   |
+     20 GTGGCC     |   Individual 19   |   Individual 43   |   Individual 67   |   Individual 91   |
+     21 GTTTCG     |   Individual 20   |   Individual 44   |   Individual 68   |   Individual 92   |
+     22 CGTACG     |   Individual 21   |   Individual 45   |   Individual 69   |   Individual 93   |
+     23 GAGTGG     |   Individual 22   |   Individual 46   |   Individual 70   |   Individual 94   |
+     25 ACTGAT     |   Individual 23   |   Individual 47   |   Individual 71   |   Individual 95   |
+     27 ATTCCT     |   Individual 24   |   Individual 48   |   Individual 72   |   Individual 96   |
+
+
+key                                                    value                          type
+------------------------------------------------------------------------------------------
+name                                                    None                      NoneType
+output_path_prefix                                        ''                           str
+nr_individuals                                             2                           int
+loci                                                    '10'                           str
+read_length                                              100                           int
+cov                                                       10                           int
+hrl_number                                              0.05                         float
+no_singletons                                           True                          bool
+diversity                                                1.0                         float
+gc_content                                               0.5                         float
+quality_model                                   'L100-Q70-A'                           str
+single_end                                              True                          bool
+overlap                                                    0                           int
+multiple_p7_bcs                                        False                          bool
+coverage_model                                'BetaBinomial'                           str
+bbd_alpha                                                  6                           int
+bbd_beta                                                   2                           int
+max_pcr_copy_nr                                            3                           int
+hrl_max_cov                                             1000                           int
+dbr                                         b'NNNNNNMMGGACG'                         bytes
+p5_overhang                                         b'TGCAT'                         bytes
+p7_overhang                                           b'TAC'                         bytes
+p5_rec_site                                        b'ATGCAT'                         bytes
+p7_rec_site                                          b'GTAC'                         bytes
+barcode_set                                           'full'                           str
+event_prob_profile            {'common': 0.9, 'dropout': 0.05, 'mutation': 0.05}                          dict
+mutation_type_prob_profile    {'snp': 0.8999, 'insert': 0.05, 'deletion': 0.05, 'p5 na alternative': 1.0000000000000001e-07, 'p7 na alternative': 5e-06, 'p5 na dropout': 8.99e-05, 'p7 na dropout': 5e-06}                          dict
+prob_heterozygocity                                      0.5                         float
+prob_incomplete_digestion                                0.1                         float
+rate_incomplete_digestion                                0.2                         float
+prob_pcr_copy                                            0.2                         float
+hrl_pcr_copies                                           0.9                         float
+singleton_pcr_copies                      0.3333333333333333                         float
+prob_seq_error                                          0.01                         float
+verbosity                                                  0                           int
+zip_output                                             False                          bool
+get_barcodes                                           False                          bool
+debug_run                                              False                          bool
+version                                                False                          bool
+nr_loci                                                   10                           int

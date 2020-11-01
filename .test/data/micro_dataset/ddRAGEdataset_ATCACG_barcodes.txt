@@ -1,0 +1,3 @@
+#  Ind.	p5 bc	p7 bc	p5 spc	p7 spc	Annotation
+Individual 04	TGACCA	ATCACG	C		Annotation 1
+Individual 13	AGTCAA	ATCACG	C		Annotation 1

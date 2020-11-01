@@ -1,0 +1,1108 @@
+---
+Individual Information:
+  Individual 80:
+    dbr: NNNNNNMMGGACG
+    p5 bc: ACTTGA
+    p5 overhang: TGCAT
+    p5 spacer: GAC
+    p7 bc: GGCTAC
+    p7 overhang: TAC
+    p7 spacer: CGA
+  Individual 82:
+    dbr: NNNNNNMMGGACG
+    p5 bc: TAGCTT
+    p5 overhang: TGCAT
+    p5 spacer: AC
+    p7 bc: GGCTAC
+    p7 overhang: TAC
+    p7 spacer: CGA
+  Individual 85:
+    dbr: NNNNNNMMGGACG
+    p5 bc: AGTCAA
+    p5 overhang: TGCAT
+    p5 spacer: C
+    p7 bc: GGCTAC
+    p7 overhang: TAC
+    p7 spacer: CGA
+---
+Locus 0:
+  allele coverages:
+    0: 49
+    1: 13
+  allele frequencies:
+    0: 0.8333333333333334
+    1: 0.16666666666666666
+  coverage: 62
+  id reads: 0
+  individuals:
+    Individual 80:
+      0:
+        cov: 8
+        mutations: []
+      1:
+        cov: 13
+        mutations:
+        - p5@79:T>G
+    Individual 82:
+      0:
+        cov: 15
+        mutations: []
+    Individual 85:
+      0:
+        cov: 26
+        mutations: []
+  p5 seq: AATCGGCCAAGCATGTCGGACGACAAGCATGACAGCTCCATAAAACTCGGCCTGCCCCATGCGCGAAACTTTGCATGTTTCGTAGACT
+Locus 1:
+  allele coverages:
+    0: 31
+    2: 25
+  allele frequencies:
+    0: 0.6666666666666666
+    2: 0.3333333333333333
+  coverage: 56
+  id reads: 0
+  individuals:
+    Individual 80:
+      0:
+        cov: 15
+        mutations: []
+    Individual 82:
+      0:
+        cov: 16
+        mutations: []
+    Individual 85:
+      2:
+        cov: 25
+        mutations:
+        - p5@7:G>A
+        - p5@57:G>C
+  p5 seq: AAACTAGGTAAGAAACTTGTCAGCAAGGACTGAGAGATTCTTGTGGCGAATGTGGAGGGTGGTCTGCTGGGTATCGCCTGTGGCTGCG
+Locus 2:
+  allele coverages:
+    0: 62
+  allele frequencies:
+    0: 1.0
+  coverage: 62
+  id reads: 0
+  individuals:
+    Individual 80:
+      0:
+        cov: 19
+        mutations: []
+    Individual 82:
+      0:
+        cov: 17
+        mutations: []
+    Individual 85:
+      0:
+        cov: 26
+        mutations: []
+  p5 seq: TGCCCTGCAACTCTTTGTGACCCCATTAGGCTTTTCCCTTTAAAGGAGTTGTAGGTGTAGTTCAGATAAAGGATCTTTGCCGACTTTG
+Locus 3:
+  allele coverages:
+    0: 34
+    1: 14
+  allele frequencies:
+    0: 0.6666666666666666
+    1: 0.3333333333333333
+  coverage: 48
+  id reads: 0
+  individuals:
+    Individual 80:
+      0:
+        cov: 18
+        mutations: []
+    Individual 82:
+      1:
+        cov: 14
+        mutations:
+        - p5@78:A>T
+    Individual 85:
+      0:
+        cov: 16
+        mutations: []
+  p5 seq: TCCTGGAAAGTCGCTTTGTGTATCGGGACTGACGAATTCGACTGGAGGACGGACAGTCCTTGAATATCGGCTAAGTTAACTTGAGAGC
+Locus 4:
+  allele coverages:
+    0: 46
+    1: 20
+  allele frequencies:
+    0: 0.6666666666666666
+    1: 0.3333333333333333
+  coverage: 66
+  id reads: 0
+  individuals:
+    Individual 80:
+      0:
+        cov: 23
+        mutations: []
+    Individual 82:
+      1:
+        cov: 20
+        mutations:
+        - p5@4:A>C
+    Individual 85:
+      0:
+        cov: 23
+        mutations: []
+  p5 seq: TCGAAATCCAGAGTATTCGTAGGCAGTGCTCTACTCTATACGGCGCCTGCATGCTGGGCCGTAGTCGAGCGTCGAATCGGCACTCGTC
+Locus 5:
+  allele coverages:
+    0: 40
+    1: 21
+  allele frequencies:
+    0: 0.6666666666666666
+    1: 0.3333333333333333
+  coverage: 61
+  id reads: 0
+  individuals:
+    Individual 80:
+      0:
+        cov: 19
+        mutations: []
+    Individual 82:
+      1:
+        cov: 21
+        mutations:
+        - p5@15:G>A
+    Individual 85:
+      0:
+        cov: 21
+        mutations: []
+  p5 seq: TATCAATCGCCTGAGGCGGAGAGACGAGCCTGGACGAATCACACCGACTGGCAAGTGGCGTGCGCATTGTAAATCGATGCGGCGTGAT
+Locus 6:
+  allele coverages:
+    0: 53
+  allele frequencies:
+    0: 1.0
+  coverage: 53
+  id reads: 0
+  individuals:
+    Individual 80:
+      0:
+        cov: 26
+        mutations: []
+    Individual 82:
+      0:
+        cov: 10
+        mutations: []
+    Individual 85:
+      0:
+        cov: 17
+        mutations: []
+  p5 seq: GATTCATATAAAGGTTTAGCGATTAAGGGATCCTCCCCAATGGTATGTGATGTCGGCAGGCCTTATGAGATGCCTGATGCGTCTTTGG
+Locus 7:
+  allele coverages:
+    0: 57
+  allele frequencies:
+    0: 1.0
+  coverage: 57
+  id reads: 0
+  individuals:
+    Individual 80:
+      0:
+        cov: 23
+        mutations: []
+    Individual 82:
+      0:
+        cov: 22
+        mutations: []
+    Individual 85:
+      0:
+        cov: 12
+        mutations: []
+  p5 seq: ATTCCAAATCCTACTCGCACCTCGCACTCTCGCGTGCTGTCATATAGATGGCGCTTAGGCAACCGATTCGATCCCGCCATATGCACTG
+Locus 8:
+  allele coverages:
+    0: 48
+  allele frequencies:
+    0: 1.0
+  coverage: 48
+  id reads: 0
+  individuals:
+    Individual 80:
+      0:
+        cov: 10
+        mutations: []
+    Individual 82:
+      0:
+        cov: 21
+        mutations: []
+    Individual 85:
+      0:
+        cov: 17
+        mutations: []
+  p5 seq: TCTCGACATCTGAACCACAAACCTCTCAACATTGGAAGTCCCTGCGATGCGTCCATACCGAAACCGCCCCCCGACGAGTCTATCTCAC
+Locus 9:
+  allele coverages:
+    0: 38
+  allele frequencies:
+    0: 1.0
+  coverage: 38
+  id reads: 0
+  individuals:
+    Individual 80: {}
+    Individual 82:
+      0:
+        cov: 22
+        mutations: []
+    Individual 85:
+      0:
+        cov: 16
+        mutations: []
+  p5 seq: TGGTAGAAAGCTCGTTCGGCCGACGCGCGTTCTTCCCACTGGATGTAGTGACGGCAACGCAAGCACCGGAAGTCGCGATAAGCAAGCG
+Locus 10:
+  allele coverages:
+    0: 44
+  allele frequencies:
+    0: 1.0
+  coverage: 44
+  id reads: 0
+  individuals:
+    Individual 80:
+      0:
+        cov: 20
+        mutations: []
+    Individual 82:
+      0:
+        cov: 24
+        mutations: []
+    Individual 85: {}
+  p5 seq: GTAAATACGTGATACGTTGCTCCCGTGCGTTATGGTAAATACTCTCGAGCTAATGTGTTCCGCGGAGCTGACGCTTTGTTTATCTGTA
+Locus 11:
+  allele coverages:
+    0: 41
+    1: 20
+  allele frequencies:
+    0: 0.6666666666666666
+    1: 0.3333333333333333
+  coverage: 61
+  id reads: 0
+  individuals:
+    Individual 80:
+      0:
+        cov: 19
+        mutations: []
+    Individual 82:
+      0:
+        cov: 22
+        mutations: []
+    Individual 85:
+      1:
+        cov: 20
+        mutations:
+        - p5@50:G>C
+  p5 seq: GGCACACCATCATCACGCCTGCTGGTAAATGGAAGAGAACAAGTCTATATGCGCATCTGGATCTCAGCTTTATACGCGGACACTCTAG
+Locus 12:
+  allele coverages:
+    0: 62
+  allele frequencies:
+    0: 1.0
+  coverage: 62
+  id reads: 0
+  individuals:
+    Individual 80:
+      0:
+        cov: 14
+        mutations: []
+    Individual 82:
+      0:
+        cov: 25
+        mutations: []
+    Individual 85:
+      0:
+        cov: 23
+        mutations: []
+  p5 seq: ACGGATATAGAGGTGTCTCACGTATCTGGTAATTGACACGTTTACTATAATCCCATTTGTTGAGGCGTGTTTGGTTCACTGTCCTTGA
+Locus 13:
+  allele coverages:
+    0: 64
+  allele frequencies:
+    0: 1.0
+  coverage: 64
+  id reads: 0
+  individuals:
+    Individual 80:
+      0:
+        cov: 17
+        mutations: []
+    Individual 82:
+      0:
+        cov: 21
+        mutations: []
+    Individual 85:
+      0:
+        cov: 26
+        mutations: []
+  p5 seq: GGAAATGTCAATTAAATTTTAAGGATTAGAATGAGCCGCTCAAGTCACTCGTAAAGCAGCGACCAAGTTGGTCGCCTTTTGCCAATAA
+Locus 14:
+  allele coverages:
+    0: 30
+  allele frequencies:
+    0: 1.0
+  coverage: 30
+  id reads: 0
+  individuals:
+    Individual 80: {}
+    Individual 82:
+      0:
+        cov: 13
+        mutations: []
+    Individual 85:
+      0:
+        cov: 17
+        mutations: []
+  p5 seq: GTGGGTCGGGACGATTAATTCGGCGAGATGCTTATCGGCCACAATACATTTTCGCCCATAACAGACACCCTACCACACATACGTGTCT
+Locus 15:
+  allele coverages:
+    0: 37
+    1: 13
+  allele frequencies:
+    0: 0.6666666666666666
+    1: 0.3333333333333333
+  coverage: 50
+  id reads: 0
+  individuals:
+    Individual 80:
+      1:
+        cov: 13
+        mutations:
+        - p5@1:A>C
+    Individual 82:
+      0:
+        cov: 22
+        mutations: []
+    Individual 85:
+      0:
+        cov: 15
+        mutations: []
+  p5 seq: GATCCTAAGGTTTGGAGTCACGCGCCCGCGCTCGGAGCGGTTAGCAGGCAGGATCACCAGGTGGTGCCAGCAATTTAAACCCGATAAG
+Locus 16:
+  allele coverages:
+    0: 50
+  allele frequencies:
+    0: 1.0
+  coverage: 50
+  id reads: 0
+  individuals:
+    Individual 80:
+      0:
+        cov: 21
+        mutations: []
+    Individual 82:
+      0:
+        cov: 11
+        mutations: []
+    Individual 85:
+      0:
+        cov: 18
+        mutations: []
+  p5 seq: CATACCTTTCAACCCGCCAAATTCGGCAGTATGGGGCTACAGTTTGGTCGAGAAGTTCACACCTTATACAAGGGGATGAATACCAGGT
+Locus 17:
+  allele coverages:
+    0: 67
+  allele frequencies:
+    0: 1.0
+  coverage: 67
+  id reads: 0
+  individuals:
+    Individual 80:
+      0:
+        cov: 21
+        mutations: []
+    Individual 82:
+      0:
+        cov: 24
+        mutations: []
+    Individual 85:
+      0:
+        cov: 22
+        mutations: []
+  p5 seq: TGCTCAACCGCACATCGCGGCATTGGACCTACCAAGTATTGTTGCCGAGCAAGTCTCGTCACTGATGCAACTTAAGGATCACCTTTCA
+Locus 18:
+  allele coverages:
+    0: 58
+  allele frequencies:
+    0: 1.0
+  coverage: 58
+  id reads: 0
+  individuals:
+    Individual 80:
+      0:
+        cov: 13
+        mutations: []
+    Individual 82:
+      0:
+        cov: 21
+        mutations: []
+    Individual 85:
+      0:
+        cov: 24
+        mutations: []
+  p5 seq: GATGCCGCCCTAAGTTCATACGGTATCATTTAACCCCCACATACATCGAATCAGTCTTACCGCCTAAAGGGTAGCGAAGCCGCATATA
+Locus 19:
+  allele coverages:
+    0: 39
+  allele frequencies:
+    0: 1.0
+  coverage: 39
+  id reads: 3
+  individuals:
+    Individual 80:
+      0:
+        cov: 16
+        mutations: []
+    Individual 82:
+      0:
+        cov: 23
+        mutations: []
+    Individual 85: {}
+  p5 seq: ACTACCTGAGCGCCGAATGGGGCCCAAGAACATTAAAGAACATTCATAACAATCCCCTATATTAAAACCGCCGTCGCTCGTCTCATCA
+Locus 20:
+  allele coverages:
+    0: 63
+  allele frequencies:
+    0: 1.0
+  coverage: 63
+  id reads: 0
+  individuals:
+    Individual 80:
+      0:
+        cov: 23
+        mutations: []
+    Individual 82:
+      0:
+        cov: 19
+        mutations: []
+    Individual 85:
+      0:
+        cov: 21
+        mutations: []
+  p5 seq: AGAGACTTGGGACACACGCCGGACCCTGGAACTGCAGTCTGCGTCGGGGAACGGGTTGTAAAGTATGTTAGACAAAACGCAACCCTAC
+Locus 21:
+  allele coverages:
+    0: 38
+  allele frequencies:
+    0: 1.0
+  coverage: 38
+  id reads: 0
+  individuals:
+    Individual 80: {}
+    Individual 82:
+      0:
+        cov: 19
+        mutations: []
+    Individual 85:
+      0:
+        cov: 19
+        mutations: []
+  p5 seq: TACTCGCCGCCAAGGCACATATAACCAGAGAATGCCTGACTGAGGTGTTGCTCACAAAGGCCGCGTATGGCCCTTAGTCTGCACCCGA
+Locus 22:
+  allele coverages:
+    0: 58
+  allele frequencies:
+    0: 1.0
+  coverage: 58
+  id reads: 3
+  individuals:
+    Individual 80:
+      0:
+        cov: 24
+        mutations: []
+    Individual 82:
+      0:
+        cov: 24
+        mutations: []
+    Individual 85:
+      0:
+        cov: 10
+        mutations: []
+  p5 seq: CCGAAAGTCGACTATTCCTTGCCGCAGGCCACTGCCATCGAGAAAAATCATCACCTGGTGTCACAGTATACGTGTCAGAACTCGTTAG
+Locus 23:
+  allele coverages:
+    0: 38
+  allele frequencies:
+    0: 1.0
+  coverage: 38
+  id reads: 0
+  individuals:
+    Individual 80:
+      0:
+        cov: 15
+        mutations: []
+    Individual 82:
+      0:
+        cov: 15
+        mutations: []
+    Individual 85:
+      0:
+        cov: 8
+        mutations: []
+  p5 seq: CTAAGCTCACCCTAGGCAGCGACCGACTGGCTATGTCCGCGGCCATGGAGAACATATAATAGGCCGCACGACCAAATGTGCGGAGGAG
+Locus 24:
+  allele coverages:
+    0: 69
+  allele frequencies:
+    0: 1.0
+  coverage: 69
+  id reads: 0
+  individuals:
+    Individual 80:
+      0:
+        cov: 21
+        mutations: []
+    Individual 82:
+      0:
+        cov: 25
+        mutations: []
+    Individual 85:
+      0:
+        cov: 23
+        mutations: []
+  p5 seq: GGAGCGATATCGAATACGATGCTAAGACTGAACGTGTCGCCTGGCCACTGAGACCGCCATCAGTCGGGTTATGAGGCTCATGCTATGG
+Locus 25:
+  allele coverages:
+    0: 25
+  allele frequencies:
+    0: 1.0
+  coverage: 25
+  id reads: 4
+  individuals:
+    Individual 80:
+      0:
+        cov: 19
+        mutations: []
+    Individual 82: {}
+    Individual 85:
+      0:
+        cov: 6
+        mutations: []
+  p5 seq: CCGACAAGCAAGAGTTTACCGCTTTTTAATTTGACTCAGAATAAGTCTGGTTATTTTAAGAGGGAATGCGAGCGTGTGGATAGGAGTG
+Locus 26:
+  allele coverages:
+    0: 43
+  allele frequencies:
+    0: 1.0
+  coverage: 43
+  id reads: 0
+  individuals:
+    Individual 80:
+      0:
+        cov: 22
+        mutations: []
+    Individual 82:
+      0:
+        cov: 16
+        mutations: []
+    Individual 85:
+      0:
+        cov: 5
+        mutations: []
+  p5 seq: AAGTTTCCGTCTATACTAAGTTAGTCTGGAGGCCTAAAGTCCGACGTTATACACGTTGCCGTTCTGAATTAAGCTGCGAAGCGCAAGA
+Locus 27:
+  allele coverages:
+    0: 71
+  allele frequencies:
+    0: 1.0
+  coverage: 71
+  id reads: 0
+  individuals:
+    Individual 80:
+      0:
+        cov: 22
+        mutations: []
+    Individual 82:
+      0:
+        cov: 24
+        mutations: []
+    Individual 85:
+      0:
+        cov: 25
+        mutations: []
+  p5 seq: CGATCCTAGAGAAGCTCGCGCCCATAGCAGACTCTCACTTCGGCCGCAGACCCGCCCAAATAAAGAGTTTGGGTCGCCCAAGCGCATT
+Locus 28:
+  allele coverages:
+    0: 54
+  allele frequencies:
+    0: 1.0
+  coverage: 54
+  id reads: 0
+  individuals:
+    Individual 80:
+      0:
+        cov: 18
+        mutations: []
+    Individual 82:
+      0:
+        cov: 15
+        mutations: []
+    Individual 85:
+      0:
+        cov: 21
+        mutations: []
+  p5 seq: TATACTCGCGCGAATTATTGACGGTCACCGCAGTGTGTAATTGGCCGGATGTCCGGACATCCATGAGCGATCTTTCAATTCGGGTCCC
+Locus 29:
+  allele coverages:
+    0: 49
+    1: 14
+  allele frequencies:
+    0: 0.8333333333333334
+    1: 0.16666666666666666
+  coverage: 63
+  id reads: 0
+  individuals:
+    Individual 80:
+      0:
+        cov: 6
+        mutations: []
+      1:
+        cov: 14
+        mutations:
+        - p5@70:T>C
+    Individual 82:
+      0:
+        cov: 21
+        mutations: []
+    Individual 85:
+      0:
+        cov: 22
+        mutations: []
+  p5 seq: CTTGCAGTTCTGTTTGCTCGCACAGCGCGCGATGCTGCACAATCCGTTATCTGGAGACGAGCGCCAATGTTTTCAGGACAATCGACGG
+Locus 30:
+  allele coverages:
+    0: 35
+  allele frequencies:
+    0: 1.0
+  coverage: 35
+  id reads: 0
+  individuals:
+    Individual 80:
+      0:
+        cov: 25
+        mutations: []
+    Individual 82:
+      0:
+        cov: 10
+        mutations: []
+    Individual 85: {}
+  p5 seq: CAGCGCTGCTTTCTGATGGGACGCTATAATCTGATAGACCGCTATTATACTGCGGAGTCAGACGCTTTGTTCTTATGAAGCCGGCCCG
+Locus 31:
+  allele coverages:
+    0: 41
+    1: 12
+  allele frequencies:
+    0: 0.8333333333333334
+    1: 0.16666666666666666
+  coverage: 53
+  id reads: 6
+  individuals:
+    Individual 80:
+      0:
+        cov: 11
+        mutations: []
+      1:
+        cov: 12
+        mutations:
+        - p5@34:G>T
+    Individual 82:
+      0:
+        cov: 20
+        mutations: []
+    Individual 85:
+      0:
+        cov: 10
+        mutations: []
+  p5 seq: GGCTAAGAATTTTATCCGCTTTAGTCGTGCCACCGGATCTATAACCGAATGCAGTCTCAGCTAGTTTCTATGGAGACCTGGATTGAAC
+Locus 32:
+  allele coverages:
+    0: 52
+  allele frequencies:
+    0: 1.0
+  coverage: 52
+  id reads: 0
+  individuals:
+    Individual 80:
+      0:
+        cov: 25
+        mutations: []
+    Individual 82:
+      0:
+        cov: 4
+        mutations: []
+    Individual 85:
+      0:
+        cov: 23
+        mutations: []
+  p5 seq: ATCACAGATTCGCACTTAAACCTAATCCTCGTCCAACTGGATACGCGCGTGATCATTCAGTCAGGTCGCCGTTCGCACAGCCGAACAA
+Locus 33:
+  allele coverages:
+    0: 47
+    2: 24
+  allele frequencies:
+    0: 0.6666666666666666
+    2: 0.3333333333333333
+  coverage: 71
+  id reads: 0
+  individuals:
+    Individual 80:
+      0:
+        cov: 25
+        mutations: []
+    Individual 82:
+      0:
+        cov: 22
+        mutations: []
+    Individual 85:
+      2:
+        cov: 24
+        mutations:
+        - p5@9:G>A
+  p5 seq: AATATGATGGCGACCCAGAGGATCCTCCAACCAAAGACGAGGGTTTCTTTAATCGTCCTAAGAAGTCAGTATTTTAAGTGGGTGTTTC
+Locus 34:
+  allele coverages:
+    0: 56
+    1: 6
+  allele frequencies:
+    0: 0.8333333333333334
+    1: 0.16666666666666666
+  coverage: 62
+  id reads: 0
+  individuals:
+    Individual 80:
+      0:
+        cov: 10
+        mutations: []
+      1:
+        cov: 6
+        mutations:
+        - p5@23:G>C
+    Individual 82:
+      0:
+        cov: 23
+        mutations: []
+    Individual 85:
+      0:
+        cov: 23
+        mutations: []
+  p5 seq: CAGTTCTTAGGTTCTAACGGGATGAGCGTCTCAACGTTAAGCATTGCCAGCTGCTGTGATCGGTTTCACGCCGTGTGTGTTTGCCAGG
+Locus 35:
+  allele coverages:
+    0: 66
+  allele frequencies:
+    0: 1.0
+  coverage: 66
+  id reads: 0
+  individuals:
+    Individual 80:
+      0:
+        cov: 24
+        mutations: []
+    Individual 82:
+      0:
+        cov: 22
+        mutations: []
+    Individual 85:
+      0:
+        cov: 20
+        mutations: []
+  p5 seq: ATCTATGTCCCTGCATGCCTGTCGGTGGAGAACGCTTTTGCCAGATTACCGCATAAAAAATTTTAGAAAAAGTTTTACCAAGAGCAAA
+Locus 36:
+  allele coverages:
+    0: 57
+  allele frequencies:
+    0: 1.0
+  coverage: 57
+  id reads: 0
+  individuals:
+    Individual 80:
+      0:
+        cov: 22
+        mutations: []
+    Individual 82:
+      0:
+        cov: 21
+        mutations: []
+    Individual 85:
+      0:
+        cov: 14
+        mutations: []
+  p5 seq: GTCGCTGGGCAGAGCACCAGCGCTAACCAGAATCAATACGCACCCAACAACCACCGGAGCTGCTAGCTCTACCAGGCCGAGCATCCGA
+Locus 37:
+  allele coverages:
+    0: 67
+  allele frequencies:
+    0: 1.0
+  coverage: 67
+  id reads: 0
+  individuals:
+    Individual 80:
+      0:
+        cov: 25
+        mutations: []
+    Individual 82:
+      0:
+        cov: 17
+        mutations: []
+    Individual 85:
+      0:
+        cov: 25
+        mutations: []
+  p5 seq: ACAATAAATGTCGGCCAGAACTAGCGTCGAAGAGCGTAAGTGTGAACAAGCATGCAGAGATTGTAACCACAGACAGGTCGGCAGAGAA
+Locus 38:
+  allele coverages:
+    0: 63
+  allele frequencies:
+    0: 1.0
+  coverage: 63
+  id reads: 0
+  individuals:
+    Individual 80:
+      0:
+        cov: 23
+        mutations: []
+    Individual 82:
+      0:
+        cov: 14
+        mutations: []
+    Individual 85:
+      0:
+        cov: 26
+        mutations: []
+  p5 seq: CGGAGGGTGGGAGCCTCTCCACAAGTCATGTTAAGAGTCAGGCTAAACGCCAACTACGGATCCGTAAACACAATCTTTTTTTCCATGC
+Locus 39:
+  allele coverages:
+    0: 62
+  allele frequencies:
+    0: 1.0
+  coverage: 62
+  id reads: 0
+  individuals:
+    Individual 80:
+      0:
+        cov: 23
+        mutations: []
+    Individual 82:
+      0:
+        cov: 20
+        mutations: []
+    Individual 85:
+      0:
+        cov: 19
+        mutations: []
+  p5 seq: CAATGTCAAGTCTATCATTCATTCCTTCGTATTTATCCATGACGGTTGTATGAGATAATGCCAACCTAAGATCCGTCTTAACGCGGGC
+Locus 40:
+  allele coverages:
+    0: 49
+  allele frequencies:
+    0: 1.0
+  coverage: 49
+  id reads: 0
+  individuals:
+    Individual 80:
+      0:
+        cov: 12
+        mutations: []
+    Individual 82:
+      0:
+        cov: 18
+        mutations: []
+    Individual 85:
+      0:
+        cov: 19
+        mutations: []
+  p5 seq: AGTGATCCATTCAAGCTGGGCCCAGCAAAGAAGACTAATACGAGGGACATCTGCCGACTGAGTGCCGAAAGATTAACATCAATCCATA
+Locus 41:
+  allele coverages:
+    0: 50
+  allele frequencies:
+    0: 1.0
+  coverage: 50
+  id reads: 0
+  individuals:
+    Individual 80:
+      0:
+        cov: 14
+        mutations: []
+    Individual 82:
+      0:
+        cov: 21
+        mutations: []
+    Individual 85:
+      0:
+        cov: 15
+        mutations: []
+  p5 seq: TGCCTTGCATGGATTGGGGTCCGGCCCATGCCTGCGGTGTGCTAATGCCGTTTGAGATTATTGGATCACCTCCGATGCGCCCCAGCAT
+Locus 42:
+  allele coverages:
+    0: 64
+  allele frequencies:
+    0: 1.0
+  coverage: 64
+  id reads: 3
+  individuals:
+    Individual 80:
+      0:
+        cov: 24
+        mutations: []
+    Individual 82:
+      0:
+        cov: 22
+        mutations: []
+    Individual 85:
+      0:
+        cov: 18
+        mutations: []
+  p5 seq: TCGAACGATATCTGAACAGTCCCGTCGGCCTACCGTAAGGAATCTGTCAAATGGCCATGTCCTGTTCTCGTATTTTAGGCGAGTGTGC
+Locus 43:
+  allele coverages:
+    0: 72
+  allele frequencies:
+    0: 1.0
+  coverage: 72
+  id reads: 0
+  individuals:
+    Individual 80:
+      0:
+        cov: 23
+        mutations: []
+    Individual 82:
+      0:
+        cov: 25
+        mutations: []
+    Individual 85:
+      0:
+        cov: 24
+        mutations: []
+  p5 seq: CTACCCTTGTTGATATGGAATCACAGCTAGAGATTTTACCCTAGGGCGACGCAAAGTTAAGTAGCATTCTACACGCCGCACCCTCCCC
+Locus 44:
+  allele coverages:
+    0: 38
+    1: 12
+  allele frequencies:
+    0: 0.75
+    1: 0.25
+  coverage: 50
+  id reads: 0
+  individuals:
+    Individual 80: {}
+    Individual 82:
+      0:
+        cov: 13
+        mutations: []
+      1:
+        cov: 12
+        mutations:
+        - p5@48:C>A
+    Individual 85:
+      0:
+        cov: 25
+        mutations: []
+  p5 seq: AGCAATTTCAGTTGGGTAGGCACAAACAACTATTTTCAGGTATGACCGCTCGGAGCACGCGCACGCCGATTGATACATCGCTTGCGAC
+Locus 45:
+  allele coverages:
+    0: 58
+  allele frequencies:
+    0: 1.0
+  coverage: 58
+  id reads: 0
+  individuals:
+    Individual 80:
+      0:
+        cov: 22
+        mutations: []
+    Individual 82:
+      0:
+        cov: 20
+        mutations: []
+    Individual 85:
+      0:
+        cov: 16
+        mutations: []
+  p5 seq: CGCCATTTCTTCGGGCAGGTTTACAAACACTAGCCAGCAGACGCTACCCGGAATCCTGTAATTCGCGCTAGTCCTTCCGCATGACACA
+Locus 46:
+  allele coverages:
+    0: 44
+  allele frequencies:
+    0: 1.0
+  coverage: 44
+  id reads: 0
+  individuals:
+    Individual 80: {}
+    Individual 82:
+      0:
+        cov: 24
+        mutations: []
+    Individual 85:
+      0:
+        cov: 20
+        mutations: []
+  p5 seq: AAATAGGACACTGCGTGAACTACCACATACGTATGCCCACTTGTCCAGTAGGCCGAACTTGCGAGGTGTCCTCATTGCACTTACCCGC
+Locus 47:
+  allele coverages:
+    0: 38
+  allele frequencies:
+    0: 1.0
+  coverage: 38
+  id reads: 2
+  individuals:
+    Individual 80: {}
+    Individual 82:
+      0:
+        cov: 15
+        mutations: []
+    Individual 85:
+      0:
+        cov: 23
+        mutations: []
+  p5 seq: GTGCGTCTAGCGTTCGCAAAGCCGATGGCTCTGACTTCAAGTGGTCTCAATATTTTTGCGCAGTTCGGCGCAGCGTGCTAGGCCGAAG
+Locus 48:
+  allele coverages:
+    0: 64
+  allele frequencies:
+    0: 1.0
+  coverage: 64
+  id reads: 3
+  individuals:
+    Individual 80:
+      0:
+        cov: 18
+        mutations: []
+    Individual 82:
+      0:
+        cov: 24
+        mutations: []
+    Individual 85:
+      0:
+        cov: 22
+        mutations: []
+  p5 seq: TGTGCGGCTGATATAAGTGCCATTCAACTGTTTTCATCGCCGCTTGGCGGTAAGTTAGAGACTATGAAGCGATCACGAGTCACTACTC
+Locus 49:
+  allele coverages:
+    0: 70
+  allele frequencies:
+    0: 1.0
+  coverage: 70
+  id reads: 0
+  individuals:
+    Individual 80:
+      0:
+        cov: 25
+        mutations: []
+    Individual 82:
+      0:
+        cov: 25
+        mutations: []
+    Individual 85:
+      0:
+        cov: 20
+        mutations: []
+  p5 seq: AAACAATCGCTGGACGATTTGGAGCTCGCTGATTGGTGCACGAAGCTTGGATCTCTAACCAAACGACACAGATTCTCAAGCCATTATA
+---
+HRL Locus 1:
+  Individual 80: 534
+  Individual 82: 333
+  Individual 85: 373
+HRL Locus 2:
+  Individual 80: 462
+  Individual 82: 50
+  Individual 85: 499

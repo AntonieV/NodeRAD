@@ -1,7 +1,7 @@
 # This file should contain everything to configure the workflow on a global scale.
 # In case of sample based data, it should be complemented by a samples.tsv file that contains
 # one row per sample. It can be parsed easily via pandas.
-#samples: "config/samples.tsv"
+#samples: "config/samples_medium.tsv"
 
 # minimal sets of samples for testing:
 
@@ -11,7 +11,7 @@ samples: "config/samples_mini.tsv"
 
 resources:
   # input of first run for mapping reads of each sample
-#  fastq-data: "data/ddRAGEdataset_ATCACG_1.fastq"
+#  fastq-data: "data/medium_dataset/ddRAGEdataset_ATCACG_1.fastq"
 
 # minimal dataset for testing:
 #  fastq-data: "data/small_dataset/ddRAGEdataset_GGCTAC_1.fastq"

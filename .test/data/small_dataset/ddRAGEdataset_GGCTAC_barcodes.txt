@@ -1,0 +1,4 @@
+#  Ind.	p5 bc	p7 bc	p5 spc	p7 spc	Annotation
+Individual 80	ACTTGA	GGCTAC	GAC	CGA	Annotation 4
+Individual 82	TAGCTT	GGCTAC	AC	CGA	Annotation 4
+Individual 85	AGTCAA	GGCTAC	C	CGA	Annotation 4
