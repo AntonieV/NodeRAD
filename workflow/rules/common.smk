@@ -68,7 +68,7 @@ def all_input(wildcards):
                     "results/noderad/graph/{sample}.pdf",
                     "results/noderad/connected_components/{sample}.all_components.xml.gz", # optional
                     "results/noderad/connected_components/{sample}.all_components.pdf", # optional
-                    "results/noderad/representatives/{sample}.txt"
+                    "results/noderad/representatives/{sample}.tsv"
                 ],
                 sample = sample
             )

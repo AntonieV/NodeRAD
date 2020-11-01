@@ -98,7 +98,7 @@ connected_components = noderad_connected_components.get_components(graph, messag
 ### ILP on each connected component
 
 with open(repres, 'a+') as f:
-    print("{}\t{}\t{}".format("Component-ID", "Total number of representatives", "Node-ID of representatives"), file=f)
+    print("{}\t{}\t{}\t{}".format("Component-ID", "Total number of representatives", "ILP-solution", "Node-ID of representatives"), file=f)
 
 for (comp, comp_nr) in connected_components:
     sys.stderr.write("\n\nSolutions for each number of representatives for connected component {}:\n".format(comp_nr))
@@ -151,11 +151,12 @@ for (comp, comp_nr) in connected_components:
                     if var.varValue == 1:
                         idx = var.name.split("_")[-1]
                         node = find_vertex(graph, v_id, comp.vertex_properties["id"][idx])[0]
+                        solution = pulp.value(model_representatives.objective.value())
                         v_n_repres[node].append(n)
-                        v_sol_repres[node].append(pulp.value(model_representatives.objective.value()))
+                        v_sol_repres[node].append(solution)
 
                         with open(repres, 'a+') as f:
-                            print("{}\t{}\t{}".format(comp_nr, n, graph.vertex_properties["id"][node]), file=f)
+                            print("{}\t{}\t{}\t{}".format(comp_nr, n, solution, graph.vertex_properties["id"][node]), file=f)
 
         # with open(snakemake.output.get("representatives"), 'a+') as f:
         #     print("status: ", pulp.LpStatus[model_representatives.status], file=f)

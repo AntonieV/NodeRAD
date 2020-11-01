@@ -1,7 +1,7 @@
 *
 analysis
 analysis/*
-.test/results/*
+
 
 ### R Programming language ###
 # History files
@@ -16,9 +16,6 @@ analysis/*
 
 # Example code in package build process
 *-Ex.R
-
-# Output files from R CMD build
-/*.tar.gz
 
 # Output files from R CMD check
 /*.Rcheck/
@@ -70,9 +67,10 @@ __pycache__/
 !start.sh
 
 # Examples output:
+!.test/results/noderad/*
 !.test/results/noderad/graph/A.pdf
 !.test/results/noderad/graph/A.xml.gz
 !.test/results/noderad/connected_components/A.all_components.pdf
 !.test/results/noderad/connected_components/A.all_components.xml.gz
 !.test/results/noderad/connected_components/subgraphes/A/*
-!.test/results/noderad/representatives/*
+!.test/results/noderad/representatives/**

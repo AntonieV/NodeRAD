@@ -49,7 +49,7 @@ rule noderad_representatives:
     input:
          "results/noderad/graph/{sample}.xml.gz"
     output:
-        representatives="results/noderad/representatives/{sample}.txt",
+        representatives="results/noderad/representatives/{sample}.tsv",
         representatives_xml="results/noderad/representatives/{sample}.xml.gz",
         repesentatives_figure="results/noderad/representatives/{sample}.pdf",
         # optional output files of connected components:
