@@ -43,7 +43,7 @@ graph.vertex_properties["id"] = v_id
 v_name = graph.new_vertex_property("string")
 graph.vertex_properties["name"] = v_name
 v_seq = graph.new_vertex_property("string")
-graph.vertex_properties["seqence"] = v_seq
+graph.vertex_properties["sequence"] = v_seq
 v_qual = graph.new_vertex_property("vector<float>")
 graph.vertex_properties["quality"] = v_qual
 e_dist = graph.new_edge_property("int")
@@ -96,7 +96,7 @@ for read in sam.fetch(until_eof=True):
         if nm <= threshold:
             if max_NM < nm:
                 max_NM = nm
-            query_node = find_vertex(graph, v_name, read.query_name)[0] ###
+            query_node = find_vertex(graph, v_name, read.query_name)[0]
             ref_node = find_vertex(graph, v_name, read.reference_name)[0]
             if (not graph.vertex_index[ref_node] in graph.get_all_neighbors(query_node)):
                 edge = graph.add_edge(query_node, ref_node)

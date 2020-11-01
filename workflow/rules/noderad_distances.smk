@@ -50,7 +50,9 @@ rule noderad_representatives:
          "results/noderad/graph/{sample}.xml.gz"
     output:
         representatives="results/noderad/representatives/{sample}.txt",
-        # optional output files:
+        representatives_xml="results/noderad/representatives/{sample}.xml.gz",
+        repesentatives_figure="results/noderad/representatives/{sample}.pdf",
+        # optional output files of connected components:
         connected_components_xml="results/noderad/connected_components/{sample}.all_components.xml.gz",
         connected_components_figure="results/noderad/connected_components/{sample}.all_components.pdf",
         dir_subgraphs=directory("results/noderad/connected_components/subgraphes/{sample}")

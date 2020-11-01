@@ -10,7 +10,7 @@ thread_solvs = mip_solvs[15:]
 
 
 def create_solver(solver, mip, timelimit, gaprel, gapabs, maxnodes, maxmemory, threads):
-    print("Params: solver={} mip={} timeLimit={} gapRel={} gapAbs={} maxNodes={} maxMemory={} threads={}\n".format(str(solver), str(mip), str(timelimit), str(gaprel), str(gapabs), str(maxnodes), str(maxmemory), str(threads)))
+    sys.stderr.write("Params for ILP-solver: solver={} mip={} timeLimit={} gapRel={} gapAbs={} maxNodes={} maxMemory={} threads={}\n".format(str(solver), str(mip), str(timelimit), str(gaprel), str(gapabs), str(maxnodes), str(maxmemory), str(threads)))
     if solver == "SCIP_CMD":
         return pulp.apis.SCIP_CMD(mip=mip)
     if solver == "CHOCO_CMD":
