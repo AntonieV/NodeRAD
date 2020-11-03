@@ -4,27 +4,39 @@ import gzip
 import pysam
 from Bio import SeqIO
 from graph_tool.all import *
+import noderad_graph_operations
 
 sys.stderr = open(snakemake.log[0], "w")
 
+### input
 sam = snakemake.input.get("sam")
 reads = snakemake.input.get("fastq")
+
+### optional output
+output_figure = snakemake.output.get("graph_figure", "")
+
+### params for mutation rates and threshold
 threshold = snakemake.params.get("threshold", "")
 mut_total = snakemake.params.get("mut_total", "")
 mut_subst = snakemake.params.get("mut_subst", "")
-n_snp = 0
 mut_ins = snakemake.params.get("mut_ins", "")
-n_ins = 0
 mut_del = snakemake.params.get("mut_del", "")
-n_del = 0
-format = ""
 
+n_snp = 0      # counter for total number of substitutions/snp's
+n_ins = 0      # counter for total number of insertions
+n_del = 0      # counter for total number of deletions
+idx_nodes = 0  # index of nodes
+max_NM = 0     # highest edit distance
+format = ""    # format of reads
+
+
+### get reads format
 if reads.endswith((".fastq", ".fq", ".fastq.gz", ".fq.gz")):
     format = "fastq"
 if reads.endswith((".fasta", ".fa", ".fasta.gz", ".fa.gz")):
     format = "fasta"
 
-# default value of threshold for maximum distance value
+### default value of threshold for maximum distance value
 if threshold == "":
     threshold = 23
 else:
@@ -34,27 +46,21 @@ sample = os.path.splitext(os.path.basename(reads))[0]  # name of sample/reads
 if reads.endswith(".gz"):
     sample = os.path.splitext(sample)[0]
 
-# init graph
-idx_nodes = 0  # index of nodes
-max_NM = 0     # highest edit distance
+### init graph
 graph = Graph(directed=True)
-v_id = graph.new_vertex_property("string")
-graph.vertex_properties["id"] = v_id
-v_name = graph.new_vertex_property("string")
-graph.vertex_properties["name"] = v_name
-v_seq = graph.new_vertex_property("string")
-graph.vertex_properties["sequence"] = v_seq
-v_qual = graph.new_vertex_property("vector<float>")
-graph.vertex_properties["quality"] = v_qual
-e_dist = graph.new_edge_property("int")
-graph.edge_properties["distance"] = e_dist
-e_cs = graph.new_edge_property("string")  # cigar string from cs tag, short or long option can be selected in minimap2 rule
-graph.edge_properties["cs-tag"] = e_cs
-e_cig = graph.new_edge_property("string")  # cigar string from mandatory field 6 (sam format)
-graph.edge_properties["cigar"] = e_cig
-e_lh = graph.new_edge_property("float")
-graph.edge_properties["likelihood"] = e_lh
 
+
+### set graph properties
+for (name, prop, prop_type) in noderad_graph_operations.get_new_properties("init-graph"):
+    if name.startswith("v_"):
+        vars()[name] = graph.new_vertex_property(prop_type)
+        graph.vertex_properties[prop] = vars()[name]
+    if name.startswith("e_"):
+        vars()[name] = graph.new_edge_property(prop_type)
+        graph.edge_properties[prop] = vars()[name]
+
+
+### create first empty node for graph
 node = graph.add_vertex()
 v_id[node] = "{idx}_{sample}".format(idx=idx_nodes, sample=sample)
 v_name[node] = ""
@@ -63,7 +69,7 @@ v_qual[node] = ""
 nodes = [node]
 edges = []
 
-# add vertices
+### add vertices
 def add_verticles(_reads, idx_nodes):
     for record in SeqIO.parse(_reads, format):
         idx_nodes += 1
@@ -81,7 +87,7 @@ else:
     with open(reads, "rU") as _reads:
         add_verticles(_reads, idx_nodes)
 
-# add edges from all-vs-all alignment of reads (please see rule minimap2)
+### add edges from all-vs-all alignment of reads (please see rule minimap2)
 sam = pysam.AlignmentFile(sam, "rb")
 for read in sam.fetch(until_eof=True):
     if read.has_tag("NM") and not read.query_name == read.reference_name:
@@ -139,6 +145,7 @@ sys.stderr.write("\n\tmutations:\n\t\tsnp's and substitutions: {}\n\t\tinsertion
 
 graph.save(snakemake.output.get("graph_xml"))
 pos = sfdp_layout(graph)
-graph_draw(graph, vertex_color=[1, 1, 1, 0],
-           edge_color=graph.edge_properties["likelihood"],
-           pos=pos, vertex_size=1, output=snakemake.output.get("graph_figure"))
+if output_figure:
+    graph_draw(graph, vertex_color=[1, 1, 1, 0],
+               edge_color=graph.edge_properties["likelihood"],
+               pos=pos, vertex_size=1, output=output_figure)

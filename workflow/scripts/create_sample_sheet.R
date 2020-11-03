@@ -1,6 +1,6 @@
 library("tidyverse")
 setwd("../../../NodeRAD")
-############### samples.tsv mit antibodes und control group ############### 
+### little script to create samples.tsv
 
 sample <- data.frame(
   sample = c("A", "B", "C", "D"),

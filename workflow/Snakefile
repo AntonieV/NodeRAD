@@ -16,7 +16,7 @@
 
 
 include: "rules/common.smk"
-include: "rules/noderad_distances.smk"
+include: "rules/noderad.smk"
 include: "rules/qc.smk"
 include: "rules/cutadapt.smk"
 

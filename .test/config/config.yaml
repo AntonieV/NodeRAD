@@ -43,6 +43,29 @@ ilp:
   maxNodes:            # integer value, only for CPLEX_CMD solver
   maxMemory:           # float value, only for CPLEX_CMD solver
 
+# optional graph figure outputs and additional xml files for subgraphs
+graph-intermediate-steps:
+  edit-distance-graph:
+    # on activation please set a path to the variable graph_figure (rule noderad_graph in noderad.smk),
+    # on inactivation comment this variable out
+    activate: True
+  connected-components:
+    graph:
+      # on activation please set a path to the variable connected_components_xml (rule noderad_representatives in noderad.smk),
+      # on inactivation comment this variable out
+      activate-xml: True
+      # on activation please set a path to the variable connected_components_figure (rule noderad_representatives in noderad.smk),
+      # on inactivation comment this variable out
+      activate-figure: True
+    subgraphes:
+      # on activation please set a directory to the variable components_subgraphes (rule noderad_representatives in noderad.smk),
+      # on inactivation comment this variable out
+      activate: True
+  ilp-optimized-graph:
+    # on activation please set a path to the variable repesentatives_figure (rule noderad_representatives in noderad.smk),
+    # on inactivation comment this variable out
+    activate: True
+
 params: # ToDo: adjust optional parameters for the rule cutadapt_se
   # these cutadapt parameters need to contain the required flag(s) for
   # the type of adapter(s) to trim, i.e.:

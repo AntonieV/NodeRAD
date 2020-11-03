@@ -2,7 +2,6 @@
 analysis
 analysis/*
 
-
 ### R Programming language ###
 # History files
 .Rhistory
@@ -16,6 +15,9 @@ analysis/*
 
 # Example code in package build process
 *-Ex.R
+
+# Output files from R CMD build
+/*.tar.gz
 
 # Output files from R CMD check
 /*.Rcheck/
@@ -41,12 +43,10 @@ vignettes/*.pdf
 # R Environment Variables
 .Renviron
 
-### Java ###
-# Compiled class file
-*.class
-
+# Python
 __pycache__/
 *.py[cod]
+
 
 !analysis/README.md
 !config
@@ -73,4 +73,4 @@ __pycache__/
 !.test/results/noderad/connected_components/A.all_components.pdf
 !.test/results/noderad/connected_components/A.all_components.xml.gz
 !.test/results/noderad/connected_components/subgraphes/A/*
-!.test/results/noderad/representatives/**
+!.test/results/noderad/representatives/*

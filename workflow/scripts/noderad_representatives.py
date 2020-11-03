@@ -3,9 +3,11 @@ from graph_tool.all import *
 import pulp
 import math
 import noderad_solver_wrapper
-import noderad_connected_components
+import noderad_graph_operations
+
 
 sys.stderr = open(snakemake.log[0], "w")
+
 
 ### input
 graph = load_graph(snakemake.input[0])
@@ -21,51 +23,6 @@ repres_figure = snakemake.output.get("repesentatives_figure", "")
 connected_components_xml = snakemake.output.get("connected_components_xml", "")
 connected_components_figure = snakemake.output.get("connected_components_figure", "")
 dir_subgraphs = snakemake.output.get("dir_subgraphs", "")
-
-
-### vertex properties
-v_id = graph.vertex_properties["id"]
-v_name = graph.vertex_properties["name"]
-v_seq = graph.vertex_properties["sequence"]
-v_qual = graph.vertex_properties["quality"]
-
-### edge properties
-e_dist = graph.edge_properties["distance"]
-e_cs = graph.edge_properties["cs-tag"]
-e_cig = graph.edge_properties["cigar"]
-e_lh = graph.edge_properties["likelihood"]
-
-
-### additional vertex and edge properties for graph
-# index number of the connected component to which the node belongs to
-v_concom = graph.new_vertex_property("int32_t")
-graph.vertex_properties["component-label"] = v_concom
-
-# sum of likelihood of all incoming edges of the node
-v_sum_in = graph.new_vertex_property("double")
-graph.vertex_properties["sum-in-edges"] = v_sum_in
-
-# array of all n values where the node was chosen as representative for the optimal solution at the ilp
-v_n_repres = graph.new_vertex_property("vector<long>")
-graph.vertex_properties["total-number-of-representatives"] = v_n_repres
-
-# array of all ilp solutions where the node is representative, the corresponding n is located in
-# v_n_repres at the same index
-# therefore (v_n_repres[i], v_sol_repres[i]) defines the optimal solution if v_n_repres[i] representants are used
-v_sol_repres = graph.new_vertex_property("vector<double>")
-graph.vertex_properties["ilp-solution"] = v_sol_repres
-
-# array of total number of representatives where the edge (source, target) is set on z[source][target] == 1
-e_n_indicator = graph.new_edge_property("vector<long>")
-graph.edge_properties["indicator"] = e_n_indicator
-
-
-### pre-calculation of the sum of likelihoods of incoming edges for each node (to improve the runtime of the ILP)
-for node in graph.vertices():
-    likelihood_sum = 0
-    for neighbor in graph.get_in_neighbors(graph.vertex_index[node]):
-        likelihood_sum += math.log10(graph.edge_properties['likelihood'][graph.edge(neighbor, node)])
-    v_sum_in[node] = likelihood_sum
 
 
 ### solver configuration wrapper for PuLP:
@@ -88,9 +45,33 @@ if solver:
             'The selected solver is not supported or is not available. The calculation is continued with the default solvers of Pulp (CBC and CHOCO).')
 
 
+### set graph properties
+for (name, prop) in noderad_graph_operations.get_properties("distance-graph"):
+    if name.startswith("v_"):
+        vars()[name] = graph.vertex_properties[str(prop)]
+    if name.startswith("e_"):
+        vars()[name] = graph.edge_properties[str(prop)]
+
+for (name, prop, prop_type) in noderad_graph_operations.get_new_properties("distance-graph"):
+    if name.startswith("v_"):
+        vars()[name] = graph.new_vertex_property(prop_type)
+        graph.vertex_properties[prop] = vars()[name]
+    if name.startswith("e_"):
+        vars()[name] = graph.new_edge_property(prop_type)
+        graph.edge_properties[prop] = vars()[name]
+
+
+### pre-calculation of the sum of likelihoods of incoming edges for each node (to improve the runtime of the ILP)
+for node in graph.vertices():
+    likelihood_sum = 0
+    for neighbor in graph.get_in_neighbors(graph.vertex_index[node]):
+        likelihood_sum += math.log10(graph.edge_properties['likelihood'][graph.edge(neighbor, node)])
+    v_sum_in[node] = likelihood_sum
+
+
 ### extract connected components
 message = "CONNECTED COMPONENTS based on the graph construction from the edit distances (minimap2)"
-connected_components = noderad_connected_components.get_components(graph, message, snakemake.wildcards.get('sample'),
+connected_components = noderad_graph_operations.get_components(graph, message, snakemake.wildcards.get('sample'),
                                                                    dir_subgraphs, connected_components_xml,
                                                                    connected_components_figure)
 
@@ -102,10 +83,19 @@ with open(repres, 'a+') as f:
 
 for (comp, comp_nr) in connected_components:
     sys.stderr.write("\n\nSolutions for each number of representatives for connected component {}:\n".format(comp_nr))
+
     # data:
     nodes = list([comp.vertex_index[node] for node in comp.vertices()])
 
-    for n in range(1, len(nodes) + 1):
+    # determining the lower limit for the solvability of the ILP
+    comp_size = len(nodes)
+    vertex_degrees = []
+    for node in nodes:
+        vertex_degrees.append(comp.vertex(node).in_degree() + comp.vertex(node).out_degree())
+    vertex_degrees.sort(reverse=True)
+    minimum_representatives = noderad_graph_operations.get_minimum_representatives(vertex_degrees, comp_size)
+
+    for n in range(minimum_representatives, comp_size + 1):
         # decision variables
         r = pulp.LpVariable.dicts("representatives", nodes, 0, 1, pulp.LpBinary)
         z = pulp.LpVariable.dicts("indicator", (nodes, nodes), 0, 1, pulp.LpBinary)
@@ -158,10 +148,6 @@ for (comp, comp_nr) in connected_components:
                         with open(repres, 'a+') as f:
                             print("{}\t{}\t{}\t{}".format(comp_nr, n, solution, graph.vertex_properties["id"][node]), file=f)
 
-        # with open(snakemake.output.get("representatives"), 'a+') as f:
-        #     print("status: ", pulp.LpStatus[model_representatives.status], file=f)
-        #     print("Best solution for {} representatives is {} with: ".format(n, pulp.value(
-        #         model_representatives.objective.value())), file=f)
         sys.stderr.write("\n\tstatus: {}".format(pulp.LpStatus[model_representatives.status]))
         sys.stderr.write("\n\tBest solution for {} representatives is {}.\n".format(n, pulp.value(
                 model_representatives.objective.value())))
@@ -190,8 +176,9 @@ for edge in graph.edges():
         e_color[edge] = 0
 
 pos = sfdp_layout(graph)
-graph_draw(graph, vertex_fill_color=graph.vertex_properties['repr_color'],
-           edge_color=graph.edge_properties['indicator_color'],
-           pos=pos, vertex_size=1, output=repres_figure)
+if repres_figure:
+    graph_draw(graph, vertex_fill_color=graph.vertex_properties['repr_color'],
+               edge_color=graph.edge_properties['indicator_color'],
+               pos=pos, vertex_size=1, output=repres_figure)
 
 # for edge in edges, if len(e_n_indicator)==0 -> remove edge
