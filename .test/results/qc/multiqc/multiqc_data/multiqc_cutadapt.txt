@@ -1,0 +1,2 @@
+Sample	r_processed	r_with_adapters	r_written	bp_processed	bp_written	percent_trimmed
+ddRAGEdataset_GGCTAC_1	8724	3387	8724	872400	851750	2.3670334708849152

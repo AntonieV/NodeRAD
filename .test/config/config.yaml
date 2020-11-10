@@ -65,6 +65,17 @@ graph-intermediate-steps:
     # on activation please set a path to the variable repesentatives_figure (rule noderad_representatives in noderad.smk),
     # on inactivation comment this variable out
     activate: True
+  optimized-representantives-graph:
+    # on activation please set a path to the variable opt_repres_xml (rule optimized_solution in noderad.smk),
+    # on inactivation comment this variable out
+    activate-xml: True
+    # on activation please set a path to the variable opt_repres_figure (rule optimized_solution in noderad.smk),
+    # on inactivation comment this variable out
+    activate-figure: True
+    # on activation please set a directory to the variable dir_clusters (rule optimized_solution in noderad.smk),
+    # on inactivation comment this variable out
+    cluster:
+      activate: True
 
 params: # ToDo: adjust optional parameters for the rule cutadapt_se
   # these cutadapt parameters need to contain the required flag(s) for

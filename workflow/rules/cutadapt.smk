@@ -7,8 +7,7 @@ rule cutadapt_se:
     output:
         fastq="results/trimmed/{sample}.fastq.gz",
         qc="results/trimmed/{sample}.se.qc.txt",
-        log="logs/cutadapt/{sample}.se.log"#,
-        # restfile="results/trimmed/restfiles/restfile-{sample}.fastq.gz"
+        log="logs/cutadapt/{sample}.se.log"
     params:
         adapter=get_adapter,
         # ToDo: move optional parameters into config.yaml

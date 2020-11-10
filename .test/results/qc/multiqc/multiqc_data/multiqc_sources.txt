@@ -1,0 +1,3 @@
+Module	Section	Sample Name	Source
+Cutadapt	all_sections	ddRAGEdataset_GGCTAC_1	/data/Antonie/workspace/workspace_bioinformatik/NodeRAD/.test/results/trimmed/A.se.qc.txt
+FastQC	all_sections	A	/data/Antonie/workspace/workspace_bioinformatik/NodeRAD/.test/results/qc/fastqc/A_fastqc.zip

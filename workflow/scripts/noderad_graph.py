@@ -78,6 +78,7 @@ def add_verticles(_reads, idx_nodes):
         v_name[node] = (record.id).split(' ', 1)[0]
         v_seq[node] = record.seq
         v_qual[node] = [10**(-1 * i / 10) for i in record.letter_annotations["phred_quality"]]
+        v_q_qual[node] = record.letter_annotations["phred_quality"]
         nodes.append(node)
 
 if reads.endswith(".gz"):
@@ -108,7 +109,21 @@ for read in sam.fetch(until_eof=True):
                 edge = graph.add_edge(query_node, ref_node)
                 e_dist[edge] = nm
                 e_cs[edge] = cig
-                e_cig[edge] = read.cigarstring
+
+                # sam format properties to write results of optimal solution to sam file (rule optimized_solution)
+                e_sam_cigar[edge] = read.cigarstring
+                e_sam_qname[edge] = read.query_name
+                e_sam_flag[edge] = read.flag
+                e_sam_rname[edge] = read.reference_id
+                e_sam_pos[edge] = read.reference_start
+                e_sam_mapq[edge] = read.mapping_quality
+                e_sam_cigar[edge] = read.cigar
+                e_sam_rnext[edge] = read.next_reference_id
+                e_sam_pnext[edge] = read.next_reference_start
+                e_sam_tlen[edge] = read.template_length
+                e_sam_seq[edge] = read.query_sequence
+                e_sam_all_tags[edge] = read.tags
+
                 qual_idx = 0
                 for (op, length) in read.cigartuples:
                     mutrate = mut_total

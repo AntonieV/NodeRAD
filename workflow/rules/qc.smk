@@ -7,7 +7,7 @@ rule fastqc:
         html="results/qc/fastqc/{sample}.html",
         zip="results/qc/fastqc/{sample}_fastqc.zip"
     log:
-        "logs/fastqc/{sample}.log"
+        "logs/qc/fastqc/{sample}_fastqc.log"
     wrapper:
         "0.66.0/bio/fastqc"
 
@@ -17,6 +17,6 @@ rule multiqc:
     output:
         "results/qc/multiqc/multiqc.html"
     log:
-        "logs/multiqc.log"
+        "logs/qc/multiqc.log"
     wrapper:
         "0.66.0/bio/multiqc"

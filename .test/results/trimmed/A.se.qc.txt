@@ -1,0 +1,29 @@
+This is cutadapt 2.10 with Python 3.8.6
+Command line parameters: -g A=TTAGGC --no-indels -o results/trimmed/{name}.fastq.gz data/mini_dataset/ddRAGEdataset_GGCTAC_1.fastq
+Processing reads on 1 core in single-end mode ...
+Finished in 0.17 s (19 us/read; 3.15 M reads/minute).
+
+=== Summary ===
+
+Total reads processed:                   8,724
+Reads with adapters:                     3,387 (38.8%)
+Reads written (passing filters):         8,724 (100.0%)
+
+Total basepairs processed:       872,400 bp
+Total written (filtered):        851,750 bp (97.6%)
+
+=== Adapter A ===
+
+Sequence: TTAGGC; Type: regular 5'; Length: 6; Trimmed: 3387 times
+
+No. of allowed errors:
+0-6 bp: 0
+
+Overview of removed sequences
+length	count	expect	max.err	error counts
+6	3382	2.1	0	3382
+38	1	2.1	0	1
+74	1	2.1	0	1
+77	1	2.1	0	1
+80	1	2.1	0	1
+89	1	2.1	0	1

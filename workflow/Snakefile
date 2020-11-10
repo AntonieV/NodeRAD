@@ -7,12 +7,16 @@
 #        * https://github.com/snakemake-workflows/chipseq
 
 # The data preprocessing steps include:
+#        * simulation of datas for testing was performed with ddRAGE,
+#          for more information please see https://ddrage.readthedocs.io/en/latest/getting-started/
 #        * raw read quality control with FastQC and MultiQC
 #        * adapter trimming with cutadapt
 
-# The data analysis steps with NodeRAD include:
-#        * determine edit distances with minimap2
-#        * construct graph from edit distances
+# The data analysis steps with NodeRAD include (noderad.smk):
+#        * determine edit distances with minimap2 (rules minimap2_index and minimap2)
+#        * construct graph from edit distances with graph-tool (rule noderad_graph)
+#        * find representatives solving ILP-problem with pulp (rule noderad_representatives)
+#        * find the best solution under consideration of coverage and expected value (rule optimized_solution)
 
 
 include: "rules/common.smk"
