@@ -114,7 +114,7 @@ for (comp, comp_nr) in connected_components:
         for node in nodes:
             for neighbor in comp.get_in_neighbors(comp.vertex_index[node]):
                 # z[i][j] = 1 <=> i is adjacent to j AND r[j] == 1
-                model_representatives += (z[neighbor][node] == r[node]), "{i}adjacent_to_{j}_and_r[{j}]_is_1".format(
+                model_representatives += (z[neighbor][node] == r[node]), "{i}_adjacent_to_{j}_and_r[{j}]_is_1".format(
                     i=node, j=neighbor)
 
             # each node has a representative or is a representative itself

@@ -106,6 +106,7 @@ for read in sam.fetch(until_eof=True):
             query_node = find_vertex(graph, v_name, read.query_name)[0]
             ref_node = find_vertex(graph, v_name, read.reference_name)[0]
             if (not graph.vertex_index[ref_node] in graph.get_all_neighbors(query_node)):
+                # add edge from alignment in sam-file
                 edge = graph.add_edge(query_node, ref_node)
                 e_dist[edge] = nm
                 e_cs[edge] = cig
@@ -149,7 +150,7 @@ for read in sam.fetch(until_eof=True):
                             likelihood *= (1 - mutrate) * float(1/3) * i + mutrate * (1 - i)
                         qual_idx = length
                 e_lh[edge] = likelihood
-                edges.append(edge)
+                edges.append((graph.vertex_index[edge.source()], graph.vertex_index[edge.target()]))
 sam.close()
 
 graph.remove_vertex(0)

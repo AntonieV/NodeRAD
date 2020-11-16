@@ -163,7 +163,7 @@
             }
         }
     ],
-    "report_multiqc_command": "/data/Antonie/workspace/workspace_bioinformatik/NodeRAD/.test/.snakemake/conda/334bfd8d/bin/multiqc --force -o results/qc/multiqc -n multiqc.html logs/cutadapt results/trimmed results/qc/fastqc",
+    "report_multiqc_command": "/data/Antonie/workspace/workspace_bioinformatik/NodeRAD/.test/.snakemake/conda/334bfd8d/bin/multiqc --force -o results/qc/multiqc -n multiqc.html results/trimmed results/qc/fastqc logs/cutadapt",
     "report_plot_data": {
         "cutadapt_filtered_reads_plot": {
             "plot_type": "bar_graph",
@@ -2178,17 +2178,17 @@
         }
     },
     "config_analysis_dir_abs": [
-        "/data/Antonie/workspace/workspace_bioinformatik/NodeRAD/.test/logs/cutadapt",
         "/data/Antonie/workspace/workspace_bioinformatik/NodeRAD/.test/results/trimmed",
-        "/data/Antonie/workspace/workspace_bioinformatik/NodeRAD/.test/results/qc/fastqc"
+        "/data/Antonie/workspace/workspace_bioinformatik/NodeRAD/.test/results/qc/fastqc",
+        "/data/Antonie/workspace/workspace_bioinformatik/NodeRAD/.test/logs/cutadapt"
     ],
     "config_analysis_dir": [
-        "logs/cutadapt",
         "results/trimmed",
-        "results/qc/fastqc"
+        "results/qc/fastqc",
+        "logs/cutadapt"
     ],
-    "config_creation_date": "2020-11-10, 14:06",
-    "config_git_hash": "9b31b239b718d59cc24e79ed0a7f16c91e2c423f",
+    "config_creation_date": "2020-11-16, 20:17",
+    "config_git_hash": "53e6282acca13478a104d95edb1461cd6ea361e3",
     "config_intro_text": null,
     "config_report_comment": null,
     "config_report_header_info": null,
@@ -2196,5 +2196,5 @@
     "config_short_version": "1.9",
     "config_subtitle": null,
     "config_title": null,
-    "config_version": "1.9 (9b31b23)"
+    "config_version": "1.9 (53e6282)"
 }

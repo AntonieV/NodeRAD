@@ -1,7 +1,7 @@
 This is cutadapt 2.10 with Python 3.8.6
 Command line parameters: -g A=TTAGGC --no-indels -o results/trimmed/{name}.fastq.gz data/mini_dataset/ddRAGEdataset_GGCTAC_1.fastq
 Processing reads on 1 core in single-end mode ...
-Finished in 0.17 s (19 us/read; 3.15 M reads/minute).
+Finished in 0.16 s (18 us/read; 3.30 M reads/minute).
 
 === Summary ===
 
