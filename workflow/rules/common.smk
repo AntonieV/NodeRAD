@@ -61,17 +61,6 @@ def all_input(wildcards):
 
     # trimming reads
     for sample in samples.index:
-        wanted_input.extend (
-            expand (
-                [
-                    "results/noderad/3_representatives/{sample}.tsv",
-                    "results/noderad/4_optimized_solution/{sample}.fasta",
-                    "results/noderad/4_optimized_solution/{sample}.sam"
-                ],
-                sample = sample
-            )
-        )
-
         # optional figures of graph-intermediate-steps:
         if config["graph-intermediate-steps"]["edit-distance-graph"]["activate"]:
             wanted_input.extend(expand(["results/noderad/1_graph/{sample}.pdf"], sample = sample))
@@ -80,7 +69,7 @@ def all_input(wildcards):
             wanted_input.extend (
                 expand (
                     [
-                        "results/noderad/2_connected_components/{sample}.all_components.xml.gz"
+                        "results/noderad/2_allel_fractions/connected_components/{sample}.all_components.xml.gz"
                     ],
                     sample = sample
                 )
@@ -90,7 +79,7 @@ def all_input(wildcards):
             wanted_input.extend (
                 expand (
                     [
-                        "results/noderad/2_connected_components/{sample}.all_components.pdf"
+                        "results/noderad/2_allel_fractions/connected_components/{sample}.all_components.pdf"
                     ],
                     sample = sample
                 )
@@ -101,51 +90,12 @@ def all_input(wildcards):
                 directory(
                     expand (
                         [
-                            "results/noderad/2_connected_components/subgraphes/{sample}"
+                            "results/noderad/2_allel_fractions/connected_components/subgraphes/{sample}"
                         ],
                         sample = sample
                     )
                 )
             )
 
-
-        if config["graph-intermediate-steps"]["optimized-representantives-graph"]["cluster"]["activate"]:
-            wanted_input.extend (
-                directory(
-                    expand (
-                        [
-                            "results/noderad/4_optimized_solution/cluster/{sample}"
-                        ],
-                        sample = sample
-                    )
-                )
-            )
-
-        if config["graph-intermediate-steps"]["ilp-optimized-graph"]["activate"]:
-            wanted_input.extend(expand(["results/noderad/3_representatives/{sample}.pdf"], sample = sample))
-
-        if config["graph-intermediate-steps"]["optimized-representantives-graph"]["activate-xml"]:
-            wanted_input.extend (
-                directory(
-                    expand (
-                        [
-                            "results/noderad/4_optimized_solution/{sample}.xml.gz"
-                        ],
-                        sample = sample
-                    )
-                )
-            )
-
-        if config["graph-intermediate-steps"]["optimized-representantives-graph"]["activate-figure"]:
-            wanted_input.extend (
-                directory(
-                    expand (
-                        [
-                            "results/noderad/4_optimized_solution/{sample}.pdf"
-                        ],
-                        sample = sample
-                    )
-                )
-            )
 
     return wanted_input

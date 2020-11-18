@@ -16,7 +16,7 @@ reads = snakemake.input.get("fastq")
 output_figure = snakemake.output.get("graph_figure", "")
 
 ### params for mutation rates and threshold
-threshold = snakemake.params.get("threshold", "")
+threshold = snakemake.params.get("threshold_max_edit_distance", "")
 mut_total = snakemake.params.get("mut_total", "")
 mut_subst = snakemake.params.get("mut_subst", "")
 mut_ins = snakemake.params.get("mut_ins", "")
@@ -42,9 +42,7 @@ if threshold == "":
 else:
     threshold = int(threshold)
 
-sample = os.path.splitext(os.path.basename(reads))[0]  # name of sample/reads
-if reads.endswith(".gz"):
-    sample = os.path.splitext(sample)[0]
+sample = snakemake.wildcards.get('sample')
 
 ### init graph
 graph = Graph(directed=True)
@@ -105,27 +103,13 @@ for read in sam.fetch(until_eof=True):
                 max_NM = nm
             query_node = find_vertex(graph, v_name, read.query_name)[0]
             ref_node = find_vertex(graph, v_name, read.reference_name)[0]
-            if (not graph.vertex_index[ref_node] in graph.get_all_neighbors(query_node)):
-                # add edge from alignment in sam-file
+            if not graph.vertex_index[ref_node] in graph.get_out_neighbors(query_node):  # ignores duplicates
+                # add edge from alignment of sam-file
                 edge = graph.add_edge(query_node, ref_node)
                 e_dist[edge] = nm
                 e_cs[edge] = cig
-
-                # sam format properties to write results of optimal solution to sam file (rule optimized_solution)
-                e_sam_cigar[edge] = read.cigarstring
-                e_sam_qname[edge] = read.query_name
-                e_sam_flag[edge] = read.flag
-                e_sam_rname[edge] = read.reference_id
-                e_sam_pos[edge] = read.reference_start
-                e_sam_mapq[edge] = read.mapping_quality
-                e_sam_cigar[edge] = read.cigar
-                e_sam_rnext[edge] = read.next_reference_id
-                e_sam_pnext[edge] = read.next_reference_start
-                e_sam_tlen[edge] = read.template_length
-                e_sam_seq[edge] = read.query_sequence
-                e_sam_all_tags[edge] = read.tags
-
                 qual_idx = 0
+
                 for (op, length) in read.cigartuples:
                     mutrate = mut_total
                     qual_query_node = graph.vertex_properties["quality"][query_node]

@@ -34,66 +34,35 @@ rule noderad_graph:
         # optional output files:
         graph_figure="results/noderad/1_graph/{sample}.pdf"
     params:
-        threshold=12, # threshold for maximum distance value for building the graph, default: 23
-        mut_total=config["mutationrates"]["total"],
-        mut_subst=config["mutationrates"]["substitution"],
-        mut_ins=config["mutationrates"]["insertion"],
-        mut_del=config["mutationrates"]["deletion"],
+        threshold_max_edit_distance=config["params"]["threshold_max_edit_distance"],
+        mut_total=config["genome-properties"]["mutationrates"]["total"],
+        mut_subst=config["genome-properties"]["mutationrates"]["substitution"],
+        mut_ins=config["genome-properties"]["mutationrates"]["insertion"],
+        mut_del=config["genome-properties"]["mutationrates"]["deletion"]
     log:
-        "logs/noderad/graph/{sample}-graph.log"
+        "logs/noderad/1_graph/{sample}-graph.log"
     conda:
         "../envs/noderad_graph.yaml"
     script:
         "../scripts/noderad_graph.py"
 
 # extracts the connected components and solves the ilp to determine the optimal representatives
-rule noderad_representatives:
+rule noderad_allel_fractions:
     input:
          "results/noderad/1_graph/{sample}.xml.gz"
     output:
-        representatives="results/noderad/3_representatives/{sample}.tsv",
-        representatives_xml="results/noderad/3_representatives/{sample}.xml.gz",
-        # optional output files:
-        connected_components_xml="results/noderad/2_connected_components/{sample}.all_components.xml.gz",
-        connected_components_figure="results/noderad/2_connected_components/{sample}.all_components.pdf",
-        dir_subgraphs=directory("results/noderad/2_connected_components/subgraphes"+"/{sample}"),
-        repesentatives_figure="results/noderad/3_representatives/{sample}.pdf"
+        connected_components_xml="results/noderad/2_allel_fractions/connected_components/{sample}.all_components.xml.gz",
+        connected_components_figure="results/noderad/2_allel_fractions/connected_components/{sample}.all_components.pdf",
+        dir_subgraphs=directory("results/noderad/2_allel_fractions/connected_components/subgraphes"+"/{sample}")
     params:
-        # optional params for PuLP solvers
-        solver=config["ilp"]["solver"],
-        mip=config["ilp"]["mip"],
-        timelimit=config["ilp"]["timeLimit"],
-        gaprel=config["ilp"]["gapRel"],
-        gapabs=config["ilp"]["gapAbs"],
-        maxnodes=config["ilp"]["maxNodes"],
-        maxmemory=config["ilp"]["maxMemory"]
+        # optional params
+        ploidy=config["genome-properties"]["ploidy"],
+        treshold_seq_noise=config["genome-properties"]["treshold-seq-noise"]
     log:
-        "logs/noderad/representatives/{sample}-representatives.log"
-    threads:
-        # for PuLP solver params the total number of threads must be divided among all samples
-        int(config["ilp"]["threads"]/len(samples.index)) if config["ilp"]["threads"] else 1
+        "logs/noderad/2_allel_fractions/{sample}-representatives.log"
     conda:
-         "../envs/noderad_representatives.yaml"
+         "../envs/noderad_allel_fractions.yaml"
     script:
-        "../scripts/noderad_representatives.py"
+        "../scripts/noderad_allel_fractions.py"
 
-# determine the best solution by considering distribution and coverage
-rule optimized_solution:
-    input:
-        graph="results/noderad/3_representatives/{sample}.xml.gz",
-        alignment="results/minimap2/aligned/{sample}_aln.sam"
-    output:
-        repres_fasta="results/noderad/4_optimized_solution/{sample}.fasta",
-        clustered_reads="results/noderad/4_optimized_solution/{sample}.sam",
-        # optional output files
-        opt_repres_xml="results/noderad/4_optimized_solution/{sample}.xml.gz",
-        opt_repres_figure="results/noderad/4_optimized_solution/{sample}.pdf",
-        dir_clusters=directory("results/noderad/4_optimized_solution/cluster"+"/{sample}")
-    params:
-        ""
-    log:
-        "logs/noderad/optimized_solution/{sample}-representatives.log"
-    conda:
-         "../envs/noderad_optimized_solution.yaml"
-    script:
-        "../scripts/noderad_optimized_solution.py"
+

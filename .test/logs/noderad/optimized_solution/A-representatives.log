@@ -1,5 +1,0 @@
-graph construction summary after removal of the edges that were not part of optiomal solution:
- nodes:	3387
- edges:	12112
- There were 4705 edges removed.
- As optimal solution 276 clusters were detected.

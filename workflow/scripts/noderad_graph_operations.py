@@ -1,14 +1,13 @@
 from graph_tool.all import *
 import sys
 import os
+from itertools import combinations_with_replacement
+from collections import Counter
+
 
 def get_properties(graphtype):
     if graphtype == "distance-graph":
         return [(name, prop) for (name, prop, prop_type) in get_new_properties("init-graph")]
-
-    if graphtype == "optimized-graph":
-        props = [(name, prop) for (name, prop) in get_properties("distance-graph")]
-        return props + [(name, prop) for (name, prop, prop_type) in get_new_properties("distance-graph")]
 
 
 def get_new_properties(graphtype):
@@ -17,17 +16,6 @@ def get_new_properties(graphtype):
                 ("v_seq", "sequence", "string"),
                 ("v_qual", "quality", "vector<float>"),  # p error of quality phred scores
                 ("v_q_qual", "quality-q-vals", "vector<int>"),  # q values of quality phred scores
-                ("e_sam_qname", "sam-format-qname", "string"),
-                ("e_sam_flag", "sam-format-flag", "int"),
-                ("e_sam_rname", "sam-format-rname", "int"),
-                ("e_sam_pos", "sam-format-pos", "int"),
-                ("e_sam_mapq", "sam-format-mapq", "int"),
-                ("e_sam_cigar", "sam-format-cigar", "string"),  # cigar string from mandatory field 6 (sam format)
-                ("e_sam_rnext", "sam-format-rnext", "string"),
-                ("e_sam_pnext", "sam-format-pnext", "int"),
-                ("e_sam_tlen", "sam-format-tlen", "int"),
-                ("e_sam_seq", "sam-format-seq", "string"),
-                ("e_sam_all_tags", "sam-format-all-tags", "string"),
                 ("e_dist", "distance", "int"),
                 ("e_cs", "cs-tag", "string"),  # cigar string from cs tag, short or long option can be selected in minimap2 rule
                 ("e_lh", "likelihood", "float")]
@@ -35,29 +23,15 @@ def get_new_properties(graphtype):
     if graphtype == "distance-graph":
         ### new properties for ILP calculation
         # v_concom: index number of the connected component to which the node belongs to
+        # v_frac_lh: likelihood of allele fractions given one read
         # v_sum_in: sum of likelihood of all incoming edges of the node
-        # v_n_repres: list of all n values where the node was chosen as representative for the optimal solution at the ilp
-        # v_sol_repres: list of all ilp solutions where the node is representative, the corresponding n is located in
-        # v_n_repres at the same index. Therefore (v_n_repres[i], v_sol_repres[i]) defines the optimal solution
-        # if v_n_repres[i] representants are used
-        # e_n_indicator: list of total number of representatives where the edge (source, target) is set on z[source][target] == 1
-        return [("v_concom", "component-label", "int32_t"), ("v_log_sum_in", "log-sum-in-edges", "double"),
-                ("v_sum_in", "sum-in-edges", "double"),
-                ("v_n_repres", "total-number-of-representatives", "vector<long>"),
-                ("v_sol_repres", "ilp-solution", "vector<double>"), ("e_n_indicator", "indicator", "vector<long>")]
-
-    if graphtype == "optimized-graph":
-        ### new properties for optimized solution:
-        # v_sol_repr_neigh: an integer value, which determines, if the node is a neighbor (v_sol_repr_neigh = 1)
-        # or a representative (v_sol_repr_neigh = 2) or if it does not belong to the solution (v_sol_repr_neigh = 0)
-        # e_in_edges: a boolean value, which describes, whether an edge is an incoming edge of a representative
-        return [("v_sol_repr_neigh", "is-representative-or-neighbor", "int"),
-                ("e_in_edges", "incoming-edges-to-representative", "bool")]
-
+        return [("v_concom", "component-label", "int32_t"),
+                ("v_frac_lh", "read-fraction-likelihood", "float"),
+                ("v_sum_in", "sum-in-edges", "double")]
 
 def get_components(graph_obj, msg="", wildcards="", sub_dir=None, graph_xml=None, graph_figure=None, v_color=None, e_color=None):
     v_concom = graph_obj.vertex_properties["component-label"]
-    all_components, hist = label_components(graph_obj, vprop=v_concom)
+    all_components, hist = label_components(graph_obj, vprop=v_concom, directed=False)
     if msg:
         sys.stderr.write("\n\n{}:\n".format(msg))
         sys.stderr.write("Number of connected components: {}\n\n".format(max(all_components.a)))
@@ -110,12 +84,18 @@ def get_components(graph_obj, msg="", wildcards="", sub_dir=None, graph_xml=None
                    pos=pos, vertex_size=1, output=graph_figure)
     return connected_components
 
-def get_minimum_representatives(vertex_degrees, comp_size):
-    minimum_degrees = 0
-    required_nodes = 0
-    for i in vertex_degrees:
-        minimum_degrees += i
-        required_nodes += 1
-        if minimum_degrees >= comp_size:
-            return required_nodes
-    sys.exit("The tested component is not a connected component.")
+
+def get_candidate_alleles(graph, reads, noise):
+    read_support = Counter()
+    for read in reads:
+        read_support[graph.vertex_properties['sequence'][read]] += 1
+    return sorted(seq for seq, count in read_support.items() if count >= noise)
+
+### returns a map with lists of all possible combinations of fractions from a given number of alleles n and
+# the ploidy given in config file
+def get_candidate_vafs(n, ploidy):
+    n_alleles = n + n % ploidy  # each locus is of same ploidy
+    get_combination_vafs = lambda comb: [sum(x == i for x in comb) / n_alleles for i in range(n)]
+    return map(get_combination_vafs, combinations_with_replacement(range(n), n_alleles))
+
+
