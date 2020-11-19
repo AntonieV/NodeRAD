@@ -2,5 +2,8 @@ channels:
   - bioconda
   - conda-forge
 dependencies:
+  - biopython ==1.78
   - graph-tool ==2.35
-  - pulp ==2.3
+  - pysam ==0.16
+  - editdistance ==0.5.3
+

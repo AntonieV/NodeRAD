@@ -15,7 +15,8 @@ resources:
 
 # minimal dataset for testing:
 #  fastq-data: "data/small_dataset/ddRAGEdataset_GGCTAC_1.fastq"
-  fastq-data: "data/mini_dataset/ddRAGEdataset_GGCTAC_1.fastq"
+#  fastq-data: "data/mini_dataset/ddRAGEdataset_GGCTAC_1.fastq"
+  fastq-data: "data/mini_dataset/reduced_ddRAGEdataset_GGCTAC_1.fastq"
 #  fastq-data: "data/micro_dataset/ddRAGEdataset_ATCACG_1.fastq"
 
 

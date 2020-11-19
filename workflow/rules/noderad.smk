@@ -24,45 +24,28 @@ rule minimap2:
     wrapper:
         "0.66.0/bio/minimap2/aligner"
 
-# creates graph for nodeRAD calculations
-rule noderad_graph:
+rule noderad:
     input:
         sam="results/minimap2/aligned/{sample}_aln.sam",
         fastq="results/trimmed/{sample}.fastq.gz"
     output:
         graph_xml="results/noderad/1_graph/{sample}.xml.gz",
         # optional output files:
-        graph_figure="results/noderad/1_graph/{sample}.pdf"
+        graph_figure="results/noderad/1_graph/{sample}.pdf",
+        connected_components_xml="results/noderad/2_connected_components/{sample}.all_components.xml.gz",
+        connected_components_figure="results/noderad/2_connected_components/{sample}.all_components.pdf",
+        dir_subgraphs=directory("results/noderad/2_connected_components/subgraphes"+"/{sample}")
     params:
         threshold_max_edit_distance=config["params"]["threshold_max_edit_distance"],
         mut_total=config["genome-properties"]["mutationrates"]["total"],
         mut_subst=config["genome-properties"]["mutationrates"]["substitution"],
         mut_ins=config["genome-properties"]["mutationrates"]["insertion"],
-        mut_del=config["genome-properties"]["mutationrates"]["deletion"]
-    log:
-        "logs/noderad/1_graph/{sample}-graph.log"
-    conda:
-        "../envs/noderad_graph.yaml"
-    script:
-        "../scripts/noderad_graph.py"
-
-# extracts the connected components and solves the ilp to determine the optimal representatives
-rule noderad_allel_fractions:
-    input:
-         "results/noderad/1_graph/{sample}.xml.gz"
-    output:
-        connected_components_xml="results/noderad/2_allel_fractions/connected_components/{sample}.all_components.xml.gz",
-        connected_components_figure="results/noderad/2_allel_fractions/connected_components/{sample}.all_components.pdf",
-        dir_subgraphs=directory("results/noderad/2_allel_fractions/connected_components/subgraphes"+"/{sample}")
-    params:
-        # optional params
+        mut_del=config["genome-properties"]["mutationrates"]["deletion"],
         ploidy=config["genome-properties"]["ploidy"],
-        treshold_seq_noise=config["genome-properties"]["treshold-seq-noise"]
+        treshold_seq_noise=config["genome-properties"]["treshold-seq-noise"],
     log:
-        "logs/noderad/2_allel_fractions/{sample}-representatives.log"
+        "logs/noderad/{sample}.log"
     conda:
-         "../envs/noderad_allel_fractions.yaml"
+        "../envs/noderad.yaml"
     script:
-        "../scripts/noderad_allel_fractions.py"
-
-
+        "../scripts/noderad_main.py"

@@ -66,11 +66,3 @@ __pycache__/
 !README.md
 !start.sh
 
-# Examples output:
-!.test/results/noderad/*
-!.test/results/noderad/graph/A.pdf
-!.test/results/noderad/graph/A.xml.gz
-!.test/results/noderad/connected_components/A.all_components.pdf
-!.test/results/noderad/connected_components/A.all_components.xml.gz
-!.test/results/noderad/connected_components/subgraphes/A/*
-!.test/results/noderad/representatives/*

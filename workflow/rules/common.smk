@@ -69,7 +69,7 @@ def all_input(wildcards):
             wanted_input.extend (
                 expand (
                     [
-                        "results/noderad/2_allel_fractions/connected_components/{sample}.all_components.xml.gz"
+                        "results/noderad/2_connected_components/{sample}.all_components.xml.gz"
                     ],
                     sample = sample
                 )
@@ -79,7 +79,7 @@ def all_input(wildcards):
             wanted_input.extend (
                 expand (
                     [
-                        "results/noderad/2_allel_fractions/connected_components/{sample}.all_components.pdf"
+                        "results/noderad/2_connected_components/{sample}.all_components.pdf"
                     ],
                     sample = sample
                 )
@@ -90,7 +90,7 @@ def all_input(wildcards):
                 directory(
                     expand (
                         [
-                            "results/noderad/2_allel_fractions/connected_components/subgraphes/{sample}"
+                            "results/noderad/2_connected_components/subgraphes/{sample}"
                         ],
                         sample = sample
                     )
