@@ -85,17 +85,42 @@ def all_input(wildcards):
                 )
             )
 
-        if config["graph-intermediate-steps"]["connected-components"]["subgraphes"]["activate"]:
+        if config["graph-intermediate-steps"]["connected-components"]["subgraphs"]["activate"]:
             wanted_input.extend (
                 directory(
                     expand (
                         [
-                            "results/noderad/2_connected_components/subgraphes/{sample}"
+                            "results/noderad/2_connected_components/subgraphes/{sample}",
+                            "results/noderad/3_alleles/alleles_subgraphs/{sample}",
+                            "results/noderad/3_alleles/spanning_trees/{sample}"
                         ],
                         sample = sample
                     )
                 )
             )
 
+        if config["graph-intermediate-steps"]["alleles"]["subgraphs"]["activate"]:
+            wanted_input.extend (
+                directory(
+                    expand (
+                        [
+                            "results/noderad/3_alleles/alleles_subgraphs/{sample}"
+                        ],
+                        sample = sample
+                    )
+                )
+            )
+
+        if config["graph-intermediate-steps"]["alleles"]["spanning-trees"]["activate"]:
+            wanted_input.extend (
+                directory(
+                    expand (
+                        [
+                            "results/noderad/3_alleles/spanning_trees/{sample}"
+                        ],
+                        sample = sample
+                    )
+                )
+            )
 
     return wanted_input

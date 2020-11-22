@@ -5,21 +5,42 @@ from Bio import SeqIO
 import likelihood_operations
 
 
-def set_properties():
-    return [("v_id", "id", "string"), ("v_name", "name", "string"),
-            ("v_seq", "sequence", "string"),
-            ("v_qual", "quality", "vector<float>"),  # p error of quality phred scores
-            ("v_q_qual", "quality-q-vals", "vector<int>"),  # q values of quality phred scores
-            ("v_concom", "component-label", "int32_t"),  # index number of the connected component to which the node belongs to
-            ("e_dist", "distance", "int"),
-            ("e_cs", "cs-tag", "string"),  # cigar string from cs tag, short or long option can be selected in minimap2 rule
-            ("e_cigar_tup", "cigar-tuples", "string"),  # cigar tuples https://pysam.readthedocs.io/en/latest/api.html#pysam.AlignedSegment.cigartuples
-            ("e_lh", "likelihood", "float"),
-            ("v_concom", "component-label", "int32_t")]  # index number of the connected component to which the node belongs to
+def set_dir(dir):
+    if not os.path.exists(dir):
+        os.makedirs(dir)
+
+
+def set_properties(graph_type):
+    if graph_type == "reads-alignment":
+        return [("g_total_mut", "total-mutation-rates", "float"),
+                ("g_subst_mut", "subst-mutation-rates", "float"),
+                ("g_ins_mut", "ins-mutation-rates", "float"),
+                ("g_del_mut", "del-mutation-rates", "float"),
+                ("g_total_heterozyg", "total-heterozygosity", "float"),
+                ("g_subst_heterozyg", "subst-heterozygosity", "float"),
+                ("g_ins_heterozyg", "ins-heterozygosity", "float"),
+                ("g_del_heterozyg", "del-heterozygosity", "float"),
+                ("v_id", "id", "string"), ("v_name", "name", "string"),
+                ("v_seq", "sequence", "string"),
+                ("v_qual", "quality", "vector<float>"),  # p error of quality phred scores
+                ("v_q_qual", "quality-q-vals", "vector<int>"),  # q values of quality phred scores
+                ("v_concom", "component-label", "int32_t"),  # index number of the connected component to which the node belongs to
+                ("e_dist", "distance", "int"),
+                ("e_cs", "cs-tag", "string"),  # cigar string from cs tag, short or long option can be selected in minimap2 rule
+                ("e_cigar_tup", "cigar-tuples", "string"),  # cigar tuples https://pysam.readthedocs.io/en/latest/api.html#pysam.AlignedSegment.cigartuples
+                ("e_lh", "likelihood", "float")]
+    if graph_type == "alleles":
+        return [("g_total_heterozyg", "total-heterozygosity", "float"),
+                ("g_subst_heterozyg", "subst-heterozygosity", "float"),
+                ("g_ins_heterozyg", "ins-heterozygosity", "float"),
+                ("g_del_heterozyg", "del-heterozygosity", "float"),
+                ("v_al_seq", "allele-sequence", "string"),
+                ("e_al_dist", "allele-distance", "int"),
+                ("e_al_cigar_tup", "allele-cigar-tuples", "string")]
 
 
 # add vertices
-def set_nodes(_reads, graph, format, sample):
+def set_nodes(graph, _reads, format, sample):
     for record in SeqIO.parse(_reads, format):
         node = graph.add_vertex()
         graph.vp["id"][node] = "{idx}_{sample}".format(idx=node, sample=sample)
@@ -30,7 +51,7 @@ def set_nodes(_reads, graph, format, sample):
     return graph
 
 
-def set_edges(graph, read, threshold, stats, mut_rates):
+def set_edges(graph, read, threshold, stats):
     if read.has_tag("NM") and not read.query_name == read.reference_name:
         nm = 0  # edit distance between query and reference sequence
         cig = ""  # elements of cigar string
@@ -50,12 +71,30 @@ def set_edges(graph, read, threshold, stats, mut_rates):
                 graph.ep["distance"][edge] = nm
                 graph.ep["cs-tag"][edge] = cig
                 graph.ep["cigar-tuples"][edge] = read.cigar
-                likelihood_calculation = likelihood_operations.get_alignment_likelihood(read.cigartuples,
+                likelihood_calculation = likelihood_operations.get_alignment_likelihood(graph, read.cigartuples,
                                                                graph.vertex_properties["quality"][query_node],
-                                                               mut_rates, stats)
+                                                               stats)
                 graph.ep["likelihood"][edge] = likelihood_calculation[0]
                 stats = likelihood_calculation[1]
     return graph, stats
+
+
+def save_and_draw_graph(graph, xml_out=None, figure_out=None, v_color=None, e_color=None, v_size=1):
+    # default colors
+    v_color_prop = "red"
+    e_color_prop = "blue"
+
+    if v_color:
+        v_color_prop = graph.vertex_properties[v_color]
+    if e_color:
+        e_color_prop = graph.edge_properties[e_color]
+    if xml_out:
+        graph.save(xml_out)
+    if figure_out:
+        pos = sfdp_layout(graph)
+        graph_draw(graph, vertex_fill_color=v_color_prop,
+                   edge_color=e_color_prop,
+                   pos=pos, vertex_size=v_size, output=figure_out)
 
 
 def get_components(graph_obj, msg="", wildcards="", sub_dir=None, graph_xml=None, graph_figure=None, v_color=None, e_color=None):
@@ -67,9 +106,6 @@ def get_components(graph_obj, msg="", wildcards="", sub_dir=None, graph_xml=None
         sys.stderr.write("Histogram of connected components:\n" + str(hist) + "\n\n")
         sys.stderr.write("connected components with more than one vertex are:\n\n")
     connected_components = []
-    # default colors
-    v_color_prop = "red"
-    e_color_prop = "blue"
 
     for comp_nr in range(max(all_components)):
         # a is a shortcut for the get_array() method as an attribute,
@@ -83,34 +119,17 @@ def get_components(graph_obj, msg="", wildcards="", sub_dir=None, graph_xml=None
 
             # optional output files for each subgraph:
             if sub_dir:
-                if not os.path.exists(sub_dir):
-                    os.makedirs(sub_dir)
-                conn_component.save(
-                    "{}/{}-{}.subgraph.xml.gz".format(sub_dir, wildcards, str(comp_nr)))
-
-                # set colors for nodes and edges and draw each component
-                if v_color:
-                    v_color_prop = conn_component.vertex_properties[v_color]
-                if e_color:
-                    e_color_prop = conn_component.edge_properties[e_color]
-
-                pos = sfdp_layout(conn_component)
-                graph_draw(conn_component, vertex_fill_color=v_color_prop, edge_color=e_color_prop, pos=pos,
-                           vertex_size=9, output="{}/{}-{}.subgraph.pdf".format(sub_dir, wildcards, str(comp_nr)))
+                set_dir(sub_dir)
+                xml = "{}/{}-{}.subgraph.xml.gz".format(sub_dir, wildcards, str(comp_nr))
+                figure = "{}/{}-{}.subgraph.pdf".format(sub_dir, wildcards, str(comp_nr))
+                save_and_draw_graph(conn_component, xml_out=xml, figure_out=figure, v_color=v_color, e_color=e_color, v_size=9)
 
     # optional output: all connected components of the graph:
     # set colors for nodes and edges and draw each component
-    if v_color:
-        v_color_prop = graph_obj.vertex_properties[v_color]
-    if e_color:
-        e_color_prop = graph_obj.edge_properties[e_color]
     if graph_xml:
-        graph_obj.save(graph_xml)
+       save_and_draw_graph(graph_obj, xml_out=graph_xml)
     if graph_figure:
-        pos = sfdp_layout(graph_obj)
-        graph_draw(graph_obj, vertex_fill_color=v_color_prop,
-                   edge_color=e_color_prop,
-                   pos=pos, vertex_size=1, output=graph_figure)
+       save_and_draw_graph(graph_obj, figure_out=graph_figure, v_color=v_color, e_color=e_color)
     return connected_components
 
 

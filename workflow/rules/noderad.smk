@@ -34,15 +34,24 @@ rule noderad:
         graph_figure="results/noderad/1_graph/{sample}.pdf",
         connected_components_xml="results/noderad/2_connected_components/{sample}.all_components.xml.gz",
         connected_components_figure="results/noderad/2_connected_components/{sample}.all_components.pdf",
-        dir_subgraphs=directory("results/noderad/2_connected_components/subgraphes"+"/{sample}")
+        components_subgraphs=directory("results/noderad/2_connected_components/subgraphes"+"/{sample}"),
+        alleles_subgraphs=directory("results/noderad/3_alleles/alleles_subgraphs"+"/{sample}"),
+        alleles_spanning_trees=directory("results/noderad/3_alleles/spanning_trees"+"/{sample}")
     params:
         threshold_max_edit_distance=config["params"]["threshold_max_edit_distance"],
+        ploidy=config["genome-properties"]["ploidy"],
+        treshold_seq_noise=config["genome-properties"]["treshold-seq-noise"],
+        # mutation rates
         mut_total=config["genome-properties"]["mutationrates"]["total"],
         mut_subst=config["genome-properties"]["mutationrates"]["substitution"],
         mut_ins=config["genome-properties"]["mutationrates"]["insertion"],
         mut_del=config["genome-properties"]["mutationrates"]["deletion"],
-        ploidy=config["genome-properties"]["ploidy"],
-        treshold_seq_noise=config["genome-properties"]["treshold-seq-noise"],
+        # heterozygosity
+        heterozyg_total=config["genome-properties"]["heterozygosity"]["total"],
+        heterozyg_subst=config["genome-properties"]["heterozygosity"]["substitution"],
+        heterozyg_ins=config["genome-properties"]["heterozygosity"]["insertion"],
+        heterozyg_del=config["genome-properties"]["heterozygosity"]["deletion"],
+
     log:
         "logs/noderad/{sample}.log"
     conda:
