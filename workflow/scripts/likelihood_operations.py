@@ -1,9 +1,7 @@
-import os
 from graph_tool.all import *
 from itertools import zip_longest, combinations_with_replacement
 from collections import Counter
 import math
-import editdistance
 import graph_operations
 
 
@@ -12,7 +10,6 @@ import graph_operations
 def get_alignment_likelihood(graph, cigar_tuples, quality, stats=None, reverse=False):
     qual_idx = 0
     likelihood = 1.0
-    sum_rate = graph.gp["total-mutation-rates"]
     _subst = graph.gp["subst-mutation-rates"]
     # mismatch of not reversed edge: insertion in query node
     _ins = graph.gp["ins-mutation-rates"]
@@ -24,29 +21,23 @@ def get_alignment_likelihood(graph, cigar_tuples, quality, stats=None, reverse=F
         # on mismatch of backwards edge: insertion in reference node corresponds to deletion in query node
         _del = graph.gp["ins-mutation-rates"]
 
-    if not sum_rate:
-        sum_rate = _subst + _ins + _del
-
     for (op, length) in cigar_tuples:
-        mut_rate = sum_rate
         if op == 7 or op == 0:  # on match in cigar-string
             for i in quality[qual_idx:length]:
                 likelihood *= 1 - i
             qual_idx = length
         if op == 8 or op == 1 or op == 2 or op == 4:
+            mut_rate = 0
             if op == 8 or op == 4:  # on substitution/snp or on softclip mismatch in cigar-string
-                if _subst:
-                    mut_rate = _subst
+                mut_rate = _subst
                 if stats:
                     stats["n_snp"] += length
             if op == 1:  # on insertion mismatch in cigar-string
-                if _ins:
-                    mut_rate = _ins
+                mut_rate = _ins
                 if stats:
                     stats["n_ins"] += length
             if op == 2:  # on deletion mismatch in cigar-string
-                if not reverse and _del:
-                    mut_rate = _del
+                mut_rate = _del
                 if stats:
                     stats["n_del"] += length
             for i in quality[qual_idx:length]:
@@ -59,7 +50,7 @@ def get_alignment_likelihood(graph, cigar_tuples, quality, stats=None, reverse=F
 
 def get_heterozygosity(comp, cigar_tuples, reverse=False):
     heterozygosity = 1.0
-    sum_rate = comp.gp["total-heterozygosity"]
+    heterozyg_factor = 1.0
     _subst = comp.gp["subst-heterozygosity"]
     # mismatch of not reversed edge: insertion in query node
     _ins = comp.gp["ins-heterozygosity"]
@@ -71,24 +62,19 @@ def get_heterozygosity(comp, cigar_tuples, reverse=False):
         # on mismatch of backwards edge: insertion in reference node corresponds to deletion in query node
         _del = comp.gp["ins-heterozygosity"]
 
-    if not sum_rate:
-        sum_rate = _subst + _ins + _del
+    heterozyg_all = _subst + _ins + _del
 
     for (op, length) in cigar_tuples:
-        heterozyg_factor = sum_rate
         if op == 7 or op == 0:  # on match in cigar-string
-            heterozygosity *= (1 - heterozyg_factor)**length
+            heterozygosity *= (1 - heterozyg_all) ** length
         if op == 8 or op == 1 or op == 2 or op == 4:
             if op == 8 or op == 4:  # on substitution/snp or on softclip mismatch in cigar-string
-                if _subst:
-                    heterozyg_factor = _subst
+                heterozyg_factor = _subst ** length
             if op == 1:  # on insertion mismatch in cigar-string
-                if _ins:
-                    heterozyg_factor = _ins
+                heterozyg_factor = _ins
             if op == 2:  # on deletion mismatch in cigar-string
-                if _del:
-                    heterozyg_factor = _del
-            heterozygosity *= (heterozyg_factor * float(1 / 3) + heterozyg_factor) ** length
+                heterozyg_factor = _del
+            heterozygosity *= heterozyg_factor
     return heterozygosity
 
 
@@ -107,10 +93,36 @@ def get_cigar_tuples(comp, seq_node, allele):
     return None
 
 
+def get_max_parsimony_n_alleles(n, ploidy):
+    """Get the expected number of true alleles in the connected component
+    given that n alleles have been observed.
+
+    The returned value can be seen as the parsimonious solution: if ploidy is
+    higher than the number of observed alleles, there must be at least as many
+    alleles as the ploidy (though some are the same, e.g. at homozygous loci).
+    If ploidy is less than the observed alleles, there must be so many additional
+    alleles that are the same as one of the observed such that the number of alleles
+    can be divided by the ploidy."""
+    remainder = n % ploidy
+    if ploidy >= n:
+        return ploidy
+    elif remainder:
+        return n + ploidy - remainder
+    else:
+        return n
+
+    # if ploidy >= n:
+    #     return ploidy
+    # elif (remainder := n % ploidy):
+    #     return n + ploidy - remainder
+    # else:
+    #     return n
+
+
 # returns a map with lists of all possible combinations of fractions from a given number of alleles n and
 # the ploidy given in config file
 def get_candidate_vafs(n, ploidy):
-    n_alleles = n + n % ploidy  # each locus is of same ploidy
+    n_alleles = get_max_parsimony_n_alleles(n, ploidy)
     get_combination_vafs = lambda comb: [sum(x == i for x in comb) / n_alleles for i in range(n)]
     return map(get_combination_vafs, combinations_with_replacement(range(n), n_alleles))
 
@@ -161,7 +173,7 @@ def grouper(iterable, n, fillvalue=None):
 
 
 def get_candidate_loci(n, ploidy):
-    n_alleles = n + n % ploidy  # each locus is of same ploidy
+    n_alleles = get_max_parsimony_n_alleles(n, ploidy)
     get_combination_loci = lambda comb: list(grouper(comb, ploidy))
     return map(get_combination_loci, combinations_with_replacement(range(n), n_alleles))
 
@@ -176,7 +188,7 @@ def get_alleles_edit_distance(comp, allele_1, allele_2):
                 return comp.edge_properties["distance"][comp.edge(node_s, node_t)]
             if comp.edge(node_t, node_s):
                 return comp.edge_properties["distance"][comp.edge(node_t, node_s)]
-    return editdistance.eval(allele_1, allele_2)
+    return None
 
 
 # get subgraph induced by locus alleles (using only ONE node per allele)
@@ -199,7 +211,6 @@ def init_alleles_subgraph():
 # get minimum spanning tree (with edit distance as weight)
 def get_allele_subgraph(comp, alleles, dir_subgraph, comp_nr):
     allele_subgraph = init_alleles_subgraph()
-    allele_subgraph.graph_properties["total-heterozygosity"] = comp.graph_properties["total-heterozygosity"]
     allele_subgraph.graph_properties["subst-heterozygosity"] = comp.graph_properties["subst-heterozygosity"]
     allele_subgraph.graph_properties["ins-heterozygosity"] = comp.graph_properties["ins-heterozygosity"]
     allele_subgraph.graph_properties["del-heterozygosity"] = comp.graph_properties["del-heterozygosity"]
@@ -219,9 +230,10 @@ def get_allele_subgraph(comp, alleles, dir_subgraph, comp_nr):
                 else:
                     node_2 = allele_subgraph.add_vertex()
                     allele_subgraph.vp["allele-sequence"][node_2] = allele_2
-
-                edge = allele_subgraph.add_edge(node_1, node_2)
-                allele_subgraph.ep["allele-distance"][edge] = get_alleles_edit_distance(comp, allele_1, allele_2)
+                edit_distances = get_alleles_edit_distance(comp, allele_1, allele_2)
+                if edit_distances:
+                    edge = allele_subgraph.add_edge(node_1, node_2)
+                    allele_subgraph.ep["allele-distance"][edge] = edit_distances
 
     if dir_subgraph:
         graph_operations.set_dir(dir_subgraph)
@@ -254,49 +266,31 @@ def get_allele_likelihood_allele(comp, allele_subgraph, spanning_tree, locus_all
     # for each traversed edge, calculate pairHMM probability from parent to child node
     # and sum up in log space
     likelihood = 0
-    if len(locus_alleles) > 1:
-        node_source = find_vertex(spanning_tree, spanning_tree.vp["allele-sequence"], locus_alleles[0])[0]
-        # print(spanning_tree.vertex_index(node_source))
-        for i in range(1, len(locus_alleles)):
-            node_target = find_vertex(spanning_tree, spanning_tree.vp["allele-sequence"], locus_alleles[i])[0]
-            nodes, edges = shortest_path(spanning_tree, source=node_source, target=node_target)
-            rooted_mst_likelihood = 0
-            for edge in edges:
-                allele_parent = spanning_tree.vertex_properties["allele-sequence"][edge.source()]
-                allele_child = spanning_tree.vertex_properties["allele-sequence"][edge.target()]
-                cigar = get_cigar_tuples(comp, allele_parent, allele_child)
-                rooted_mst_likelihood += math.log(get_heterozygosity(allele_subgraph, list(eval(cigar[0])), reverse=cigar[1]))
-            # add to overall sum
-            likelihood += rooted_mst_likelihood
+    for allele_i in locus_alleles:
+        node_source = find_vertex(spanning_tree, spanning_tree.vp["allele-sequence"], allele_i)[0]
+        for allele_j in locus_alleles:
+            if not allele_i == allele_j:
+                node_target = find_vertex(spanning_tree, spanning_tree.vp["allele-sequence"], allele_j)[0]
+                nodes, edges = shortest_path(spanning_tree, source=node_source, target=node_target)
+                rooted_mst_likelihood = 0
+                for edge in edges:
+                    allele_parent = spanning_tree.vertex_properties["allele-sequence"][edge.source()]
+                    allele_child = spanning_tree.vertex_properties["allele-sequence"][edge.target()]
+                    cigar = get_cigar_tuples(comp, allele_parent, allele_child)
+                    rooted_mst_likelihood += math.log(get_heterozygosity(allele_subgraph, list(eval(cigar[0])), reverse=cigar[1]))
+                # add to overall sum
+                likelihood += rooted_mst_likelihood
     return likelihood
 
-    # for root in dfs_iterator(spanning_tree, spanning_tree.vertex(0)):
-    #     rooted_mst_likelihood = 0
-    #     allele_parent = spanning_tree.vertex_propertie["allele-sequence"][root.source()]
-    #     allele_child = spanning_tree[0].vertex_propertie["allele-sequence"][root.target()]
-    #     cigar = get_cigar_tuples(allele_subgraph, allele_parent, allele_child)
-    #     rooted_mst_likelihood += math.log(get_heterozygosity(comp, list(eval(cigar[0])), reverse=cigar[1]))
-    #     print(rooted_mst_likelihood)
+
+def indicator_constrait(max_likelihood_vafs, loci):
+    return sum(max_likelihood_vafs[idx] for locus in loci for idx in locus) == 1
 
 
-# ToDo
-# def indicator_constrait():
+def calc_loci_likelihoods(comp, max_likelihood_vafs, alleles, loci, allele_subgraph, spanning_tree):
+    if indicator_constrait(max_likelihood_vafs, loci):
+        locus_alleles = [alleles[idx] for locus in loci for idx in locus]
+        return get_allele_likelihood_allele(comp, allele_subgraph, spanning_tree, locus_alleles)
+    return -float("inf")
 
-
-def calc_loci_likelihoods(max_likelihood_vafs, comp, alleles, loci, dir_mst, dir_subgraph, comp_nr):
-    locus_alleles = []
-    for locus in loci:
-        for idx in locus:
-            if idx:  # ToDo: there is None-Type in loci_candidates on ploidy > 2
-                locus_alleles.append(alleles[idx])
-    allele_subgraph = get_allele_subgraph(comp, alleles, dir_subgraph, comp_nr)
-    spanning_tree = get_spanning_tree(allele_subgraph, dir_mst, comp_nr)
-    # locus_alleles = [alleles[idx] for locus in loci for idx in locus]
-    print(get_allele_likelihood_allele(comp, allele_subgraph, spanning_tree, locus_alleles))
-    # indicator_constraint = get_indicator_constrait()
-    # if indicator_constraint:
-        # calculate double product from slide 9
-    #     return ...
-    # else:
-    #     return 0
 

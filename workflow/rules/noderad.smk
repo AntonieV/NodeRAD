@@ -42,12 +42,10 @@ rule noderad:
         ploidy=config["genome-properties"]["ploidy"],
         treshold_seq_noise=config["genome-properties"]["treshold-seq-noise"],
         # mutation rates
-        mut_total=config["genome-properties"]["mutationrates"]["total"],
         mut_subst=config["genome-properties"]["mutationrates"]["substitution"],
         mut_ins=config["genome-properties"]["mutationrates"]["insertion"],
         mut_del=config["genome-properties"]["mutationrates"]["deletion"],
         # heterozygosity
-        heterozyg_total=config["genome-properties"]["heterozygosity"]["total"],
         heterozyg_subst=config["genome-properties"]["heterozygosity"]["substitution"],
         heterozyg_ins=config["genome-properties"]["heterozygosity"]["insertion"],
         heterozyg_del=config["genome-properties"]["heterozygosity"]["deletion"],

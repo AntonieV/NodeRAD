@@ -12,11 +12,9 @@ def set_dir(dir):
 
 def set_properties(graph_type):
     if graph_type == "reads-alignment":
-        return [("g_total_mut", "total-mutation-rates", "float"),
-                ("g_subst_mut", "subst-mutation-rates", "float"),
+        return [("g_subst_mut", "subst-mutation-rates", "float"),
                 ("g_ins_mut", "ins-mutation-rates", "float"),
                 ("g_del_mut", "del-mutation-rates", "float"),
-                ("g_total_heterozyg", "total-heterozygosity", "float"),
                 ("g_subst_heterozyg", "subst-heterozygosity", "float"),
                 ("g_ins_heterozyg", "ins-heterozygosity", "float"),
                 ("g_del_heterozyg", "del-heterozygosity", "float"),
@@ -30,8 +28,7 @@ def set_properties(graph_type):
                 ("e_cigar_tup", "cigar-tuples", "string"),  # cigar tuples https://pysam.readthedocs.io/en/latest/api.html#pysam.AlignedSegment.cigartuples
                 ("e_lh", "likelihood", "float")]
     if graph_type == "alleles":
-        return [("g_total_heterozyg", "total-heterozygosity", "float"),
-                ("g_subst_heterozyg", "subst-heterozygosity", "float"),
+        return [("g_subst_heterozyg", "subst-heterozygosity", "float"),
                 ("g_ins_heterozyg", "ins-heterozygosity", "float"),
                 ("g_del_heterozyg", "del-heterozygosity", "float"),
                 ("v_al_seq", "allele-sequence", "string"),

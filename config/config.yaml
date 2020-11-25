@@ -14,12 +14,10 @@ genome-properties:
   treshold-seq-noise: 2  # default: 2
   ploidy: 4
   mutationrates:
-    total: 0.05
     substitution: 0.8999
     insertion: 0.05
     deletion: 0.05
   heterozygosity:
-    total: 0.003
     substitution: 0.001
     insertion: 0.001
     deletion: 0.001

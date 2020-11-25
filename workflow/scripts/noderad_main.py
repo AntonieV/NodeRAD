@@ -64,12 +64,10 @@ for (name, prop, prop_type) in graph_operations.set_properties("reads-alignment"
         graph.edge_properties[prop] = vars()[name]
 
 # set mutation-rates and heterozygosity
-graph.graph_properties["total-mutation-rates"] = snakemake.params.get("mut_total", "")
 graph.graph_properties["subst-mutation-rates"] = snakemake.params.get("mut_subst", "")
 graph.graph_properties["ins-mutation-rates"] = snakemake.params.get("mut_ins", "")
 graph.graph_properties["del-mutation-rates"] = snakemake.params.get("mut_del", "")
 
-graph.graph_properties["total-heterozygosity"] = snakemake.params.get("heterozyg_total", "")
 graph.graph_properties["subst-heterozygosity"] = snakemake.params.get("heterozyg_subst", "")
 graph.graph_properties["ins-heterozygosity"] = snakemake.params.get("heterozyg_ins", "")
 graph.graph_properties["del-heterozygosity"] = snakemake.params.get("heterozyg_del", "")
@@ -128,8 +126,8 @@ connected_components = graph_operations.get_components(graph, message, snakemake
                                                                    connected_components_figure, v_color="component-label",
                                                                    e_color="likelihood")
 
-# step 2
 for (comp, comp_nr) in connected_components:
+    # step 2
     alleles = likelihood_operations.get_candidate_alleles(comp, comp.vertices(), noise)
     n = len(alleles)
     vafs_candidates = list(likelihood_operations.get_candidate_vafs(n, ploidy))
@@ -137,30 +135,32 @@ for (comp, comp_nr) in connected_components:
 
     # calculate the likelihood over ALL reads
     vafs_likelihoods = [likelihood_operations.calc_vafs_likelihood(comp, vafs, nodes, alleles) for vafs in vafs_candidates]
+    if not vafs_likelihoods:  # case empty list
+        continue
     max_likelihood_idx = np.argmax(vafs_likelihoods)
     # obtain ML solution for step 2
     max_likelihood_vafs = vafs_candidates[max_likelihood_idx]
-    # print(max_likelihood_vafs)
+    # print("Max_lh_vafs: ", max_likelihood_vafs)
 
     sys.stderr.write("\nvafs with maximum likelihood in sample {}, copmonent {} is:\n".format(sample, comp_nr))
     for vaf, allele in zip(max_likelihood_vafs, alleles):
         sys.stderr.write("    {} for allele {}\n".format(vaf, allele))
 
-
     # step 3
     loci_candidates = list(likelihood_operations.get_candidate_loci(n, ploidy))
-    print("n = ", n, "ploidy = ", ploidy, "loci candidates: ", loci_candidates)
-
-    # likelihood_operations.get_allele_likelihood_allele(comp, alleles, dir_alleles_spanning_trees, dir_alleles_subgraphs, comp_nr)
+    # print("n = ", n, "ploidy = ", ploidy, "loci candidates: ", loci_candidates)
+    if len(alleles) > 1:
+        allele_subgraph = likelihood_operations.get_allele_subgraph(comp, alleles, dir_alleles_subgraphs, comp_nr)
+        spanning_tree = likelihood_operations.get_spanning_tree(allele_subgraph, dir_alleles_spanning_trees, comp_nr)
 
     loci_likelihoods = [
-        likelihood_operations.calc_loci_likelihoods(max_likelihood_vafs, comp, alleles, loci,
-                                                    dir_alleles_spanning_trees, dir_alleles_subgraphs, comp_nr)
+        likelihood_operations.calc_loci_likelihoods(comp, max_likelihood_vafs, alleles, loci, allele_subgraph, spanning_tree)
         for loci in loci_candidates
     ]
-    # ToDo:
-    # max_likelihood_idx = np.argmax(loci_likelihoods)
-    # print(max_likelihood_idx)
-    # max_likelihood_loci = loci_candidates[max_likelihood_idx]
-    # print(max_likelihood_loci)
+
+    max_likelihood_idx = np.argmax(loci_likelihoods)
+    max_likelihood_loci = loci_candidates[max_likelihood_idx]
+    print("\nloci_likelihoods: ", loci_likelihoods,
+          "\nmax_likelihood_idx: ", max_likelihood_idx,
+          "\nmax_likelihood_loci: ", max_likelihood_loci)
 
