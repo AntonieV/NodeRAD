@@ -1,27 +1,22 @@
 # This file should contain everything to configure the workflow on a global scale.
 # In case of sample based data, it should be complemented by a samples.tsv file that contains
 # one row per sample. It can be parsed easily via pandas.
+
 #samples: "config/samples_medium.tsv"
 
 # minimal sets of samples for testing:
-
 #samples: "config/samples_small.tsv"
 samples: "config/samples_mini.tsv"
 #samples: "config/samples_micro.tsv"
 
 resources:
-  # input of first run for mapping reads of each sample
 #  fastq-data: "data/medium_dataset/ddRAGEdataset_ATCACG_1.fastq"
 
-# minimal dataset for testing:
+# minimal datasets for testing:
 #  fastq-data: "data/small_dataset/ddRAGEdataset_GGCTAC_1.fastq"
-#  fastq-data: "data/mini_dataset/ddRAGEdataset_GGCTAC_1.fastq"
-  fastq-data: "data/mini_dataset/reduced_ddRAGEdataset_GGCTAC_1.fastq"
+  fastq-data: "data/mini_dataset/ddRAGEdataset_GGCTAC_1.fastq"
+#  fastq-data: "data/mini_dataset/reduced_ddRAGEdataset_GGCTAC_1.fastq"
 #  fastq-data: "data/micro_dataset/ddRAGEdataset_ATCACG_1.fastq"
-
-
-  # input of second run to compare the samples with each other
-  fasta-data: "results/test.fasta"
 
 genome-properties:
   treshold-seq-noise: 2  # default: 2
@@ -38,9 +33,12 @@ genome-properties:
 # optional graph figure outputs and additional xml files for subgraphs
 graph-intermediate-steps:
   edit-distance-graph:
+    # on activation please set a path to the variable graph_xml (rule noderad in noderad.smk),
+    # on inactivation comment this variable out
+    activate-xml: True
     # on activation please set a path to the variable graph_figure (rule noderad in noderad.smk),
     # on inactivation comment this variable out
-    activate: True
+    activate-figure: True
   connected-components:
     graph:
       # on activation please set a path to the variable connected_components_xml (rule noderad in noderad.smk),

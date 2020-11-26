@@ -29,8 +29,9 @@ rule noderad:
         sam="results/minimap2/aligned/{sample}_aln.sam",
         fastq="results/trimmed/{sample}.fastq.gz"
     output:
-        graph_xml="results/noderad/1_graph/{sample}.xml.gz",
+        vcf="results/noderad/4_vcf/{sample}.vcf",
         # optional output files:
+        graph_xml="results/noderad/1_graph/{sample}.xml.gz",
         graph_figure="results/noderad/1_graph/{sample}.pdf",
         connected_components_xml="results/noderad/2_connected_components/{sample}.all_components.xml.gz",
         connected_components_figure="results/noderad/2_connected_components/{sample}.all_components.pdf",

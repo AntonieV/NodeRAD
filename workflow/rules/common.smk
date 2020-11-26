@@ -61,9 +61,15 @@ def all_input(wildcards):
 
     # trimming reads
     for sample in samples.index:
+        # requires output: vcf file
+        wanted_input.extend(expand(["results/noderad/4_vcf/{sample}.vcf"], sample=sample))
+
         # optional figures of graph-intermediate-steps:
-        if config["graph-intermediate-steps"]["edit-distance-graph"]["activate"]:
-            wanted_input.extend(expand(["results/noderad/1_graph/{sample}.pdf"], sample = sample))
+        if config["graph-intermediate-steps"]["edit-distance-graph"]["activate-xml"]:
+            wanted_input.extend(expand(["results/noderad/1_graph/{sample}.xml.gz"], sample=sample))
+
+        if config["graph-intermediate-steps"]["edit-distance-graph"]["activate-figure"]:
+            wanted_input.extend(expand(["results/noderad/1_graph/{sample}.pdf"], sample=sample))
 
         if config["graph-intermediate-steps"]["connected-components"]["graph"]["activate-xml"]:
             wanted_input.extend (
@@ -71,7 +77,7 @@ def all_input(wildcards):
                     [
                         "results/noderad/2_connected_components/{sample}.all_components.xml.gz"
                     ],
-                    sample = sample
+                    sample=sample
                 )
             )
 
@@ -81,7 +87,7 @@ def all_input(wildcards):
                     [
                         "results/noderad/2_connected_components/{sample}.all_components.pdf"
                     ],
-                    sample = sample
+                    sample=sample
                 )
             )
 
@@ -90,11 +96,9 @@ def all_input(wildcards):
                 directory(
                     expand (
                         [
-                            "results/noderad/2_connected_components/subgraphes/{sample}",
-                            "results/noderad/3_alleles/alleles_subgraphs/{sample}",
-                            "results/noderad/3_alleles/spanning_trees/{sample}"
+                            "results/noderad/2_connected_components/subgraphes/{sample}"
                         ],
-                        sample = sample
+                        sample=sample
                     )
                 )
             )
@@ -106,7 +110,7 @@ def all_input(wildcards):
                         [
                             "results/noderad/3_alleles/alleles_subgraphs/{sample}"
                         ],
-                        sample = sample
+                        sample=sample
                     )
                 )
             )
@@ -118,7 +122,7 @@ def all_input(wildcards):
                         [
                             "results/noderad/3_alleles/spanning_trees/{sample}"
                         ],
-                        sample = sample
+                        sample=sample
                     )
                 )
             )

@@ -7,7 +7,11 @@ import likelihood_operations
 
 def set_dir(dir):
     if not os.path.exists(dir):
-        os.makedirs(dir)
+        os.makedirs(str(dir))
+
+
+def set_dirs(dirs):
+    [set_dir(d) for d in dirs if d]
 
 
 def set_properties(graph_type):
