@@ -1,5 +1,5 @@
 from graph_tool.all import *
-from itertools import zip_longest, combinations_with_replacement
+from itertools import zip_longest, combinations_with_replacement, chain, combinations
 from collections import Counter
 import math
 import graph_operations
@@ -78,9 +78,9 @@ def get_heterozygosity(comp, cigar_tuples, reverse=False):
     return heterozygosity
 
 
-def get_cigar_tuples(comp, seq_node, allele):
+def get_cigar_tuples(comp, seq, allele):
     source_nodes = [comp.vertex_index[node] for node in
-                    find_vertex(comp, comp.vp["sequence"], seq_node)]
+                    find_vertex(comp, comp.vp["sequence"], seq)]
     target_nodes = [comp.vertex_index[node] for node in find_vertex(comp, comp.vp["sequence"], allele)]
     for node_s in source_nodes:
         for node_t in target_nodes:
@@ -171,125 +171,33 @@ def get_candidate_loci(n, ploidy):
     return map(get_combination_loci, combinations_with_replacement(range(n), n_alleles))
 
 
-def get_alleles_edit_distance(comp, allele_1, allele_2):
-    nodes_allele_1 = [comp.vertex_index[node] for node in
-                    find_vertex(comp, comp.vp["sequence"], allele_1)]
-    nodes_allele_2 = [comp.vertex_index[node] for node in find_vertex(comp, comp.vp["sequence"], allele_2)]
-    for node_s in nodes_allele_1:
-        for node_t in nodes_allele_2:
-            if comp.edge(node_s, node_t):
-                return comp.edge_properties["distance"][comp.edge(node_s, node_t)]
-            if comp.edge(node_t, node_s):
-                return comp.edge_properties["distance"][comp.edge(node_t, node_s)]
-    return None
+def get_allele_likelihood_allele(comp, locus_alleles):
+    likelihood = 1.0
+    if len(locus_alleles) == 1:
+        locus_alleles.append(locus_alleles[0])
+    # heterozygosity for all combinations of allele pairs
+    for allele_i, allele_j in list(combinations(locus_alleles, 2)):
+        cigar = get_cigar_tuples(comp, allele_i, allele_j)
+        if cigar:
+            likelihood += math.log(get_heterozygosity(comp, list(eval(cigar[0])), reverse=cigar[1]))
+    return math.e ** likelihood
 
 
-# get subgraph induced by locus alleles (using only ONE node per allele)
-def init_alleles_subgraph():
-    allele_subgraph = Graph(directed=False)
-    # set graph properties
-    for (name, prop, prop_type) in graph_operations.set_properties("alleles"):
-        if name.startswith("g_"):
-            vars()[name] = allele_subgraph.new_graph_property(prop_type)
-            allele_subgraph.graph_properties[prop] = vars()[name]
-        if name.startswith("v_"):
-            vars()[name] = allele_subgraph.new_vertex_property(prop_type)
-            allele_subgraph.vertex_properties[prop] = vars()[name]
-        if name.startswith("e_"):
-            vars()[name] = allele_subgraph.new_edge_property(prop_type)
-            allele_subgraph.edge_properties[prop] = vars()[name]
-    return allele_subgraph
-
-
-# get minimum spanning tree (with edit distance as weight)
-def get_allele_subgraph(comp, alleles, dir_subgraph, comp_nr):
-    if len(alleles) > 1:
-        allele_subgraph = init_alleles_subgraph()
-        allele_subgraph.graph_properties["subst-heterozygosity"] = comp.graph_properties["subst-heterozygosity"]
-        allele_subgraph.graph_properties["ins-heterozygosity"] = comp.graph_properties["ins-heterozygosity"]
-        allele_subgraph.graph_properties["del-heterozygosity"] = comp.graph_properties["del-heterozygosity"]
-        for allele_1 in alleles:
-            node_exists = find_vertex(allele_subgraph, allele_subgraph.vp["allele-sequence"], allele_1)
-            if node_exists:
-                node_1 = node_exists[0]
-            else:
-                node_1 = allele_subgraph.add_vertex()
-                allele_subgraph.vp["allele-sequence"][node_1] = allele_1
-
-            for allele_2 in alleles:
-                if not allele_1 == allele_2:
-                    node_exists = find_vertex(allele_subgraph, allele_subgraph.vp["allele-sequence"], allele_2)
-                    if node_exists:
-                        node_2 = node_exists[0]
-                    else:
-                        node_2 = allele_subgraph.add_vertex()
-                        allele_subgraph.vp["allele-sequence"][node_2] = allele_2
-                    edit_distances = get_alleles_edit_distance(comp, allele_1, allele_2)
-                    if edit_distances:
-                        edge = allele_subgraph.add_edge(node_1, node_2)
-                        allele_subgraph.ep["allele-distance"][edge] = edit_distances
-
-        if dir_subgraph:
-            graph_operations.set_dir(dir_subgraph)
-            xml = "{}/{}.subgraph.xml.gz".format(dir_subgraph, str(comp_nr))
-            figure = "{}/{}.subgraph.pdf".format(dir_subgraph, str(comp_nr))
-            graph_operations.save_and_draw_graph(allele_subgraph,
-                                                 xml_out=xml,
-                                                 figure_out=figure,
-                                                 e_color="allele-distance",
-                                                 v_size=9)
-        return allele_subgraph
-    return None
-
-
-def get_spanning_tree(allele_subgraph, dir_mst, comp_nr):
-    if allele_subgraph:
-        spanning_tree_map = min_spanning_tree(allele_subgraph, weights=allele_subgraph.ep["allele-distance"])
-        spanning_tree_view = GraphView(allele_subgraph, efilt=spanning_tree_map)
-        if dir_mst:
-            graph_operations.set_dir(dir_mst)
-            xml = "{}/{}.spanning-tree.xml.gz".format(dir_mst, str(comp_nr))
-            figure = "{}/{}.spanning-tree.pdf".format(dir_mst, str(comp_nr))
-            graph_operations.save_and_draw_graph(spanning_tree_view,
-                                                 xml_out=xml,
-                                                 figure_out=figure,
-                                                 e_color="allele-distance",
-                                                 v_size=9)
-        return Graph(spanning_tree_view, prune=True, directed=False)
-    return None
-
-def get_allele_likelihood_allele(comp, allele_subgraph, spanning_tree, locus_alleles):
-    # traverse spanning tree from root
-    # for each traversed edge, calculate pairHMM probability from parent to child node
-    # and sum up in log space
-    likelihood = 0
-    if spanning_tree:
-        for allele_i in locus_alleles:
-            node_source = find_vertex(spanning_tree, spanning_tree.vp["allele-sequence"], allele_i)[0]
-            for allele_j in locus_alleles:
-                if not allele_i == allele_j:
-                    node_target = find_vertex(spanning_tree, spanning_tree.vp["allele-sequence"], allele_j)[0]
-                    nodes, edges = shortest_path(spanning_tree, source=node_source, target=node_target)
-                    rooted_mst_likelihood = 0
-                    for edge in edges:
-                        allele_parent = spanning_tree.vertex_properties["allele-sequence"][edge.source()]
-                        allele_child = spanning_tree.vertex_properties["allele-sequence"][edge.target()]
-                        cigar = get_cigar_tuples(comp, allele_parent, allele_child)
-                        rooted_mst_likelihood += math.log(get_heterozygosity(allele_subgraph, list(eval(cigar[0])), reverse=cigar[1]))
-                    # add to overall sum
-                    likelihood += rooted_mst_likelihood
-    return likelihood
+# filters meaningful combinations
+def is_valid_combination(loci_candidates, ploidy):
+    return len(list(set([i for i in chain(*loci_candidates)]))) <= ploidy
 
 
 def indicator_constrait(max_likelihood_vafs, loci):
     return sum(max_likelihood_vafs[idx] for locus in loci for idx in locus) == 1
 
 
-def calc_loci_likelihoods(comp, max_likelihood_vafs, alleles, loci, allele_subgraph, spanning_tree):
+def calc_loci_likelihoods(comp, max_likelihood_vafs, alleles, loci, ploidy):
     if indicator_constrait(max_likelihood_vafs, loci):
-        locus_alleles = [alleles[idx] for locus in loci for idx in locus]
-        return get_allele_likelihood_allele(comp, allele_subgraph, spanning_tree, locus_alleles)
-    return -float("inf")
+        locus_alleles = [alleles[idx] for locus in loci for idx in locus if is_valid_combination(loci, ploidy)]
+        if locus_alleles:
+            return get_allele_likelihood_allele(comp, locus_alleles)
+    return 0
 
 
 def get_sorted_loci_alleles(alleles, max_likelihood_loci):

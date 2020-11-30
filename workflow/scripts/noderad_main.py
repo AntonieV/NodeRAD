@@ -25,13 +25,10 @@ output_figure = snakemake.output.get("graph_figure", "")
 connected_components_xml = snakemake.output.get("connected_components_xml", "")
 connected_components_figure = snakemake.output.get("connected_components_figure", "")
 dir_subgraphs = snakemake.output.get("components_subgraphs", "")
-dir_alleles_subgraphs = snakemake.output.get("alleles_subgraphs", "")
-dir_alleles_spanning_trees = snakemake.output.get("alleles_spanning_trees")
 
 # params for mutation rates, ploidy, threshold and noise
 threshold = snakemake.params.get("threshold_max_edit_distance", "")
-ploidy = snakemake.params.get("ploidy", "")
-
+ploidy = snakemake.params.get("ploidy", "")  # a diploid chromosome set is determined for the prototype
 noise = snakemake.params.get("treshold_seq_noise", "")
 
 # get reads format
@@ -123,10 +120,9 @@ graph_operations.save_and_draw_graph(graph, xml_out=graph_xml,
                                      figure_out=output_figure,
                                      e_color="likelihood")
 
-# in case these directories are expected as optional output, but some samples do not produce
-# subgraphs, e.g. spanning trees. This way the empty directories for these samples preserved
-# and are not removed by snakemake.
-graph_operations.set_dirs([dir_subgraphs, dir_alleles_subgraphs, dir_alleles_spanning_trees])
+# in case subgraph directory is expected as optional output, but some samples do not produce
+# subgraphs. This way the empty directories for these samples preserved and are not removed by snakemake.
+graph_operations.set_dir(dir_subgraphs)
 
 # extract connected components
 message = "CONNECTED COMPONENTS based on the graph construction from the edit distances (minimap2)"
@@ -163,12 +159,9 @@ for (comp, comp_nr) in connected_components:
 
     # step 3: likelihood of loci given alleles and fractions
     loci_candidates = list(likelihood_operations.get_candidate_loci(n, ploidy))
-    allele_subgraph = likelihood_operations.get_allele_subgraph(comp, alleles, dir_alleles_subgraphs, comp_nr)
-    spanning_tree = likelihood_operations.get_spanning_tree(allele_subgraph, dir_alleles_spanning_trees, comp_nr)
 
     loci_likelihoods = [
-        likelihood_operations.calc_loci_likelihoods(comp, max_likelihood_vafs, alleles, loci, allele_subgraph,
-                                                    spanning_tree)
+        likelihood_operations.calc_loci_likelihoods(comp, max_likelihood_vafs, alleles, loci, ploidy)
         for loci in loci_candidates
     ]
     # write to log file

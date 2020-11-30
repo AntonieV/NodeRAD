@@ -5,13 +5,10 @@ from Bio import SeqIO
 import likelihood_operations
 
 
-def set_dir(dir):
-    if not os.path.exists(dir):
-        os.makedirs(str(dir))
-
-
-def set_dirs(dirs):
-    [set_dir(d) for d in dirs if d]
+def set_dir(_dir):
+    if _dir:
+        if not os.path.exists(_dir):
+            os.makedirs(str(_dir))
 
 
 def set_properties(graph_type):
@@ -34,10 +31,7 @@ def set_properties(graph_type):
     if graph_type == "alleles":
         return [("g_subst_heterozyg", "subst-heterozygosity", "float"),
                 ("g_ins_heterozyg", "ins-heterozygosity", "float"),
-                ("g_del_heterozyg", "del-heterozygosity", "float"),
-                ("v_al_seq", "allele-sequence", "string"),
-                ("e_al_dist", "allele-distance", "int"),
-                ("e_al_cigar_tup", "allele-cigar-tuples", "string")]
+                ("g_del_heterozyg", "del-heterozygosity", "float")]
 
 
 # add vertices

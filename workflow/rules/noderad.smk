@@ -35,12 +35,12 @@ rule noderad:
         graph_figure="results/noderad/1_graph/{sample}.pdf",
         connected_components_xml="results/noderad/2_connected_components/{sample}.all_components.xml.gz",
         connected_components_figure="results/noderad/2_connected_components/{sample}.all_components.pdf",
-        components_subgraphs=directory("results/noderad/2_connected_components/subgraphes"+"/{sample}"),
-        alleles_subgraphs=directory("results/noderad/3_alleles/alleles_subgraphs"+"/{sample}"),
-        alleles_spanning_trees=directory("results/noderad/3_alleles/spanning_trees"+"/{sample}")
+        components_subgraphs=directory("results/noderad/2_connected_components/subgraphes"+"/{sample}")
     params:
         threshold_max_edit_distance=config["params"]["threshold_max_edit_distance"],
-        ploidy=config["genome-properties"]["ploidy"],
+        # a diploid chromosome set is determined for this prototype,
+        # for future use it can be configured in config["genome-properties"]["ploidy"]
+        ploidy=2,
         treshold_seq_noise=config["genome-properties"]["treshold-seq-noise"],
         # mutation rates
         mut_subst=config["genome-properties"]["mutationrates"]["substitution"],

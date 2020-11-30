@@ -9,7 +9,9 @@ resources:
 
 genome-properties:
   treshold-seq-noise: 2  # default: 2
-  ploidy: 4
+  # a diploid chromosome set is determined for this prototype,
+  # for future use it can be configured here
+  ploidy: 2
   mutationrates:
     substitution: 0.8999
     insertion: 0.05
@@ -39,15 +41,6 @@ graph-intermediate-steps:
     subgraphs:
       # on activation please set a directory to the variable components_subgraphs (rule noderad in noderad.smk),
       # on inactivation comment this variable out
-      activate: True
-  alleles:
-    # on activation please set a directory to the variable alleles_subgraphs (rule noderad in noderad.smk),
-    # on inactivation comment this variable out
-    subgraphs:
-      activate: True
-    # on activation please set a directory to the variable alleles_spanning_trees (rule noderad in noderad.smk),
-    # on inactivation comment this variable out
-    spanning-trees:
       activate: True
 
 params:
