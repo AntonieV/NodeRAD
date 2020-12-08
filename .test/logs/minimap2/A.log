@@ -1,9 +1,9 @@
-[M::main::0.004*1.20] loaded/built the index for 3387 target sequence(s)
-[M::mm_mapopt_update::0.004*1.18] mid_occ = 145
+[M::main::0.005*1.21] loaded/built the index for 3387 target sequence(s)
+[M::mm_mapopt_update::0.005*1.20] mid_occ = 145
 [M::mm_idx_stat] kmer size: 15; skip: 10; is_hpc: 0; #seq: 3387
-[M::mm_idx_stat::0.005*1.17] distinct minimizers: 6420 (77.73% are singletons); average occurrences: 7.302; average spacing: 6.785
-[M::worker_pipeline::0.201*2.63] mapped 3387 sequences
-[M::worker_pipeline::0.401*2.63] mapped 3387 sequences
+[M::mm_idx_stat::0.005*1.19] distinct minimizers: 6420 (77.73% are singletons); average occurrences: 7.302; average spacing: 6.785
+[M::worker_pipeline::0.231*2.62] mapped 3387 sequences
+[M::worker_pipeline::0.427*2.66] mapped 3387 sequences
 [M::main] Version: 2.17-r941
 [M::main] CMD: minimap2 -t 3 -a -A 10 --eqx --cs=long -o results/minimap2/aligned/A_aln.sam results/minimap2/A.fastq.mmi results/trimmed/A.fastq.gz results/trimmed/A.fastq.gz
-[M::main] Real time: 0.403 sec; CPU: 1.057 sec; Peak RSS: 0.061 GB
+[M::main] Real time: 0.429 sec; CPU: 1.137 sec; Peak RSS: 0.062 GB
