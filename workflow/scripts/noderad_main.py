@@ -30,6 +30,7 @@ dir_subgraphs = snakemake.output.get("components_subgraphs", "")
 threshold = snakemake.params.get("threshold_max_edit_distance", "")
 ploidy = snakemake.params.get("ploidy", "")  # a diploid chromosome set is determined for the prototype
 noise = snakemake.params.get("treshold_seq_noise", "")
+cluster_size = snakemake.params.get("treshold_cluster_size", "")
 
 # get reads format
 format = ""  # format of reads
@@ -52,7 +53,7 @@ if not noise:
 graph = Graph(directed=True)
 
 # set graph properties
-for (name, prop, prop_type) in graph_operations.set_properties("reads-alignment"):
+for (name, prop, prop_type) in graph_operations.set_properties():
     if name.startswith("g_"):
         vars()[name] = graph.new_graph_property(prop_type)
         graph.graph_properties[prop] = vars()[name]
@@ -64,6 +65,8 @@ for (name, prop, prop_type) in graph_operations.set_properties("reads-alignment"
         graph.edge_properties[prop] = vars()[name]
 
 # set mutation-rates and heterozygosity
+graph.graph_properties["ploidy"] = ploidy
+
 graph.graph_properties["subst-mutation-rates"] = snakemake.params.get("mut_subst", "")
 graph.graph_properties["ins-mutation-rates"] = snakemake.params.get("mut_ins", "")
 graph.graph_properties["del-mutation-rates"] = snakemake.params.get("mut_del", "")
@@ -131,10 +134,11 @@ connected_components = graph_operations.get_components(graph, message, snakemake
                                                        connected_components_figure, v_color="component-label",
                                                        e_color="likelihood")
 
+graph = None
 loc_nr = 1
 for (comp, comp_nr) in connected_components:
     # step 2: likelihood of allele fractions
-    alleles = likelihood_operations.get_candidate_alleles(comp, comp.vertices(), noise)
+    alleles = likelihood_operations.get_candidate_alleles(comp, comp.vertices(), noise, cluster_size)
     n = len(alleles)
     vafs_candidates = list(likelihood_operations.get_candidate_vafs(n, ploidy))
     nodes = list([comp.vertex_index[node] for node in comp.vertices()])
@@ -152,7 +156,7 @@ for (comp, comp_nr) in connected_components:
     # write to log file
     sys.stderr.write(
         "\n\nStats for component {} in sample {} with {} alleles and ploidy = {}:\n".format(comp_nr, sample,
-                                                                                              n, ploidy))
+                                                                                            n, ploidy))
     sys.stderr.write("\n\tMaximum vafs likelihood:\n")
     for vaf, allele in zip(max_likelihood_vafs, alleles):
         sys.stderr.write("\t\t{} for allele {}\n".format(vaf, allele))
@@ -161,7 +165,7 @@ for (comp, comp_nr) in connected_components:
     loci_candidates = list(likelihood_operations.get_candidate_loci(n, ploidy))
 
     loci_likelihoods = [
-        likelihood_operations.calc_loci_likelihoods(comp, max_likelihood_vafs, alleles, loci, ploidy)
+        likelihood_operations.calc_loci_likelihoods(comp, max_likelihood_vafs, alleles, loci)
         for loci in loci_candidates
     ]
     # write to log file
@@ -170,15 +174,12 @@ for (comp, comp_nr) in connected_components:
     max_likelihood_loci = loci_candidates[max_likelihood_idx]
     sys.stderr.write("\t\tloci_likelihoods:\n\t\t\t{}\n\t\tmax_likelihood_idx:\n\t\t\t{}"
                      "\n\t\tmax_likelihood_loci:\n\t\t\t{}\n".format(loci_likelihoods, max_likelihood_idx,
-                                                                    max_likelihood_loci))
+                                                                     max_likelihood_loci))
 
     # step 4: results output to VCF file
-    loci_alleles = likelihood_operations.get_sorted_loci_alleles(alleles, max_likelihood_loci)
-    n_alleles = len(loci_alleles)
-    genotype = likelihood_operations.get_genotype(n_alleles)
-    alt = ', '.join(loci_alleles[1:]) if n_alleles > 1 else "."
-    if n_alleles:
+    for locus in list(set(max_likelihood_loci)):
         vcf.write("{chrom}\t{pos}\t.\t{ref}\t{alt}\t.\t.\tGT\t{gt}\n".format(chrom="LOC{}".format(loc_nr),
-                                                                             pos="1", ref=loci_alleles[0],
-                                                                             alt=alt, gt=genotype))
+                                                                             pos="1", ref=alleles[0],
+                                                                             alt=', '.join(alleles[1:]) if n > 1 else ".",
+                                                                             gt=likelihood_operations.get_genotype(locus)))
         loc_nr += 1

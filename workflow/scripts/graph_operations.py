@@ -11,9 +11,9 @@ def set_dir(_dir):
             os.makedirs(str(_dir))
 
 
-def set_properties(graph_type):
-    if graph_type == "reads-alignment":
-        return [("g_subst_mut", "subst-mutation-rates", "float"),
+def set_properties():
+        return [("g_ploidy", "ploidy", "int"),
+                ("g_subst_mut", "subst-mutation-rates", "float"),
                 ("g_ins_mut", "ins-mutation-rates", "float"),
                 ("g_del_mut", "del-mutation-rates", "float"),
                 ("g_subst_heterozyg", "subst-heterozygosity", "float"),
@@ -28,10 +28,6 @@ def set_properties(graph_type):
                 ("e_cs", "cs-tag", "string"),  # cigar string from cs tag, short or long option can be selected in minimap2 rule
                 ("e_cigar_tup", "cigar-tuples", "string"),  # cigar tuples https://pysam.readthedocs.io/en/latest/api.html#pysam.AlignedSegment.cigartuples
                 ("e_lh", "likelihood", "float")]
-    if graph_type == "alleles":
-        return [("g_subst_heterozyg", "subst-heterozygosity", "float"),
-                ("g_ins_heterozyg", "ins-heterozygosity", "float"),
-                ("g_del_heterozyg", "del-heterozygosity", "float")]
 
 
 # add vertices

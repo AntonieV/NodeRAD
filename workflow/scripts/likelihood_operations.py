@@ -2,7 +2,6 @@ from graph_tool.all import *
 from itertools import zip_longest, combinations_with_replacement, chain, combinations
 from collections import Counter
 import math
-import graph_operations
 
 
 # if not reverse: calculates likelihood for an edge (from ref to query) from the cigartuples and quality of the query node
@@ -120,11 +119,15 @@ def get_candidate_vafs(n, ploidy):
     return map(get_combination_vafs, combinations_with_replacement(range(n), n_alleles))
 
 
-def get_candidate_alleles(graph, reads, noise):
+def get_candidate_alleles(comp, reads, noise, cluster_size):
     read_support = Counter()
     for read in reads:
-        read_support[graph.vertex_properties['sequence'][read]] += 1
-    return sorted(seq for seq, count in read_support.items() if count >= noise)
+        read_support[comp.vertex_properties['sequence'][read]] += 1
+    # filters noise for clusters above a certain cluster size
+    # treshold value of noise and cluster-size are given in config
+    if comp.num_vertices() >= cluster_size:
+        return sorted(seq for seq, count in read_support.items() if count >= noise)
+    return sorted(seq for seq, count in read_support.items())
 
 
 def get_allele_likelihood_read(comp, allele, node):
@@ -173,41 +176,28 @@ def get_candidate_loci(n, ploidy):
 
 def get_allele_likelihood_allele(comp, locus_alleles):
     likelihood = 1.0
-    if len(locus_alleles) == 1:
-        locus_alleles.append(locus_alleles[0])
-    # heterozygosity for all combinations of allele pairs
-    for allele_i, allele_j in list(combinations(locus_alleles, 2)):
-        cigar = get_cigar_tuples(comp, allele_i, allele_j)
-        if cigar:
-            likelihood += math.log(get_heterozygosity(comp, list(eval(cigar[0])), reverse=cigar[1]))
+    for alleles in locus_alleles:
+        # heterozygosity for all combinations of allele pairs
+        for allele_i, allele_j in list(combinations(alleles, 2)):
+            cigar = get_cigar_tuples(comp, allele_i, allele_j)
+            if cigar:
+                likelihood += math.log(get_heterozygosity(comp, list(eval(cigar[0])), reverse=cigar[1]))
     return math.e ** likelihood
 
 
-# filters meaningful combinations
-def is_valid_combination(loci_candidates, ploidy):
-    return len(list(set([i for i in chain(*loci_candidates)]))) <= ploidy
+def indicator_constrait(ploidy, max_likelihood_vafs, loci):
+    count_alleles = Counter(list(chain(*loci)))
+    return all([count_alleles[idx] == max_likelihood_vafs[idx] * len(loci) * ploidy for locus in loci for idx in locus])
 
 
-def indicator_constrait(max_likelihood_vafs, loci):
-    return sum(max_likelihood_vafs[idx] for locus in loci for idx in locus) == 1
-
-
-def calc_loci_likelihoods(comp, max_likelihood_vafs, alleles, loci, ploidy):
-    if indicator_constrait(max_likelihood_vafs, loci):
-        locus_alleles = [alleles[idx] for locus in loci for idx in locus if is_valid_combination(loci, ploidy)]
-        if locus_alleles:
-            return get_allele_likelihood_allele(comp, locus_alleles)
+def calc_loci_likelihoods(comp, max_likelihood_vafs, alleles, loci):
+    ploidy = comp.gp["ploidy"]
+    if indicator_constrait(ploidy, max_likelihood_vafs, loci):
+        locus_alleles = list(list(map(lambda x: alleles[x], locus)) for locus in loci)
+        return get_allele_likelihood_allele(comp, locus_alleles)
     return 0
 
 
-def get_sorted_loci_alleles(alleles, max_likelihood_loci):
-    return sorted(set([alleles[loc] for loci in max_likelihood_loci for loc in loci]))
-
-
-def get_genotype(n_loci_alleles):
-    if n_loci_alleles > 1:
-        return '/'.join(map(str, range(n_loci_alleles)))
-    if n_loci_alleles == 1:
-        return "0/0"
-    return ""
+def get_genotype(locus):
+    return '/'.join(map(str, [idx for idx in locus]))
 

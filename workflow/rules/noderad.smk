@@ -40,8 +40,9 @@ rule noderad:
         threshold_max_edit_distance=config["params"]["threshold_max_edit_distance"],
         # a diploid chromosome set is determined for this prototype,
         # for future use it can be configured in config["genome-properties"]["ploidy"]
-        ploidy=2,
-        treshold_seq_noise=config["genome-properties"]["treshold-seq-noise"],
+        ploidy=config["genome-properties"]["ploidy"],
+        treshold_seq_noise=config["genome-properties"]["noise"]["treshold-seq-noise"],
+        treshold_cluster_size=config["genome-properties"]["noise"]["treshold-cluster-size"],
         # mutation rates
         mut_subst=config["genome-properties"]["mutationrates"]["substitution"],
         mut_ins=config["genome-properties"]["mutationrates"]["insertion"],

@@ -19,7 +19,9 @@ resources:
 #  fastq-data: "data/micro_dataset/ddRAGEdataset_ATCACG_1.fastq"
 
 genome-properties:
-  treshold-seq-noise: 2  # default: 2
+  noise:
+    treshold-seq-noise: 2
+    treshold-cluster-size: 5
   # a diploid chromosome set is determined for this prototype,
   # for future use it can be configured here
   ploidy: 2
