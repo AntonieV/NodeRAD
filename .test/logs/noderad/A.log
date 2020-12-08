@@ -21,37 +21,37 @@ Histogram of connected components:
 
 connected components with more than one vertex are:
 
-	<Graph object, directed, with 138 vertices and 742 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7fea36274250>
-	<Graph object, directed, with 105 vertices and 564 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7fea36269a50>
-	<Graph object, directed, with 116 vertices and 611 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7fea362f0c10>
-	<Graph object, directed, with 98 vertices and 521 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7fea362704d0>
-	<Graph object, directed, with 93 vertices and 492 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7fea362709d0>
-	<Graph object, directed, with 112 vertices and 602 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7fea35149710>
-	<Graph object, directed, with 116 vertices and 611 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7fea362c6210>
-	<Graph object, directed, with 126 vertices and 666 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7fea36269710>
-	<Graph object, directed, with 77 vertices and 417 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7fea35166710>
-	<Graph object, directed, with 80 vertices and 426 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7fea362bafd0>
-	<Graph object, directed, with 115 vertices and 624 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7fea36274e10>
-	<Graph object, directed, with 137 vertices and 705 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7fea3516fe10>
-	<Graph object, directed, with 80 vertices and 428 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7fea4518ce10>
-	<Graph object, directed, with 125 vertices and 662 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7fea36269e10>
-	<Graph object, directed, with 99 vertices and 514 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7fea35161990>
-	<Graph object, directed, with 122 vertices and 646 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7fea35161490>
-	<Graph object, directed, with 113 vertices and 601 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7fea3517c750>
-	<Graph object, directed, with 111 vertices and 594 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7fea3516fe50>
-	<Graph object, directed, with 100 vertices and 538 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7fea3514cc90>
-	<Graph object, directed, with 75 vertices and 383 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7fea3514cd90>
-	<Graph object, directed, with 151 vertices and 793 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7fea362e9b50>
-	<Graph object, directed, with 105 vertices and 553 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7fea3516f910>
-	<Graph object, directed, with 109 vertices and 579 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7fea35109350>
-	<Graph object, directed, with 2 vertices and 1 edge, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7fea35173d50>
-	<Graph object, directed, with 125 vertices and 666 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7fea351210d0>
-	<Graph object, directed, with 118 vertices and 623 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7fea35106d50>
-	<Graph object, directed, with 126 vertices and 676 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7fea35121f50>
-	<Graph object, directed, with 104 vertices and 556 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7fea3511d810>
-	<Graph object, directed, with 144 vertices and 753 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7fea35179f90>
-	<Graph object, directed, with 59 vertices and 318 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7fea36270610>
-	<Graph object, directed, with 159 vertices and 842 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7fea3511df90>
+	<Graph object, directed, with 138 vertices and 742 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7f0f8c8a1d50>
+	<Graph object, directed, with 105 vertices and 564 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7f0f9b7b1190>
+	<Graph object, directed, with 116 vertices and 611 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7f0f8c9368d0>
+	<Graph object, directed, with 98 vertices and 521 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7f0f8c8b7a10>
+	<Graph object, directed, with 93 vertices and 492 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7f0f8b78bb50>
+	<Graph object, directed, with 112 vertices and 602 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7f0f8b78b210>
+	<Graph object, directed, with 116 vertices and 611 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7f0f8b790b90>
+	<Graph object, directed, with 126 vertices and 666 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7f0f8c8a1f90>
+	<Graph object, directed, with 77 vertices and 417 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7f0f8c8b0ed0>
+	<Graph object, directed, with 80 vertices and 426 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7f0f8b7ac590>
+	<Graph object, directed, with 115 vertices and 624 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7f0fa031f790>
+	<Graph object, directed, with 137 vertices and 705 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7f0f8b7b8e10>
+	<Graph object, directed, with 80 vertices and 428 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7f0f9d1f28d0>
+	<Graph object, directed, with 125 vertices and 662 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7f0f8c8a1bd0>
+	<Graph object, directed, with 99 vertices and 514 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7f0f9b7bc7d0>
+	<Graph object, directed, with 122 vertices and 646 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7f0f8b790d50>
+	<Graph object, directed, with 113 vertices and 601 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7f0f9c812050>
+	<Graph object, directed, with 111 vertices and 594 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7f0f9b7d22d0>
+	<Graph object, directed, with 100 vertices and 538 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7f0f8b7c4e90>
+	<Graph object, directed, with 75 vertices and 383 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7f0f8b7b8e50>
+	<Graph object, directed, with 151 vertices and 793 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7f0f8b74a9d0>
+	<Graph object, directed, with 105 vertices and 553 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7f0f8c974bd0>
+	<Graph object, directed, with 109 vertices and 579 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7f0f8b760990>
+	<Graph object, directed, with 2 vertices and 1 edge, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7f0f8b7ace90>
+	<Graph object, directed, with 125 vertices and 666 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7f0f8c8a1ed0>
+	<Graph object, directed, with 118 vertices and 623 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7f0f8b7b35d0>
+	<Graph object, directed, with 126 vertices and 676 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7f0f8b767350>
+	<Graph object, directed, with 104 vertices and 556 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7f0f8b7ace10>
+	<Graph object, directed, with 144 vertices and 753 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7f0f8b7a8f10>
+	<Graph object, directed, with 59 vertices and 318 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7f0f9b7ce650>
+	<Graph object, directed, with 159 vertices and 842 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7f0f8b756f10>
 
 
 Stats for component 0 in sample A with 5 alleles and ploidy = 2:
@@ -96,7 +96,7 @@ Stats for component 5 in sample A with 2 alleles and ploidy = 2:
 
 	Maximum loci likelihood calculations:
 		loci_likelihoods:
-			[2.0494596070682984, 0, 0]
+			[2.049459607068299, 0, 0]
 		max_likelihood_idx:
 			0
 		max_likelihood_loci:
@@ -198,7 +198,7 @@ Stats for component 22 in sample A with 2 alleles and ploidy = 2:
 
 	Maximum loci likelihood calculations:
 		loci_likelihoods:
-			[2.0494596070682984, 0, 0]
+			[2.049459607068299, 0, 0]
 		max_likelihood_idx:
 			0
 		max_likelihood_loci:
@@ -270,7 +270,7 @@ Stats for component 35 in sample A with 2 alleles and ploidy = 2:
 
 	Maximum loci likelihood calculations:
 		loci_likelihoods:
-			[2.0494596070682984, 0, 0]
+			[2.049459607068299, 0, 0]
 		max_likelihood_idx:
 			0
 		max_likelihood_loci:
@@ -302,7 +302,7 @@ Stats for component 41 in sample A with 2 alleles and ploidy = 2:
 
 	Maximum loci likelihood calculations:
 		loci_likelihoods:
-			[2.0494596070682984, 0, 0]
+			[2.049459607068299, 0, 0]
 		max_likelihood_idx:
 			0
 		max_likelihood_loci:
@@ -333,7 +333,7 @@ Stats for component 46 in sample A with 2 alleles and ploidy = 2:
 
 	Maximum loci likelihood calculations:
 		loci_likelihoods:
-			[2.0494596070682984, 0, 0]
+			[2.049459607068299, 0, 0]
 		max_likelihood_idx:
 			0
 		max_likelihood_loci:
@@ -419,7 +419,7 @@ Stats for component 56 in sample A with 4 alleles and ploidy = 2:
 
 	Maximum loci likelihood calculations:
 		loci_likelihoods:
-			[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.0015498479249838736, 0]
+			[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.0015498479249838732, 0]
 		max_likelihood_idx:
 			33
 		max_likelihood_loci:
@@ -452,7 +452,7 @@ Stats for component 60 in sample A with 2 alleles and ploidy = 2:
 
 	Maximum loci likelihood calculations:
 		loci_likelihoods:
-			[0, 2.068015970205387e-09, 0]
+			[0, 2.068015970205385e-09, 0]
 		max_likelihood_idx:
 			1
 		max_likelihood_loci:
@@ -486,7 +486,7 @@ Stats for component 62 in sample A with 2 alleles and ploidy = 2:
 
 	Maximum loci likelihood calculations:
 		loci_likelihoods:
-			[2.0494596070682984, 0, 0]
+			[2.049459607068299, 0, 0]
 		max_likelihood_idx:
 			0
 		max_likelihood_loci:
@@ -556,7 +556,7 @@ Stats for component 73 in sample A with 2 alleles and ploidy = 2:
 
 	Maximum loci likelihood calculations:
 		loci_likelihoods:
-			[2.0494596070682984, 0, 0]
+			[2.049459607068299, 0, 0]
 		max_likelihood_idx:
 			0
 		max_likelihood_loci:
