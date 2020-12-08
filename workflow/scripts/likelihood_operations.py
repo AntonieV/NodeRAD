@@ -182,7 +182,7 @@ def get_allele_likelihood_allele(comp, locus_alleles):
             cigar = get_cigar_tuples(comp, allele_i, allele_j)
             if cigar:
                 likelihood += math.log(get_heterozygosity(comp, list(eval(cigar[0])), reverse=cigar[1]))
-    return math.e ** likelihood
+    return math.exp(likelihood)
 
 
 def indicator_constrait(ploidy, max_likelihood_vafs, loci):
@@ -196,6 +196,25 @@ def calc_loci_likelihoods(comp, max_likelihood_vafs, alleles, loci):
         locus_alleles = list(list(map(lambda x: alleles[x], locus)) for locus in loci)
         return get_allele_likelihood_allele(comp, locus_alleles)
     return 0
+
+
+def get_sorted_loci_alleles(alleles, max_likelihood_loci):
+    return sorted(set([alleles[loc] for loci in max_likelihood_loci for loc in loci]))
+
+
+def get_alleles_matched_to_loci(alleles, max_likelihood_loci):
+    matched_al_loc = []
+    for locus in max_likelihood_loci:
+        matched_al_loc.append(tuple(alleles[idx] for idx in locus))
+    return matched_al_loc
+
+
+def get_gt_indices(alleles, max_likelihood_loci, loc_alleles):
+    matched_al_loc = get_alleles_matched_to_loci(alleles, max_likelihood_loci)
+    gt_indices = []
+    for locus in matched_al_loc:
+        gt_indices.append(tuple(loc_alleles.index(allele) for allele in locus))
+    return gt_indices
 
 
 def get_genotype(locus):

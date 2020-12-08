@@ -26,7 +26,7 @@ connected_components_xml = snakemake.output.get("connected_components_xml", "")
 connected_components_figure = snakemake.output.get("connected_components_figure", "")
 dir_subgraphs = snakemake.output.get("components_subgraphs", "")
 
-# params for mutation rates, ploidy, threshold and noise
+# params for ploidy, threshold, noise and cluster-size
 threshold = snakemake.params.get("threshold_max_edit_distance", "")
 ploidy = snakemake.params.get("ploidy", "")  # a diploid chromosome set is determined for the prototype
 noise = snakemake.params.get("treshold_seq_noise", "")
@@ -127,7 +127,7 @@ graph_operations.save_and_draw_graph(graph, xml_out=graph_xml,
 # subgraphs. This way the empty directories for these samples preserved and are not removed by snakemake.
 graph_operations.set_dir(dir_subgraphs)
 
-# extract connected components
+# step 1: extract connected components
 message = "CONNECTED COMPONENTS based on the graph construction from the edit distances (minimap2)"
 connected_components = graph_operations.get_components(graph, message, snakemake.wildcards.get('sample'),
                                                        dir_subgraphs, connected_components_xml,
@@ -177,9 +177,12 @@ for (comp, comp_nr) in connected_components:
                                                                      max_likelihood_loci))
 
     # step 4: results output to VCF file
-    for locus in list(set(max_likelihood_loci)):
+    loci_alleles = likelihood_operations.get_sorted_loci_alleles(alleles, max_likelihood_loci)
+    gt_indices = likelihood_operations.get_gt_indices(alleles, max_likelihood_loci, loci_alleles)
+
+    for gt_idx_locus in list(set(gt_indices)):
         vcf.write("{chrom}\t{pos}\t.\t{ref}\t{alt}\t.\t.\tGT\t{gt}\n".format(chrom="LOC{}".format(loc_nr),
-                                                                             pos="1", ref=alleles[0],
-                                                                             alt=', '.join(alleles[1:]) if n > 1 else ".",
-                                                                             gt=likelihood_operations.get_genotype(locus)))
+                                                                             pos="1", ref=loci_alleles[0],
+                                                                             alt=', '.join(loci_alleles[1:]) if len(loci_alleles) > 1 else ".",
+                                                                             gt=likelihood_operations.get_genotype(gt_idx_locus)))
         loc_nr += 1
