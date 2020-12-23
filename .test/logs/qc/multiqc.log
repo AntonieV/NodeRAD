@@ -1,8 +1,8 @@
-[INFO   ]         multiqc : This is MultiQC v1.9 (32aa38c)
+[INFO   ]         multiqc : This is MultiQC v1.9 (a5a5896)
 [INFO   ]         multiqc : Template    : default
-[INFO   ]         multiqc : Searching   : /data/Antonie/workspace/workspace_bioinformatik/NodeRAD/.test/results/qc/fastqc
-[INFO   ]         multiqc : Searching   : /data/Antonie/workspace/workspace_bioinformatik/NodeRAD/.test/results/trimmed
 [INFO   ]         multiqc : Searching   : /data/Antonie/workspace/workspace_bioinformatik/NodeRAD/.test/logs/cutadapt
+[INFO   ]         multiqc : Searching   : /data/Antonie/workspace/workspace_bioinformatik/NodeRAD/.test/results/trimmed
+[INFO   ]         multiqc : Searching   : /data/Antonie/workspace/workspace_bioinformatik/NodeRAD/.test/results/qc/fastqc
 [INFO   ]        cutadapt : Found 1 reports
 [INFO   ]          fastqc : Found 1 reports
 [INFO   ]         multiqc : Compressing plot data
