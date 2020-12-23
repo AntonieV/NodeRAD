@@ -22,9 +22,9 @@ def get_alignment_likelihood(graph, cigar_tuples, quality, stats=None, reverse=F
 
     for (op, length) in cigar_tuples:
         if op == 7 or op == 0:  # on match in cigar-string
-            for i in quality[qual_idx:length]:
+            for i in quality[qual_idx:(qual_idx+length)]:
                 likelihood *= 1 - i
-            qual_idx = length
+            qual_idx += length
         if op == 8 or op == 1 or op == 2 or op == 4:
             mut_rate = 0
             if op == 8 or op == 4:  # on substitution/snp or on softclip mismatch in cigar-string
@@ -39,9 +39,9 @@ def get_alignment_likelihood(graph, cigar_tuples, quality, stats=None, reverse=F
                 mut_rate = _del
                 if stats:
                     stats["n_del"] += length
-            for i in quality[qual_idx:length]:
+            for i in quality[qual_idx:(qual_idx+length)]:
                 likelihood *= (1 - mut_rate) * float(1 / 3) * i + mut_rate * (1 - i)
-            qual_idx = length
+            qual_idx += length
     if stats:
         return likelihood, stats
     return likelihood
@@ -68,12 +68,12 @@ def get_heterozygosity(comp, cigar_tuples, reverse=False):
             heterozygosity *= (1 - heterozyg_all) ** length
         if op == 8 or op == 1 or op == 2 or op == 4:
             if op == 8 or op == 4:  # on substitution/snp or on softclip mismatch in cigar-string
-                heterozyg_factor = _subst ** length
+                heterozyg_factor = _subst
             if op == 1:  # on insertion mismatch in cigar-string
                 heterozyg_factor = _ins
             if op == 2:  # on deletion mismatch in cigar-string
                 heterozyg_factor = _del
-            heterozygosity *= heterozyg_factor
+            heterozygosity *= heterozyg_factor ** length
     return heterozygosity
 
 
@@ -163,6 +163,8 @@ def calc_vafs_likelihood(comp, vafs, nodes, alleles):
 
 
 # source: https://docs.python.org/3/library/itertools.html
+# Collect data into fixed-length chunks or blocks"
+# grouper('ABCDEFG', 3, 'x') --> ABC DEF Gxx"
 def grouper(iterable, n, fillvalue=None):
     args = [iter(iterable)] * n
     return zip_longest(*args, fillvalue=fillvalue)

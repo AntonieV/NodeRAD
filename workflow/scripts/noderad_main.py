@@ -146,7 +146,7 @@ for (comp, comp_nr) in connected_components:
     # calculate the likelihood over ALL reads
     vafs_likelihoods = [likelihood_operations.calc_vafs_likelihood(comp, vafs, nodes, alleles) for vafs in
                         vafs_candidates]
-    if not vafs_likelihoods:  # case empty list
+    if not vafs_likelihoods:  # case empty list, e.g. if the treshold-seq-noise value is set too large
         continue
     max_likelihood_idx = np.argmax(vafs_likelihoods)
 
