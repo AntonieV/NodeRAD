@@ -1,5 +1,5 @@
 from graph_tool.all import *
-from itertools import zip_longest, combinations_with_replacement, chain, combinations
+from itertools import zip_longest, combinations_with_replacement, chain, combinations, permutations
 from collections import Counter
 import math
 
@@ -172,8 +172,9 @@ def grouper(iterable, n, fillvalue=None):
 
 def get_candidate_loci(n, ploidy):
     n_alleles = get_max_parsimony_n_alleles(n, ploidy)
-    get_combination_loci = lambda comb: list(grouper(comb, ploidy))
-    return map(get_combination_loci, combinations_with_replacement(range(n), n_alleles))
+    get_combination_loci = lambda comb: tuple(sorted(map(lambda l: tuple(sorted(l)), grouper(comb, ploidy))))
+    return set(get_combination_loci(p) for comb in combinations_with_replacement(range(n), n_alleles) for p in
+               permutations(comb))
 
 
 def get_allele_likelihood_allele(comp, locus_alleles):
