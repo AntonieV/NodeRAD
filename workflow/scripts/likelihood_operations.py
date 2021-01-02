@@ -177,11 +177,11 @@ def get_candidate_loci(n, ploidy):
                permutations(comb))
 
 
-def get_allele_likelihood_allele(comp, locus_alleles):
+def get_allele_likelihood_allele(comp, loci_alleles):
     likelihood = 1.0
-    for alleles in locus_alleles:
+    for locus_alleles in loci_alleles:
         # heterozygosity for all combinations of allele pairs
-        for allele_i, allele_j in list(combinations(alleles, 2)):
+        for allele_i, allele_j in list(combinations(locus_alleles, 2)):
             cigar = get_cigar_tuples(comp, allele_i, allele_j)
             if cigar:
                 likelihood += math.log(get_heterozygosity(comp, list(eval(cigar[0])), reverse=cigar[1]))
@@ -196,8 +196,8 @@ def indicator_constrait(ploidy, max_likelihood_vafs, loci):
 def calc_loci_likelihoods(comp, max_likelihood_vafs, alleles, loci):
     ploidy = comp.gp["ploidy"]
     if indicator_constrait(ploidy, max_likelihood_vafs, loci):
-        locus_alleles = list(list(map(lambda x: alleles[x], locus)) for locus in loci)
-        return get_allele_likelihood_allele(comp, locus_alleles)
+        loci_alleles = list(list(map(lambda x: alleles[x], locus)) for locus in loci)
+        return get_allele_likelihood_allele(comp, loci_alleles)
     return 0
 
 
