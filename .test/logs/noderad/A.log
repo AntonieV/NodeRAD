@@ -1,57 +1,50 @@
 graph construction summary for sample A:
  nodes:	3387
- edges:	17707
- max distance:	7
-	mutations:
-		snp's and substitutions: 16565
-		insertions: 325
-		deletions: 334
-
+ edges:	301592
 
 
 CONNECTED COMPONENTS based on the graph construction from the edit distances (minimap2):
-Number of connected components: 77
+Number of connected components: 69
 
 Histogram of connected components:
-[138   1   1   1 105 116   1  98   1  93   1   1   1   1   1 112 116 126
-   1   1   1   1  77   1  80   1   1 115   1   1 137   1   1   1   1  80
-   1 125   1   1   1  99 122   1   1   1 113   1   1 111 100   1  75   1
- 151   1 105   1   1 109   2 125 118   1 126   1 104   1 144   1   1   1
-   1  59 159   1   1   1]
+[138   1   1   1 105 117  98   1  93   1   1   1   1   1 112 116 126   1
+   1   1   1  78  80   1   1 116   1 137   1   1   1   1  80   1 125   1
+   1   1  99 122   1   1   1 114   1 111 100   1  75   1 151   1 106   1
+ 109   2 125 118   1 127 105 145   1   1   1  59 159   1   1   1]
 
 connected components with more than one vertex are:
 
-	<Graph object, directed, with 138 vertices and 742 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7fbfb86d0550>
-	<Graph object, directed, with 105 vertices and 564 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7fbfcc140350>
-	<Graph object, directed, with 116 vertices and 611 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7fbfb86d0350>
-	<Graph object, directed, with 98 vertices and 521 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7fbfb86cbd50>
-	<Graph object, directed, with 93 vertices and 492 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7fbfb75a3f10>
-	<Graph object, directed, with 112 vertices and 602 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7fbfb75a7f50>
-	<Graph object, directed, with 116 vertices and 611 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7fbfb75a31d0>
-	<Graph object, directed, with 126 vertices and 666 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7fbfb86b9ad0>
-	<Graph object, directed, with 77 vertices and 417 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7fbfb75c0bd0>
-	<Graph object, directed, with 80 vertices and 426 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7fbfb75c5990>
-	<Graph object, directed, with 115 vertices and 624 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7fbfb86cb3d0>
-	<Graph object, directed, with 137 vertices and 705 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7fbfb75a3590>
-	<Graph object, directed, with 80 vertices and 428 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7fbfb75cc410>
-	<Graph object, directed, with 125 vertices and 662 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7fbfc75ce7d0>
-	<Graph object, directed, with 99 vertices and 514 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7fbfb75cce90>
-	<Graph object, directed, with 122 vertices and 646 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7fbfc75c2e10>
-	<Graph object, directed, with 113 vertices and 601 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7fbfb75cee50>
-	<Graph object, directed, with 111 vertices and 594 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7fbfb75dca10>
-	<Graph object, directed, with 100 vertices and 538 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7fbfb75c0b10>
-	<Graph object, directed, with 75 vertices and 383 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7fbfb7561fd0>
-	<Graph object, directed, with 151 vertices and 793 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7fbfb7565f10>
-	<Graph object, directed, with 105 vertices and 553 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7fbfb8716f10>
-	<Graph object, directed, with 109 vertices and 579 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7fbfc75ed4d0>
-	<Graph object, directed, with 2 vertices and 1 edge, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7fbfb75d8b50>
-	<Graph object, directed, with 125 vertices and 666 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7fbfb75dc7d0>
-	<Graph object, directed, with 118 vertices and 623 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7fbfb8746ed0>
-	<Graph object, directed, with 126 vertices and 676 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7fbfb9e80110>
-	<Graph object, directed, with 104 vertices and 556 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7fbfb7569710>
-	<Graph object, directed, with 144 vertices and 753 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7fbfb757d750>
-	<Graph object, directed, with 59 vertices and 318 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7fbfb86b9d90>
-	<Graph object, directed, with 159 vertices and 842 edges, 6 internal vertex properties, 4 internal edge properties, 7 internal graph properties, at 0x7fbfb874ebd0>
+	<Graph object, directed, with 138 vertices and 13567 edges, 5 internal vertex properties, 3 internal edge properties, 7 internal graph properties, at 0x7f131e0c35d0>
+	<Graph object, directed, with 105 vertices and 9435 edges, 5 internal vertex properties, 3 internal edge properties, 7 internal graph properties, at 0x7f130db49fd0>
+	<Graph object, directed, with 117 vertices and 10829 edges, 5 internal vertex properties, 3 internal edge properties, 7 internal graph properties, at 0x7f130dacc350>
+	<Graph object, directed, with 98 vertices and 8435 edges, 5 internal vertex properties, 3 internal edge properties, 7 internal graph properties, at 0x7f130dacc0d0>
+	<Graph object, directed, with 93 vertices and 7627 edges, 5 internal vertex properties, 3 internal edge properties, 7 internal graph properties, at 0x7f130dacc750>
+	<Graph object, directed, with 112 vertices and 10668 edges, 5 internal vertex properties, 3 internal edge properties, 7 internal graph properties, at 0x7f130dabd710>
+	<Graph object, directed, with 116 vertices and 10939 edges, 5 internal vertex properties, 3 internal edge properties, 7 internal graph properties, at 0x7f131c5829d0>
+	<Graph object, directed, with 126 vertices and 12130 edges, 5 internal vertex properties, 3 internal edge properties, 7 internal graph properties, at 0x7f131ca23e10>
+	<Graph object, directed, with 78 vertices and 5526 edges, 5 internal vertex properties, 3 internal edge properties, 7 internal graph properties, at 0x7f130c9bf9d0>
+	<Graph object, directed, with 80 vertices and 5907 edges, 5 internal vertex properties, 3 internal edge properties, 7 internal graph properties, at 0x7f130c9bfbd0>
+	<Graph object, directed, with 116 vertices and 11209 edges, 5 internal vertex properties, 3 internal edge properties, 7 internal graph properties, at 0x7f130dad1050>
+	<Graph object, directed, with 137 vertices and 12735 edges, 5 internal vertex properties, 3 internal edge properties, 7 internal graph properties, at 0x7f130c9a9b50>
+	<Graph object, directed, with 80 vertices and 5653 edges, 5 internal vertex properties, 3 internal edge properties, 7 internal graph properties, at 0x7f130c9cbc50>
+	<Graph object, directed, with 125 vertices and 11401 edges, 5 internal vertex properties, 3 internal edge properties, 7 internal graph properties, at 0x7f130c9d0150>
+	<Graph object, directed, with 99 vertices and 8076 edges, 5 internal vertex properties, 3 internal edge properties, 7 internal graph properties, at 0x7f130dacc490>
+	<Graph object, directed, with 122 vertices and 11294 edges, 5 internal vertex properties, 3 internal edge properties, 7 internal graph properties, at 0x7f130dacc610>
+	<Graph object, directed, with 114 vertices and 10544 edges, 5 internal vertex properties, 3 internal edge properties, 7 internal graph properties, at 0x7f130c9d4e50>
+	<Graph object, directed, with 111 vertices and 10702 edges, 5 internal vertex properties, 3 internal edge properties, 7 internal graph properties, at 0x7f130c9dea90>
+	<Graph object, directed, with 100 vertices and 8896 edges, 5 internal vertex properties, 3 internal edge properties, 7 internal graph properties, at 0x7f130c9d4d50>
+	<Graph object, directed, with 75 vertices and 4661 edges, 5 internal vertex properties, 3 internal edge properties, 7 internal graph properties, at 0x7f130dad1510>
+	<Graph object, directed, with 151 vertices and 14538 edges, 5 internal vertex properties, 3 internal edge properties, 7 internal graph properties, at 0x7f130c968790>
+	<Graph object, directed, with 106 vertices and 9768 edges, 5 internal vertex properties, 3 internal edge properties, 7 internal graph properties, at 0x7f130c9e2bd0>
+	<Graph object, directed, with 109 vertices and 10498 edges, 5 internal vertex properties, 3 internal edge properties, 7 internal graph properties, at 0x7f130c969f90>
+	<Graph object, directed, with 2 vertices and 1 edge, 5 internal vertex properties, 3 internal edge properties, 7 internal graph properties, at 0x7f130c9688d0>
+	<Graph object, directed, with 125 vertices and 12052 edges, 5 internal vertex properties, 3 internal edge properties, 7 internal graph properties, at 0x7f130c9de9d0>
+	<Graph object, directed, with 118 vertices and 10887 edges, 5 internal vertex properties, 3 internal edge properties, 7 internal graph properties, at 0x7f130dabd4d0>
+	<Graph object, directed, with 127 vertices and 12250 edges, 5 internal vertex properties, 3 internal edge properties, 7 internal graph properties, at 0x7f130c9c22d0>
+	<Graph object, directed, with 105 vertices and 9581 edges, 5 internal vertex properties, 3 internal edge properties, 7 internal graph properties, at 0x7f130c980b90>
+	<Graph object, directed, with 145 vertices and 13507 edges, 5 internal vertex properties, 3 internal edge properties, 7 internal graph properties, at 0x7f130c979bd0>
+	<Graph object, directed, with 59 vertices and 3001 edges, 5 internal vertex properties, 3 internal edge properties, 7 internal graph properties, at 0x7f130c975550>
+	<Graph object, directed, with 159 vertices and 15275 edges, 5 internal vertex properties, 3 internal edge properties, 7 internal graph properties, at 0x7f131c9ede10>
 
 
 Stats for component 0 in sample A with 5 alleles and ploidy = 2:
@@ -103,7 +96,7 @@ Stats for component 5 in sample A with 2 alleles and ploidy = 2:
 			((0, 0),)
 
 
-Stats for component 7 in sample A with 5 alleles and ploidy = 2:
+Stats for component 6 in sample A with 5 alleles and ploidy = 2:
 
 	Maximum vafs likelihood:
 		1.0 for allele ACTGCAGTAAGGCTGTAAGATCGCTCCTTGTCCGGCCCCGCGTTAAGCGCACACAAGAACTGGACCAAGCTGAGGGCCGTCCTCCACTGCTACA
@@ -121,7 +114,7 @@ Stats for component 7 in sample A with 5 alleles and ploidy = 2:
 			((0, 0), (0, 0), (0, 0))
 
 
-Stats for component 9 in sample A with 3 alleles and ploidy = 2:
+Stats for component 8 in sample A with 3 alleles and ploidy = 2:
 
 	Maximum vafs likelihood:
 		0.0 for allele ACTGCATCTTAAGTCTGACCGTCCCCGATCACGTAATAGTCGAAGGAGCATACTTTAAGACGTAGCGTTAGGGTGCCGGTTAGGGTCATGTCGC
@@ -137,7 +130,7 @@ Stats for component 9 in sample A with 3 alleles and ploidy = 2:
 			((2, 2), (2, 2))
 
 
-Stats for component 15 in sample A with 4 alleles and ploidy = 2:
+Stats for component 14 in sample A with 4 alleles and ploidy = 2:
 
 	Maximum vafs likelihood:
 		1.0 for allele ACTGCATACGGTTAACTTGTTCCTGTCAATCTGACGCGATCCTGGGAGGAGGTGTGTCTCCGAGCTCTTAAACGACGCAGGATCATACCATCAA
@@ -154,7 +147,7 @@ Stats for component 15 in sample A with 4 alleles and ploidy = 2:
 			((0, 0), (0, 0))
 
 
-Stats for component 16 in sample A with 4 alleles and ploidy = 2:
+Stats for component 15 in sample A with 4 alleles and ploidy = 2:
 
 	Maximum vafs likelihood:
 		1.0 for allele ACTGCATGCACTAATATGGGGGATCCGGTCAACAACGAGACACACAAAGTTGTTCGTTCTACATCAAGGGGCGTGCGATTACTTACGACATATC
@@ -171,7 +164,7 @@ Stats for component 16 in sample A with 4 alleles and ploidy = 2:
 			((0, 0), (0, 0))
 
 
-Stats for component 17 in sample A with 6 alleles and ploidy = 2:
+Stats for component 16 in sample A with 6 alleles and ploidy = 2:
 
 	Maximum vafs likelihood:
 		1.0 for allele ACTGCATCGTGGTTCGCACAACCCTTACCTGGTAACGGTAGTTTACCCATTCGAAATACGTGCCGGAGATCCGTGAGGGTGCGGCATCCAGAGT
@@ -190,7 +183,7 @@ Stats for component 17 in sample A with 6 alleles and ploidy = 2:
 			((0, 0), (0, 0), (0, 0))
 
 
-Stats for component 22 in sample A with 2 alleles and ploidy = 2:
+Stats for component 21 in sample A with 2 alleles and ploidy = 2:
 
 	Maximum vafs likelihood:
 		1.0 for allele ACTGCATGATTTAACTACGTGCAGCCCAACATTCTCAACGTATTGAGGCACAAGTAATACATTGGTGCTTTTCCCATGTAACCAGCCTAGCCAT
@@ -205,7 +198,7 @@ Stats for component 22 in sample A with 2 alleles and ploidy = 2:
 			((0, 0),)
 
 
-Stats for component 24 in sample A with 4 alleles and ploidy = 2:
+Stats for component 22 in sample A with 4 alleles and ploidy = 2:
 
 	Maximum vafs likelihood:
 		1.0 for allele ACTGCATGCCGGGTTATTAGAGAAATGGGAAGAGTCATATACGATATCTGATCCCTCCGTCCAAGGCGGTCGTCCGGGACCATAGTGCTCAGTA
@@ -222,26 +215,26 @@ Stats for component 24 in sample A with 4 alleles and ploidy = 2:
 			((0, 0), (0, 0))
 
 
-Stats for component 27 in sample A with 6 alleles and ploidy = 2:
+Stats for component 25 in sample A with 6 alleles and ploidy = 2:
 
 	Maximum vafs likelihood:
-		0.0 for allele ACTGCATCCTAGTATGGAAGTTGGTGGGAATCCTGGGACGTGCCCTGACCGCCCCTCGCGAAAAATCCGGTATTGCTAAAGAGAGGATAGACTA
+		1.0 for allele ACTGCATCCTAGTATGGAAGTTGGTGGGAATCCTGGGACGTGCCCTGACCGCCCCTCGCGAAAAATCCGGTATTGCTAAAGAGAGGATAGACTA
 		0.0 for allele ACTGCATCCTGGTATGGAAGTTGGTGGGAATCCTGGGACATGCCCTGACCGCCCCTCGCGAAAAATCCGGTATTGCTAAAGAGAGGATAGACTA
 		0.0 for allele ACTGCATCCTGGTATGGAAGTTGGTGGGAATCCTGGGACGTGCCCTGACCGCCCCTCGCGAAAAATCCGGTATTGCTAAAGAGACGATAGACTA
 		0.0 for allele ACTGCATCCTGGTATGGAAGTTGGTGGGAATCCTGGGACGTGCCCTGACCGCCCCTCGCGAAAAATCCGGTATTGCTAAAGAGAGGATAGACAA
 		0.0 for allele ACTGCATCCTGGTATGGAAGTTGGTGGGAATCCTGGGACGTGCCCTGACCGCCCCTCGCGAAAAATCCGGTATTGCTAAAGAGAGGATAGACGA
-		1.0 for allele ACTGCATCCTGGTATGGAAGTTGGTGGGAATCCTGGGACGTGCCCTGACCGCCCCTCGCGAAAAATCCGGTATTGCTAAAGAGAGGATAGACTA
+		0.0 for allele ACTGCATCCTGGTATGGAAGTTGGTGGGAATCCTGGGACGTGCCCTGACCGCCCCTCGCGAAAAATCCGGTATTGCTAAAGAGAGGATAGACTA
 
 	Maximum loci likelihood calculations:
 		loci_likelihoods:
-			[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.165008585217315, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+			[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.165008585217315, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 		max_likelihood_idx:
-			412
+			357
 		max_likelihood_loci:
-			((5, 5), (5, 5), (5, 5))
+			((0, 0), (0, 0), (0, 0))
 
 
-Stats for component 30 in sample A with 8 alleles and ploidy = 2:
+Stats for component 27 in sample A with 8 alleles and ploidy = 2:
 
 	Maximum vafs likelihood:
 		1.0 for allele ACTGCATCTTGTTCCAAAGGAATCACTGTCGCTTAACCCGCGATATATTTGTCATTTGTTGGTGACTGAAAGATGAAAAAGCTTACGGGTAGCA
@@ -262,7 +255,7 @@ Stats for component 30 in sample A with 8 alleles and ploidy = 2:
 			((0, 0), (0, 0), (0, 0), (0, 0))
 
 
-Stats for component 35 in sample A with 2 alleles and ploidy = 2:
+Stats for component 32 in sample A with 2 alleles and ploidy = 2:
 
 	Maximum vafs likelihood:
 		1.0 for allele ACTGCATGTGGTTCGTGCTTTGGTTGTGTTGGCCACAAGTAAGTTTTGCATACGACCGGCACCCTTTGTGATGTGTCGCTTAGCGCGGCCGGAC
@@ -277,7 +270,7 @@ Stats for component 35 in sample A with 2 alleles and ploidy = 2:
 			((0, 0),)
 
 
-Stats for component 37 in sample A with 4 alleles and ploidy = 2:
+Stats for component 34 in sample A with 4 alleles and ploidy = 2:
 
 	Maximum vafs likelihood:
 		1.0 for allele ACTGCATCAACGCGCATATTCCGAGGAGTTCTTTTCCAGGCGTGCCGAAAGGCGCGTCGTGAAGTTAGGAACCGATGCCACAGAATGGCTCTTT
@@ -294,7 +287,7 @@ Stats for component 37 in sample A with 4 alleles and ploidy = 2:
 			((0, 0), (0, 0))
 
 
-Stats for component 41 in sample A with 2 alleles and ploidy = 2:
+Stats for component 38 in sample A with 2 alleles and ploidy = 2:
 
 	Maximum vafs likelihood:
 		1.0 for allele AATGCATCGCAATGTCCTATAACAGGCCACTCAACCGTATGGGTTTTCATGCTAACAGGCGGAGAGACAAATTATAGTGCGGGCGCGCAAGACC
@@ -309,7 +302,7 @@ Stats for component 41 in sample A with 2 alleles and ploidy = 2:
 			((0, 0),)
 
 
-Stats for component 42 in sample A with 3 alleles and ploidy = 2:
+Stats for component 39 in sample A with 3 alleles and ploidy = 2:
 
 	Maximum vafs likelihood:
 		1.0 for allele ACTGCATTGAAACCGCCTTGCGCACTACTAGCCAGGAGCGGCTACGACAAGTCTCTAGGACGTGTGCAGTGTATCTAAGTGCCTCATAAATCCG
@@ -325,7 +318,7 @@ Stats for component 42 in sample A with 3 alleles and ploidy = 2:
 			((0, 0), (0, 0))
 
 
-Stats for component 46 in sample A with 2 alleles and ploidy = 2:
+Stats for component 43 in sample A with 2 alleles and ploidy = 2:
 
 	Maximum vafs likelihood:
 		1.0 for allele ACTGCATAGACATATCCACGTTAACGCTCGGGTCGGGACCATGTTACCAGTTGAAAAACGACTTAGCTAGAGGTCTATCCAAACGATAGTATTG
@@ -340,7 +333,7 @@ Stats for component 46 in sample A with 2 alleles and ploidy = 2:
 			((0, 0),)
 
 
-Stats for component 49 in sample A with 3 alleles and ploidy = 2:
+Stats for component 45 in sample A with 3 alleles and ploidy = 2:
 
 	Maximum vafs likelihood:
 		1.0 for allele ACTGCATGGTCCTTGCTTTTTGCTATAGCTGCGCGTAACGGTGCAATATAAACTACCGGCCCCCCCCCGTTCCGGCACTGAGTGACCATACAAG
@@ -356,7 +349,7 @@ Stats for component 49 in sample A with 3 alleles and ploidy = 2:
 			((0, 0), (0, 0))
 
 
-Stats for component 50 in sample A with 4 alleles and ploidy = 2:
+Stats for component 46 in sample A with 4 alleles and ploidy = 2:
 
 	Maximum vafs likelihood:
 		1.0 for allele ACTGCATCGGGAAGGGGGCCATATGAAAGAACGACAACGGTGCCTATTTCCTGCCCCACAAAGACCTTGCAGGGGGCCCGCTCCCCGCTTTATA
@@ -373,7 +366,7 @@ Stats for component 50 in sample A with 4 alleles and ploidy = 2:
 			((0, 0), (0, 0))
 
 
-Stats for component 52 in sample A with 3 alleles and ploidy = 2:
+Stats for component 48 in sample A with 3 alleles and ploidy = 2:
 
 	Maximum vafs likelihood:
 		1.0 for allele ACTGCATCCACTCCCGATCCGCCCTAGAGTTATTGTTAATCACTTCCCGAAATTGAGCGAGGGGATAGCACGAATTGTAACTCAAACATACTTG
@@ -389,7 +382,7 @@ Stats for component 52 in sample A with 3 alleles and ploidy = 2:
 			((0, 0), (0, 0))
 
 
-Stats for component 54 in sample A with 7 alleles and ploidy = 2:
+Stats for component 50 in sample A with 7 alleles and ploidy = 2:
 
 	Maximum vafs likelihood:
 		1.0 for allele ACTGCAGTGGAACAGTTCTGTCCCCCCCATCTCAGTCTGTCGCAAGACGGTCAAGATCCAGACCTCAGTTCGATTGTTTAACCGGCCGCCCGGG
@@ -409,24 +402,24 @@ Stats for component 54 in sample A with 7 alleles and ploidy = 2:
 			((0, 0), (0, 0), (0, 0), (0, 0))
 
 
-Stats for component 56 in sample A with 4 alleles and ploidy = 2:
+Stats for component 52 in sample A with 4 alleles and ploidy = 2:
 
 	Maximum vafs likelihood:
-		0.0 for allele ACTGAATTTAAGTTCAAGAAAATACACGCTTTTAATATTCGCCTCGATTACGTCTTAACAGCTCCAGACATTGAGACCTGTTCGCTCCATGAAC
+		1.0 for allele ACTGAATTTAAGTTCAAGAAAATACACGCTTTTAATATTCGCCTCGATTACGTCTTAACAGCTCCAGACATTGAGACCTGTTCGCTCCATGAAC
 		0.0 for allele ACTGCATTTAAGTTCAAGAAAATACACCCTTTTAATATTCGCCTCGATTACGTCTTAACAGCTCCAGACATTGAGACCTGTTCGCTCCATGAAC
-		0.25 for allele ACTGCATTTAAGTTCAAGAAAATACACGCTTTTAATATTCGCCTCGATTACGTCTTAACAGCTCCAGACATTGAGACCTGTTCGCTCCATAAAC
-		0.75 for allele ACTGCATTTAAGTTCAAGAAAATACACGCTTTTAATATTCGCCTCGATTACGTCTTAACAGCTCCAGACATTGAGACCTGTTCGCTCCATGAAC
+		0.0 for allele ACTGCATTTAAGTTCAAGAAAATACACGCTTTTAATATTCGCCTCGATTACGTCTTAACAGCTCCAGACATTGAGACCTGTTCGCTCCATAAAC
+		0.0 for allele ACTGCATTTAAGTTCAAGAAAATACACGCTTTTAATATTCGCCTCGATTACGTCTTAACAGCTCCAGACATTGAGACCTGTTCGCTCCATGAAC
 
 	Maximum loci likelihood calculations:
 		loci_likelihoods:
-			[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.0015498479249838732, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+			[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.545198381208922, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 		max_likelihood_idx:
-			24
+			13
 		max_likelihood_loci:
-			((2, 3), (3, 3))
+			((0, 0), (0, 0))
 
 
-Stats for component 59 in sample A with 5 alleles and ploidy = 2:
+Stats for component 54 in sample A with 5 alleles and ploidy = 2:
 
 	Maximum vafs likelihood:
 		1.0 for allele ACTGCATGGTGAAATCGCTCCCTTAATTGGGTGTTACTGTGTTATCCACCTACGTGCCGTGGGCGATGAGTAACCCGTGTGACGACCGTCACAA
@@ -444,7 +437,7 @@ Stats for component 59 in sample A with 5 alleles and ploidy = 2:
 			((0, 0), (0, 0), (0, 0))
 
 
-Stats for component 60 in sample A with 2 alleles and ploidy = 2:
+Stats for component 55 in sample A with 2 alleles and ploidy = 2:
 
 	Maximum vafs likelihood:
 		0.5 for allele ACTGCATGGTGGAATCGCTCCCTTAACTGGGTGTTACTGTGTTATCCACCTACGTGCCGTGGGCGATGAGTAACTCGTGTGACGACCGTCACAA
@@ -459,7 +452,7 @@ Stats for component 60 in sample A with 2 alleles and ploidy = 2:
 			((0, 1),)
 
 
-Stats for component 61 in sample A with 6 alleles and ploidy = 2:
+Stats for component 56 in sample A with 6 alleles and ploidy = 2:
 
 	Maximum vafs likelihood:
 		1.0 for allele ACTGCATATGCGATATGTCATGGCATGGACAGAGCAATCGCTGCTCCTCCGTCGGATGTGTGCGCGACTTCCAGTCCCGCCGCGCATTTGAGAA
@@ -478,7 +471,7 @@ Stats for component 61 in sample A with 6 alleles and ploidy = 2:
 			((0, 0), (0, 0), (0, 0))
 
 
-Stats for component 62 in sample A with 2 alleles and ploidy = 2:
+Stats for component 57 in sample A with 2 alleles and ploidy = 2:
 
 	Maximum vafs likelihood:
 		1.0 for allele ACTGCATCTCGTGAATCCCACATTTAGTTAACATACCATCGGCCTTAACGACCGATGAAGTCACCGGTAGGTGCGGCCATACCAGCTCTAGGAC
@@ -493,7 +486,7 @@ Stats for component 62 in sample A with 2 alleles and ploidy = 2:
 			((0, 0),)
 
 
-Stats for component 64 in sample A with 4 alleles and ploidy = 2:
+Stats for component 59 in sample A with 4 alleles and ploidy = 2:
 
 	Maximum vafs likelihood:
 		1.0 for allele ACTGCATTGTAACCTGTTGGAGCGCATAGGGAGAATCCCAGGGTCCTAAGCGCGATCGCTCAACAGGACCTCGCTCTATATCGTGGCAACGCTC
@@ -510,7 +503,7 @@ Stats for component 64 in sample A with 4 alleles and ploidy = 2:
 			((0, 0), (0, 0))
 
 
-Stats for component 66 in sample A with 5 alleles and ploidy = 2:
+Stats for component 60 in sample A with 5 alleles and ploidy = 2:
 
 	Maximum vafs likelihood:
 		1.0 for allele ACTGCATGCTGTCGTAGCTACTGGAACCCTTCCCTCACGAGACCCTAAGACAGGCGCATTAGATATACGACGGCAAATTCTGCGAGAGTCGATA
@@ -528,7 +521,7 @@ Stats for component 66 in sample A with 5 alleles and ploidy = 2:
 			((0, 0), (0, 0), (0, 0))
 
 
-Stats for component 68 in sample A with 7 alleles and ploidy = 2:
+Stats for component 61 in sample A with 7 alleles and ploidy = 2:
 
 	Maximum vafs likelihood:
 		1.0 for allele ACTGCATGTGTTAATGTCAGTGTAATTTACACATGTCGTAGGACCATAAAACAACAGAAGATTCTCGCATTTAGGTCCATAACAGACCTCAGAA
@@ -548,7 +541,7 @@ Stats for component 68 in sample A with 7 alleles and ploidy = 2:
 			((0, 0), (0, 0), (0, 0), (0, 0))
 
 
-Stats for component 73 in sample A with 2 alleles and ploidy = 2:
+Stats for component 65 in sample A with 2 alleles and ploidy = 2:
 
 	Maximum vafs likelihood:
 		1.0 for allele ACTGCATAACTCGGGGTGCCCGGTGATTTTATGCCCACACTACACTAACGGTATATCCCTACAGATGGCTGTAACGAACGGCATGTCCGGGCGG
@@ -563,7 +556,7 @@ Stats for component 73 in sample A with 2 alleles and ploidy = 2:
 			((0, 0),)
 
 
-Stats for component 74 in sample A with 6 alleles and ploidy = 2:
+Stats for component 66 in sample A with 6 alleles and ploidy = 2:
 
 	Maximum vafs likelihood:
 		1.0 for allele ACTGCATGCGACCGTAAGCGGGGATATCGAATTAAATGAATTACGACCATCCGCTAAATACTTACTCCCAGTCACTACGCCCGACTATACCGGG
