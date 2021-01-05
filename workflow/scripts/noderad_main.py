@@ -145,7 +145,7 @@ for (comp, comp_nr) in connected_components:
         sys.stderr.write("\t\t{} for allele {}\n".format(vaf, allele))
 
     # step 3: likelihood of loci given alleles and fractions
-    loci_candidates = list(likelihood_operations.get_candidate_loci(n, ploidy))
+    loci_candidates = list(likelihood_operations.get_candidate_loci(n, ploidy, max_likelihood_vafs))
 
     loci_likelihoods = [
         likelihood_operations.calc_loci_likelihoods(comp, max_likelihood_vafs, alleles, loci)
