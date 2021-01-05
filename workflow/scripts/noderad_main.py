@@ -80,7 +80,7 @@ node = graph.add_vertex()
 v_id[node] = "{idx}_{sample}".format(idx=0, sample=sample)
 v_name[node] = ""
 v_seq[node] = ""
-v_qual[node] = ""
+v_q_qual[node] = ""
 
 # add reads as vertices of the graph
 if reads.endswith(".gz"):
@@ -91,37 +91,20 @@ else:
         graph = graph_operations.set_nodes(graph, _reads, format, sample)
 
 # add edges from all-vs-all alignment of reads (please see rule minimap2)
-stats = {"max_NM": 0, "n_snp": 0, "n_ins": 0, "n_del": 0}
 sam = pysam.AlignmentFile(sam, "rb")
 for read in sam.fetch(until_eof=True):
-    graph_build = graph_operations.set_edges(graph, read, threshold, stats)
-    graph = graph_build[0]
-    stats = graph_build[1]
+    graph = graph_operations.set_edges(graph, read, threshold)
 sam.close()
 graph.remove_vertex(0)
 
-# statistics
-max_NM = stats["max_NM"]  # highest edit distance
-n_snp = stats["n_snp"]  # counter for total number of substitutions/snp's
-n_ins = stats["n_ins"]  # counter for total number of insertions
-n_del = stats["n_del"]  # counter for total number of deletions
 
 # write log files
 sys.stderr.write(
     "graph construction summary for sample {}:"
-    "\n nodes:\t{}\n edges:\t{}\n max distance:\t{}".format(sample,
-                                                            graph.num_vertices(),
-                                                            graph.num_edges(),
-                                                            stats["max_NM"]))
-sys.stderr.write(
-    "\n\tmutations:\n\t\tsnp's and substitutions: {}"
-    "\n\t\tinsertions: {}\n\t\tdeletions: {}\n\n".format(stats["n_snp"],
-                                                         stats["n_ins"],
-                                                         stats["n_del"]))
+    "\n nodes:\t{}\n edges:\t{}\n".format(sample, graph.num_vertices(), graph.num_edges()))
 
 graph_operations.save_and_draw_graph(graph, xml_out=graph_xml,
-                                     figure_out=output_figure,
-                                     e_color="likelihood")
+                                     figure_out=output_figure)
 
 # in case subgraph directory is expected as optional output, but some samples do not produce
 # subgraphs. This way the empty directories for these samples preserved and are not removed by snakemake.
@@ -131,8 +114,7 @@ graph_operations.set_dir(dir_subgraphs)
 message = "CONNECTED COMPONENTS based on the graph construction from the edit distances (minimap2)"
 connected_components = graph_operations.get_components(graph, message, snakemake.wildcards.get('sample'),
                                                        dir_subgraphs, connected_components_xml,
-                                                       connected_components_figure, v_color="component-label",
-                                                       e_color="likelihood")
+                                                       connected_components_figure, v_color="component-label")
 
 graph = None
 loc_nr = 1
@@ -142,9 +124,10 @@ for (comp, comp_nr) in connected_components:
     n = len(alleles)
     vafs_candidates = list(likelihood_operations.get_candidate_vafs(n, ploidy))
     nodes = list([comp.vertex_index[node] for node in comp.vertices()])
+    read_allele_likelihoods = {}
 
     # calculate the likelihood over ALL reads
-    vafs_likelihoods = [likelihood_operations.calc_vafs_likelihood(comp, vafs, nodes, alleles) for vafs in
+    vafs_likelihoods = [likelihood_operations.calc_vafs_likelihood(comp, vafs, nodes, alleles, read_allele_likelihoods) for vafs in
                         vafs_candidates]
     if not vafs_likelihoods:  # case empty list, e.g. if the treshold-seq-noise value is set too large
         continue
@@ -168,10 +151,11 @@ for (comp, comp_nr) in connected_components:
         likelihood_operations.calc_loci_likelihoods(comp, max_likelihood_vafs, alleles, loci)
         for loci in loci_candidates
     ]
-    # write to log file
-    sys.stderr.write("\n\tMaximum loci likelihood calculations:\n")
     max_likelihood_idx = np.argmax(loci_likelihoods)
     max_likelihood_loci = loci_candidates[max_likelihood_idx]
+
+    # write to log file
+    sys.stderr.write("\n\tMaximum loci likelihood calculations:\n")
     sys.stderr.write("\t\tloci_likelihoods:\n\t\t\t{}\n\t\tmax_likelihood_idx:\n\t\t\t{}"
                      "\n\t\tmax_likelihood_loci:\n\t\t\t{}\n".format(loci_likelihoods, max_likelihood_idx,
                                                                      max_likelihood_loci))

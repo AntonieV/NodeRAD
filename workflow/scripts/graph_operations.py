@@ -21,13 +21,11 @@ def set_properties():
                 ("g_del_heterozyg", "del-heterozygosity", "float"),
                 ("v_id", "id", "string"), ("v_name", "name", "string"),
                 ("v_seq", "sequence", "string"),
-                ("v_qual", "quality", "vector<float>"),  # p error of quality phred scores
                 ("v_q_qual", "quality-q-vals", "vector<int>"),  # q values of quality phred scores
                 ("v_concom", "component-label", "int32_t"),  # index number of the connected component to which the node belongs to
                 ("e_dist", "distance", "int"),
                 ("e_cs", "cs-tag", "string"),  # cigar string from cs tag, short or long option can be selected in minimap2 rule
-                ("e_cigar_tup", "cigar-tuples", "string"),  # cigar tuples https://pysam.readthedocs.io/en/latest/api.html#pysam.AlignedSegment.cigartuples
-                ("e_lh", "likelihood", "float")]
+                ("e_cigar_tup", "cigar-tuples", "string")]  # cigar tuples https://pysam.readthedocs.io/en/latest/api.html#pysam.AlignedSegment.cigartuples
 
 
 # add vertices
@@ -37,12 +35,11 @@ def set_nodes(graph, _reads, format, sample):
         graph.vp["id"][node] = "{idx}_{sample}".format(idx=node, sample=sample)
         graph.vp["name"][node] = (record.id).split(' ', 1)[0]
         graph.vp["sequence"][node] = record.seq
-        graph.vp["quality"][node] = [10 ** (-1 * i / 10) for i in record.letter_annotations["phred_quality"]]
         graph.vp["quality-q-vals"][node] = record.letter_annotations["phred_quality"]
     return graph
 
 
-def set_edges(graph, read, threshold, stats):
+def set_edges(graph, read, threshold):
     if read.has_tag("NM") and not read.query_name == read.reference_name:
         nm = 0  # edit distance between query and reference sequence
         cig = ""  # elements of cigar string
@@ -52,8 +49,6 @@ def set_edges(graph, read, threshold, stats):
             if tag == "cs":
                 cig = tag_val
         if nm <= threshold:
-            if stats["max_NM"] < nm:
-                stats["max_NM"] = nm
             query_node = find_vertex(graph, graph.vp["name"], read.query_name)[0]
             ref_node = find_vertex(graph, graph.vp["name"], read.reference_name)[0]
             if not graph.vertex_index[ref_node] in graph.get_out_neighbors(query_node):  # ignores duplicates
@@ -62,12 +57,7 @@ def set_edges(graph, read, threshold, stats):
                 graph.ep["distance"][edge] = nm
                 graph.ep["cs-tag"][edge] = cig
                 graph.ep["cigar-tuples"][edge] = read.cigar
-                likelihood_calculation = likelihood_operations.get_alignment_likelihood(graph, read.cigartuples,
-                                                               graph.vertex_properties["quality"][query_node],
-                                                               stats)
-                graph.ep["likelihood"][edge] = likelihood_calculation[0]
-                stats = likelihood_calculation[1]
-    return graph, stats
+    return graph
 
 
 def save_and_draw_graph(graph, xml_out=None, figure_out=None, v_color=None, e_color=None, v_size=1):

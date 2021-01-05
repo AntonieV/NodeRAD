@@ -6,7 +6,8 @@ import math
 
 # if not reverse: calculates likelihood for an edge (from ref to query) from the cigartuples and quality of the query node
 # if reverse: calculates likelihood for backwards an edge (from ref to query) from the cigartuples and ref quality of an existing edge (from query to ref)
-def get_alignment_likelihood(graph, cigar_tuples, quality, stats=None, reverse=False):
+def get_alignment_likelihood(graph, cigar_tuples, qual, reverse=False):
+    quality = [10 ** (-1 * i / 10) for i in qual]
     qual_idx = 0
     likelihood = 1.0
     _subst = graph.gp["subst-mutation-rates"]
@@ -29,21 +30,13 @@ def get_alignment_likelihood(graph, cigar_tuples, quality, stats=None, reverse=F
             mut_rate = 0
             if op == 8 or op == 4:  # on substitution/snp or on softclip mismatch in cigar-string
                 mut_rate = _subst
-                if stats:
-                    stats["n_snp"] += length
             if op == 1:  # on insertion mismatch in cigar-string
                 mut_rate = _ins
-                if stats:
-                    stats["n_ins"] += length
             if op == 2:  # on deletion mismatch in cigar-string
                 mut_rate = _del
-                if stats:
-                    stats["n_del"] += length
             for i in quality[qual_idx:(qual_idx+length)]:
                 likelihood *= (1 - mut_rate) * float(1 / 3) * i + mut_rate * (1 - i)
             qual_idx += length
-    if stats:
-        return likelihood, stats
     return likelihood
 
 
@@ -130,36 +123,38 @@ def get_candidate_alleles(comp, reads, noise, cluster_size):
     return sorted(seq for seq, count in read_support.items())
 
 
-def get_allele_likelihood_read(comp, allele, node):
+def get_allele_likelihood_read(comp, allele, node, read_allele_likelihoods):
     # obtian one arbitrary out edge of node that points to another node with sequence = allele
     out_neighbors = comp.get_out_neighbors(node)
-    in_neighbors = comp.get_in_neighbors(node)
+    qual = comp.vp["quality-q-vals"][node]
     # search for existing edge from given node to target node with sequence = allele
     for neighbor in out_neighbors:
-        if comp.vertex_properties['sequence'][neighbor] == allele:
-            return comp.edge_properties["likelihood"][comp.edge(node, neighbor)]
+        seq_neighbor = comp.vertex_properties['sequence'][neighbor]
+        if seq_neighbor == allele:
+            if not (seq_neighbor, allele) in read_allele_likelihoods:
+                read_allele_likelihoods[(seq_neighbor, allele)] = get_alignment_likelihood(comp, list(eval(comp.edge_properties['cigar-tuples'][comp.edge(node, neighbor)])), qual, reverse=False)
+            return read_allele_likelihoods[(seq_neighbor, allele)]
     # search for reverse target node with sequence = allele to given node
-    qual = comp.vp["quality"][node]
+    in_neighbors = comp.get_in_neighbors(node)
     for neighbor in in_neighbors:
-        if comp.vertex_properties['sequence'][neighbor] == allele:
-            return get_alignment_likelihood(comp, list(eval(comp.edge_properties['cigar-tuples'][comp.edge(neighbor, node)])),
-                                                qual, reverse=True)
-    cigar_tuples = get_cigar_tuples(comp, comp.vp["sequence"][node], allele)
-    if cigar_tuples:
-        return get_alignment_likelihood(comp, list(eval(cigar_tuples[0])), qual, reverse=cigar_tuples[1])
+        seq_neighbor = comp.vertex_properties['sequence'][neighbor]
+        if seq_neighbor == allele:
+            if not (seq_neighbor, allele) in read_allele_likelihoods:
+                read_allele_likelihoods[(seq_neighbor, allele)] = get_alignment_likelihood(comp, list(eval(comp.edge_properties['cigar-tuples'][comp.edge(neighbor, node)])), qual, reverse=True)
+            return read_allele_likelihoods[(seq_neighbor, allele)]
     return 0
 
 
-def calc_vafs_likelihood_read(comp, vafs, node, alleles):
+def calc_vafs_likelihood_read(comp, vafs, node, alleles, read_allele_likelihoods):
     vafs_lh_read = sum(
-        vaf * get_allele_likelihood_read(comp, allele, node)
+        vaf * get_allele_likelihood_read(comp, allele, node, read_allele_likelihoods)
         for vaf, allele in zip(vafs, alleles)
     )
     return math.log(vafs_lh_read) if vafs_lh_read > 0 else -float("inf")
 
 
-def calc_vafs_likelihood(comp, vafs, nodes, alleles):
-    return sum(calc_vafs_likelihood_read(comp, vafs, node, alleles) for node in nodes)
+def calc_vafs_likelihood(comp, vafs, nodes, alleles, read_allele_likelihoods):
+    return sum(calc_vafs_likelihood_read(comp, vafs, node, alleles, read_allele_likelihoods) for node in nodes)
 
 
 # source: https://docs.python.org/3/library/itertools.html

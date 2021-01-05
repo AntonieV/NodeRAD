@@ -19,7 +19,7 @@ rule minimap2:
     log:
         "logs/minimap2/{sample}.log"
     params:
-        extra="-a -A 10 --eqx --cs=long"
+        extra="-a -A 10 -N 100 --eqx --cs=long"
     threads: 3
     wrapper:
         "0.66.0/bio/minimap2/aligner"
