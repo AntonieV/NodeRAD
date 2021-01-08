@@ -126,23 +126,24 @@ def get_candidate_alleles(comp, reads, noise, cluster_size):
 
 def get_allele_likelihood_read(comp, allele, node, read_allele_likelihoods):
     # obtian one arbitrary out edge of node that points to another node with sequence = allele
-    out_neighbors = comp.get_out_neighbors(node)
+    seq_node = comp.vertex_properties['sequence'][node]
     qual = comp.vp["quality-q-vals"][node]
+    if (seq_node, allele) in read_allele_likelihoods:
+        return read_allele_likelihoods[(seq_node, allele)]
     # search for existing edge from given node to target node with sequence = allele
+    out_neighbors = comp.get_out_neighbors(node)
     for neighbor in out_neighbors:
         seq_neighbor = comp.vertex_properties['sequence'][neighbor]
         if seq_neighbor == allele:
-            if not (seq_neighbor, allele) in read_allele_likelihoods:
-                read_allele_likelihoods[(seq_neighbor, allele)] = get_alignment_likelihood(comp, list(eval(comp.edge_properties['cigar-tuples'][comp.edge(node, neighbor)])), qual, reverse=False)
-            return read_allele_likelihoods[(seq_neighbor, allele)]
+            read_allele_likelihoods[(seq_node, seq_neighbor)] = get_alignment_likelihood(comp, list(eval(comp.edge_properties['cigar-tuples'][comp.edge(node, neighbor)])), qual, reverse=False)
+            return read_allele_likelihoods[(seq_node, seq_neighbor)]
     # search for reverse target node with sequence = allele to given node
     in_neighbors = comp.get_in_neighbors(node)
     for neighbor in in_neighbors:
         seq_neighbor = comp.vertex_properties['sequence'][neighbor]
         if seq_neighbor == allele:
-            if not (seq_neighbor, allele) in read_allele_likelihoods:
-                read_allele_likelihoods[(seq_neighbor, allele)] = get_alignment_likelihood(comp, list(eval(comp.edge_properties['cigar-tuples'][comp.edge(neighbor, node)])), qual, reverse=True)
-            return read_allele_likelihoods[(seq_neighbor, allele)]
+            read_allele_likelihoods[(seq_node, seq_neighbor)] = get_alignment_likelihood(comp, list(eval(comp.edge_properties['cigar-tuples'][comp.edge(neighbor, node)])), qual, reverse=True)
+            return read_allele_likelihoods[(seq_node, seq_neighbor)]
     return 0
 
 
