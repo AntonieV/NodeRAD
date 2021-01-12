@@ -1,0 +1,764 @@
+graph construction summary for sample B:
+ nodes:	1843
+ edges:	78068
+
+
+CONNECTED COMPONENTS based on the graph construction from the edit distances (minimap2):
+Number of connected components: 124
+
+Histogram of connected components:
+[ 23  19   1   1  16  17  24  21  12  29  32  28  33  26   1  26   1  27
+  19  28   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1
+   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1
+   1   1   1   1  13   1   1   1   1   1   1   1   1   1   1   1   1   1
+  24  25   1   1  28  29   1  26  27   1   1  22   1  34   1  23  37  24
+  22   1  14   1  28   4  28   1   1  34   1  29   1  18  21  14  44  28
+  21  21  29  37  30   1  34   1   1  28   1  28  32   1   1 462  71]
+
+connected components with more than one vertex are:
+
+	<Graph object, directed, with 23 vertices and 440 edges, 5 internal vertex properties, 3 internal edge properties, 6 internal graph properties, at 0x7f6124de0d90>
+	<Graph object, directed, with 19 vertices and 311 edges, 5 internal vertex properties, 3 internal edge properties, 6 internal graph properties, at 0x7f6133c595d0>
+	<Graph object, directed, with 16 vertices and 216 edges, 5 internal vertex properties, 3 internal edge properties, 6 internal graph properties, at 0x7f6124d48fd0>
+	<Graph object, directed, with 17 vertices and 248 edges, 5 internal vertex properties, 3 internal edge properties, 6 internal graph properties, at 0x7f6126535ad0>
+	<Graph object, directed, with 24 vertices and 483 edges, 5 internal vertex properties, 3 internal edge properties, 6 internal graph properties, at 0x7f6133c73d50>
+	<Graph object, directed, with 21 vertices and 396 edges, 5 internal vertex properties, 3 internal edge properties, 6 internal graph properties, at 0x7f6133c76fd0>
+	<Graph object, directed, with 12 vertices and 124 edges, 5 internal vertex properties, 3 internal edge properties, 6 internal graph properties, at 0x7f6123c37850>
+	<Graph object, directed, with 29 vertices and 671 edges, 5 internal vertex properties, 3 internal edge properties, 6 internal graph properties, at 0x7f61345be750>
+	<Graph object, directed, with 32 vertices and 865 edges, 5 internal vertex properties, 3 internal edge properties, 6 internal graph properties, at 0x7f6124d5b190>
+	<Graph object, directed, with 28 vertices and 652 edges, 5 internal vertex properties, 3 internal edge properties, 6 internal graph properties, at 0x7f6133c7d8d0>
+	<Graph object, directed, with 33 vertices and 967 edges, 5 internal vertex properties, 3 internal edge properties, 6 internal graph properties, at 0x7f6123c32750>
+	<Graph object, directed, with 26 vertices and 567 edges, 5 internal vertex properties, 3 internal edge properties, 6 internal graph properties, at 0x7f6133c5c750>
+	<Graph object, directed, with 26 vertices and 564 edges, 5 internal vertex properties, 3 internal edge properties, 6 internal graph properties, at 0x7f6123c53950>
+	<Graph object, directed, with 27 vertices and 665 edges, 5 internal vertex properties, 3 internal edge properties, 6 internal graph properties, at 0x7f6123c5c810>
+	<Graph object, directed, with 19 vertices and 288 edges, 5 internal vertex properties, 3 internal edge properties, 6 internal graph properties, at 0x7f6133c73850>
+	<Graph object, directed, with 28 vertices and 704 edges, 5 internal vertex properties, 3 internal edge properties, 6 internal graph properties, at 0x7f6123c57b10>
+	<Graph object, directed, with 13 vertices and 156 edges, 5 internal vertex properties, 3 internal edge properties, 6 internal graph properties, at 0x7f6123c49390>
+	<Graph object, directed, with 24 vertices and 499 edges, 5 internal vertex properties, 3 internal edge properties, 6 internal graph properties, at 0x7f6123c49550>
+	<Graph object, directed, with 25 vertices and 550 edges, 5 internal vertex properties, 3 internal edge properties, 6 internal graph properties, at 0x7f6123c66750>
+	<Graph object, directed, with 28 vertices and 724 edges, 5 internal vertex properties, 3 internal edge properties, 6 internal graph properties, at 0x7f6124de0c50>
+	<Graph object, directed, with 29 vertices and 679 edges, 5 internal vertex properties, 3 internal edge properties, 6 internal graph properties, at 0x7f6123c37350>
+	<Graph object, directed, with 26 vertices and 559 edges, 5 internal vertex properties, 3 internal edge properties, 6 internal graph properties, at 0x7f613545fc50>
+	<Graph object, directed, with 27 vertices and 634 edges, 5 internal vertex properties, 3 internal edge properties, 6 internal graph properties, at 0x7f6123c4db10>
+	<Graph object, directed, with 22 vertices and 420 edges, 5 internal vertex properties, 3 internal edge properties, 6 internal graph properties, at 0x7f6123c686d0>
+	<Graph object, directed, with 34 vertices and 1041 edges, 5 internal vertex properties, 3 internal edge properties, 6 internal graph properties, at 0x7f6124d5b210>
+	<Graph object, directed, with 23 vertices and 467 edges, 5 internal vertex properties, 3 internal edge properties, 6 internal graph properties, at 0x7f6123c4de90>
+	<Graph object, directed, with 37 vertices and 1297 edges, 5 internal vertex properties, 3 internal edge properties, 6 internal graph properties, at 0x7f6123c61c10>
+	<Graph object, directed, with 24 vertices and 487 edges, 5 internal vertex properties, 3 internal edge properties, 6 internal graph properties, at 0x7f6133c76810>
+	<Graph object, directed, with 22 vertices and 444 edges, 5 internal vertex properties, 3 internal edge properties, 6 internal graph properties, at 0x7f6123c4d890>
+	<Graph object, directed, with 14 vertices and 158 edges, 5 internal vertex properties, 3 internal edge properties, 6 internal graph properties, at 0x7f6123c666d0>
+	<Graph object, directed, with 28 vertices and 688 edges, 5 internal vertex properties, 3 internal edge properties, 6 internal graph properties, at 0x7f6123c11390>
+	<Graph object, directed, with 4 vertices and 12 edges, 5 internal vertex properties, 3 internal edge properties, 6 internal graph properties, at 0x7f6123c030d0>
+	<Graph object, directed, with 28 vertices and 556 edges, 5 internal vertex properties, 3 internal edge properties, 6 internal graph properties, at 0x7f6133cb3bd0>
+	<Graph object, directed, with 34 vertices and 988 edges, 5 internal vertex properties, 3 internal edge properties, 6 internal graph properties, at 0x7f6123c579d0>
+	<Graph object, directed, with 29 vertices and 705 edges, 5 internal vertex properties, 3 internal edge properties, 6 internal graph properties, at 0x7f6123c6fb90>
+	<Graph object, directed, with 18 vertices and 267 edges, 5 internal vertex properties, 3 internal edge properties, 6 internal graph properties, at 0x7f6123bf4c90>
+	<Graph object, directed, with 21 vertices and 372 edges, 5 internal vertex properties, 3 internal edge properties, 6 internal graph properties, at 0x7f6123c1ee10>
+	<Graph object, directed, with 14 vertices and 171 edges, 5 internal vertex properties, 3 internal edge properties, 6 internal graph properties, at 0x7f6123c25c50>
+	<Graph object, directed, with 44 vertices and 1494 edges, 5 internal vertex properties, 3 internal edge properties, 6 internal graph properties, at 0x7f6123c14c90>
+	<Graph object, directed, with 28 vertices and 746 edges, 5 internal vertex properties, 3 internal edge properties, 6 internal graph properties, at 0x7f6123c1eb50>
+	<Graph object, directed, with 21 vertices and 370 edges, 5 internal vertex properties, 3 internal edge properties, 6 internal graph properties, at 0x7f6123c30cd0>
+	<Graph object, directed, with 21 vertices and 408 edges, 5 internal vertex properties, 3 internal edge properties, 6 internal graph properties, at 0x7f6123c2d050>
+	<Graph object, directed, with 29 vertices and 739 edges, 5 internal vertex properties, 3 internal edge properties, 6 internal graph properties, at 0x7f6123c25550>
+	<Graph object, directed, with 37 vertices and 1222 edges, 5 internal vertex properties, 3 internal edge properties, 6 internal graph properties, at 0x7f6123c23d10>
+	<Graph object, directed, with 30 vertices and 826 edges, 5 internal vertex properties, 3 internal edge properties, 6 internal graph properties, at 0x7f6123c23b90>
+	<Graph object, directed, with 34 vertices and 1086 edges, 5 internal vertex properties, 3 internal edge properties, 6 internal graph properties, at 0x7f6123bb9c90>
+	<Graph object, directed, with 28 vertices and 734 edges, 5 internal vertex properties, 3 internal edge properties, 6 internal graph properties, at 0x7f6123bb9110>
+	<Graph object, directed, with 28 vertices and 607 edges, 5 internal vertex properties, 3 internal edge properties, 6 internal graph properties, at 0x7f6123c1a550>
+	<Graph object, directed, with 32 vertices and 855 edges, 5 internal vertex properties, 3 internal edge properties, 6 internal graph properties, at 0x7f6123bc3290>
+	<Graph object, directed, with 462 vertices and 44712 edges, 5 internal vertex properties, 3 internal edge properties, 6 internal graph properties, at 0x7f6123bbcf50>
+
+
+Stats for component 0 in sample B with 2 alleles and ploidy = 2:
+
+	Maximum vafs likelihood:
+		1.0 for allele ACTGCATAATCGGCCAAGCATGTCGGACGACAAGCATGACAGCTCCATAAAACTCGGCCTGCCCCATGCGCGAAACTTTGCATGTTTCGTAGAC
+		0.0 for allele ACTGCATAATCGGCCAAGCATGTCGGACGACAAGCATGACAGCTCCATACAACTCGGCCTGCCCCATGCGCGAAACTTTGCATGTTTCGTAGAC
+
+	Maximum loci likelihood calculations:
+		loci_likelihoods:
+			[2.049459607068299]
+		max_likelihood_idx:
+			0
+		max_likelihood_loci:
+			((0, 0),)
+
+
+Stats for component 1 in sample B with 1 alleles and ploidy = 2:
+
+	Maximum vafs likelihood:
+		1.0 for allele ACTGCATAAACTAGGTAAGAAACTTGTCAGCAAGGACTGAGAGATTCTTGTGGCGAATGTGGAGGGTGGTCTGCTGGGTATCGCCTGTGGCTGC
+
+	Maximum loci likelihood calculations:
+		loci_likelihoods:
+			[2.049459607068299]
+		max_likelihood_idx:
+			0
+		max_likelihood_loci:
+			((0, 0),)
+
+
+Stats for component 4 in sample B with 1 alleles and ploidy = 2:
+
+	Maximum vafs likelihood:
+		1.0 for allele ACTGCATTGCCCTGCAACTCTTTGTGACCCCATTAGGCTTTTCCCTTTAAAGGAGTTGTAGGTGTAGTTCAGATAAAGGATCTTTGCCGACTTT
+
+	Maximum loci likelihood calculations:
+		loci_likelihoods:
+			[2.049459607068299]
+		max_likelihood_idx:
+			0
+		max_likelihood_loci:
+			((0, 0),)
+
+
+Stats for component 5 in sample B with 1 alleles and ploidy = 2:
+
+	Maximum vafs likelihood:
+		1.0 for allele ACTGCATTCCTGGAAAGTCGCTTTGTGTATCGGGACTGACGAATTCGACTGGAGGACGGACAGTCCTTGAATATCGGCTAAGTTATCTTGAGAG
+
+	Maximum loci likelihood calculations:
+		loci_likelihoods:
+			[2.049459607068299]
+		max_likelihood_idx:
+			0
+		max_likelihood_loci:
+			((0, 0),)
+
+
+Stats for component 6 in sample B with 1 alleles and ploidy = 2:
+
+	Maximum vafs likelihood:
+		1.0 for allele ACTGCATTCGACATCCAGAGTATTCGTAGGCAGTGCTCTACTCTATACGGCGCCTGCATGCTGGGCCGTAGTCGAGCGTCGAATCGGCACTCGT
+
+	Maximum loci likelihood calculations:
+		loci_likelihoods:
+			[2.049459607068299]
+		max_likelihood_idx:
+			0
+		max_likelihood_loci:
+			((0, 0),)
+
+
+Stats for component 7 in sample B with 1 alleles and ploidy = 2:
+
+	Maximum vafs likelihood:
+		1.0 for allele ACTGCATTATCAATCGCCTGAGACGGAGAGACGAGCCTGGACGAATCACACCGACTGGCAAGTGGCGTGCGCATTGTAAATCGATGCGGCGTGA
+
+	Maximum loci likelihood calculations:
+		loci_likelihoods:
+			[2.049459607068299]
+		max_likelihood_idx:
+			0
+		max_likelihood_loci:
+			((0, 0),)
+
+
+Stats for component 8 in sample B with 1 alleles and ploidy = 2:
+
+	Maximum vafs likelihood:
+		1.0 for allele ACTGCATGATTCATATAAAGGTTTAGCGATTAAGGGATCCTCCCCAATGGTATGTGATGTCGGCAGGCCTTATGAGATGCCTGATGCGTCTTTG
+
+	Maximum loci likelihood calculations:
+		loci_likelihoods:
+			[2.049459607068299]
+		max_likelihood_idx:
+			0
+		max_likelihood_loci:
+			((0, 0),)
+
+
+Stats for component 9 in sample B with 1 alleles and ploidy = 2:
+
+	Maximum vafs likelihood:
+		1.0 for allele ACTGCATATTCCAAATCCTACTCGCACCTCGCACTCTCGCGTGCTGTCATATAGATGGCGCTTAGGCAACCGATTCGATCCCGCCATATGCACT
+
+	Maximum loci likelihood calculations:
+		loci_likelihoods:
+			[2.049459607068299]
+		max_likelihood_idx:
+			0
+		max_likelihood_loci:
+			((0, 0),)
+
+
+Stats for component 10 in sample B with 1 alleles and ploidy = 2:
+
+	Maximum vafs likelihood:
+		1.0 for allele ACTGCATTCTCGACATCTGAACCACAAACCTCTCAACATTGGAAGTCCCTGCGATGCGTCCATACCGAAACCGCCCCCCGACGAGTCTATCTCA
+
+	Maximum loci likelihood calculations:
+		loci_likelihoods:
+			[2.049459607068299]
+		max_likelihood_idx:
+			0
+		max_likelihood_loci:
+			((0, 0),)
+
+
+Stats for component 11 in sample B with 1 alleles and ploidy = 2:
+
+	Maximum vafs likelihood:
+		1.0 for allele ACTGCATTGGTAGAAAGCTCGTTCGGCCGACGCGCGTTCTTCCCACTGGATGTAGTGACGGCAACGCAAGCACCGGAAGTCGCGATAAGCAAGC
+
+	Maximum loci likelihood calculations:
+		loci_likelihoods:
+			[2.049459607068299]
+		max_likelihood_idx:
+			0
+		max_likelihood_loci:
+			((0, 0),)
+
+
+Stats for component 12 in sample B with 1 alleles and ploidy = 2:
+
+	Maximum vafs likelihood:
+		1.0 for allele ACTGCATGTAAATACGTGATACGTTGCTCCCGTGCGTTATGGTAAATACTCTCGAGCTAATGTGTTCCGCGGAGCTGACGCTTTGTTTATCTGT
+
+	Maximum loci likelihood calculations:
+		loci_likelihoods:
+			[2.049459607068299]
+		max_likelihood_idx:
+			0
+		max_likelihood_loci:
+			((0, 0),)
+
+
+Stats for component 13 in sample B with 1 alleles and ploidy = 2:
+
+	Maximum vafs likelihood:
+		1.0 for allele ACTGCATGGCACACCATCATCACGCCTGCTGGTAAATGGAAGAGAACAAGTCTATATGCGCATCTGGATCTCAGCTTTATACGCGGACACTCTA
+
+	Maximum loci likelihood calculations:
+		loci_likelihoods:
+			[2.049459607068299]
+		max_likelihood_idx:
+			0
+		max_likelihood_loci:
+			((0, 0),)
+
+
+Stats for component 15 in sample B with 1 alleles and ploidy = 2:
+
+	Maximum vafs likelihood:
+		1.0 for allele ACTGCATACGGATATAGAGGTGTCTCACGTATCTGGTAATTGACACGTTTACTATAATCCCATTTGTTGAGGCGTGTTTGGTTCACTGTCCTTG
+
+	Maximum loci likelihood calculations:
+		loci_likelihoods:
+			[2.049459607068299]
+		max_likelihood_idx:
+			0
+		max_likelihood_loci:
+			((0, 0),)
+
+
+Stats for component 17 in sample B with 1 alleles and ploidy = 2:
+
+	Maximum vafs likelihood:
+		1.0 for allele ACTGCATGGAAATGTCAATTAAATTTTAAGGATTAGAATGAGCCGCTCAAGTCACTCGTAAAGCAGCGACCAAGTTGGTCGCCTTTTGCCAATA
+
+	Maximum loci likelihood calculations:
+		loci_likelihoods:
+			[2.049459607068299]
+		max_likelihood_idx:
+			0
+		max_likelihood_loci:
+			((0, 0),)
+
+
+Stats for component 18 in sample B with 1 alleles and ploidy = 2:
+
+	Maximum vafs likelihood:
+		1.0 for allele ACTGCATGTGGGTCGGGACGATTAATTCGGCGAGATGCTTATCGGCCACAATACATTTTCGCCCATAACAGACACCCTACCACACATACGTGTC
+
+	Maximum loci likelihood calculations:
+		loci_likelihoods:
+			[2.049459607068299]
+		max_likelihood_idx:
+			0
+		max_likelihood_loci:
+			((0, 0),)
+
+
+Stats for component 19 in sample B with 1 alleles and ploidy = 2:
+
+	Maximum vafs likelihood:
+		1.0 for allele ACTGCATGATCCTAAGGTTTGGAGTCACGCGCCCGCGCTCGGAGCGGTTAGCAGGCAGGATCACCAGGTGGTGCCAGCAATTTAAACCCGATAA
+
+	Maximum loci likelihood calculations:
+		loci_likelihoods:
+			[2.049459607068299]
+		max_likelihood_idx:
+			0
+		max_likelihood_loci:
+			((0, 0),)
+
+
+Stats for component 58 in sample B with 1 alleles and ploidy = 2:
+
+	Maximum vafs likelihood:
+		1.0 for allele AGTCAACTGCATCATACCTTTCAACCCGCCAAATTCGGCAGTATGG
+
+	Maximum loci likelihood calculations:
+		loci_likelihoods:
+			[2.3674006593887054]
+		max_likelihood_idx:
+			0
+		max_likelihood_loci:
+			((0, 0),)
+
+
+Stats for component 72 in sample B with 1 alleles and ploidy = 2:
+
+	Maximum vafs likelihood:
+		1.0 for allele ACTGCATTGCTCAACCGCACATCGCGGCATTGGACCTACCAAGTATTGTTGCCGAGCAAGTCTCGTCACTGATGCAACTTAAGGATCACCTTTC
+
+	Maximum loci likelihood calculations:
+		loci_likelihoods:
+			[2.049459607068299]
+		max_likelihood_idx:
+			0
+		max_likelihood_loci:
+			((0, 0),)
+
+
+Stats for component 73 in sample B with 1 alleles and ploidy = 2:
+
+	Maximum vafs likelihood:
+		1.0 for allele ACTGCATGATGCCGCCCTAAGTTCATACGGTATCATTTAACCCCCACATACATCGAATCAGTCTTACCGCCTAAAGGGTAGCGAAGCCGCATAT
+
+	Maximum loci likelihood calculations:
+		loci_likelihoods:
+			[2.049459607068299]
+		max_likelihood_idx:
+			0
+		max_likelihood_loci:
+			((0, 0),)
+
+
+Stats for component 76 in sample B with 2 alleles and ploidy = 2:
+
+	Maximum vafs likelihood:
+		0.5 for allele ACTGCATACTACCTGAGCGCCGAATGGGGCCCAAGAACATTAAAGAACATTCATAACAATCCCCTATATTAAAACCGCCGTCGCTCGTCTCATC
+		0.5 for allele ACTGCATACTACCTGAGCGCCGAATGGGGCCCAAGAACATTAAAGAACATTCATAACAGTCCCCTATATTAAAACCGCCGTCGCTCGTCTCATC
+
+	Maximum loci likelihood calculations:
+		loci_likelihoods:
+			[0.0020556264865278823]
+		max_likelihood_idx:
+			0
+		max_likelihood_loci:
+			((0, 1),)
+
+
+Stats for component 77 in sample B with 1 alleles and ploidy = 2:
+
+	Maximum vafs likelihood:
+		1.0 for allele ACTGCATAGAGACTTGGGACACACGCCGGACCCTGGAACTGCAGTCTGCGTCGGGGAACGGGTTGTAAAGTATGTTAGACAAAACGCAACCCTA
+
+	Maximum loci likelihood calculations:
+		loci_likelihoods:
+			[2.049459607068299]
+		max_likelihood_idx:
+			0
+		max_likelihood_loci:
+			((0, 0),)
+
+
+Stats for component 79 in sample B with 1 alleles and ploidy = 2:
+
+	Maximum vafs likelihood:
+		1.0 for allele ACTGCATTACTCGCCGCCAAGGCACATATAACCAGAGAATGCCTGACTGAGGTGTTGCTCACAAAGGCCGCGTATGGCCCTTAGTCTGCACCCG
+
+	Maximum loci likelihood calculations:
+		loci_likelihoods:
+			[2.049459607068299]
+		max_likelihood_idx:
+			0
+		max_likelihood_loci:
+			((0, 0),)
+
+
+Stats for component 80 in sample B with 1 alleles and ploidy = 2:
+
+	Maximum vafs likelihood:
+		1.0 for allele ACTGCATCCGAAAGTCGACTATTCCTTGCCGCAGGCCACTGCCATCGAGAAAAATCATCACCTGGTGTCACAGTATACGTGTCAGAACTCGTTA
+
+	Maximum loci likelihood calculations:
+		loci_likelihoods:
+			[2.049459607068299]
+		max_likelihood_idx:
+			0
+		max_likelihood_loci:
+			((0, 0),)
+
+
+Stats for component 83 in sample B with 1 alleles and ploidy = 2:
+
+	Maximum vafs likelihood:
+		1.0 for allele ACTGCATCTAAGCTCACCCTAGGCAGCGACCGACTGGCTATGTCCGCGGCCATGGAGAACATATAATAGGCCGCACGACCAAATGTGCGGAGGA
+
+	Maximum loci likelihood calculations:
+		loci_likelihoods:
+			[2.049459607068299]
+		max_likelihood_idx:
+			0
+		max_likelihood_loci:
+			((0, 0),)
+
+
+Stats for component 85 in sample B with 1 alleles and ploidy = 2:
+
+	Maximum vafs likelihood:
+		1.0 for allele ACTGCATGGAGCGATATCGAATACGATGCTAAGACTGAACGTGTCGCCTGGCCACTGAGACCGCCATCAGTCGGGTTATGAGGCTCATGCTATG
+
+	Maximum loci likelihood calculations:
+		loci_likelihoods:
+			[2.049459607068299]
+		max_likelihood_idx:
+			0
+		max_likelihood_loci:
+			((0, 0),)
+
+
+Stats for component 87 in sample B with 1 alleles and ploidy = 2:
+
+	Maximum vafs likelihood:
+		1.0 for allele ACTGCATAAGTTTCCGTCTATACTAAGTTAGTCTGGAGGCCTAAAGTCCGACGTTATACACGTTGCCGTTCTGAATTAAGCTGCGAAGCGCAAG
+
+	Maximum loci likelihood calculations:
+		loci_likelihoods:
+			[2.049459607068299]
+		max_likelihood_idx:
+			0
+		max_likelihood_loci:
+			((0, 0),)
+
+
+Stats for component 88 in sample B with 2 alleles and ploidy = 2:
+
+	Maximum vafs likelihood:
+		1.0 for allele ACTGCATCGATCCTAGAGAAGCTCGCGCCCATAGCAGACTCTCACTTCGGCCGCAGACCCGCCCAAATAAAGAGTTTGGGTCGCCCAAGCGCAT
+		0.0 for allele ACTGCATCGATCCTAGAGAAGCTCGCGCCCATAGCAGACTCTCACTTCGGCCGCAGACCCGCCCAAATATAGAGTTTGGGTCGCCCAAGCGCAT
+
+	Maximum loci likelihood calculations:
+		loci_likelihoods:
+			[2.049459607068299]
+		max_likelihood_idx:
+			0
+		max_likelihood_loci:
+			((0, 0),)
+
+
+Stats for component 89 in sample B with 1 alleles and ploidy = 2:
+
+	Maximum vafs likelihood:
+		1.0 for allele ACTGCATTATACTCGCGCGAATTATTGACGGTCACCGCAGTGTGTAATTGGCCGGATGTCCGGACATCCATGAGCGATCTTTCAATTCGGGTCC
+
+	Maximum loci likelihood calculations:
+		loci_likelihoods:
+			[2.049459607068299]
+		max_likelihood_idx:
+			0
+		max_likelihood_loci:
+			((0, 0),)
+
+
+Stats for component 90 in sample B with 1 alleles and ploidy = 2:
+
+	Maximum vafs likelihood:
+		1.0 for allele ACTGCATCTTGCAGTTCTGTTTGCTCGCACAGCGCGCGATGCTGCACAATCCGTTATCTGGAGACGAGCGCCAATGTTTTCAGGACAATCGACG
+
+	Maximum loci likelihood calculations:
+		loci_likelihoods:
+			[2.049459607068299]
+		max_likelihood_idx:
+			0
+		max_likelihood_loci:
+			((0, 0),)
+
+
+Stats for component 92 in sample B with 1 alleles and ploidy = 2:
+
+	Maximum vafs likelihood:
+		1.0 for allele ACTGCATCAGCGCTGCTTTCTGATGGGACGCTATAATCTGATAGACCGCTATTATACTGCGGAGTCAGACGCTTTGTTCTTATGAAGCCGGCCC
+
+	Maximum loci likelihood calculations:
+		loci_likelihoods:
+			[2.049459607068299]
+		max_likelihood_idx:
+			0
+		max_likelihood_loci:
+			((0, 0),)
+
+
+Stats for component 94 in sample B with 1 alleles and ploidy = 2:
+
+	Maximum vafs likelihood:
+		1.0 for allele ACTGCATGGCTAAGAATTTTATCCGCTTTAGTCGTGCCACCGGATCTATAACCGAATGCAGTCTCAGCTAGTTTCTATGGAGACCTGGATTGAA
+
+	Maximum loci likelihood calculations:
+		loci_likelihoods:
+			[2.049459607068299]
+		max_likelihood_idx:
+			0
+		max_likelihood_loci:
+			((0, 0),)
+
+
+Stats for component 96 in sample B with 1 alleles and ploidy = 2:
+
+	Maximum vafs likelihood:
+		1.0 for allele ACTGCATAATATGATGGCGACCCAGAGGATCCTCCAACCAAAGACGAGGGTTTCTTTAATCGTCCTAAGAAGTCAGTATTTTAAGTGGGTGTTT
+
+	Maximum loci likelihood calculations:
+		loci_likelihoods:
+			[2.049459607068299]
+		max_likelihood_idx:
+			0
+		max_likelihood_loci:
+			((0, 0),)
+
+
+Stats for component 99 in sample B with 1 alleles and ploidy = 2:
+
+	Maximum vafs likelihood:
+		1.0 for allele ACTGCATCAGTTCTTAGGTTCTAACGGGATGAGCGTCTCAACGTTAAGCATTGCCAGCTGCTGTGATCGGTTTCACGCCGTGTGTGTTTGCCAG
+
+	Maximum loci likelihood calculations:
+		loci_likelihoods:
+			[2.049459607068299]
+		max_likelihood_idx:
+			0
+		max_likelihood_loci:
+			((0, 0),)
+
+
+Stats for component 101 in sample B with 1 alleles and ploidy = 2:
+
+	Maximum vafs likelihood:
+		1.0 for allele ACTGCATATCTATGTCCCTGCATGCCTGTCGGTGGAGAACGCTTTTGCCAGATTACCGCATAAAAAATTTTAGAAAAAGTTTTACCAAGAGCAA
+
+	Maximum loci likelihood calculations:
+		loci_likelihoods:
+			[2.049459607068299]
+		max_likelihood_idx:
+			0
+		max_likelihood_loci:
+			((0, 0),)
+
+
+Stats for component 103 in sample B with 1 alleles and ploidy = 2:
+
+	Maximum vafs likelihood:
+		1.0 for allele ACTGCATGTCGCTGGGCAGAGCACCAGCGCTAACCAGAATCAATACGCACCCAACAACCACCGGAGCTGCTAGCTCTACCAGGCCGAGCATCCG
+
+	Maximum loci likelihood calculations:
+		loci_likelihoods:
+			[2.049459607068299]
+		max_likelihood_idx:
+			0
+		max_likelihood_loci:
+			((0, 0),)
+
+
+Stats for component 104 in sample B with 1 alleles and ploidy = 2:
+
+	Maximum vafs likelihood:
+		1.0 for allele ACTGCATACAATAAATGTCGGCCAGAACTAGCGTCGAAGAGCGTAAGTGTGAACAAGCATGCAGAGATTGTAACCACAGACAGGTCGGCAGAGA
+
+	Maximum loci likelihood calculations:
+		loci_likelihoods:
+			[2.049459607068299]
+		max_likelihood_idx:
+			0
+		max_likelihood_loci:
+			((0, 0),)
+
+
+Stats for component 105 in sample B with 1 alleles and ploidy = 2:
+
+	Maximum vafs likelihood:
+		1.0 for allele ACTGCATCGGAGGGTGGGAGCCTCTCCACAAGTCATGTTAAGAGTCAGGCTAAACGCCAACTACGGATCCGTAAACACAATCTTTTTTTCCATG
+
+	Maximum loci likelihood calculations:
+		loci_likelihoods:
+			[2.049459607068299]
+		max_likelihood_idx:
+			0
+		max_likelihood_loci:
+			((0, 0),)
+
+
+Stats for component 106 in sample B with 2 alleles and ploidy = 2:
+
+	Maximum vafs likelihood:
+		0.5 for allele ACTGCATCAATGTCAAGTCTATCATTCATTCCTTCGTATTTATCCATGACGGTTGTATGAGATAATGCCAACCTAAGATCCGTCTTAACGCGGG
+		0.5 for allele AGTCAACTGCATCAATGTCAAGTCTATCATTCATTCCTTCGTATTTATCCATGACGGTTGTATGAGATAATGCCAACCTAAGATCCGTCTTAACGCG
+
+	Maximum loci likelihood calculations:
+		loci_likelihoods:
+			[2.0618119222947647e-06]
+		max_likelihood_idx:
+			0
+		max_likelihood_loci:
+			((0, 1),)
+
+
+Stats for component 107 in sample B with 1 alleles and ploidy = 2:
+
+	Maximum vafs likelihood:
+		1.0 for allele ACTGCATAGTGATCCATTCAAGCTGGGCCCAGCAAAGAAGACTAATACGAGGGACATCTGCCGACTGAGTGCCGAAAGATTAACATCAATCCAT
+
+	Maximum loci likelihood calculations:
+		loci_likelihoods:
+			[2.049459607068299]
+		max_likelihood_idx:
+			0
+		max_likelihood_loci:
+			((0, 0),)
+
+
+Stats for component 108 in sample B with 1 alleles and ploidy = 2:
+
+	Maximum vafs likelihood:
+		1.0 for allele ACTGCATTGCCTTGCATGGATTGGGGTCCGGCCCATGCCTGCGGTGTGCTAATGCCGTTTGAGATTATTGGATCACCTCCGATGCGCCCCAGCA
+
+	Maximum loci likelihood calculations:
+		loci_likelihoods:
+			[2.049459607068299]
+		max_likelihood_idx:
+			0
+		max_likelihood_loci:
+			((0, 0),)
+
+
+Stats for component 109 in sample B with 1 alleles and ploidy = 2:
+
+	Maximum vafs likelihood:
+		1.0 for allele ACTGCATTCGAACGATATCTGAACAGTCCCGTCGGCCTACCGTAAGGAATCTGTCAAATGGCCATGTCCTGTTCTCGTATTTTAGGCGAGTGTG
+
+	Maximum loci likelihood calculations:
+		loci_likelihoods:
+			[2.049459607068299]
+		max_likelihood_idx:
+			0
+		max_likelihood_loci:
+			((0, 0),)
+
+
+Stats for component 110 in sample B with 1 alleles and ploidy = 2:
+
+	Maximum vafs likelihood:
+		1.0 for allele ACTGCATCTACCCTTGTTGATATGGAATCACAGCTAGAGATTTTACCCTAGGGCGACGCAAAGTTAAGTAGCATTCTACACGCCGCACCCTCCC
+
+	Maximum loci likelihood calculations:
+		loci_likelihoods:
+			[2.049459607068299]
+		max_likelihood_idx:
+			0
+		max_likelihood_loci:
+			((0, 0),)
+
+
+Stats for component 111 in sample B with 2 alleles and ploidy = 2:
+
+	Maximum vafs likelihood:
+		0.5 for allele ACTGCATAGCAATTTCAGTTGGGTAGGCACAAACAACTATTTTCAGGTATGACCGATCGGAGCACGCGCACGCCGATTGATACATCGCTTGCGA
+		0.5 for allele ACTGCATAGCAATTTCAGTTGGGTAGGCACAAACAACTATTTTCAGGTATGACCGCTCGGAGCACGCGCACGCCGATTGATACATCGCTTGCGA
+
+	Maximum loci likelihood calculations:
+		loci_likelihoods:
+			[0.0020556264865278823]
+		max_likelihood_idx:
+			0
+		max_likelihood_loci:
+			((0, 1),)
+
+
+Stats for component 112 in sample B with 1 alleles and ploidy = 2:
+
+	Maximum vafs likelihood:
+		1.0 for allele ACTGCATCGCCATTTCTTCGGGCAGGTTTACAAACACTAGCCAGCAGACGCTACCCGGAATCCTGTAATTCGCGCTAGTCCTTCCGCATGACAC
+
+	Maximum loci likelihood calculations:
+		loci_likelihoods:
+			[2.049459607068299]
+		max_likelihood_idx:
+			0
+		max_likelihood_loci:
+			((0, 0),)
+
+
+Stats for component 114 in sample B with 1 alleles and ploidy = 2:
+
+	Maximum vafs likelihood:
+		1.0 for allele ACTGCATAAATAGGACACTGCGTGAACTACCACATACGTATGCCCACTTGTCCAGTAGGCCGAACTTGCGAGGTGTCCTCATTGCACTTACCCG
+
+	Maximum loci likelihood calculations:
+		loci_likelihoods:
+			[2.049459607068299]
+		max_likelihood_idx:
+			0
+		max_likelihood_loci:
+			((0, 0),)
+
+
+Stats for component 117 in sample B with 1 alleles and ploidy = 2:
+
+	Maximum vafs likelihood:
+		1.0 for allele ACTGCATGTGCGTCTAGCGTTCGCAAAGCCGATGGCTCTGACTTCAAGTGGTCTCAATATTTTTGCGCAGTTCGGCGCAGCGTGCTAGGCCGAA
+
+	Maximum loci likelihood calculations:
+		loci_likelihoods:
+			[2.049459607068299]
+		max_likelihood_idx:
+			0
+		max_likelihood_loci:
+			((0, 0),)
+
+
+Stats for component 119 in sample B with 1 alleles and ploidy = 2:
+
+	Maximum vafs likelihood:
+		1.0 for allele ACTGCATTGTGCGGCTGATATAAGTGCCATTCAACTGTTTTCATCGCCGCTTGGCGGTAAGTTAGAGACTATGAAGCGATCACGAGTCACTACT
+
+	Maximum loci likelihood calculations:
+		loci_likelihoods:
+			[2.049459607068299]
+		max_likelihood_idx:
+			0
+		max_likelihood_loci:
+			((0, 0),)
+
+
+Stats for component 120 in sample B with 1 alleles and ploidy = 2:
+
+	Maximum vafs likelihood:
+		1.0 for allele ACTGCATAAACAATCGCTGGACGATTTGGAGCTCGCTGATTGGTGCACGAAGCTTGGATCTCTAACCAAACGACACAGATTCTCAAGCCATTAT
+
+	Maximum loci likelihood calculations:
+		loci_likelihoods:
+			[2.049459607068299]
+		max_likelihood_idx:
+			0
+		max_likelihood_loci:
+			((0, 0),)
+
+
+Stats for component 123 in sample B with 5 alleles and ploidy = 2:
+
+	Maximum vafs likelihood:
+		1.0 for allele ACTGCATCTTAAACTTCAGCAACTGCCTGAACGGTGAAAGTATCAGAATTAGTTCTCGTGCTAGATCCGTTAGCAACCTGAGGTGCAACGCCTC
+		0.0 for allele ACTGCATCTTAAACTTCAGCAACTGCGTGAACGGTGAAAGTATCAGAATTAGTTCTCGTGCTAGATCCGTTAGCAACCTGAGGTGCAACGCCTC
+		0.0 for allele ACTGCATCTTAAACTTCAGCAACTGCGTGAACGGTGAAAGTATCAGAATTAGTTCTCGTGCTAGATCCGTTCGCAACCTGAGGTGCAACGCCTC
+		0.0 for allele ACTGCATCTTAAACTTCAGCAACTGCGTGAACGGTTAAAGTATCAGAATTAGTTCTCGTGCTAGATCCGTTAGCAACCTGAGGTGCAACGCCTC
+		0.0 for allele GAGACTGCATCTTAAACTTCAGCAACTGCGTGAACGGTGAAAGTATCAGAATTAGTTCTCGTGCTAGATCCGTTAGCAACCTGAGGTGCAACGCCT
+
+	Maximum loci likelihood calculations:
+		loci_likelihoods:
+			[1.165008585217315]
+		max_likelihood_idx:
+			0
+		max_likelihood_loci:
+			((0, 0), (0, 0), (0, 0))
