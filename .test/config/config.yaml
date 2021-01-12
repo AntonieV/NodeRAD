@@ -5,30 +5,40 @@
 #samples: "config/samples_medium.tsv"
 
 # minimal sets of samples for testing:
-#samples: "config/samples_small.tsv"
-samples: "config/samples_mini.tsv"
+samples: "config/samples_small.tsv"
+#samples: "config/samples_mini.tsv"
 #samples: "config/samples_micro.tsv"
 
 resources:
 #  fastq-data: "data/medium_dataset/ddRAGEdataset_ATCACG_1.fastq"
 
 # minimal datasets for testing:
-#  fastq-data: "data/small_dataset/ddRAGEdataset_GGCTAC_1.fastq"
-  fastq-data: "data/mini_dataset/ddRAGEdataset_GGCTAC_1.fastq"
+  fastq-data: "data/small_dataset/ddRAGEdataset_GGCTAC_1.fastq"
+#  fastq-data: "data/mini_dataset/ddRAGEdataset_GGCTAC_1.fastq"
 #  fastq-data: "data/mini_dataset/reduced_ddRAGEdataset_GGCTAC_1.fastq"
 #  fastq-data: "data/micro_dataset/ddRAGEdataset_ATCACG_1.fastq"
 
+eval-data:
+#  micro-dataset: "data/micro_dataset/ddRAGEdataset_GGCTAC_gt.yaml"
+#  mini-dataset: "data/mini_dataset/ddRAGEdataset_GGCTAC_gt.yaml"
+  small-dataset: "data/small_dataset/ddRAGEdataset_GGCTAC_gt.yaml"
+#  medium-dataset: "data/medium_dataset/ddRAGEdataset_GGCTAC_gt.yaml"
+
+
 genome-properties:
   noise:
-    treshold-seq-noise: 2
-    treshold-cluster-size: 5
+    treshold-seq-noise:
+        small-clusters: 2  # for clusters < treshold-cluster-size
+        large-clusters: 4  # for clusters >= treshold-cluster-size
+    treshold-cluster-size: 300
   # a diploid chromosome set is determined for this prototype,
   # for future use it can be configured here
   ploidy: 2
-  mutationrates:
-    substitution: 0.8999
-    insertion: 0.05
-    deletion: 0.05
+  errors-per-base:
+    # sequencing errors in data from Illumina sequencing platforms as default values
+    # source: https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-016-0976-y
+    insertion: 2.8e-6
+    deletion: 5.1e-6
   heterozygosity:
     substitution: 0.001
     insertion: 0.001
@@ -58,4 +68,4 @@ graph-intermediate-steps:
 
 params:
   # threshold for maximum distance value for building the graph, default: 23
-  threshold_max_edit_distance: 12
+  threshold_max_edit_distance: 9

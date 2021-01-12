@@ -1,7 +1,6 @@
 from graph_tool.all import *
 from itertools import zip_longest, combinations_with_replacement, chain, combinations, permutations, repeat
 from collections import Counter
-import numpy as np
 import math
 
 
@@ -11,33 +10,29 @@ def get_alignment_likelihood(graph, cigar_tuples, qual, reverse=False):
     quality = [10 ** (-1 * i / 10) for i in qual]
     qual_idx = 0
     likelihood = 1.0
-    _subst = graph.gp["subst-mutation-rates"]
     # mismatch of not reversed edge: insertion in query node
-    _ins = graph.gp["ins-mutation-rates"]
+    _ins = graph.gp["ins-error-rates"]
     # mismatch of not reversed edge: deletion in query node
-    _del = graph.gp["del-mutation-rates"]
+    _del = graph.gp["del-error-rates"]
     if reverse:
         # on mismatch of backwards edge: deletion in reference node corresponds to insertion in query node
         _ins = _del
         # on mismatch of backwards edge: insertion in reference node corresponds to deletion in query node
-        _del = graph.gp["ins-mutation-rates"]
+        _del = graph.gp["ins-error-rates"]
 
     for (op, length) in cigar_tuples:
-        if op == 7 or op == 0:  # on match in cigar-string
-            for i in quality[qual_idx:(qual_idx+length)]:
+        for i in quality[qual_idx:(qual_idx + length)]:
+            if op == 7 or op == 0:  # on match in cigar-string
                 likelihood *= 1 - i
-            qual_idx += length
-        if op == 8 or op == 1 or op == 2 or op == 4:
-            mut_rate = 0
-            if op == 8 or op == 4:  # on substitution/snp or on softclip mismatch in cigar-string
-                mut_rate = _subst
-            if op == 1:  # on insertion mismatch in cigar-string
-                mut_rate = _ins
-            if op == 2:  # on deletion mismatch in cigar-string
-                mut_rate = _del
-            for i in quality[qual_idx:(qual_idx+length)]:
-                likelihood *= (1 - mut_rate) * float(1 / 3) * i + mut_rate * (1 - i)
-            qual_idx += length
+            if op == 8 or op == 4:  # on substitution/snp or on softclip in cigar-string
+                likelihood *= float(1 / 3) * i
+            if op == 1 or op == 2:
+                err_rate = 0
+                if op == 1:  # on insertion in cigar-string
+                    likelihood *= _ins
+                if op == 2:  # on deletion in cigar-string
+                    likelihood *= _del
+        qual_idx += length
     return likelihood
 
 
@@ -113,37 +108,39 @@ def get_candidate_vafs(n, ploidy):
     return map(get_combination_vafs, combinations_with_replacement(range(n), n_alleles))
 
 
-def get_candidate_alleles(comp, reads, noise, cluster_size):
+def get_candidate_alleles(comp, reads, noise_small, noise_large, cluster_size):
     read_support = Counter()
     for read in reads:
         read_support[comp.vertex_properties['sequence'][read]] += 1
     # filters noise for clusters above a certain cluster size
-    # treshold value of noise and cluster-size are given in config
+    # treshold values of noise and cluster-size are given in config
     if comp.num_vertices() >= cluster_size:
-        return sorted(seq for seq, count in read_support.items() if count >= noise)
-    return sorted(seq for seq, count in read_support.items())
+        return sorted(seq for seq, count in read_support.items() if count >= noise_large)
+    # filters noise for small clusters
+    return sorted(seq for seq, count in read_support.items()if count >= noise_small)
 
 
 def get_allele_likelihood_read(comp, allele, node, read_allele_likelihoods):
-    # obtian one arbitrary out edge of node that points to another node with sequence = allele
+    # obtian one arbitrary edge of node that points to another node with sequence = allele
     seq_node = comp.vertex_properties['sequence'][node]
+    id_node = comp.vp['id'][node]
     qual = comp.vp["quality-q-vals"][node]
-    if (seq_node, allele) in read_allele_likelihoods:
-        return read_allele_likelihoods[(seq_node, allele)]
+    if (id_node, allele) in read_allele_likelihoods:
+        return read_allele_likelihoods[(id_node, allele)]
     # search for existing edge from given node to target node with sequence = allele
     out_neighbors = comp.get_out_neighbors(node)
     for neighbor in out_neighbors:
         seq_neighbor = comp.vertex_properties['sequence'][neighbor]
         if seq_neighbor == allele:
-            read_allele_likelihoods[(seq_node, seq_neighbor)] = get_alignment_likelihood(comp, list(eval(comp.edge_properties['cigar-tuples'][comp.edge(node, neighbor)])), qual, reverse=False)
-            return read_allele_likelihoods[(seq_node, seq_neighbor)]
+            read_allele_likelihoods[(id_node, seq_neighbor)] = get_alignment_likelihood(comp, list(eval(comp.edge_properties['cigar-tuples'][comp.edge(node, neighbor)])), qual, reverse=False)
+            return read_allele_likelihoods[(id_node, seq_neighbor)]
     # search for reverse target node with sequence = allele to given node
     in_neighbors = comp.get_in_neighbors(node)
     for neighbor in in_neighbors:
         seq_neighbor = comp.vertex_properties['sequence'][neighbor]
         if seq_neighbor == allele:
-            read_allele_likelihoods[(seq_node, seq_neighbor)] = get_alignment_likelihood(comp, list(eval(comp.edge_properties['cigar-tuples'][comp.edge(neighbor, node)])), qual, reverse=True)
-            return read_allele_likelihoods[(seq_node, seq_neighbor)]
+            read_allele_likelihoods[(id_node, seq_neighbor)] = get_alignment_likelihood(comp, list(eval(comp.edge_properties['cigar-tuples'][comp.edge(neighbor, node)])), qual, reverse=True)
+            return read_allele_likelihoods[(id_node, seq_neighbor)]
     return 0
 
 
@@ -175,14 +172,18 @@ def get_candidate_loci(n, ploidy, max_likelihood_vafs):
     return set(get_combination_loci(p) for p in permutations(comb))
 
 
-def get_allele_likelihood_allele(comp, loci_alleles):
+def get_allele_likelihood_allele(comp, loci_alleles, loci_likelihoods):
     likelihood = 1.0
     for locus_alleles in loci_alleles:
         # heterozygosity for all combinations of allele pairs
         for allele_i, allele_j in list(combinations(locus_alleles, 2)):
-            cigar = get_cigar_tuples(comp, allele_i, allele_j)
-            if cigar:
-                likelihood += math.log(get_heterozygosity(comp, list(eval(cigar[0])), reverse=cigar[1]))
+            if (allele_i, allele_j) in loci_likelihoods:
+                likelihood += loci_likelihoods[(allele_i, allele_j)]
+            else:
+                cigar = get_cigar_tuples(comp, allele_i, allele_j)
+                if cigar:
+                    loci_likelihoods[(allele_i, allele_j)] = math.log(get_heterozygosity(comp, list(eval(cigar[0])), reverse=cigar[1]))
+                    likelihood += loci_likelihoods[(allele_i, allele_j)]
     return math.exp(likelihood)
 
 
@@ -191,11 +192,11 @@ def indicator_constrait(ploidy, max_likelihood_vafs, loci):
     return all([count_alleles[idx] == max_likelihood_vafs[idx] * len(loci) * ploidy for locus in loci for idx in locus])
 
 
-def calc_loci_likelihoods(comp, max_likelihood_vafs, alleles, loci):
+def calc_loci_likelihoods(comp, max_likelihood_vafs, alleles, loci, loci_likelihoods):
     ploidy = comp.gp["ploidy"]
     if indicator_constrait(ploidy, max_likelihood_vafs, loci):
         loci_alleles = list(list(map(lambda x: alleles[x], locus)) for locus in loci)
-        return get_allele_likelihood_allele(comp, loci_alleles)
+        return get_allele_likelihood_allele(comp, loci_alleles, loci_likelihoods)
     return 0
 
 

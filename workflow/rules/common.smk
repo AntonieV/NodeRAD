@@ -26,7 +26,13 @@ wildcard_constraints:
 ####### data preprocessing #######
 
 def get_adapter(wildcards):
-    return " -g {}={} ".format(wildcards.sample, samples.loc[wildcards.sample, "barcode_1"])
+    # return " -g {}={} ".format(wildcards.sample, samples.loc[wildcards.sample, "barcode_1"])
+    return " -a {sample}={bar2} -g {sample}={bar1} ".format(sample=wildcards.sample,
+                               bar1=samples.loc[wildcards.sample, "barcode_1"],
+                               bar2=samples.loc[wildcards.sample, "barcode_2"])
+
+def get_individual(sample):
+    return samples.loc[sample]["individual"]
 
 ####### results #######
 def get_multiqc_input(wildcards):
@@ -62,7 +68,15 @@ def all_input(wildcards):
     # trimming reads
     for sample in samples.index:
         # requires output: vcf file
-        wanted_input.extend(expand(["results/noderad/4_vcf/{sample}.vcf"], sample=sample))
+        wanted_input.extend(
+            expand(
+                [
+                    "results/noderad/4_vcf/{sample}.vcf",
+                    "results/evaluation/sim_fasta/{sample}.sim.fasta"
+                    # "results/evaluation/blast/{sample}.blast.tsv"
+                ], sample=sample
+            )
+        )
 
         # optional figures of graph-intermediate-steps:
         if config["graph-intermediate-steps"]["edit-distance-graph"]["activate-xml"]:

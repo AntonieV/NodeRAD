@@ -13,9 +13,8 @@ def set_dir(_dir):
 
 def set_properties():
         return [("g_ploidy", "ploidy", "int"),
-                ("g_subst_mut", "subst-mutation-rates", "float"),
-                ("g_ins_mut", "ins-mutation-rates", "float"),
-                ("g_del_mut", "del-mutation-rates", "float"),
+                ("g_ins_err", "ins-error-rates", "float"),
+                ("g_del_err", "del-error-rates", "float"),
                 ("g_subst_heterozyg", "subst-heterozygosity", "float"),
                 ("g_ins_heterozyg", "ins-heterozygosity", "float"),
                 ("g_del_heterozyg", "del-heterozygosity", "float"),

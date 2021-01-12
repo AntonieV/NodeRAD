@@ -11,7 +11,7 @@ sys.stderr = open(snakemake.log[0], "w")
 sample = snakemake.wildcards.get('sample')
 
 # input
-sam = snakemake.input.get("sam")
+bam = snakemake.input.get("bam")
 reads = snakemake.input.get("fastq")
 
 # required output
@@ -29,7 +29,8 @@ dir_subgraphs = snakemake.output.get("components_subgraphs", "")
 # params for ploidy, threshold, noise and cluster-size
 threshold = snakemake.params.get("threshold_max_edit_distance", "")
 ploidy = snakemake.params.get("ploidy", "")  # a diploid chromosome set is determined for the prototype
-noise = snakemake.params.get("treshold_seq_noise", "")
+noise_small = snakemake.params.get("treshold_seq_noise_small", "")
+noise_large = snakemake.params.get("treshold_seq_noise_large", "")
 cluster_size = snakemake.params.get("treshold_cluster_size", "")
 
 # get reads format
@@ -46,8 +47,10 @@ else:
     threshold = int(threshold)
 
 # default value of noise
-if not noise:
-    noise = 1
+if not noise_small:
+    noise_small = 1
+if not noise_large:
+    noise_large = 1
 
 # init graph
 graph = Graph(directed=True)
@@ -64,12 +67,11 @@ for (name, prop, prop_type) in graph_operations.set_properties():
         vars()[name] = graph.new_edge_property(prop_type)
         graph.edge_properties[prop] = vars()[name]
 
-# set mutation-rates and heterozygosity
+# set ploidy, sequencing error and heterozygosity
 graph.graph_properties["ploidy"] = ploidy
 
-graph.graph_properties["subst-mutation-rates"] = snakemake.params.get("mut_subst", "")
-graph.graph_properties["ins-mutation-rates"] = snakemake.params.get("mut_ins", "")
-graph.graph_properties["del-mutation-rates"] = snakemake.params.get("mut_del", "")
+graph.graph_properties["ins-error-rates"] = snakemake.params.get("err_ins", "")
+graph.graph_properties["del-error-rates"] = snakemake.params.get("err_del", "")
 
 graph.graph_properties["subst-heterozygosity"] = snakemake.params.get("heterozyg_subst", "")
 graph.graph_properties["ins-heterozygosity"] = snakemake.params.get("heterozyg_ins", "")
@@ -91,10 +93,12 @@ else:
         graph = graph_operations.set_nodes(graph, _reads, format, sample)
 
 # add edges from all-vs-all alignment of reads (please see rule minimap2)
-sam = pysam.AlignmentFile(sam, "rb")
-for read in sam.fetch(until_eof=True):
+verbose = pysam.set_verbosity(0)  # https://github.com/pysam-developers/pysam/issues/939
+bam = pysam.AlignmentFile(bam, "rb")
+pysam.set_verbosity(verbose)
+for read in bam.fetch(until_eof=True):
     graph = graph_operations.set_edges(graph, read, threshold)
-sam.close()
+bam.close()
 graph.remove_vertex(0)
 
 
@@ -120,7 +124,7 @@ graph = None
 loc_nr = 1
 for (comp, comp_nr) in connected_components:
     # step 2: likelihood of allele fractions
-    alleles = likelihood_operations.get_candidate_alleles(comp, comp.vertices(), noise, cluster_size)
+    alleles = likelihood_operations.get_candidate_alleles(comp, comp.vertices(), noise_small, noise_large, cluster_size)
     n = len(alleles)
     vafs_candidates = list(likelihood_operations.get_candidate_vafs(n, ploidy))
     nodes = list([comp.vertex_index[node] for node in comp.vertices()])
@@ -146,9 +150,10 @@ for (comp, comp_nr) in connected_components:
 
     # step 3: likelihood of loci given alleles and fractions
     loci_candidates = list(likelihood_operations.get_candidate_loci(n, ploidy, max_likelihood_vafs))
+    loci_likelihoods = {}
 
     loci_likelihoods = [
-        likelihood_operations.calc_loci_likelihoods(comp, max_likelihood_vafs, alleles, loci)
+        likelihood_operations.calc_loci_likelihoods(comp, max_likelihood_vafs, alleles, loci, loci_likelihoods)
         for loci in loci_candidates
     ]
     max_likelihood_idx = np.argmax(loci_likelihoods)
