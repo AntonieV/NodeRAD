@@ -70,3 +70,20 @@ rule noderad:
         "../envs/noderad.yaml"
     script:
         "../scripts/noderad_main.py"
+
+# evaluation of results
+
+rule simulated_data_to_fasta:
+    input:
+         sim_data_stats=config["eval-data"]["small-dataset"]
+    output:
+        fasta_sim="results/evaluation/sim_fasta/{sample}.sim.fasta"
+    params:
+        individual=lambda wc: get_individual(wc.sample)
+    log:
+        "logs/evaluation/{sample}.sim_to_fasta.log"
+    conda:
+        "../envs/sim_to_fasta.yaml"
+    script:
+        "../scripts/sim_to_fasta.py"
+
