@@ -15,7 +15,7 @@ rule cutadapt_se:
     log:
         "logs/cutadapt/{sample}.se.log"
     conda:
-        "../envs/temp_cutadapt_se.yaml"
+        "../envs/cutadapt_se.yaml"
     shell:
          #TODO: possibly replace with wrapper after {{name}} integration for assignment to the individuals
         "cutadapt {params.adapter} {params.extra} -o results/trimmed/{{name}}.fastq.gz {input} > {output.qc} 2> {log}"

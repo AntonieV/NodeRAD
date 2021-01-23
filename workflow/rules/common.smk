@@ -72,8 +72,7 @@ def all_input(wildcards):
             expand(
                 [
                     "results/noderad/4_vcf/{sample}.vcf",
-                    "results/evaluation/sim_fasta/{sample}.sim.fasta"
-                    # "results/evaluation/blast/{sample}.blast.tsv"
+                    "results/evaluation/blast/{sample}.blast.tsv"
                 ], sample=sample
             )
         )

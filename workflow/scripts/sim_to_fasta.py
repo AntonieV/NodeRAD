@@ -9,6 +9,7 @@ sample = snakemake.wildcards.get('sample')
 
 # input
 sim_in = snakemake.input.get("sim_data_stats")
+individual_name=snakemake.params.get("individual")
 individual = snakemake.params.get("individual").replace("_", " ")
 
 fasta = ""
@@ -49,7 +50,7 @@ for key_loc in sim_data_file.keys():
                     seq = seq[:idx] + seq[idx + len(mut_subs):]
 
     # parsing to fasta format
-    fasta_id = ">{}|{}".format(individual, key_loc)
+    fasta_id = ">{}|{}|simulated".format(individual_name, key_loc.replace(" ", "_"))
     fasta += "{}\n{}\n".format(fasta_id, seq)
 
 # write fasta file

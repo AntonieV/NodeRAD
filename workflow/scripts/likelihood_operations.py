@@ -11,58 +11,49 @@ def get_alignment_likelihood(graph, cigar_tuples, qual, reverse=False):
     qual_idx = 0
     likelihood = 1.0
     # mismatch of not reversed edge: insertion in query node
-    _ins = graph.gp["ins-error-rates"]
+    e_ins = graph.gp["ins-error-rates"]
     # mismatch of not reversed edge: deletion in query node
-    _del = graph.gp["del-error-rates"]
+    e_del = graph.gp["del-error-rates"]
     if reverse:
         # on mismatch of backwards edge: deletion in reference node corresponds to insertion in query node
-        _ins = _del
+        e_ins = e_del
         # on mismatch of backwards edge: insertion in reference node corresponds to deletion in query node
         _del = graph.gp["ins-error-rates"]
-
     for (op, length) in cigar_tuples:
         for i in quality[qual_idx:(qual_idx + length)]:
             if op == 7 or op == 0:  # on match in cigar-string
                 likelihood *= 1 - i
             if op == 8 or op == 4:  # on substitution/snp or on softclip in cigar-string
                 likelihood *= float(1 / 3) * i
-            if op == 1 or op == 2:
-                err_rate = 0
-                if op == 1:  # on insertion in cigar-string
-                    likelihood *= _ins
-                if op == 2:  # on deletion in cigar-string
-                    likelihood *= _del
+            if op == 1:  # on insertion in cigar-string
+                likelihood *= e_ins
+            if op == 2:  # on deletion in cigar-string
+                likelihood *= e_del
         qual_idx += length
     return likelihood
 
 
 def get_heterozygosity(comp, cigar_tuples, reverse=False):
     heterozygosity = 1.0
-    heterozyg_factor = 1.0
-    _subst = comp.gp["subst-heterozygosity"]
+    h_sub = comp.gp["subst-heterozygosity"]
     # mismatch of not reversed edge: insertion in query node
-    _ins = comp.gp["ins-heterozygosity"]
+    h_ins = comp.gp["ins-heterozygosity"]
     # mismatch of not reversed edge: deletion in query node
-    _del = comp.gp["del-heterozygosity"]
+    h_del = comp.gp["del-heterozygosity"]
     if reverse:
         # on mismatch of backwards edge: deletion in reference node corresponds to insertion in query node
-        _ins = _del
+        h_ins = h_del
         # on mismatch of backwards edge: insertion in reference node corresponds to deletion in query node
-        _del = comp.gp["ins-heterozygosity"]
-
-    heterozyg_all = _subst + _ins + _del
-
+        h_del = comp.gp["ins-heterozygosity"]
     for (op, length) in cigar_tuples:
         if op == 7 or op == 0:  # on match in cigar-string
-            heterozygosity *= (1 - heterozyg_all) ** length
-        if op == 8 or op == 1 or op == 2 or op == 4:
-            if op == 8 or op == 4:  # on substitution/snp or on softclip mismatch in cigar-string
-                heterozyg_factor = _subst
-            if op == 1:  # on insertion mismatch in cigar-string
-                heterozyg_factor = _ins
-            if op == 2:  # on deletion mismatch in cigar-string
-                heterozyg_factor = _del
-            heterozygosity *= heterozyg_factor ** length
+            heterozygosity *= (1 - (h_sub + h_ins + h_del)) ** length
+        if op == 8 or op == 4:  # on substitution/snp or on softclip mismatch in cigar-string
+            heterozygosity *= h_sub ** length
+        if op == 1:  # on insertion mismatch in cigar-string
+            heterozygosity *= h_ins ** length
+        if op == 2:  # on deletion mismatch in cigar-string
+            heterozygosity *= h_del ** length
     return heterozygosity
 
 
@@ -122,7 +113,6 @@ def get_candidate_alleles(comp, reads, noise_small, noise_large, cluster_size):
 
 def get_allele_likelihood_read(comp, allele, node, read_allele_likelihoods):
     # obtian one arbitrary edge of node that points to another node with sequence = allele
-    seq_node = comp.vertex_properties['sequence'][node]
     id_node = comp.vp['id'][node]
     qual = comp.vp["quality-q-vals"][node]
     if (id_node, allele) in read_allele_likelihoods:

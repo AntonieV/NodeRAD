@@ -121,7 +121,7 @@ connected_components = graph_operations.get_components(graph, message, snakemake
                                                        connected_components_figure, v_color="component-label")
 
 graph = None
-loc_nr = 1
+loc_nr = 0
 for (comp, comp_nr) in connected_components:
     # step 2: likelihood of allele fractions
     alleles = likelihood_operations.get_candidate_alleles(comp, comp.vertices(), noise_small, noise_large, cluster_size)

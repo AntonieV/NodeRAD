@@ -24,7 +24,6 @@ eval-data:
   small-dataset: "data/small_dataset/ddRAGEdataset_GGCTAC_gt.yaml"
 #  medium-dataset: "data/medium_dataset/ddRAGEdataset_GGCTAC_gt.yaml"
 
-
 genome-properties:
   noise:
     treshold-seq-noise:

@@ -1,3 +1,6 @@
+import os
+from pathlib import Path
+
 rule minimap2_index:
     input:
         target="results/trimmed/{sample}.fastq.gz"
@@ -75,15 +78,91 @@ rule noderad:
 
 rule simulated_data_to_fasta:
     input:
-         sim_data_stats=config["eval-data"]["small-dataset"]
+        sim_data_stats=config["eval-data"]["small-dataset"]
     output:
-        fasta_sim="results/evaluation/sim_fasta/{sample}.sim.fasta"
+        fasta_sim="results/evaluation/sim_fasta/{sample}/{sample}.sim.fasta"
     params:
         individual=lambda wc: get_individual(wc.sample)
     log:
-        "logs/evaluation/{sample}.sim_to_fasta.log"
+        "logs/evaluation/parse/{sample}.sim_to_fasta.log"
     conda:
         "../envs/sim_to_fasta.yaml"
     script:
         "../scripts/sim_to_fasta.py"
 
+rule vcf_to_fasta:
+    input:
+        vcf_data="results/noderad/4_vcf/{sample}.vcf"
+    output:
+        vcf_fasta="results/evaluation/vcf_fasta/{sample}/{sample}.vcf.fasta"
+    params:
+        individual=lambda wc: get_individual(wc.sample)
+    log:
+        "logs/evaluation/parse/{sample}.vcf_to_fasta.log"
+    script:
+        "../scripts/vcf_to_fasta.py"
+
+rule samtools_index:
+    input:
+        expand("results/evaluation/{type}_fasta/{sample}/{sample}.{type}.fasta", sample=samples.index, type=["sim", "vcf"])
+    output:
+        "results/evaluation/{type}_fasta/{sample}/{sample}.{type}.fasta.fai"
+    params:
+        ""
+    log:
+        "logs/evaluation/index/{type}_fasta/{sample}.{type}.fasta"
+    wrapper:
+        "v0.69.0/bio/samtools/faidx"
+
+rule blast_database:
+    input:
+        fasta_sim="results/evaluation/sim_fasta/{sample}/{sample}.sim.fasta",
+        fasta_idx="results/evaluation/sim_fasta/{sample}/{sample}.sim.fasta.fai"
+    output:
+        multiext("results/evaluation/sim_fasta/{sample}/{sample}.sim.fasta.",
+                 "ndb", "nos", "not", "ntf", "nto")
+    params:
+        ""
+    log:
+        "logs/evaluation/blast/{sample}.blast_db.log"
+    conda:
+        "../envs/blast.yaml"
+    shell:
+        "makeblastdb -in {input.fasta_sim} -input_type fasta -dbtype nucl -parse_seqids"
+
+rule blast:
+    input:
+        fasta_sim=multiext("results/evaluation/sim_fasta/{sample}/{sample}.sim.fasta.",
+                 "ndb", "nos", "not", "ntf", "nto"),
+        res="results/evaluation/vcf_fasta/{sample}/{sample}.vcf.fasta"
+    output:
+        blast="results/evaluation/blast/{sample}.blast.tsv"#,
+        # plot_identity="results/evaluation/plots/{sample}.pers_identity.pdf"
+    params:
+        percent_identity=80,
+        dbname= lambda wc, input: os.path.dirname(input.fasta_sim[0])+"/"+Path(os.path.basename(input.fasta_sim[0])).stem
+    log:
+        "logs/evaluation/blast/{sample}.log"
+    conda:
+        "../envs/blast.yaml"
+    shell:
+        "blastn -query {input.res} -outfmt 6 -db {params.dbname} -out {output.blast}"
+        # "blastn -query {input.res} -db results/evaluation/sim_fasta/{wildcards.sample}/{wildcards.sample}.sim.fasta -outfmt 7 > {output.blast}"
+
+
+# rule blast:
+#     input:
+#         fasta_db=multiext("results/evaluation/sim_fasta/{sample}/{sample}.sim.fasta.",
+#                  "ndb", "nos", "not", "ntf", "nto"),
+#         res="results/evaluation/vcf_fasta/{sample}/{sample}.vcf.fasta"
+#     output:
+#         blast="results/evaluation/blast/{sample}.blast.tsv"#,
+#         # plot_identity="results/evaluation/plots/{sample}.pers_identity.pdf"
+#     params:
+#         dbname= lambda wc, input: ','.join(Path(os.path.basename(input.fasta_db[0])).stem)
+#     log:
+#         "logs/evaluation/blast/{sample}.log"
+#     conda:
+#         "../envs/blast.yaml"
+#     script:
+#         "../scripts/evaluation_blast.R"
