@@ -2,27 +2,26 @@
 # In case of sample based data, it should be complemented by a samples.tsv file that contains
 # one row per sample. It can be parsed easily via pandas.
 
-#samples: "config/samples_medium.tsv"
-
 # minimal sets of samples for testing:
+#samples: "config/samples_medium.tsv"
 samples: "config/samples_small.tsv"
 #samples: "config/samples_mini.tsv"
 #samples: "config/samples_micro.tsv"
 
 resources:
-#  fastq-data: "data/medium_dataset/ddRAGEdataset_ATCACG_1.fastq"
-
 # minimal datasets for testing:
+#  fastq-data: "data/medium_dataset/ddRAGEdataset_ATCACG_1.fastq"
   fastq-data: "data/small_dataset/ddRAGEdataset_GGCTAC_1.fastq"
 #  fastq-data: "data/mini_dataset/ddRAGEdataset_GGCTAC_1.fastq"
 #  fastq-data: "data/mini_dataset/reduced_ddRAGEdataset_GGCTAC_1.fastq"
 #  fastq-data: "data/micro_dataset/ddRAGEdataset_ATCACG_1.fastq"
 
-eval-data:
-#  micro-dataset: "data/micro_dataset/ddRAGEdataset_GGCTAC_gt.yaml"
-#  mini-dataset: "data/mini_dataset/ddRAGEdataset_GGCTAC_gt.yaml"
-  small-dataset: "data/small_dataset/ddRAGEdataset_GGCTAC_gt.yaml"
-#  medium-dataset: "data/medium_dataset/ddRAGEdataset_GGCTAC_gt.yaml"
+eval-data: "data/small_dataset/ddRAGEdataset_GGCTAC_gt.yaml"
+# minimal datasets for evaluation of testing datasets:
+# "data/micro_dataset/ddRAGEdataset_GGCTAC_gt.yaml"       #  micro-dataset
+# "data/mini_dataset/ddRAGEdataset_GGCTAC_gt.yaml"        #  mini-dataset
+# "data/small_dataset/ddRAGEdataset_GGCTAC_gt.yaml"       #  small-dataset
+# "data/medium_dataset/ddRAGEdataset_GGCTAC_gt.yaml"      #  medium-dataset
 
 genome-properties:
   noise:

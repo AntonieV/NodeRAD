@@ -43,9 +43,9 @@ source ~/miniconda3/etc/profile.d/conda.sh
 
 conda activate snakemake
 
-snakemake --use-conda --cores $(nproc) --show-failed-logs --conda-cleanup-pkgs cache -R all
+snakemake --use-conda --cores $(nproc) --directory .test --show-failed-logs --conda-cleanup-pkgs cache -R all
 
-snakemake --report
+snakemake --report --directory .test
 
 cd .test
 

@@ -71,9 +71,16 @@ def all_input(wildcards):
         wanted_input.extend(
             expand(
                 [
-                    "results/noderad/4_vcf/{sample}.vcf",
-                    "results/evaluation/blast/{sample}.blast.tsv"
+                    "results/noderad/4_vcf/{sample}.vcf"
                 ], sample=sample
+            )
+        )
+        if config["eval-data"]:
+            wanted_input.extend(
+                expand(
+                    [
+                        "results/evaluation/blast/{sample}.blast.tsv"
+                    ], sample=sample
             )
         )
 

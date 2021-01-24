@@ -3,6 +3,48 @@
 [![Snakemake](https://img.shields.io/badge/snakemake-≥5.14.0-brightgreen.svg)](https://snakemake.bitbucket.io)
 <!-- [![Build Status](https://travis-ci.org/....)](https://travis-ci.org/....)-->
 
+
+<pre>
+<span style="color:darkred">
+                                                      ▒                         
+                                                      ▓                         
+                                                     ░█                         
+                                                   ░░██                         
+                                    ░           ▒▓█████                         
+                                   ▒█░░           ░▒▓██                         
+                                   ░████████▓▒      ░██                         
+                                     ██▓▓▒░░      ░▒██                          
+                                      ██▒    ▒▓██████                           
+                                       ███▓    ░▒███                            
+                                         ████ ▒███░                             
+                                           ░███░                                
+                                        ░██   ░███░                             
+                                      ░███       ░██                            
+███╗   ██╗ ██████╗ ██████╗ ███████╗  ██▓        ░░▒██░  ██████╗  █████╗ ██████╗ 
+████╗  ██║██╔═══██╗██╔══██╗██╔════╝ ██▒   ▒▒▓█████████░ ██╔══██╗██╔══██╗██╔══██╗
+██╔██╗ ██║██║   ██║██║  ██║█████╗  ▒█▓░       ░░▒▒▓▓██▒ ██████╔╝███████║██║  ██║
+██║╚██╗██║██║   ██║██║  ██║██╔══╝  ▒██▓▒░░░        ░██▒ ██╔══██╗██╔══██║██║  ██║
+██║ ╚████║╚██████╔╝██████╔╝███████╗ █████████▓▒▒   ▄█▀░ ██║  ██║██║  ██║██████╔╝
+╚═╝  ╚═══╝ ╚═════╝ ╚═════╝ ╚══════╝ ░██▓▓▒▒░░░░   ███░  ╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝ 
+                                      ███▒       ███                            
+                                        ████    ██▀                             
+                                           █████                                
+                                         ░█▓ ░████                              
+                                       ░██▓     ░██░                            
+                                      ██████▓▒    ░██                           
+                                     ██▓▒▒░        ░██                          
+                                    ░█░     ▒▒▓███████░                         
+                                    ██▒░       ░░▒▒▓▓█▒                         
+                                    ██████▓▒▒        ░                          
+                                    █▓▓▒░░                                      
+                                    ▓░                                          
+                                    ▒                                           
+</span>
+</pre>
+NodeRAD is a [Snakemake](https://github.com/snakemake/snakemake) workflow for analysis of RAD sequencing data without the presence of a reference genome. It detects loci and genomic variants using sequencing error and heterozygosity rates.
+
+**Note:** Currently the workflow is limited to diploid species.
+
 ## Authors
 
 * Antonie Vietor (@AntonieV)
@@ -29,6 +71,8 @@ Install Snakemake using [conda](https://conda.io/projects/conda/en/latest/user-g
 For installation details, see the [instructions in the Snakemake documentation](https://snakemake.readthedocs.io/en/stable/getting_started/installation.html).
 
 ### Step 4: Execute workflow
+
+You can run the workflow with some examples through the script **start.sh**. To use your own data, change the paths in `config/config.yaml` for `samples`, `fastq-data` and `eval-data` (if there is data from a ddRAGE simulation). 
 
 Activate the conda environment:
 
@@ -98,5 +142,5 @@ In case you have also changed or added steps, please consider contributing them 
 
 ## Testing
 
-Test cases are in the subfolder `.test`. They are automatically executed via continuous integration with [Github Actions](https://github.com/features/actions).
+More test cases are in the subfolder `.test`. To run the workflow with one of the test data sets adjust the paths for `samples`, `fastq-data` and `eval-data` in `.test/config/config.yaml` for the desired test dataset and run the script **start_test.sh**. Also note that for the different data sets you may have to adjust the threshold values in the configuration file. Test cases are also automatically executed via continuous integration with [Github Actions](https://github.com/features/actions).
 

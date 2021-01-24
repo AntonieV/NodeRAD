@@ -78,7 +78,7 @@ rule noderad:
 
 rule simulated_data_to_fasta:
     input:
-        sim_data_stats=config["eval-data"]["small-dataset"]
+        sim_data_stats=config["eval-data"]
     output:
         fasta_sim="results/evaluation/sim_fasta/{sample}/{sample}.sim.fasta"
     params:
@@ -136,7 +136,7 @@ rule blast:
                  "ndb", "nos", "not", "ntf", "nto"),
         res="results/evaluation/vcf_fasta/{sample}/{sample}.vcf.fasta"
     output:
-        blast="results/evaluation/blast/{sample}.blast.tsv"#,
+        blast=pipe("results/evaluation/blast/{sample}.blast.raw")#,
         # plot_identity="results/evaluation/plots/{sample}.pers_identity.pdf"
     params:
         percent_identity=80,
@@ -147,22 +147,15 @@ rule blast:
         "../envs/blast.yaml"
     shell:
         "blastn -query {input.res} -outfmt 6 -db {params.dbname} -out {output.blast}"
-        # "blastn -query {input.res} -db results/evaluation/sim_fasta/{wildcards.sample}/{wildcards.sample}.sim.fasta -outfmt 7 > {output.blast}"
 
-
-# rule blast:
-#     input:
-#         fasta_db=multiext("results/evaluation/sim_fasta/{sample}/{sample}.sim.fasta.",
-#                  "ndb", "nos", "not", "ntf", "nto"),
-#         res="results/evaluation/vcf_fasta/{sample}/{sample}.vcf.fasta"
-#     output:
-#         blast="results/evaluation/blast/{sample}.blast.tsv"#,
-#         # plot_identity="results/evaluation/plots/{sample}.pers_identity.pdf"
-#     params:
-#         dbname= lambda wc, input: ','.join(Path(os.path.basename(input.fasta_db[0])).stem)
-#     log:
-#         "logs/evaluation/blast/{sample}.log"
-#     conda:
-#         "../envs/blast.yaml"
-#     script:
-#         "../scripts/evaluation_blast.R"
+rule blast_header:
+    input:
+        "results/evaluation/blast/{sample}.blast.raw"
+    output:
+        blast="results/evaluation/blast/{sample}.blast.tsv"
+    params:
+        header="query acc.ver\tsubject acc.ver\t% identity\talignment length\tmismatches\tgap opens\tq. start\tq. end\ts. start\ts. end\tevalue\tbit score\n"
+    log:
+        "logs/evaluation/blast/{sample}.header.log"
+    shell:
+        "echo -ne \"{params.header}\" | cat - {input} > {output}"

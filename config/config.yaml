@@ -5,14 +5,16 @@ samples: "config/samples.tsv"
 
 resources:
   # input fastq for mapping reads of each sample
-  fastq-data: "data/sample.fastq"
+  fastq-data: "resources/example.fastq"
+
+eval-data: "resources/example.yaml"
 
 genome-properties:
   noise:
     treshold-seq-noise:
         small-clusters: 2  # for clusters < treshold-cluster-size
-        large-clusters: 3  # for clusters >= treshold-cluster-size
-    treshold-cluster-size: 100
+        large-clusters: 4  # for clusters >= treshold-cluster-size
+    treshold-cluster-size: 300
   # a diploid chromosome set is determined for this prototype,
   # for future use it can be configured here
   ploidy: 2
