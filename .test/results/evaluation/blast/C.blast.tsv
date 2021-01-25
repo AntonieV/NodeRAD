@@ -1,3 +1,4 @@
+query acc.ver	subject acc.ver	% identity	alignment length	mismatches	gap opens	q. start	q. end	s. start	s. end	evalue	bit score
 C|Individual_85|LOC0-REF	Individual_85|Locus_0|simulated	100.000	88	0	0	7	94	1	88	1.77e-44	163
 C|Individual_85|LOC1-REF	Individual_85|Locus_1|simulated	95.455	88	4	0	7	94	1	88	8.30e-38	141
 C|Individual_85|LOC2-REF	Individual_85|Locus_2|simulated	100.000	88	0	0	7	94	1	88	1.77e-44	163
