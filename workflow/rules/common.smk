@@ -79,7 +79,10 @@ def all_input(wildcards):
             wanted_input.extend(
                 expand(
                     [
-                        "results/evaluation/blast/{sample}.blast.tsv"
+                        "results/evaluation/blast/plots/perc_ident/{sample}.plot_loci.pdf",
+                        "results/evaluation/blast/plots/hist_perc_ident/{sample}.plot_hist.pdf",
+                        "results/evaluation/blast/plots/bitscores/{sample}.plot_bitscores.pdf",
+                        "results/evaluation/blast/plots/evalues/{sample}.plot_evalues.pdf"
                     ], sample=sample
             )
         )

@@ -47,8 +47,5 @@ snakemake --use-conda --cores $(nproc) --show-failed-logs --conda-cleanup-pkgs c
 
 snakemake --report
 
-cd .test
-
 xdg-open report.html
 xdg-open results/qc/multiqc/multiqc.html
-cd ..

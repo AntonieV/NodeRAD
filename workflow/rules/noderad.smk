@@ -65,8 +65,7 @@ rule noderad:
         # heterozygosity
         heterozyg_subst=config["genome-properties"]["heterozygosity"]["substitution"],
         heterozyg_ins=config["genome-properties"]["heterozygosity"]["insertion"],
-        heterozyg_del=config["genome-properties"]["heterozygosity"]["deletion"],
-
+        heterozyg_del=config["genome-properties"]["heterozygosity"]["deletion"]
     log:
         "logs/noderad/{sample}.log"
     conda:
@@ -75,7 +74,6 @@ rule noderad:
         "../scripts/noderad_main.py"
 
 # evaluation of results
-
 rule simulated_data_to_fasta:
     input:
         sim_data_stats=config["eval-data"]
@@ -136,8 +134,7 @@ rule blast:
                  "ndb", "nos", "not", "ntf", "nto"),
         res="results/evaluation/vcf_fasta/{sample}/{sample}.vcf.fasta"
     output:
-        blast=pipe("results/evaluation/blast/{sample}.blast.raw")#,
-        # plot_identity="results/evaluation/plots/{sample}.pers_identity.pdf"
+        blast=pipe("results/evaluation/blast/{sample}.blast.raw")
     params:
         percent_identity=80,
         dbname= lambda wc, input: os.path.dirname(input.fasta_sim[0])+"/"+Path(os.path.basename(input.fasta_sim[0])).stem
@@ -159,3 +156,20 @@ rule blast_header:
         "logs/evaluation/blast/{sample}.header.log"
     shell:
         "echo -ne \"{params.header}\" | cat - {input} > {output}"
+
+rule plots_blast:
+    input:
+        "results/evaluation/blast/{sample}.blast.tsv"
+    output:
+        ident=report("results/evaluation/blast/plots/perc_ident/{sample}.plot_loci.pdf", caption="../report/plot_perc_ident.rst", category="Blast"),
+        ident_hist=report("results/evaluation/blast/plots/hist_perc_ident/{sample}.plot_hist.pdf", caption="../report/plot_hist_perc_ident.rst", category="Blast"),
+        bit_scores=report("results/evaluation/blast/plots/bitscores/{sample}.plot_bitscores.pdf", caption="../report/plot_bitscores.rst", category="Blast"),
+        evalues=report("results/evaluation/blast/plots/evalues/{sample}.plot_evalues.pdf", caption="../report/plot_evalues.rst", category="Blast")
+    params:
+        ""
+    log:
+        "logs/evaluation/blast/{sample}.plot_ident.log"
+    conda:
+        "../envs/plots_blast.yaml"
+    script:
+        "../scripts/plots_blast.R"
