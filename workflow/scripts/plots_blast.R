@@ -21,7 +21,7 @@ for(i in blast_data$locus) {
 
 plot <- ggplot(data = blast_data, aes(y=locus, x=identity)) +
   geom_bar(width = 1.0, position = "dodge", stat="identity", aes(fill = identity), colour="Black") +
-  scale_fill_gradient2(low="mediumpurple3", mid="steelblue3", high="green3", midpoint = 99, name = "Identity") +
+  scale_fill_gradient(low="mediumpurple3",high="green3", name = "Identity") +
   ggtitle("Indentity [%] of loci identified by NodeRAD vs. simulated loci") +
   xlab("Identity [%]") +
   ylab("Locus") +
