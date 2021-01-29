@@ -33,6 +33,8 @@ rule samtools_view:
         "results/minimap2/{sample}_aln.sam"
     output:
         "results/minimap2/{sample}_aln.bam"
+    log:
+        "logs/minimap2/{sample}.bam.log"
     params:
         " -b "
     wrapper:
