@@ -137,7 +137,7 @@ rule blast:
         blast=pipe("results/evaluation/blast/{sample}.blast.raw")
     params:
         percent_identity=80,
-        dbname= lambda wc, input: os.path.dirname(input.fasta_sim[0])+"/"+Path(os.path.basename(input.fasta_sim[0])).stem
+        dbname= lambda wc, input: "{}/{}".format(os.path.dirname(input.fasta_sim[0]), Path(os.path.basename(input.fasta_sim[0])).stem)
     log:
         "logs/evaluation/blast/{sample}.log"
     conda:

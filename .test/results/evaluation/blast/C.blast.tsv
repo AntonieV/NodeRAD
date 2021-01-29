@@ -1,6 +1,6 @@
 query acc.ver	subject acc.ver	% identity	alignment length	mismatches	gap opens	q. start	q. end	s. start	s. end	evalue	bit score
 C|Individual_85|LOC0-REF	Individual_85|Locus_0-0|simulated	100.000	88	0	0	7	94	1	88	1.77e-44	163
-C|Individual_85|LOC1-REF	Individual_85|Locus_1-0|simulated	95.455	88	4	0	7	94	1	88	8.30e-38	141
+C|Individual_85|LOC1-REF	Individual_85|Locus_1-0|simulated	100.000	88	0	0	7	94	1	88	1.77e-44	163
 C|Individual_85|LOC2-REF	Individual_85|Locus_2-0|simulated	100.000	88	0	0	7	94	1	88	1.77e-44	163
 C|Individual_85|LOC3-REF	Individual_85|Locus_3-0|simulated	100.000	88	0	0	7	94	1	88	1.77e-44	163
 C|Individual_85|LOC4-REF	Individual_85|Locus_4-0|simulated	100.000	88	0	0	7	94	1	88	1.77e-44	163
@@ -14,7 +14,7 @@ C|Individual_85|LOC9-REF	Individual_85|Locus_8-0|simulated	98.864	88	1	0	7	94	1	
 C|Individual_85|LOC9-ALT_1	Individual_85|Locus_8-0|simulated	100.000	88	0	0	7	94	1	88	1.77e-44	163
 C|Individual_85|LOC9-ALT_2	Individual_85|Locus_8-0|simulated	98.864	88	1	0	7	94	1	88	8.24e-43	158
 C|Individual_85|LOC10-REF	Individual_85|Locus_9-0|simulated	100.000	88	0	0	7	94	1	88	1.77e-44	163
-C|Individual_85|LOC11-REF	Individual_85|Locus_11-0|simulated	98.864	88	1	0	7	94	1	88	8.24e-43	158
+C|Individual_85|LOC11-REF	Individual_85|Locus_11-0|simulated	100.000	88	0	0	7	94	1	88	1.77e-44	163
 C|Individual_85|LOC12-REF	Individual_85|Locus_12-0|simulated	100.000	88	0	0	7	94	1	88	1.77e-44	163
 C|Individual_85|LOC13-REF	Individual_85|Locus_13-0|simulated	100.000	88	0	0	7	94	1	88	1.77e-44	163
 C|Individual_85|LOC14-REF	Individual_85|Locus_14-0|simulated	98.864	88	1	0	7	94	1	88	8.24e-43	158
@@ -39,7 +39,7 @@ C|Individual_85|LOC27-ALT_1	Individual_85|Locus_28-0|simulated	98.864	88	1	0	7	9
 C|Individual_85|LOC28-REF	Individual_85|Locus_29-0|simulated	100.000	88	0	0	7	94	1	88	1.77e-44	163
 C|Individual_85|LOC29-REF	Individual_85|Locus_31-0|simulated	100.000	88	0	0	7	94	1	88	1.77e-44	163
 C|Individual_85|LOC30-REF	Individual_85|Locus_32-0|simulated	100.000	88	0	0	7	94	1	88	1.77e-44	163
-C|Individual_85|LOC31-REF	Individual_85|Locus_33-0|simulated	97.727	88	2	0	7	94	1	88	3.83e-41	152
+C|Individual_85|LOC31-REF	Individual_85|Locus_33-0|simulated	100.000	88	0	0	7	94	1	88	1.77e-44	163
 C|Individual_85|LOC32-REF	Individual_85|Locus_34-0|simulated	100.000	88	0	0	7	94	1	88	1.77e-44	163
 C|Individual_85|LOC33-REF	Individual_85|Locus_35-0|simulated	100.000	88	0	0	7	94	1	88	1.77e-44	163
 C|Individual_85|LOC34-REF	Individual_85|Locus_36-0|simulated	100.000	88	0	0	7	94	1	88	1.77e-44	163

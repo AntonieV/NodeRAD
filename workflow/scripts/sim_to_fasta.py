@@ -35,10 +35,10 @@ for key_loc in sim_data_file.keys():
                 mut_list = [re.split("@", item)[1] for item in mutation]
                 mut_tuples = [tuple(re.split(":", mut)) for mut in mut_list]
                 for (pos, mut) in mut_tuples:
-                    idx = pos
                     if '(' or ')' in pos:
                         idx = re.split("\(", re.split("\)", pos)[0])[-1]
-                    idx = int(idx) - 1
+                    idx = int(pos)  # nucleotide position indexing in ddRAGE starts at 0,
+                    # but it should start at position 1 https://varnomen.hgvs.org/bg-material/numbering/
                     if ">" in mut:
                         mut_subs = re.split(">", mut)
                         if seq[idx] == mut_subs[0]:
