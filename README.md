@@ -42,7 +42,7 @@
                                     ▒                                           
 </span>
 </pre> -->
-NodeRAD is a [Snakemake](https://github.com/snakemake/snakemake) workflow for analysis of RAD sequencing data without the presence of a reference genome. It detects loci and genomic variants using sequencing error and heterozygosity rates.
+NodeRAD is a [Snakemake](https://github.com/snakemake/snakemake) workflow for analysis of single-end reads from RAD sequencing without the presence of a reference genome. It detects loci and genomic variants using sequencing error and heterozygosity rates.
 
 **Note:** Currently the workflow is limited to diploid species.
 
