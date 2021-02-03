@@ -50,6 +50,10 @@ NodeRAD is a [Snakemake](https://github.com/snakemake/snakemake) workflow for an
 
 * Antonie Vietor (@AntonieV)
 
+This workflow is part of a bachelor thesis. The topic and the underlying model were developed by:
+
+* Johannes Köster (@johanneskoester), https://koesterlab.github.io
+
 ## Usage
 
 If you use this workflow in a paper, don't forget to give credits to the authors by citing the URL of this (original) repository and, if available, its DOI (see above).
