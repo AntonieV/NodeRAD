@@ -177,14 +177,14 @@ def get_allele_likelihood_allele(comp, loci_alleles, loci_likelihoods):
     return math.exp(likelihood)
 
 
-def indicator_constrait(ploidy, max_likelihood_vafs, loci):
+def indicator_constraint(ploidy, max_likelihood_vafs, loci):
     count_alleles = Counter(list(chain(*loci)))
     return all([count_alleles[idx] == max_likelihood_vafs[idx] * len(loci) * ploidy for locus in loci for idx in locus])
 
 
 def calc_loci_likelihoods(comp, max_likelihood_vafs, alleles, loci, loci_likelihoods):
     ploidy = comp.gp["ploidy"]
-    if indicator_constrait(ploidy, max_likelihood_vafs, loci):
+    if indicator_constraint(ploidy, max_likelihood_vafs, loci):
         loci_alleles = list(list(map(lambda x: alleles[x], locus)) for locus in loci)
         return get_allele_likelihood_allele(comp, loci_alleles, loci_likelihoods)
     return 0
