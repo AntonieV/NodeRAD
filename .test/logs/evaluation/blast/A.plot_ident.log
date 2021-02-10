@@ -1,5 +1,5 @@
 
-── Column specification ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+── Column specification ──────────────────────────────────────────────────────────────────────────────────────────────────
 cols(
   `query acc.ver` = col_character(),
   `subject acc.ver` = col_character(),
@@ -15,3 +15,5 @@ cols(
   `bit score` = col_double()
 )
 
+Warnmeldung:
+Ignoring unknown parameters: binwidth, bins, pad 

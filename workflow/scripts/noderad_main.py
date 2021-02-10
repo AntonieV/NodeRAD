@@ -170,7 +170,7 @@ for (comp, comp_nr) in connected_components:
     gt_indices = likelihood_operations.get_gt_indices(alleles, max_likelihood_loci, loci_alleles)
 
     for gt_idx_locus in list(set(gt_indices)):
-        vcf.write("{chrom}\t{pos}\t.\t{ref}\t{alt}\t.\t.\tGT\t{gt}\n".format(chrom="LOC{}".format(loc_nr),
+        vcf.write("{chrom}\t{pos}\t.\t{ref}\t{alt}\t.\t.\t.\tGT\t{gt}\n".format(chrom="LOC{}".format(loc_nr),
                                                                              pos="1", ref=loci_alleles[0],
                                                                              alt=', '.join(loci_alleles[1:]) if len(loci_alleles) > 1 else ".",
                                                                              gt=likelihood_operations.get_genotype(gt_idx_locus)))

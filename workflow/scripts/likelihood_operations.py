@@ -164,16 +164,14 @@ def get_candidate_loci(n, ploidy, max_likelihood_vafs):
 
 def get_allele_likelihood_allele(comp, loci_alleles, loci_likelihoods):
     likelihood = 1.0
-    for locus_alleles in loci_alleles:
-        # heterozygosity for all combinations of allele pairs
-        for allele_i, allele_j in list(combinations(locus_alleles, 2)):
-            if (allele_i, allele_j) in loci_likelihoods:
+    for (allele_i, allele_j) in loci_alleles:
+        if (allele_i, allele_j) in loci_likelihoods:
+            likelihood += loci_likelihoods[(allele_i, allele_j)]
+        else:
+            cigar = get_cigar_tuples(comp, allele_i, allele_j)
+            if cigar:
+                loci_likelihoods[(allele_i, allele_j)] = math.log(get_heterozygosity(comp, list(eval(cigar[0])), reverse=cigar[1]))
                 likelihood += loci_likelihoods[(allele_i, allele_j)]
-            else:
-                cigar = get_cigar_tuples(comp, allele_i, allele_j)
-                if cigar:
-                    loci_likelihoods[(allele_i, allele_j)] = math.log(get_heterozygosity(comp, list(eval(cigar[0])), reverse=cigar[1]))
-                    likelihood += loci_likelihoods[(allele_i, allele_j)]
     return math.exp(likelihood)
 
 
