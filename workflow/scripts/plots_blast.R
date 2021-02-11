@@ -36,20 +36,8 @@ plot <- ggplot(blast_data, aes(intervals)) +
     xlab("Identity [%]") +
     ylab("Counts") +
     scale_fill_gradient(name = "Counts")+
-    theme(aspect.ratio = 2.5/1.5, plot.title = element_text(hjust = 0.5), legend.position = "right")
-
-#plot<-qplot(x=blast_data$identity,
-#         fill=..count..,
-#         geom="histogram",
-#         binswidth= 0.5,
-#         main = "Histogram of correctly identified loci by NodeRAD",
-#         col=I("black"),
-#         xlab = "Identity [%]",
-#         ylab = "Count",
-#         alpha=I(.5)) +
-#    scale_fill_gradient(low="purple3", high="green3", name = "Count") +
-#    #scale_x_continuous(breaks = seq(95, 100, 10), limits=c(95, 100)) +
-#    theme(aspect.ratio = 2.5/1.5, plot.title = element_text(hjust = 0.5), legend.position = "right")
+    theme(aspect.ratio = 2.5/1.5, plot.title = element_text(hjust = 0.5), legend.position = "right") +
+    ggtitle("Histogram of number of alleles identified by NodeRAD\nwith respect to their similarity to simulated data.")
 plot
 ggsave(snakemake@output[["ident_hist"]], width = 7, height = 7)
 
