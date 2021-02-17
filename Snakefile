@@ -30,11 +30,11 @@
 #        * add header to results of BLAST analysis (rule blast_header) and create plots (rule plots_blast)
 
 
-include: "rules/common.smk"
-include: "rules/qc.smk"
-include: "rules/cutadapt.smk"
-include: "rules/noderad.smk"
-include: "rules/evaluation.smk"
+include: "workflow/rules/common.smk"
+include: "workflow/rules/qc.smk"
+include: "workflow/rules/cutadapt.smk"
+include: "workflow/rules/noderad.smk"
+include: "workflow/rules/evaluation.smk"
 
 rule all:
     input: all_input
