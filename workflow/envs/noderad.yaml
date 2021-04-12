@@ -1,9 +1,9 @@
 channels:
-  - conda-forge
   - bioconda
+  - conda-forge
   - defaults
 dependencies:
   - biopython ==1.78
-  - graph-tool ==2.35
+  - graph-tool ==2.37
   - pysam ==0.16
 
