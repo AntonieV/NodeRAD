@@ -7,6 +7,7 @@ dependencies:
   - xorg-libxi ==1.7.10
   - xorg-libxcursor ==1.2.0
   - xorg-libxdamage ==1.1.5
+  - xorg-libxcomposite ==0.4.5
   - graph-tool ==2.37
   - pysam ==0.16
   - biopython ==1.78
