@@ -9,6 +9,7 @@ dependencies:
   - xorg-libxdamage ==1.1.5
   - xorg-libxcomposite ==0.4.5
   - xorg-libxrandr ==1.5.2
+  - xorg-libxinerama ==1.1.4
   - graph-tool ==2.37
   - pysam ==0.16
   - biopython ==1.78
