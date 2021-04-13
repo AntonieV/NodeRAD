@@ -3,7 +3,6 @@ channels:
   - bioconda
   - defaults
 dependencies:
-  - cairomm-1.0 ==1.12.2
   - graph-tool ==2.37
   - pysam ==0.16
   - biopython ==1.78
