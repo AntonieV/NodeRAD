@@ -1,12 +1,10 @@
 channels:
-  - ostrokach-forge
   - bioconda
   - conda-forge
   - defaults
 dependencies:
-  - gtk3 ==3.22
   - pysam ==0.16
   - biopython ==1.78
-  - graph-tool ==2.37
+  - graph-tool <=2.37
 
 
