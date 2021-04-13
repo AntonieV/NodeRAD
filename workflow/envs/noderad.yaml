@@ -1,8 +1,9 @@
 channels:
-  - bioconda
   - conda-forge
+  - bioconda
   - defaults
 dependencies:
+  - gdk-pixbuf ==2.42
   - biopython ==1.78
   - graph-tool ==2.37
   - pysam ==0.16
