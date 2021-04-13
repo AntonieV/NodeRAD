@@ -3,8 +3,8 @@ channels:
   - conda-forge
   - defaults
 dependencies:
+  - graph-tool ==2.37
   - qt4 ==4.8.7
   - cairomm-1.0 ==1.12.2
-  - graph-tool ==2.37
   - pysam ==0.16
   - biopython ==1.78
