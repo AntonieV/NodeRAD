@@ -3,6 +3,8 @@ channels:
   - conda-forge
   - defaults
 dependencies:
+  - gdk-pixbuf ==2.32
+  - gtk3 ==3.24.28
   - pysam ==0.16
   - biopython ==1.78
   - graph-tool ==2.37
