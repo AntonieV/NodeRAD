@@ -3,8 +3,8 @@ channels:
   - bioconda
   - defaults
 dependencies:
-  - xorg-libxau ==1.0
-  - xorg-libxi ==1.7
+  - xorg-libxau ==1.0.9
+  - xorg-libxi ==1.7.10
   - graph-tool ==2.37
   - pysam ==0.16
   - biopython ==1.78
