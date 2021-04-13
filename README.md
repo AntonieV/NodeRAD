@@ -1,8 +1,7 @@
 # Snakemake workflow: NodeRAD
 
 [![Snakemake](https://img.shields.io/badge/snakemake-≥5.14.0-brightgreen.svg)](https://snakemake.bitbucket.io)
-<!-- [![Build Status](https://travis-ci.org/....)](https://travis-ci.org/....)-->
-
+[![GitHub actions status](https://github.com/AntonieV/NodeRAD/actions/workflows/main.yaml/badge.svg?branch=master)](https://github.com/AntonieV/NodeRAD/actions?query=branch%3Amaster+workflow%3ATests)
 ![](logo_rot.png)
 
 <!-- <pre>
