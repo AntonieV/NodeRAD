@@ -17,7 +17,7 @@ jobs:
         uses: snakemake/snakemake-github-action@v1.17.0
         with:
           directory: .test
-          snakefile: Snakefile
+          snakefile: workflow/Snakefile
           args: "--lint"
 
   Testing:
@@ -32,12 +32,12 @@ jobs:
       uses: snakemake/snakemake-github-action@v1.17.0
       with:
         directory: .test
-        snakefile: Snakefile
+        snakefile: workflow/Snakefile
         args: "--use-conda --show-failed-logs --cores 10 --conda-cleanup-pkgs cache --conda-frontend mamba"
 
     - name: Test report
       uses: snakemake/snakemake-github-action@v1.17.0
       with:
         directory: .test
-        snakefile: Snakefile
+        snakefile: workflow/Snakefile
         args: "--report report.zip"
