@@ -43,7 +43,7 @@
                                     ▒                                           
 </span>
 </pre> -->
-NodeRAD is a [Snakemake](https://github.com/snakemake/snakemake) workflow for analysis of single-end reads from RAD sequencing without the presence of a reference genome. It detects loci and genomic variants using sequencing error and heterozygosity rates.
+NodeRAD is a [Snakemake](https://github.com/snakemake/snakemake) workflow for analysis of single-end reads from RAD sequencing without the presence of a reference genome. It detects loci and genomic variants using sequencing error and heterozygosity rates. For more information please have a look at the associated [bachelor thesis](https://raw.githubusercontent.com/AntonieV/RADSeq/main/main.pdf).
 
 **Note:** Currently the workflow is limited to diploid species.
 
@@ -51,7 +51,7 @@ NodeRAD is a [Snakemake](https://github.com/snakemake/snakemake) workflow for an
 
 * Antonie Vietor (@AntonieV)
 
-This workflow is part of a bachelor thesis. The topic and the underlying model were developed by:
+This workflow is part of a [bachelor thesis](https://raw.githubusercontent.com/AntonieV/RADSeq/main/main.pdf) The topic and the underlying model were developed by:
 
 * Johannes Köster (@johanneskoester), https://koesterlab.github.io
 
