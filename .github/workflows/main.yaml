@@ -32,7 +32,7 @@ jobs:
       with:
         directory: .test
         snakefile: workflow/Snakefile
-        args: "--use-conda  --conda-frontend mamba --show-failed-logs --cores 2 --conda-cleanup-pkgs cache --conda-frontend mamba"
+        args: "--use-conda --conda-frontend mamba --show-failed-logs --cores 4 --conda-cleanup-pkgs cache --conda-frontend mamba"
 
     - name: Test report
       uses: snakemake/snakemake-github-action@v1.24.0
