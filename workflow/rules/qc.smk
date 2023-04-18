@@ -9,7 +9,7 @@ rule fastqc:
     log:
         "logs/qc/fastqc/{sample}_fastqc.log"
     wrapper:
-        "0.66.0/bio/fastqc"
+        "v1.25.0/bio/fastqc"
 
 rule multiqc:
     input:
@@ -19,4 +19,4 @@ rule multiqc:
     log:
         "logs/qc/multiqc.log"
     wrapper:
-        "0.66.0/bio/multiqc"
+        "v1.25.0/bio/multiqc"

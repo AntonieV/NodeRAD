@@ -43,7 +43,7 @@ source ~/miniconda3/etc/profile.d/conda.sh
 
 conda activate snakemake
 
-snakemake --use-conda --cores $(nproc) --directory .test --show-failed-logs --conda-cleanup-pkgs cache -R all
+snakemake --use-conda --conda-frontend mamba --cores $(nproc) --directory .test --show-failed-logs --conda-cleanup-pkgs cache -R all
 
 snakemake --report --directory .test
 

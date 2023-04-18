@@ -38,7 +38,7 @@ rule samtools_index:
     log:
         "logs/evaluation/index/{type}_fasta/{sample}.{type}.fasta"
     wrapper:
-        "v0.69.0/bio/samtools/faidx"
+        "v1.25.0/bio/samtools/faidx"
 
 rule blast_database:
     input:

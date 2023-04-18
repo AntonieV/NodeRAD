@@ -63,7 +63,7 @@ If you use this workflow in a paper, don't forget to give credits to the authors
 
 ### Step 1: Obtain a copy of this workflow
 
-1. Create a new github repository using this workflow [as a template](https://help.github.com/en/articles/creating-a-repository-from-a-template).
+1. Create a new GitHub repository using this workflow [as a template](https://help.github.com/en/articles/creating-a-repository-from-a-template).
 2. [Clone](https://help.github.com/en/articles/cloning-a-repository) the newly created repository to your local system, into the place where you want to perform the data analysis.
 
 ### Step 2: Configure workflow
@@ -72,9 +72,12 @@ Configure the workflow according to your needs via editing the files in the `con
 
 ### Step 3: Install Snakemake
 
-Install Snakemake using [conda](https://conda.io/projects/conda/en/latest/user-guide/install/index.html):
-
+1. Install [conda](https://conda.io/projects/conda/en/latest/user-guide/install/index.html).
+2. Install [mamba](https://github.com/mamba-org/mamba) in conda base and create a snakemake conda environment:
+```bash
+    conda install -n base -c conda-forge mamba
     conda create -c bioconda -c conda-forge -n snakemake snakemake
+```
 
 For installation details, see the [instructions in the Snakemake documentation](https://snakemake.readthedocs.io/en/stable/getting_started/installation.html).
 
@@ -88,23 +91,23 @@ Activate the conda environment:
 
 Test your configuration by performing a dry-run via
 
-    snakemake --use-conda -n
+    snakemake --use-conda --conda-frontend mamba -n
 
 Execute the workflow locally via
 
-    snakemake --use-conda --cores $N
+    snakemake --use-conda --conda-frontend mamba --cores $N
 
 using `$N` cores or run it in a cluster environment via
 
-    snakemake --use-conda --cluster qsub --jobs 100
+    snakemake --use-conda --conda-frontend mamba --cluster qsub --jobs 100
 
 or
 
-    snakemake --use-conda --drmaa --jobs 100
+    snakemake --use-conda --conda-frontend mamba --drmaa --jobs 100
 
 If you not only want to fix the software stack but also the underlying OS, use
 
-    snakemake --use-conda --use-singularity
+    snakemake --use-conda --conda-frontend mamba --use-singularity
 
 in combination with any of the modes above.
 See the [Snakemake documentation](https://snakemake.readthedocs.io/en/stable/executable.html) for further details.

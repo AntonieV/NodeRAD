@@ -7,7 +7,7 @@ rule minimap2_index:
         "logs/minimap2/{sample}.log"
     threads: 3
     wrapper:
-        "0.66.0/bio/minimap2/index"
+        "v1.25.0/bio/minimap2/index"
 
 # determine edit distances and best alignment with minimap2
 rule minimap2:
@@ -22,7 +22,7 @@ rule minimap2:
         extra="-a -A 10 -N 100 --eqx --cs=long"
     threads: 3
     wrapper:
-        "0.66.0/bio/minimap2/aligner"
+        "v1.25.0/bio/minimap2/aligner"
 
 # converts SAM files to BAM files
 rule samtools_view:
@@ -35,7 +35,7 @@ rule samtools_view:
     params:
         " -b "
     wrapper:
-        "v0.69.0/bio/samtools/view"
+        "v1.25.0/bio/samtools/view"
 
 # RADSeq analysis: calulates alleles and loci likelihoods and returns vcf file with with the most probable loci
 rule noderad:

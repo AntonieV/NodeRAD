@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Lint workflow
-        uses: snakemake/snakemake-github-action@v1.23.0
+        uses: snakemake/snakemake-github-action@v1.24.0
         with:
           directory: .test
           snakefile: workflow/Snakefile
@@ -28,14 +28,14 @@ jobs:
       uses: actions/checkout@v3
 
     - name: Test workflow
-      uses: snakemake/snakemake-github-action@v1.23.0
+      uses: snakemake/snakemake-github-action@v1.24.0
       with:
         directory: .test
         snakefile: workflow/Snakefile
-        args: "--use-conda --show-failed-logs --cores 2 --conda-cleanup-pkgs cache --conda-frontend mamba"
+        args: "--use-conda  --conda-frontend mamba --show-failed-logs --cores 2 --conda-cleanup-pkgs cache --conda-frontend mamba"
 
     - name: Test report
-      uses: snakemake/snakemake-github-action@v1.23.0
+      uses: snakemake/snakemake-github-action@v1.24.0
       with:
         directory: .test
         snakefile: workflow/Snakefile
