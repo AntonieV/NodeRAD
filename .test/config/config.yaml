@@ -4,19 +4,19 @@
 
 # minimal sets of samples for testing:
 #samples: "config/samples_medium.tsv"
-samples: "config/samples_small.tsv"
+#samples: "config/samples_small.tsv"
 #samples: "config/samples_mini.tsv"
-#samples: "config/samples_micro.tsv"
+samples: "config/samples_micro.tsv"
 
 resources:
 # minimal datasets for testing:
 #  fastq-data: "data/medium_dataset/ddRAGEdataset_ATCACG_1.fastq"
-  fastq-data: "data/small_dataset/ddRAGEdataset_GGCTAC_1.fastq"
+#  fastq-data: "data/small_dataset/ddRAGEdataset_GGCTAC_1.fastq"
 #  fastq-data: "data/mini_dataset/ddRAGEdataset_GGCTAC_1.fastq"
 #  fastq-data: "data/mini_dataset/reduced_ddRAGEdataset_GGCTAC_1.fastq"
-#  fastq-data: "data/micro_dataset/ddRAGEdataset_ATCACG_1.fastq"
+  fastq-data: "data/micro_dataset/ddRAGEdataset_ATCACG_1.fastq"
 
-eval-data: "data/small_dataset/ddRAGEdataset_GGCTAC_gt.yaml"
+eval-data: "data/micro_dataset/ddRAGEdataset_GGCTAC_gt.yaml"
 # minimal datasets for evaluation of testing datasets:
 # "data/micro_dataset/ddRAGEdataset_GGCTAC_gt.yaml"       #  micro-dataset
 # "data/mini_dataset/ddRAGEdataset_GGCTAC_gt.yaml"        #  mini-dataset
