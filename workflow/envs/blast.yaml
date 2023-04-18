@@ -2,5 +2,6 @@ channels:
   - bioconda
   - conda-forge
 dependencies:
+  - curl ==7.83.1
   - blast ==2.13.0
   - openssl ==3.1.0
